@@ -497,3 +497,9 @@ E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.setting.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.SPForms.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRIS.vbproj.GenerateResource.Cache
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.exe.licenses
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.RotasiHistory.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.DemosiHistory.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Core.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Interop.Word.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.VBIDE.dll
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRIS.vbproj.ResolveComReference.cache

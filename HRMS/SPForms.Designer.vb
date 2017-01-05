@@ -23,146 +23,45 @@ Partial Class SPForms
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SPForms))
-        Me.btnSP = New DevExpress.XtraEditors.SimpleButton()
-        Me.lccp = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcfullname = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcompcode = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcempcode = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.barbuttonitem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
+        Me.barJudul = New DevExpress.XtraBars.BarButtonItem()
+        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.txtEmpCode = New DevExpress.XtraEditors.TextEdit()
+        Me.lcempcode = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtcompcode = New DevExpress.XtraEditors.TextEdit()
+        Me.lccompcode = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtPosition = New DevExpress.XtraEditors.TextEdit()
+        Me.lcposition = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtNamaKaryawan = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.lcnames = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.btnSP = New DevExpress.XtraEditors.SimpleButton()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.btnReset = New DevExpress.XtraEditors.SimpleButton()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcTitle = New DevExpress.XtraEditors.LabelControl()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl1.SuspendLayout()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtEmpCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcempcode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPosition.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcposition, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNamaKaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcnames, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnSP
-        '
-        Me.btnSP.Location = New System.Drawing.Point(114, 196)
-        Me.btnSP.Name = "btnSP"
-        Me.btnSP.Size = New System.Drawing.Size(153, 23)
-        Me.btnSP.TabIndex = 4
-        Me.btnSP.Text = "Give SP "
-        '
-        'lccp
-        '
-        Me.lccp.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.lccp.Location = New System.Drawing.Point(284, 147)
-        Me.lccp.Name = "lccp"
-        Me.lccp.Size = New System.Drawing.Size(5, 13)
-        Me.lccp.TabIndex = 12
-        Me.lccp.Text = "-"
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl11.Location = New System.Drawing.Point(203, 147)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(3, 13)
-        Me.LabelControl11.TabIndex = 11
-        Me.LabelControl11.Text = ":"
-        '
-        'LabelControl10
-        '
-        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl10.Location = New System.Drawing.Point(42, 147)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(91, 13)
-        Me.LabelControl10.TabIndex = 10
-        Me.LabelControl10.Text = "Current Position"
-        '
-        'lcfullname
-        '
-        Me.lcfullname.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.lcfullname.Location = New System.Drawing.Point(284, 110)
-        Me.lcfullname.Name = "lcfullname"
-        Me.lcfullname.Size = New System.Drawing.Size(5, 13)
-        Me.lcfullname.TabIndex = 9
-        Me.lcfullname.Text = "-"
-        '
-        'LabelControl8
-        '
-        Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl8.Location = New System.Drawing.Point(203, 110)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(3, 13)
-        Me.LabelControl8.TabIndex = 8
-        Me.LabelControl8.Text = ":"
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl7.Location = New System.Drawing.Point(42, 110)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(54, 13)
-        Me.LabelControl7.TabIndex = 7
-        Me.LabelControl7.Text = "Full Name"
-        '
-        'lcompcode
-        '
-        Me.lcompcode.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.lcompcode.Location = New System.Drawing.Point(284, 78)
-        Me.lcompcode.Name = "lcompcode"
-        Me.lcompcode.Size = New System.Drawing.Size(5, 13)
-        Me.lcompcode.TabIndex = 6
-        Me.lcompcode.Text = "-"
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl5.Location = New System.Drawing.Point(203, 78)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(3, 13)
-        Me.LabelControl5.TabIndex = 5
-        Me.LabelControl5.Text = ":"
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl4.Location = New System.Drawing.Point(42, 78)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(84, 13)
-        Me.LabelControl4.TabIndex = 4
-        Me.LabelControl4.Text = "Company Code"
-        '
-        'lcempcode
-        '
-        Me.lcempcode.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.lcempcode.Location = New System.Drawing.Point(284, 47)
-        Me.lcempcode.Name = "lcempcode"
-        Me.lcempcode.Size = New System.Drawing.Size(5, 13)
-        Me.lcempcode.TabIndex = 3
-        Me.lcempcode.Text = "-"
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl1.Location = New System.Drawing.Point(203, 47)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(3, 13)
-        Me.LabelControl1.TabIndex = 2
-        Me.LabelControl1.Text = ":"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl2.Location = New System.Drawing.Point(42, 47)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(86, 13)
-        Me.LabelControl2.TabIndex = 1
-        Me.LabelControl2.Text = "Employee Code"
         '
         'RibbonPageGroup1
         '
@@ -202,74 +101,246 @@ Partial Class SPForms
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "Surat Peringatan"
         '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.btnSP)
-        Me.GroupControl1.Controls.Add(Me.lccp)
-        Me.GroupControl1.Controls.Add(Me.LabelControl11)
-        Me.GroupControl1.Controls.Add(Me.LabelControl10)
-        Me.GroupControl1.Controls.Add(Me.lcfullname)
-        Me.GroupControl1.Controls.Add(Me.LabelControl8)
-        Me.GroupControl1.Controls.Add(Me.LabelControl7)
-        Me.GroupControl1.Controls.Add(Me.lcompcode)
-        Me.GroupControl1.Controls.Add(Me.LabelControl5)
-        Me.GroupControl1.Controls.Add(Me.LabelControl4)
-        Me.GroupControl1.Controls.Add(Me.lcempcode)
-        Me.GroupControl1.Controls.Add(Me.LabelControl1)
-        Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 153)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(385, 255)
-        Me.GroupControl1.TabIndex = 5
-        Me.GroupControl1.Text = "Surat Peringatan"
-        '
         'RibbonControl1
         '
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.barbuttonitem3})
+        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.BarButtonItem2, Me.barbuttonitem3, Me.barJudul})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 4
+        Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.Size = New System.Drawing.Size(410, 147)
+        Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Below
+        '
+        'barJudul
+        '
+        Me.barJudul.Caption = "BarButtonItem4"
+        Me.barJudul.Id = 4
+        Me.barJudul.Name = "barJudul"
+        '
+        'LayoutControl1
+        '
+        Me.LayoutControl1.Controls.Add(Me.lcTitle)
+        Me.LayoutControl1.Controls.Add(Me.btnReset)
+        Me.LayoutControl1.Controls.Add(Me.btnSP)
+        Me.LayoutControl1.Controls.Add(Me.txtNamaKaryawan)
+        Me.LayoutControl1.Controls.Add(Me.txtPosition)
+        Me.LayoutControl1.Controls.Add(Me.txtcompcode)
+        Me.LayoutControl1.Controls.Add(Me.txtEmpCode)
+        Me.LayoutControl1.Location = New System.Drawing.Point(15, 148)
+        Me.LayoutControl1.Name = "LayoutControl1"
+        Me.LayoutControl1.Root = Me.LayoutControlGroup1
+        Me.LayoutControl1.Size = New System.Drawing.Size(374, 220)
+        Me.LayoutControl1.TabIndex = 13
+        Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'LayoutControlGroup1
+        '
+        Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.LayoutControlGroup1.GroupBordersVisible = False
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcempcode, Me.lccompcode, Me.lcposition, Me.lcnames, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3})
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(374, 220)
+        Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.TextVisible = False
+        '
+        'txtEmpCode
+        '
+        Me.txtEmpCode.Location = New System.Drawing.Point(97, 58)
+        Me.txtEmpCode.MenuManager = Me.RibbonControl1
+        Me.txtEmpCode.Name = "txtEmpCode"
+        Me.txtEmpCode.Size = New System.Drawing.Size(265, 20)
+        Me.txtEmpCode.StyleController = Me.LayoutControl1
+        Me.txtEmpCode.TabIndex = 15
+        '
+        'lcempcode
+        '
+        Me.lcempcode.Control = Me.txtEmpCode
+        Me.lcempcode.CustomizationFormText = "Employee Code"
+        Me.lcempcode.Location = New System.Drawing.Point(0, 46)
+        Me.lcempcode.Name = "lcempcode"
+        Me.lcempcode.Size = New System.Drawing.Size(354, 24)
+        Me.lcempcode.Text = "Employee Code"
+        Me.lcempcode.TextSize = New System.Drawing.Size(81, 13)
+        '
+        'txtcompcode
+        '
+        Me.txtcompcode.Location = New System.Drawing.Point(97, 82)
+        Me.txtcompcode.MenuManager = Me.RibbonControl1
+        Me.txtcompcode.Name = "txtcompcode"
+        Me.txtcompcode.Size = New System.Drawing.Size(265, 20)
+        Me.txtcompcode.StyleController = Me.LayoutControl1
+        Me.txtcompcode.TabIndex = 16
+        '
+        'lccompcode
+        '
+        Me.lccompcode.Control = Me.txtcompcode
+        Me.lccompcode.CustomizationFormText = "LayoutControlItem3"
+        Me.lccompcode.Location = New System.Drawing.Point(0, 70)
+        Me.lccompcode.Name = "lccompcode"
+        Me.lccompcode.Size = New System.Drawing.Size(354, 24)
+        Me.lccompcode.Text = "Company Code"
+        Me.lccompcode.TextSize = New System.Drawing.Size(81, 13)
+        '
+        'txtPosition
+        '
+        Me.txtPosition.Location = New System.Drawing.Point(97, 106)
+        Me.txtPosition.MenuManager = Me.RibbonControl1
+        Me.txtPosition.Name = "txtPosition"
+        Me.txtPosition.Size = New System.Drawing.Size(265, 20)
+        Me.txtPosition.StyleController = Me.LayoutControl1
+        Me.txtPosition.TabIndex = 17
+        '
+        'lcposition
+        '
+        Me.lcposition.Control = Me.txtPosition
+        Me.lcposition.CustomizationFormText = "Position"
+        Me.lcposition.Location = New System.Drawing.Point(0, 94)
+        Me.lcposition.Name = "lcposition"
+        Me.lcposition.Size = New System.Drawing.Size(354, 24)
+        Me.lcposition.Text = "Position"
+        Me.lcposition.TextSize = New System.Drawing.Size(81, 13)
+        '
+        'txtNamaKaryawan
+        '
+        Me.txtNamaKaryawan.Location = New System.Drawing.Point(97, 34)
+        Me.txtNamaKaryawan.MenuManager = Me.RibbonControl1
+        Me.txtNamaKaryawan.Name = "txtNamaKaryawan"
+        Me.txtNamaKaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtNamaKaryawan.Size = New System.Drawing.Size(265, 20)
+        Me.txtNamaKaryawan.StyleController = Me.LayoutControl1
+        Me.txtNamaKaryawan.TabIndex = 14
+        '
+        'lcnames
+        '
+        Me.lcnames.Control = Me.txtNamaKaryawan
+        Me.lcnames.CustomizationFormText = "Employee Names"
+        Me.lcnames.Location = New System.Drawing.Point(0, 22)
+        Me.lcnames.Name = "lcnames"
+        Me.lcnames.Size = New System.Drawing.Size(354, 24)
+        Me.lcnames.Text = "Employee Names"
+        Me.lcnames.TextSize = New System.Drawing.Size(81, 13)
+        '
+        'btnSP
+        '
+        Me.btnSP.Image = CType(resources.GetObject("btnSP.Image"), System.Drawing.Image)
+        Me.btnSP.Location = New System.Drawing.Point(12, 130)
+        Me.btnSP.Name = "btnSP"
+        Me.btnSP.Size = New System.Drawing.Size(173, 38)
+        Me.btnSP.StyleController = Me.LayoutControl1
+        Me.btnSP.TabIndex = 14
+        Me.btnSP.Text = "Give SP"
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.btnSP
+        Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 118)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(177, 82)
+        Me.LayoutControlItem1.Text = "LayoutControlItem1"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextToControlDistance = 0
+        Me.LayoutControlItem1.TextVisible = False
+        '
+        'btnReset
+        '
+        Me.btnReset.Image = CType(resources.GetObject("btnReset.Image"), System.Drawing.Image)
+        Me.btnReset.Location = New System.Drawing.Point(189, 130)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(173, 38)
+        Me.btnReset.StyleController = Me.LayoutControl1
+        Me.btnReset.TabIndex = 14
+        Me.btnReset.Text = "Reset"
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.btnReset
+        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(177, 118)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(177, 82)
+        Me.LayoutControlItem2.Text = "LayoutControlItem2"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem2.TextToControlDistance = 0
+        Me.LayoutControlItem2.TextVisible = False
+        '
+        'lcTitle
+        '
+        Me.lcTitle.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lcTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center
+        Me.lcTitle.Location = New System.Drawing.Point(177, 12)
+        Me.lcTitle.Name = "lcTitle"
+        Me.lcTitle.Size = New System.Drawing.Size(20, 18)
+        Me.lcTitle.StyleController = Me.LayoutControl1
+        Me.lcTitle.TabIndex = 14
+        Me.lcTitle.Text = "SP"
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.lcTitle
+        Me.LayoutControlItem3.ControlAlignment = System.Drawing.ContentAlignment.TopCenter
+        Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(354, 22)
+        Me.LayoutControlItem3.Text = "LayoutControlItem3"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem3.TextToControlDistance = 0
+        Me.LayoutControlItem3.TextVisible = False
         '
         'SPForms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(410, 425)
-        Me.Controls.Add(Me.GroupControl1)
+        Me.ClientSize = New System.Drawing.Size(410, 374)
+        Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "SPForms"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SPForms"
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtEmpCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcempcode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPosition.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcposition, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNamaKaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcnames, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btnSP As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents lccp As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lcfullname As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lcompcode As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lcempcode As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents barbuttonitem3 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
-    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
+    Friend WithEvents barJudul As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
+    Friend WithEvents btnSP As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtNamaKaryawan As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents txtPosition As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtcompcode As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtEmpCode As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents lcempcode As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lccompcode As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lcposition As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lcnames As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents btnReset As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lcTitle As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
 End Class

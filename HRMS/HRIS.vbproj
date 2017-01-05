@@ -130,6 +130,12 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DemosiHistory.Designer.vb">
+      <DependentUpon>DemosiHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DemosiHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="infoReq.Designer.vb">
       <DependentUpon>infoReq.vb</DependentUpon>
     </Compile>
@@ -156,6 +162,12 @@
     </Compile>
     <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="RotasiHistory.Designer.vb">
+      <DependentUpon>RotasiHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RotasiHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RotasiMutasi.Designer.vb">
       <DependentUpon>RotasiMutasi.vb</DependentUpon>
     </Compile>
@@ -174,6 +186,9 @@
     <Compile Include="SPForms.vb">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="DemosiHistory.resx">
+      <DependentUpon>DemosiHistory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="infoReq.resx">
       <DependentUpon>infoReq.vb</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +212,9 @@
     </Compile>
     <EmbeddedResource Include="Notes.resx">
       <DependentUpon>Notes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RotasiHistory.resx">
+      <DependentUpon>RotasiHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RotasiMutasi.resx">
       <DependentUpon>RotasiMutasi.vb</DependentUpon>
@@ -223,6 +241,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user-icon-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

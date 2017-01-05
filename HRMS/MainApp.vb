@@ -675,6 +675,7 @@ Public Class MainApp
 
     Private Sub btnImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImport.Click
         importData()
+        updatestats()
     End Sub
 
     Dim infoForm As New infoReq
@@ -723,7 +724,24 @@ Public Class MainApp
         End Try
     End Sub
 
-
+    Public Sub updatestats()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "UPDATE db_recruitment SET" +
+                                    " Status = @Status" +
+                                    " Where Status = 'Accepted'"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("@Status", "Processed")
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+        End Try
+    End Sub
 
     Private Sub loaddatapayroll()
         SQLConnection = New MySqlConnection
@@ -1416,7 +1434,6 @@ Public Class MainApp
     End Function
     ''delete
 
-
     Public Function deletesp() As Boolean
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
@@ -1607,6 +1624,7 @@ Public Class MainApp
     End Function
 
     Dim act As String = ""
+    Dim spform As New SPForms
 
     Private Sub GridView1_FocusedRowChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
         SQLConnection = New MySqlConnection()
@@ -1719,10 +1737,6 @@ Public Class MainApp
                 txtStatWp.Text = datatabl.Rows(0).Item(22).ToString()
                 employeenotes.lcNama.Text = datatabl.Rows(0).Item(2).ToString()
                 employeenotes.LcEmpCode.Text = datatabl.Rows(0).Item(0).ToString()
-                spform.lcempcode.Text = datatabl.Rows(0).Item(0).ToString()
-                spform.lcompcode.Text = datatabl.Rows(0).Item(1).ToString()
-                spform.lcfullname.Text = datatabl.Rows(0).Item(3).ToString()
-                spform.lccp.Text = datatabl.Rows(0).Item(3).ToString()
             End If
         ElseIf barJudul.Caption = "Module Payroll" Then
             Dim param2 As String = ""
@@ -1874,15 +1888,9 @@ Public Class MainApp
                 compcode.Text = datatabl.Rows(0).Item(1).ToString()
                 txtNamaKaryawan.Text = datatabl.Rows(0).Item(2).ToString()
                 txtposition.Text = datatabl.Rows(0).Item(3).ToString()
-                spform.lcempcode.Text = txtBar2.Text
-                spform.lcompcode.Text = datatabl.Rows(0).Item(1).ToString
-                spform.lcfullname.Text = datatabl.Rows(0).Item(2).ToString
-                spform.lccp.Text = datatabl.Rows(0).Item(3).ToString
             End If
         End If
     End Sub
-
-    Dim spform As New SPForms
 
 
 #End Region
