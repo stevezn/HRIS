@@ -45,6 +45,12 @@ Partial Class MainApp
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtbar7 = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtbar6 = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtposition = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtemail = New DevExpress.XtraEditors.TextEdit()
+        Me.txtaddress = New DevExpress.XtraEditors.TextEdit()
+        Me.txtworkdate = New DevExpress.XtraEditors.DateEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.btnNotes = New DevExpress.XtraEditors.SimpleButton()
         Me.sp1 = New DevExpress.XtraEditors.SimpleButton()
@@ -129,8 +135,6 @@ Partial Class MainApp
         Me.txtBar11 = New DevExpress.XtraEditors.TextEdit()
         Me.txtBar9 = New DevExpress.XtraEditors.TextEdit()
         Me.txtBar8 = New DevExpress.XtraEditors.TextEdit()
-        Me.txtBar7 = New DevExpress.XtraEditors.TextEdit()
-        Me.txtBar6 = New DevExpress.XtraEditors.TextEdit()
         Me.btnSimpan = New DevExpress.XtraEditors.SimpleButton()
         Me.btnReset = New DevExpress.XtraEditors.SimpleButton()
         Me.txtBar5 = New DevExpress.XtraEditors.TextEdit()
@@ -170,15 +174,12 @@ Partial Class MainApp
         Me.lc4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lc5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.lc6 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.lc7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lc8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lc9 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lc11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcStatReq = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcFoto = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcBtnBrowse = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.lcFotoView = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcTglInt = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcTanggal = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -269,6 +270,13 @@ Partial Class MainApp
         Me.lcnotes = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcsp1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcrotasi = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcworkdate = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcaddress = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcemail = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcposition = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcFotoView = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lc6 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lc7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.HierarchyTableAdapter1 = New XtraReportsDemos.TreeView.dsHierarchyTableAdapters.HierarchyTableAdapter()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -276,20 +284,20 @@ Partial Class MainApp
         Me.ProductsTableAdapter1 = New XtraReportsDemos.OddEvenStyles.dsOddEvenStylesTableAdapters.ProductsTableAdapter()
         Me.ProductsTableAdapter2 = New XtraReportsDemos.OddEvenStyles.dsOddEvenStylesTableAdapters.ProductsTableAdapter()
         Me.ProductsTableAdapter3 = New XtraReportsDemos.OddEvenStyles.dsOddEvenStylesTableAdapters.ProductsTableAdapter()
-        Me.txtworkdate = New DevExpress.XtraEditors.DateEdit()
-        Me.lcworkdate = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtaddress = New DevExpress.XtraEditors.TextEdit()
-        Me.lcaddress = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtemail = New DevExpress.XtraEditors.TextEdit()
-        Me.lcemail = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtposition = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.lcposition = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.testlabel = New DevExpress.XtraEditors.LabelControl()
         RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         CType(RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtbar7.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtbar6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtaddress.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtworkdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtworkdate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtpayment.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtpayment.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtpajakpph.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -359,8 +367,6 @@ Partial Class MainApp
         CType(Me.txtBar11.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBar9.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBar8.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtBar7.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtBar6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBar5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBar4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBar3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -400,15 +406,12 @@ Partial Class MainApp
         CType(Me.lc4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lc5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lc6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lc7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lc8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lc9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lc11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcStatReq, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcBtnBrowse, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lcFotoView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcTglInt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcTanggal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -499,15 +502,13 @@ Partial Class MainApp
         CType(Me.lcnotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcsp1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcrotasi, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtworkdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtworkdate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcworkdate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtaddress.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcaddress, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcemail, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcposition, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcFotoView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lc6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lc7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -651,6 +652,8 @@ Partial Class MainApp
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.txtbar7)
+        Me.LayoutControl1.Controls.Add(Me.txtbar6)
         Me.LayoutControl1.Controls.Add(Me.txtposition)
         Me.LayoutControl1.Controls.Add(Me.txtemail)
         Me.LayoutControl1.Controls.Add(Me.txtaddress)
@@ -739,8 +742,6 @@ Partial Class MainApp
         Me.LayoutControl1.Controls.Add(Me.txtBar11)
         Me.LayoutControl1.Controls.Add(Me.txtBar9)
         Me.LayoutControl1.Controls.Add(Me.txtBar8)
-        Me.LayoutControl1.Controls.Add(Me.txtBar7)
-        Me.LayoutControl1.Controls.Add(Me.txtBar6)
         Me.LayoutControl1.Controls.Add(Me.btnSimpan)
         Me.LayoutControl1.Controls.Add(Me.btnReset)
         Me.LayoutControl1.Controls.Add(Me.txtBar5)
@@ -771,6 +772,71 @@ Partial Class MainApp
         Me.LayoutControl1.Size = New System.Drawing.Size(852, 354)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtbar7
+        '
+        Me.txtbar7.Location = New System.Drawing.Point(158, 399)
+        Me.txtbar7.MenuManager = RibbonControl1
+        Me.txtbar7.Name = "txtbar7"
+        Me.txtbar7.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtbar7.Properties.Items.AddRange(New Object() {"Kristen", "Buddha", "Islam", "Hindu"})
+        Me.txtbar7.Size = New System.Drawing.Size(250, 20)
+        Me.txtbar7.StyleController = Me.LayoutControl1
+        Me.txtbar7.TabIndex = 95
+        '
+        'txtbar6
+        '
+        Me.txtbar6.Location = New System.Drawing.Point(158, 351)
+        Me.txtbar6.MenuManager = RibbonControl1
+        Me.txtbar6.Name = "txtbar6"
+        Me.txtbar6.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtbar6.Properties.Items.AddRange(New Object() {"Male", "Female"})
+        Me.txtbar6.Size = New System.Drawing.Size(250, 20)
+        Me.txtbar6.StyleController = Me.LayoutControl1
+        Me.txtbar6.TabIndex = 94
+        '
+        'txtposition
+        '
+        Me.txtposition.Location = New System.Drawing.Point(158, 135)
+        Me.txtposition.MenuManager = RibbonControl1
+        Me.txtposition.Name = "txtposition"
+        Me.txtposition.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtposition.Properties.Items.AddRange(New Object() {"Staff", "Manager", "Supervisor", "Marketing", "Finance"})
+        Me.txtposition.Size = New System.Drawing.Size(250, 20)
+        Me.txtposition.StyleController = Me.LayoutControl1
+        Me.txtposition.TabIndex = 3
+        '
+        'txtemail
+        '
+        Me.txtemail.Location = New System.Drawing.Point(158, 447)
+        Me.txtemail.MenuManager = RibbonControl1
+        Me.txtemail.Name = "txtemail"
+        Me.txtemail.Size = New System.Drawing.Size(250, 20)
+        Me.txtemail.StyleController = Me.LayoutControl1
+        Me.txtemail.TabIndex = 93
+        '
+        'txtaddress
+        '
+        Me.txtaddress.Location = New System.Drawing.Point(158, 423)
+        Me.txtaddress.MenuManager = RibbonControl1
+        Me.txtaddress.Name = "txtaddress"
+        Me.txtaddress.Size = New System.Drawing.Size(250, 20)
+        Me.txtaddress.StyleController = Me.LayoutControl1
+        Me.txtaddress.TabIndex = 3
+        '
+        'txtworkdate
+        '
+        Me.txtworkdate.EditValue = Nothing
+        Me.txtworkdate.Location = New System.Drawing.Point(158, 375)
+        Me.txtworkdate.MenuManager = RibbonControl1
+        Me.txtworkdate.Name = "txtworkdate"
+        Me.txtworkdate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtworkdate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtworkdate.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
+        Me.txtworkdate.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
+        Me.txtworkdate.Size = New System.Drawing.Size(250, 20)
+        Me.txtworkdate.StyleController = Me.LayoutControl1
+        Me.txtworkdate.TabIndex = 92
         '
         'SimpleButton1
         '
@@ -1543,7 +1609,7 @@ Partial Class MainApp
         Me.pictureEdit.Location = New System.Drawing.Point(12, 1882)
         Me.pictureEdit.Name = "pictureEdit"
         Me.pictureEdit.Size = New System.Drawing.Size(396, 20)
-        Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.pictureEdit.TabIndex = 26
         Me.pictureEdit.TabStop = False
         '
@@ -1587,26 +1653,6 @@ Partial Class MainApp
         Me.txtBar8.Size = New System.Drawing.Size(250, 20)
         Me.txtBar8.StyleController = Me.LayoutControl1
         Me.txtBar8.TabIndex = 18
-        '
-        'txtBar7
-        '
-        Me.txtBar7.Location = New System.Drawing.Point(158, 399)
-        Me.txtBar7.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtBar7.MenuManager = RibbonControl1
-        Me.txtBar7.Name = "txtBar7"
-        Me.txtBar7.Size = New System.Drawing.Size(250, 20)
-        Me.txtBar7.StyleController = Me.LayoutControl1
-        Me.txtBar7.TabIndex = 17
-        '
-        'txtBar6
-        '
-        Me.txtBar6.Location = New System.Drawing.Point(158, 351)
-        Me.txtBar6.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtBar6.MenuManager = RibbonControl1
-        Me.txtBar6.Name = "txtBar6"
-        Me.txtBar6.Size = New System.Drawing.Size(250, 20)
-        Me.txtBar6.StyleController = Me.LayoutControl1
-        Me.txtBar6.TabIndex = 16
         '
         'btnSimpan
         '
@@ -1877,7 +1923,7 @@ Partial Class MainApp
         Me.LayoutControlGroup1.CustomizationFormText = "Root"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.SimpleSeparator1, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.lcForm, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlItem1, Me.lcProgbar, Me.EmptySpaceItem3, Me.LayoutControlItem3, Me.lc1, Me.lc2, Me.lc3, Me.lc4, Me.lc5, Me.EmptySpaceItem9, Me.lc6, Me.lc7, Me.lc8, Me.lc9, Me.lc11, Me.lcStatReq, Me.lcFoto, Me.lcBtnBrowse, Me.lcTglInt, Me.lcTanggal, Me.LayoutControlItem4, Me.lcBtnInfo, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.lcStatEmp, Me.lcTrainSmp, Me.lcJnsShif, Me.lcKaryawan, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.lcGaji, Me.LayoutControlItem2, Me.lcTunjangan, Me.lcBiayaJab, Me.lcIuranPen, Me.lcStatWp, Me.lcoda, Me.lcotc, Me.overtimehours, Me.lcded, Me.lcoad, Me.jkk, Me.pjk, Me.jht, Me.txtadddesc1, Me.txtadd1, Me.txtadddesc2, Me.txtadd2, Me.txtadddesc3, Me.txtadd3, Me.txtadddesc4, Me.txtadd4, Me.txtadddesc5, Me.txtadd5, Me.txtdeddesc1, Me.txtded1, Me.txtdeddesc2, Me.txtded2, Me.txtdeddesc3, Me.txtded3, Me.txtdeddesc4, Me.txtded4, Me.txtdeddesc5, Me.txtded5, Me.Transport, Me.compcode, Me.lcgross, Me.lcbpjs, Me.lctotalovertime, Me.lcdeductions, Me.lcnetincome, Me.lcpkp, Me.lcBtnSimpan, Me.lcBtnHapus, Me.lcBtnReset, Me.lcbutton, Me.lcjkk, Me.lcjk, Me.lcjht, Me.lclocation, Me.lcphone, Me.netosetaun, Me.bpjspercentage, Me.npwp, Me.txtbiayajabatan, Me.txtiuranpensiun, Me.lcpersenkk, Me.lcpersenjk, Me.lcpersenjht, Me.lcbiayajabatan1, Me.lciuranpensiun1, Me.lcpphutang, Me.lctaxes, Me.lcloan, Me.lclates, Me.overtimetype, Me.lcbiayajabatan, Me.lciuranpensiun, Me.lcrc, Me.lcrapel, Me.lcfm, Me.lctm, Me.lchasilrapel, Me.lcpphtahun, Me.lcpayment, Me.lcnotes, Me.lcsp1, Me.lcrotasi, Me.lcworkdate, Me.lcaddress, Me.lcemail, Me.lcposition, Me.lcFotoView})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.SimpleSeparator1, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.lcForm, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlItem1, Me.lcProgbar, Me.EmptySpaceItem3, Me.LayoutControlItem3, Me.lc1, Me.lc2, Me.lc3, Me.lc4, Me.lc5, Me.EmptySpaceItem9, Me.lc8, Me.lc9, Me.lc11, Me.lcStatReq, Me.lcFoto, Me.lcBtnBrowse, Me.lcTglInt, Me.lcTanggal, Me.LayoutControlItem4, Me.lcBtnInfo, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.lcStatEmp, Me.lcTrainSmp, Me.lcJnsShif, Me.lcKaryawan, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.lcGaji, Me.LayoutControlItem2, Me.lcTunjangan, Me.lcBiayaJab, Me.lcIuranPen, Me.lcStatWp, Me.lcoda, Me.lcotc, Me.overtimehours, Me.lcded, Me.lcoad, Me.jkk, Me.pjk, Me.jht, Me.txtadddesc1, Me.txtadd1, Me.txtadddesc2, Me.txtadd2, Me.txtadddesc3, Me.txtadd3, Me.txtadddesc4, Me.txtadd4, Me.txtadddesc5, Me.txtadd5, Me.txtdeddesc1, Me.txtded1, Me.txtdeddesc2, Me.txtded2, Me.txtdeddesc3, Me.txtded3, Me.txtdeddesc4, Me.txtded4, Me.txtdeddesc5, Me.txtded5, Me.Transport, Me.compcode, Me.lcgross, Me.lcbpjs, Me.lctotalovertime, Me.lcdeductions, Me.lcnetincome, Me.lcpkp, Me.lcBtnSimpan, Me.lcBtnHapus, Me.lcBtnReset, Me.lcbutton, Me.lcjkk, Me.lcjk, Me.lcjht, Me.lclocation, Me.lcphone, Me.netosetaun, Me.bpjspercentage, Me.npwp, Me.txtbiayajabatan, Me.txtiuranpensiun, Me.lcpersenkk, Me.lcpersenjk, Me.lcpersenjht, Me.lcbiayajabatan1, Me.lciuranpensiun1, Me.lcpphutang, Me.lctaxes, Me.lcloan, Me.lclates, Me.overtimetype, Me.lcbiayajabatan, Me.lciuranpensiun, Me.lcrc, Me.lcrapel, Me.lcfm, Me.lctm, Me.lchasilrapel, Me.lcpphtahun, Me.lcpayment, Me.lcnotes, Me.lcsp1, Me.lcrotasi, Me.lcworkdate, Me.lcaddress, Me.lcemail, Me.lcposition, Me.lcFotoView, Me.lc6, Me.lc7})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1453, 1978)
@@ -2060,28 +2106,6 @@ Partial Class MainApp
         Me.EmptySpaceItem9.Text = "EmptySpaceItem9"
         Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
         '
-        'lc6
-        '
-        Me.lc6.Control = Me.txtBar6
-        Me.lc6.CustomizationFormText = "lc6"
-        Me.lc6.Location = New System.Drawing.Point(0, 339)
-        Me.lc6.Name = "lc6"
-        Me.lc6.Size = New System.Drawing.Size(400, 24)
-        Me.lc6.Text = "lc6"
-        Me.lc6.TextSize = New System.Drawing.Size(143, 13)
-        Me.lc6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        '
-        'lc7
-        '
-        Me.lc7.Control = Me.txtBar7
-        Me.lc7.CustomizationFormText = "lc7"
-        Me.lc7.Location = New System.Drawing.Point(0, 387)
-        Me.lc7.Name = "lc7"
-        Me.lc7.Size = New System.Drawing.Size(400, 24)
-        Me.lc7.Text = "lc7"
-        Me.lc7.TextSize = New System.Drawing.Size(143, 13)
-        Me.lc7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        '
         'lc8
         '
         Me.lc8.Control = Me.txtBar8
@@ -2149,18 +2173,6 @@ Partial Class MainApp
         Me.lcBtnBrowse.TextToControlDistance = 0
         Me.lcBtnBrowse.TextVisible = False
         Me.lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        '
-        'lcFotoView
-        '
-        Me.lcFotoView.Control = Me.pictureEdit
-        Me.lcFotoView.CustomizationFormText = "lcFotoView"
-        Me.lcFotoView.Location = New System.Drawing.Point(0, 1870)
-        Me.lcFotoView.Name = "lcFotoView"
-        Me.lcFotoView.Size = New System.Drawing.Size(400, 24)
-        Me.lcFotoView.Text = "lcFotoView"
-        Me.lcFotoView.TextSize = New System.Drawing.Size(0, 0)
-        Me.lcFotoView.TextToControlDistance = 0
-        Me.lcFotoView.TextVisible = False
         '
         'lcTglInt
         '
@@ -3113,6 +3125,78 @@ Partial Class MainApp
         Me.lcrotasi.TextToControlDistance = 0
         Me.lcrotasi.TextVisible = False
         '
+        'lcworkdate
+        '
+        Me.lcworkdate.Control = Me.txtworkdate
+        Me.lcworkdate.CustomizationFormText = "Work Dates"
+        Me.lcworkdate.Location = New System.Drawing.Point(0, 363)
+        Me.lcworkdate.Name = "lcworkdate"
+        Me.lcworkdate.Size = New System.Drawing.Size(400, 24)
+        Me.lcworkdate.Text = "Work Dates"
+        Me.lcworkdate.TextSize = New System.Drawing.Size(143, 13)
+        '
+        'lcaddress
+        '
+        Me.lcaddress.Control = Me.txtaddress
+        Me.lcaddress.CustomizationFormText = "Addresses"
+        Me.lcaddress.Location = New System.Drawing.Point(0, 411)
+        Me.lcaddress.Name = "lcaddress"
+        Me.lcaddress.Size = New System.Drawing.Size(400, 24)
+        Me.lcaddress.Text = "Addresses"
+        Me.lcaddress.TextSize = New System.Drawing.Size(143, 13)
+        '
+        'lcemail
+        '
+        Me.lcemail.Control = Me.txtemail
+        Me.lcemail.CustomizationFormText = "Email"
+        Me.lcemail.Location = New System.Drawing.Point(0, 435)
+        Me.lcemail.Name = "lcemail"
+        Me.lcemail.Size = New System.Drawing.Size(400, 24)
+        Me.lcemail.Text = "Email"
+        Me.lcemail.TextSize = New System.Drawing.Size(143, 13)
+        '
+        'lcposition
+        '
+        Me.lcposition.Control = Me.txtposition
+        Me.lcposition.CustomizationFormText = "Position"
+        Me.lcposition.Location = New System.Drawing.Point(0, 123)
+        Me.lcposition.Name = "lcposition"
+        Me.lcposition.Size = New System.Drawing.Size(400, 24)
+        Me.lcposition.Text = "Position"
+        Me.lcposition.TextSize = New System.Drawing.Size(143, 13)
+        '
+        'lcFotoView
+        '
+        Me.lcFotoView.Control = Me.pictureEdit
+        Me.lcFotoView.CustomizationFormText = "lcFotoView"
+        Me.lcFotoView.Location = New System.Drawing.Point(0, 1870)
+        Me.lcFotoView.Name = "lcFotoView"
+        Me.lcFotoView.Size = New System.Drawing.Size(400, 24)
+        Me.lcFotoView.Text = "lcFotoView"
+        Me.lcFotoView.TextSize = New System.Drawing.Size(0, 0)
+        Me.lcFotoView.TextToControlDistance = 0
+        Me.lcFotoView.TextVisible = False
+        '
+        'lc6
+        '
+        Me.lc6.Control = Me.txtbar6
+        Me.lc6.CustomizationFormText = "lc6"
+        Me.lc6.Location = New System.Drawing.Point(0, 339)
+        Me.lc6.Name = "lc6"
+        Me.lc6.Size = New System.Drawing.Size(400, 24)
+        Me.lc6.Text = "lc6"
+        Me.lc6.TextSize = New System.Drawing.Size(143, 13)
+        '
+        'lc7
+        '
+        Me.lc7.Control = Me.txtbar7
+        Me.lc7.CustomizationFormText = "lc7"
+        Me.lc7.Location = New System.Drawing.Point(0, 387)
+        Me.lc7.Name = "lc7"
+        Me.lc7.Size = New System.Drawing.Size(400, 24)
+        Me.lc7.Text = "lc7"
+        Me.lc7.TextSize = New System.Drawing.Size(143, 13)
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
@@ -3137,88 +3221,13 @@ Partial Class MainApp
         '
         Me.ProductsTableAdapter3.ClearBeforeFill = True
         '
-        'txtworkdate
+        'testlabel
         '
-        Me.txtworkdate.EditValue = Nothing
-        Me.txtworkdate.Location = New System.Drawing.Point(158, 375)
-        Me.txtworkdate.MenuManager = RibbonControl1
-        Me.txtworkdate.Name = "txtworkdate"
-        Me.txtworkdate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtworkdate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtworkdate.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
-        Me.txtworkdate.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
-        Me.txtworkdate.Size = New System.Drawing.Size(250, 20)
-        Me.txtworkdate.StyleController = Me.LayoutControl1
-        Me.txtworkdate.TabIndex = 92
-        '
-        'lcworkdate
-        '
-        Me.lcworkdate.Control = Me.txtworkdate
-        Me.lcworkdate.CustomizationFormText = "Work Dates"
-        Me.lcworkdate.Location = New System.Drawing.Point(0, 363)
-        Me.lcworkdate.Name = "lcworkdate"
-        Me.lcworkdate.Size = New System.Drawing.Size(400, 24)
-        Me.lcworkdate.Text = "Work Dates"
-        Me.lcworkdate.TextSize = New System.Drawing.Size(143, 13)
-        '
-        'txtaddress
-        '
-        Me.txtaddress.Location = New System.Drawing.Point(158, 423)
-        Me.txtaddress.MenuManager = RibbonControl1
-        Me.txtaddress.Name = "txtaddress"
-        Me.txtaddress.Size = New System.Drawing.Size(250, 20)
-        Me.txtaddress.StyleController = Me.LayoutControl1
-        Me.txtaddress.TabIndex = 3
-        '
-        'lcaddress
-        '
-        Me.lcaddress.Control = Me.txtaddress
-        Me.lcaddress.CustomizationFormText = "Addresses"
-        Me.lcaddress.Location = New System.Drawing.Point(0, 411)
-        Me.lcaddress.Name = "lcaddress"
-        Me.lcaddress.Size = New System.Drawing.Size(400, 24)
-        Me.lcaddress.Text = "Addresses"
-        Me.lcaddress.TextSize = New System.Drawing.Size(143, 13)
-        '
-        'txtemail
-        '
-        Me.txtemail.Location = New System.Drawing.Point(158, 447)
-        Me.txtemail.MenuManager = RibbonControl1
-        Me.txtemail.Name = "txtemail"
-        Me.txtemail.Size = New System.Drawing.Size(250, 20)
-        Me.txtemail.StyleController = Me.LayoutControl1
-        Me.txtemail.TabIndex = 93
-        '
-        'lcemail
-        '
-        Me.lcemail.Control = Me.txtemail
-        Me.lcemail.CustomizationFormText = "Email"
-        Me.lcemail.Location = New System.Drawing.Point(0, 435)
-        Me.lcemail.Name = "lcemail"
-        Me.lcemail.Size = New System.Drawing.Size(400, 24)
-        Me.lcemail.Text = "Email"
-        Me.lcemail.TextSize = New System.Drawing.Size(143, 13)
-        '
-        'txtposition
-        '
-        Me.txtposition.Location = New System.Drawing.Point(158, 135)
-        Me.txtposition.MenuManager = RibbonControl1
-        Me.txtposition.Name = "txtposition"
-        Me.txtposition.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtposition.Properties.Items.AddRange(New Object() {"Staff", "Manager", "Supervisor", "Marketing", "Finance"})
-        Me.txtposition.Size = New System.Drawing.Size(250, 20)
-        Me.txtposition.StyleController = Me.LayoutControl1
-        Me.txtposition.TabIndex = 3
-        '
-        'lcposition
-        '
-        Me.lcposition.Control = Me.txtposition
-        Me.lcposition.CustomizationFormText = "Position"
-        Me.lcposition.Location = New System.Drawing.Point(0, 123)
-        Me.lcposition.Name = "lcposition"
-        Me.lcposition.Size = New System.Drawing.Size(400, 24)
-        Me.lcposition.Text = "Position"
-        Me.lcposition.TextSize = New System.Drawing.Size(143, 13)
+        Me.testlabel.Location = New System.Drawing.Point(348, 128)
+        Me.testlabel.Name = "testlabel"
+        Me.testlabel.Size = New System.Drawing.Size(66, 13)
+        Me.testlabel.TabIndex = 3
+        Me.testlabel.Text = "LabelControl3"
         '
         'MainApp
         '
@@ -3227,6 +3236,7 @@ Partial Class MainApp
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(856, 505)
         Me.ControlBox = False
+        Me.Controls.Add(Me.testlabel)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(RibbonControl1)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -3238,6 +3248,13 @@ Partial Class MainApp
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtbar7.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtbar6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtaddress.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtworkdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtworkdate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtpayment.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtpayment.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtpajakpph.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3307,8 +3324,6 @@ Partial Class MainApp
         CType(Me.txtBar11.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBar9.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBar8.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtBar7.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtBar6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBar5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBar4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBar3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3348,15 +3363,12 @@ Partial Class MainApp
         CType(Me.lc4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lc5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lc6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lc7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lc8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lc9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lc11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcStatReq, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcFoto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcBtnBrowse, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lcFotoView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcTglInt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcTanggal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3447,16 +3459,15 @@ Partial Class MainApp
         CType(Me.lcnotes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcsp1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcrotasi, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtworkdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtworkdate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcworkdate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtaddress.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcaddress, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcemail, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcposition, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcFotoView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lc6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lc7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
@@ -3503,10 +3514,6 @@ Partial Class MainApp
     Friend WithEvents txtBar11 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtBar9 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtBar8 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents txtBar7 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents txtBar6 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents lc6 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents lc7 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lc8 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lc9 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lcTanggal As DevExpress.XtraLayout.LayoutControlItem
@@ -3715,4 +3722,9 @@ Partial Class MainApp
     Friend WithEvents lcaddress As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lcemail As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lcposition As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtbar6 As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents lc6 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtbar7 As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents lc7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents testlabel As DevExpress.XtraEditors.LabelControl
 End Class

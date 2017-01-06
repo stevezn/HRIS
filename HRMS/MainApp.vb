@@ -40,7 +40,6 @@ Public Class MainApp
         act = "input"
     End Sub
 
-
     Sub resetclear()
         txtposition.Text = ""
         txtBar1.Text = ""
@@ -291,7 +290,7 @@ Public Class MainApp
         lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         loadDataReq()
     End Sub
@@ -339,7 +338,7 @@ Public Class MainApp
         lcphone.Text = "Phone Number"
         lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         loadDataReq()
     End Sub
@@ -676,6 +675,8 @@ Public Class MainApp
     Private Sub btnImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImport.Click
         importData()
         updatestats()
+        autoEmpCode()
+        autoIDrec()
     End Sub
 
     Dim infoForm As New infoReq
@@ -709,7 +710,7 @@ Public Class MainApp
                                      "SELECT FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Photo, @status, @CompanyCode, @EmployeeCode, @OfficeLocation, @PhoneNumber, @TrainingSampai, @JenisPegawai FROM db_recruitment WHERE Status='Accepted'"
             sqlCommand.Parameters.AddWithValue("@Status", "Active")
             sqlCommand.Parameters.AddWithValue("@CompanyCode", "Fill This")
-            sqlCommand.Parameters.AddWithValue("@EmployeeCode", "Fill This")
+            sqlCommand.Parameters.AddWithValue("@EmployeeCode", "")
             sqlCommand.Parameters.AddWithValue("@OfficeLocation", "Fill This")
             sqlCommand.Parameters.AddWithValue("@PhoneNumber", "Fill This")
             sqlCommand.Parameters.AddWithValue("@TrainingSampai", "")
@@ -724,6 +725,63 @@ Public Class MainApp
         End Try
     End Sub
 
+    Private Sub autoEmpCode()
+        Dim tempstr As String = ""
+        Dim strisi As String = ""
+        Dim res As String
+        SQLConnection = New MySqlConnection
+        Dim rd As MySqlDataReader
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "SELECT * FROM db_pegawai ORDER BY EmployeeCode desc"
+            rd = sqlcommand.ExecuteReader
+            If rd.Read Then
+                tempstr = Mid(CType(rd.Item("EmployeeCode"), String), 2, 2)
+                strisi = CType(Val(tempstr) + 1, String)
+                res = txtworkdate.Text + Mid("0000", 1, 2 - strisi.Length) & strisi
+            Else
+                res = txtworkdate.Text + "0001"
+            End If
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", res)
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+
+    Private Sub autoIDrec()
+        Dim str As String = ""
+        Dim strisi As String = ""
+        SQLConnection = New MySqlConnection
+        Dim rd As MySqlDataReader
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "Select * from db_recruitment ORDER BY id_rec desc"
+            rd = sqlcommand.ExecuteReader
+            If rd.Read Then
+                str = Mid(CType(rd.Item("id_rec"), String), 2, 2)
+                strisi = CType(Val(str) + 1, String)
+                testlabel.Text = Mid("0000", 1, 2 - strisi.Length) & strisi
+            Else
+                testlabel.Text = "0001"
+            End If
+            sqlcommand.Parameters.AddWithValue("@id_rec", testlabel.Text)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
     Public Sub updatestats()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
@@ -732,7 +790,7 @@ Public Class MainApp
         Try
             sqlcommand.CommandText = "UPDATE db_recruitment SET" +
                                     " Status = @Status" +
-                                    " Where Status = 'Accepted'"
+                                    " WHERE Status = 'Accepted'"
             sqlcommand.Connection = SQLConnection
             sqlcommand.Parameters.AddWithValue("@Status", "Processed")
             sqlcommand.Connection = SQLConnection
@@ -1096,6 +1154,7 @@ Public Class MainApp
             MsgBox("Error occured: Could Not Insert Records")
         End Try
     End Function
+
 
     Private Function insertSP() As Boolean
         SQLConnection = New MySqlConnection
@@ -1676,11 +1735,6 @@ Public Class MainApp
                 '
                 txtText.Text = datatabl.Rows(0).Item(9).ToString()
                 txtTglInterview.Text = datatabl(0).Item(10).ToString()
-                infoForm.lcNama.Text = datatabl.Rows(0).Item(2).ToString()
-                infoForm.LcNoReq.Text = datatabl.Rows(0).Item(0).ToString()
-                infoForm.lcHasil.Text = datatabl.Rows(0).Item(9).ToString()
-                infoForm.lcinterviewke.Text = datatabl.Rows(0).Item(1).ToString()
-                infoForm.lctgl.Text = datatabl.Rows(0).Item(10).ToString()
             End If
         ElseIf barJudul.Caption = "Module Employee" Then
             Dim param2 As String = ""

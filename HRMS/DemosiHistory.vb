@@ -24,9 +24,11 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+
     Private Sub DemosiHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GridControl1.RefreshDataSource()
         GridView1.Columns.Clear()
         loadData()
     End Sub
+
 End Class

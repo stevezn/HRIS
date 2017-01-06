@@ -131,6 +131,10 @@ Public Class SPForms
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
+            'If Not IsNothing(objword) Then
+            '    objword.Quit()
+            '    objword = Nothing
+            'End If
         End Try
     End Sub
 
@@ -217,6 +221,10 @@ Public Class SPForms
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
+            'If Not IsNothing(objword) Then
+            '    objword.Quit()
+            '    objword = Nothing
+            'End If
         End Try
     End Sub
 
