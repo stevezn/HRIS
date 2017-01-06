@@ -20,6 +20,9 @@ Partial Class infoReq
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.lcinterviewke = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.lcHasil = New DevExpress.XtraEditors.LabelControl()
@@ -38,9 +41,6 @@ Partial Class infoReq
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcinterviewke = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +73,31 @@ Partial Class infoReq
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(527, 332)
         Me.GroupControl1.TabIndex = 0
+        '
+        'lcinterviewke
+        '
+        Me.lcinterviewke.Location = New System.Drawing.Point(204, 155)
+        Me.lcinterviewke.Name = "lcinterviewke"
+        Me.lcinterviewke.Size = New System.Drawing.Size(4, 13)
+        Me.lcinterviewke.TabIndex = 4
+        Me.lcinterviewke.Text = "-"
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Location = New System.Drawing.Point(183, 155)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl11.TabIndex = 3
+        Me.LabelControl11.Text = ":"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl7.Location = New System.Drawing.Point(32, 155)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(72, 13)
+        Me.LabelControl7.TabIndex = 2
+        Me.LabelControl7.Text = "Interview Ke"
         '
         'PanelControl1
         '
@@ -243,31 +268,6 @@ Partial Class infoReq
         Me.LabelControl1.TabIndex = 1
         Me.LabelControl1.Text = "Recruiter Information"
         '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl7.Location = New System.Drawing.Point(32, 155)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(72, 13)
-        Me.LabelControl7.TabIndex = 2
-        Me.LabelControl7.Text = "Interview Ke"
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Location = New System.Drawing.Point(183, 155)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl11.TabIndex = 3
-        Me.LabelControl11.Text = ":"
-        '
-        'lcinterviewke
-        '
-        Me.lcinterviewke.Location = New System.Drawing.Point(204, 155)
-        Me.lcinterviewke.Name = "lcinterviewke"
-        Me.lcinterviewke.Size = New System.Drawing.Size(4, 13)
-        Me.lcinterviewke.TabIndex = 4
-        Me.lcinterviewke.Text = "-"
-        '
         'infoReq
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -278,7 +278,7 @@ Partial Class infoReq
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "infoReq"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()

@@ -299,6 +299,8 @@ Partial Class SPForms
         Me.ClientSize = New System.Drawing.Size(410, 374)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "SPForms"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SPForms"

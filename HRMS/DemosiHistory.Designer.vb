@@ -49,6 +49,8 @@ Partial Class DemosiHistory
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(498, 491)
         Me.Controls.Add(Me.GridControl1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "DemosiHistory"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DemosiHistory"

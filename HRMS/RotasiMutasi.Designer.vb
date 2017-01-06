@@ -399,6 +399,8 @@ Partial Class RotasiMutasi
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Controls.Add(Me.GroupControl1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "RotasiMutasi"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RotasiMutasi"

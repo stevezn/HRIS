@@ -23,6 +23,22 @@ Partial Class Notes
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcMutasi = New DevExpress.XtraEditors.LabelControl()
+        Me.lcRotasi = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcSp3 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcSp2 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcSp1 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.lcNama = New DevExpress.XtraEditors.LabelControl()
         Me.LcEmpCode = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
@@ -30,22 +46,6 @@ Partial Class Notes
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcSp1 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcSp2 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcSp3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcRotasi = New DevExpress.XtraEditors.LabelControl()
-        Me.lcMutasi = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         Me.SuspendLayout()
@@ -79,6 +79,140 @@ Partial Class Notes
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(527, 450)
         Me.GroupControl1.TabIndex = 1
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl13.Location = New System.Drawing.Point(30, 15)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(145, 17)
+        Me.LabelControl13.TabIndex = 2
+        Me.LabelControl13.Text = "Employee Information"
+        '
+        'lcMutasi
+        '
+        Me.lcMutasi.Location = New System.Drawing.Point(254, 278)
+        Me.lcMutasi.Name = "lcMutasi"
+        Me.lcMutasi.Size = New System.Drawing.Size(4, 13)
+        Me.lcMutasi.TabIndex = 16
+        Me.lcMutasi.Text = "-"
+        '
+        'lcRotasi
+        '
+        Me.lcRotasi.Location = New System.Drawing.Point(254, 241)
+        Me.lcRotasi.Name = "lcRotasi"
+        Me.lcRotasi.Size = New System.Drawing.Size(4, 13)
+        Me.lcRotasi.TabIndex = 15
+        Me.lcRotasi.Text = "-"
+        '
+        'LabelControl18
+        '
+        Me.LabelControl18.Location = New System.Drawing.Point(183, 278)
+        Me.LabelControl18.Name = "LabelControl18"
+        Me.LabelControl18.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl18.TabIndex = 14
+        Me.LabelControl18.Text = ":"
+        '
+        'LabelControl17
+        '
+        Me.LabelControl17.Location = New System.Drawing.Point(183, 241)
+        Me.LabelControl17.Name = "LabelControl17"
+        Me.LabelControl17.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl17.TabIndex = 13
+        Me.LabelControl17.Text = ":"
+        '
+        'LabelControl16
+        '
+        Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl16.Location = New System.Drawing.Point(75, 278)
+        Me.LabelControl16.Name = "LabelControl16"
+        Me.LabelControl16.Size = New System.Drawing.Size(38, 13)
+        Me.LabelControl16.TabIndex = 12
+        Me.LabelControl16.Text = "Mutasi"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl6.Location = New System.Drawing.Point(77, 241)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(36, 13)
+        Me.LabelControl6.TabIndex = 11
+        Me.LabelControl6.Text = "Rotasi"
+        '
+        'lcSp3
+        '
+        Me.lcSp3.Location = New System.Drawing.Point(254, 207)
+        Me.lcSp3.Name = "lcSp3"
+        Me.lcSp3.Size = New System.Drawing.Size(4, 13)
+        Me.lcSp3.TabIndex = 10
+        Me.lcSp3.Text = "-"
+        '
+        'lcSp2
+        '
+        Me.lcSp2.Location = New System.Drawing.Point(254, 175)
+        Me.lcSp2.Name = "lcSp2"
+        Me.lcSp2.Size = New System.Drawing.Size(4, 13)
+        Me.lcSp2.TabIndex = 9
+        Me.lcSp2.Text = "-"
+        '
+        'lcSp1
+        '
+        Me.lcSp1.Location = New System.Drawing.Point(254, 145)
+        Me.lcSp1.Name = "lcSp1"
+        Me.lcSp1.Size = New System.Drawing.Size(4, 13)
+        Me.lcSp1.TabIndex = 8
+        Me.lcSp1.Text = "-"
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Location = New System.Drawing.Point(183, 207)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl12.TabIndex = 7
+        Me.LabelControl12.Text = ":"
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Location = New System.Drawing.Point(183, 175)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl11.TabIndex = 6
+        Me.LabelControl11.Text = ":"
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Location = New System.Drawing.Point(183, 145)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl10.TabIndex = 5
+        Me.LabelControl10.Text = ":"
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl9.Location = New System.Drawing.Point(77, 207)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl9.TabIndex = 4
+        Me.LabelControl9.Text = "SP 3"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl7.Location = New System.Drawing.Point(77, 175)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl7.TabIndex = 3
+        Me.LabelControl7.Text = "SP 2"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl1.Location = New System.Drawing.Point(77, 145)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl1.TabIndex = 2
+        Me.LabelControl1.Text = "SP 1"
         '
         'lcNama
         '
@@ -139,146 +273,14 @@ Partial Class Notes
         Me.LabelControl2.TabIndex = 0
         Me.LabelControl2.Text = "Employee Code"
         '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl1.Location = New System.Drawing.Point(77, 145)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(24, 13)
-        Me.LabelControl1.TabIndex = 2
-        Me.LabelControl1.Text = "SP 1"
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl7.Location = New System.Drawing.Point(77, 175)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(24, 13)
-        Me.LabelControl7.TabIndex = 3
-        Me.LabelControl7.Text = "SP 2"
-        '
-        'LabelControl9
-        '
-        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl9.Location = New System.Drawing.Point(77, 207)
-        Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(24, 13)
-        Me.LabelControl9.TabIndex = 4
-        Me.LabelControl9.Text = "SP 3"
-        '
-        'LabelControl10
-        '
-        Me.LabelControl10.Location = New System.Drawing.Point(183, 145)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl10.TabIndex = 5
-        Me.LabelControl10.Text = ":"
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Location = New System.Drawing.Point(183, 175)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl11.TabIndex = 6
-        Me.LabelControl11.Text = ":"
-        '
-        'LabelControl12
-        '
-        Me.LabelControl12.Location = New System.Drawing.Point(183, 207)
-        Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl12.TabIndex = 7
-        Me.LabelControl12.Text = ":"
-        '
-        'lcSp1
-        '
-        Me.lcSp1.Location = New System.Drawing.Point(254, 145)
-        Me.lcSp1.Name = "lcSp1"
-        Me.lcSp1.Size = New System.Drawing.Size(4, 13)
-        Me.lcSp1.TabIndex = 8
-        Me.lcSp1.Text = "-"
-        '
-        'lcSp2
-        '
-        Me.lcSp2.Location = New System.Drawing.Point(254, 175)
-        Me.lcSp2.Name = "lcSp2"
-        Me.lcSp2.Size = New System.Drawing.Size(4, 13)
-        Me.lcSp2.TabIndex = 9
-        Me.lcSp2.Text = "-"
-        '
-        'lcSp3
-        '
-        Me.lcSp3.Location = New System.Drawing.Point(254, 207)
-        Me.lcSp3.Name = "lcSp3"
-        Me.lcSp3.Size = New System.Drawing.Size(4, 13)
-        Me.lcSp3.TabIndex = 10
-        Me.lcSp3.Text = "-"
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl6.Location = New System.Drawing.Point(77, 241)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(36, 13)
-        Me.LabelControl6.TabIndex = 11
-        Me.LabelControl6.Text = "Rotasi"
-        '
-        'LabelControl16
-        '
-        Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl16.Location = New System.Drawing.Point(75, 278)
-        Me.LabelControl16.Name = "LabelControl16"
-        Me.LabelControl16.Size = New System.Drawing.Size(38, 13)
-        Me.LabelControl16.TabIndex = 12
-        Me.LabelControl16.Text = "Mutasi"
-        '
-        'LabelControl17
-        '
-        Me.LabelControl17.Location = New System.Drawing.Point(183, 241)
-        Me.LabelControl17.Name = "LabelControl17"
-        Me.LabelControl17.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl17.TabIndex = 13
-        Me.LabelControl17.Text = ":"
-        '
-        'LabelControl18
-        '
-        Me.LabelControl18.Location = New System.Drawing.Point(183, 278)
-        Me.LabelControl18.Name = "LabelControl18"
-        Me.LabelControl18.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl18.TabIndex = 14
-        Me.LabelControl18.Text = ":"
-        '
-        'lcRotasi
-        '
-        Me.lcRotasi.Location = New System.Drawing.Point(254, 241)
-        Me.lcRotasi.Name = "lcRotasi"
-        Me.lcRotasi.Size = New System.Drawing.Size(4, 13)
-        Me.lcRotasi.TabIndex = 15
-        Me.lcRotasi.Text = "-"
-        '
-        'lcMutasi
-        '
-        Me.lcMutasi.Location = New System.Drawing.Point(254, 278)
-        Me.lcMutasi.Name = "lcMutasi"
-        Me.lcMutasi.Size = New System.Drawing.Size(4, 13)
-        Me.lcMutasi.TabIndex = 16
-        Me.lcMutasi.Text = "-"
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl13.Location = New System.Drawing.Point(30, 15)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(145, 17)
-        Me.LabelControl13.TabIndex = 2
-        Me.LabelControl13.Text = "Employee Information"
-        '
         'Notes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(589, 485)
         Me.Controls.Add(Me.GroupControl1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Notes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Notes"
