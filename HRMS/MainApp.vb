@@ -1735,8 +1735,6 @@ Public Class MainApp
                 txtIncentives.Text = datatabl.Rows(0).Item(20).ToString()
                 txtMeal.Text = datatabl.Rows(0).Item(21).ToString()
                 txtStatWp.Text = datatabl.Rows(0).Item(22).ToString()
-                employeenotes.lcNama.Text = datatabl.Rows(0).Item(2).ToString()
-                employeenotes.LcEmpCode.Text = datatabl.Rows(0).Item(0).ToString()
             End If
         ElseIf barJudul.Caption = "Module Payroll" Then
             Dim param2 As String = ""
