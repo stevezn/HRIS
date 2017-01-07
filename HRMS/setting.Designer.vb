@@ -75,7 +75,7 @@ Partial Class setting
         Me.GroupControl1.Controls.Add(Me.btnSimpan)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(429, 260)
         Me.GroupControl1.TabIndex = 0
@@ -84,7 +84,7 @@ Partial Class setting
         '
         Me.PictureBox1.Image = Global.HRMS.My.Resources.Resources.user_icon_6
         Me.PictureBox1.Location = New System.Drawing.Point(279, 44)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(125, 130)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -94,7 +94,7 @@ Partial Class setting
         'LabelControl3
         '
         Me.LabelControl3.Location = New System.Drawing.Point(23, 120)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(73, 13)
         Me.LabelControl3.TabIndex = 3
@@ -103,7 +103,7 @@ Partial Class setting
         'teNewPassword
         '
         Me.teNewPassword.Location = New System.Drawing.Point(111, 118)
-        Me.teNewPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.teNewPassword.Margin = New System.Windows.Forms.Padding(2)
         Me.teNewPassword.Name = "teNewPassword"
         Me.teNewPassword.Properties.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.teNewPassword.Size = New System.Drawing.Size(147, 20)
@@ -112,7 +112,7 @@ Partial Class setting
         'LabelControl2
         '
         Me.LabelControl2.Location = New System.Drawing.Point(23, 86)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(83, 13)
         Me.LabelControl2.TabIndex = 3
@@ -121,7 +121,7 @@ Partial Class setting
         'tePassword
         '
         Me.tePassword.Location = New System.Drawing.Point(111, 83)
-        Me.tePassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tePassword.Margin = New System.Windows.Forms.Padding(2)
         Me.tePassword.Name = "tePassword"
         Me.tePassword.Properties.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tePassword.Size = New System.Drawing.Size(147, 20)
@@ -130,7 +130,7 @@ Partial Class setting
         'LabelControl1
         '
         Me.LabelControl1.Location = New System.Drawing.Point(23, 51)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(48, 13)
         Me.LabelControl1.TabIndex = 3
@@ -139,7 +139,7 @@ Partial Class setting
         'teUsername
         '
         Me.teUsername.Location = New System.Drawing.Point(111, 49)
-        Me.teUsername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.teUsername.Margin = New System.Windows.Forms.Padding(2)
         Me.teUsername.Name = "teUsername"
         Me.teUsername.Size = New System.Drawing.Size(147, 20)
         Me.teUsername.TabIndex = 2
@@ -148,7 +148,7 @@ Partial Class setting
         '
         Me.btnSimpan.Image = CType(resources.GetObject("btnSimpan.Image"), System.Drawing.Image)
         Me.btnSimpan.Location = New System.Drawing.Point(173, 150)
-        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(86, 36)
         Me.btnSimpan.TabIndex = 1
@@ -158,7 +158,7 @@ Partial Class setting
         '
         Me.XtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.XtraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.XtraTabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.XtraTabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
         Me.XtraTabControl1.Size = New System.Drawing.Size(435, 288)
@@ -168,7 +168,7 @@ Partial Class setting
         'XtraTabPage1
         '
         Me.XtraTabPage1.Controls.Add(Me.GroupControl1)
-        Me.XtraTabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.XtraTabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.XtraTabPage1.Name = "XtraTabPage1"
         Me.XtraTabPage1.Size = New System.Drawing.Size(429, 260)
         Me.XtraTabPage1.Text = "User Setting"
@@ -176,7 +176,7 @@ Partial Class setting
         'XtraTabPage2
         '
         Me.XtraTabPage2.Controls.Add(Me.GroupControl2)
-        Me.XtraTabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.XtraTabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.XtraTabPage2.Name = "XtraTabPage2"
         Me.XtraTabPage2.PageVisible = False
         Me.XtraTabPage2.Size = New System.Drawing.Size(429, 260)
@@ -187,7 +187,7 @@ Partial Class setting
         Me.GroupControl2.Controls.Add(Me.PanelControl1)
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(429, 260)
         Me.GroupControl2.TabIndex = 1
@@ -204,7 +204,7 @@ Partial Class setting
         Me.PanelControl1.Controls.Add(Me.btnPayrollset)
         Me.PanelControl1.Controls.Add(Me.teFulltime)
         Me.PanelControl1.Location = New System.Drawing.Point(15, 47)
-        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(397, 210)
         Me.PanelControl1.TabIndex = 4
@@ -212,7 +212,7 @@ Partial Class setting
         'LabelControl7
         '
         Me.LabelControl7.Location = New System.Drawing.Point(29, 123)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(58, 13)
         Me.LabelControl7.TabIndex = 3
@@ -221,7 +221,7 @@ Partial Class setting
         'LabelControl5
         '
         Me.LabelControl5.Location = New System.Drawing.Point(29, 99)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(75, 13)
         Me.LabelControl5.TabIndex = 3
@@ -230,7 +230,7 @@ Partial Class setting
         'LabelControl4
         '
         Me.LabelControl4.Location = New System.Drawing.Point(29, 51)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(58, 13)
         Me.LabelControl4.TabIndex = 3
@@ -239,7 +239,7 @@ Partial Class setting
         'teGajiShift
         '
         Me.teGajiShift.Location = New System.Drawing.Point(117, 121)
-        Me.teGajiShift.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.teGajiShift.Margin = New System.Windows.Forms.Padding(2)
         Me.teGajiShift.Name = "teGajiShift"
         Me.teGajiShift.Properties.DisplayFormat.FormatString = "n2"
         Me.teGajiShift.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -249,7 +249,7 @@ Partial Class setting
         'LabelControl6
         '
         Me.LabelControl6.Location = New System.Drawing.Point(29, 26)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(75, 13)
         Me.LabelControl6.TabIndex = 3
@@ -258,7 +258,7 @@ Partial Class setting
         'teGajiFull
         '
         Me.teGajiFull.Location = New System.Drawing.Point(117, 49)
-        Me.teGajiFull.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.teGajiFull.Margin = New System.Windows.Forms.Padding(2)
         Me.teGajiFull.Name = "teGajiFull"
         Me.teGajiFull.Properties.DisplayFormat.FormatString = "n2"
         Me.teGajiFull.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -270,7 +270,7 @@ Partial Class setting
         Me.teShift.EditValue = "Shifter"
         Me.teShift.Enabled = False
         Me.teShift.Location = New System.Drawing.Point(117, 96)
-        Me.teShift.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.teShift.Margin = New System.Windows.Forms.Padding(2)
         Me.teShift.Name = "teShift"
         Me.teShift.Size = New System.Drawing.Size(242, 20)
         Me.teShift.TabIndex = 2
@@ -279,7 +279,7 @@ Partial Class setting
         '
         Me.btnPayrollset.Image = CType(resources.GetObject("btnPayrollset.Image"), System.Drawing.Image)
         Me.btnPayrollset.Location = New System.Drawing.Point(280, 157)
-        Me.btnPayrollset.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnPayrollset.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPayrollset.Name = "btnPayrollset"
         Me.btnPayrollset.Size = New System.Drawing.Size(79, 30)
         Me.btnPayrollset.TabIndex = 1
@@ -290,7 +290,7 @@ Partial Class setting
         Me.teFulltime.EditValue = "Full Time"
         Me.teFulltime.Enabled = False
         Me.teFulltime.Location = New System.Drawing.Point(117, 24)
-        Me.teFulltime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.teFulltime.Margin = New System.Windows.Forms.Padding(2)
         Me.teFulltime.Name = "teFulltime"
         Me.teFulltime.Size = New System.Drawing.Size(242, 20)
         Me.teFulltime.TabIndex = 2
@@ -301,7 +301,7 @@ Partial Class setting
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(435, 288)
         Me.Controls.Add(Me.XtraTabControl1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "setting"

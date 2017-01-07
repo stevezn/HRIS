@@ -72,6 +72,7 @@
         SQLConnection.Close()
     End Sub
 
+
     Private Sub GroupControl1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub

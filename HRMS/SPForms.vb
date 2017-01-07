@@ -124,6 +124,7 @@ Public Class SPForms
                 .Execute(Replace:=word.WdReplace.wdReplaceAll)
             End With
 
+
             'objword.Documents.Item(1).Save()
             'objword.Documents.Close(word.WdSaveOptions.wdDoNotSaveChanges)
         Catch ex As Exception
@@ -135,7 +136,43 @@ Public Class SPForms
             'End If
         End Try
     End Sub
-
+    Private Sub sp3()
+        Dim objword As word.Application = Nothing
+        Try
+            objword = New word.Application
+            objword.Documents.Open("E:\Word\sp1.docx")
+            Dim findobject As word.Find = objword.Selection.Find
+            With findobject
+                .ClearFormatting()
+                .Text = "Name"
+                .Replacement.ClearFormatting()
+                .Replacement.Text = txtNamaKaryawan.Text
+                .Execute(Replace:=word.WdReplace.wdReplaceAll)
+            End With
+            With findobject
+                .ClearFormatting()
+                .Text = "EmployeeCode"
+                .Replacement.ClearFormatting()
+                .Replacement.Text = txtEmpCode.Text
+                .Execute(Replace:=word.WdReplace.wdReplaceAll)
+            End With
+            With findobject
+                .ClearFormatting()
+                .Text = "CompanyCode"
+                .Replacement.ClearFormatting()
+                .Replacement.Text = txtcompcode.Text
+                .Execute(Replace:=word.WdReplace.wdReplaceAll)
+            End With
+            With findobject
+                .ClearFormatting()
+                .Text = "Position"
+                .Replacement.Text = txtPosition.Text
+                .Execute(Replace:=word.WdReplace.wdReplaceAll)
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
     Private Sub sp2()
         Dim objword As word.Application = Nothing
         Try
@@ -174,65 +211,28 @@ Public Class SPForms
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
-            'If Not IsNothing(objword) Then
-            '    objword.Quit()
-            '    objword = Nothing
-            'End If
-        End Try
-    End Sub
-
-    Private Sub sp3()
-        Dim objword As word.Application = Nothing
-        Try
-            objword = New word.Application
-            'Dim objdoc As word.Document
-            objword.Documents.Open("E:\Word\sp1.docx")
-            Dim findobject As word.Find = objword.Selection.Find
-            With findobject
-                .ClearFormatting()
-                .Text = "Name"
-                .Replacement.ClearFormatting()
-                .Replacement.Text = txtNamaKaryawan.Text
-                .Execute(Replace:=word.WdReplace.wdReplaceAll)
-            End With
-            With findobject
-                .ClearFormatting()
-                .Text = "Employee Code"
-                .Replacement.ClearFormatting()
-                .Replacement.Text = txtEmpCode.Text
-                .Execute(Replace:=word.WdReplace.wdReplaceAll)
-            End With
-            With findobject
-                .ClearFormatting()
-                .Text = "Company Code"
-                .Replacement.ClearFormatting()
-                .Replacement.Text = txtcompcode.Text
-                .Execute(Replace:=word.WdReplace.wdReplaceAll)
-            End With
-            With findobject
-                .ClearFormatting()
-                .Text = "Position"
-                .Replacement.ClearFormatting()
-                .Replacement.Text = txtPosition.Text
-                .Execute(Replace:=word.WdReplace.wdReplaceAll)
-            End With
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            'If Not IsNothing(objword) Then
-            '    objword.Quit()
-            '    objword = Nothing
-            'End If
         End Try
     End Sub
 
     Private Sub btnSP_Click_1(sender As Object, e As EventArgs) Handles btnSP.Click
         If barJudul.Caption = "Surat Peringatan 1" Then
-            sp1()
+            If txtcompcode.Text = "" Then
+                MsgBox("Please Input The Employee")
+            Else
+                sp1()
+            End If
         ElseIf barJudul.Caption = "Surat Peringatan 2" Then
-            sp2()
+            If txtEmpCode.Text = "" Then
+                MsgBox("Please Input The Employee")
+            Else
+                sp2()
+            End If
         ElseIf barJudul.Caption = "Surat Peringatan 3" Then
-            sp3()
+            If txtEmpCode.Text = "" Then
+                MsgBox("Please Input The Employee")
+            Else
+                sp3()
+            End If
         End If
     End Sub
 

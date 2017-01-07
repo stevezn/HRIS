@@ -41,7 +41,6 @@ Public Class RotasiMutasi
                 sqlCommand.Parameters.AddWithValue("@Position", txtPosition.Text)
                 sqlCommand.Parameters.AddWithValue("@Rotasi", txtChange.Text)
                 sqlCommand.Parameters.AddWithValue("@RotasiDate", txtDate.Text)
-
             ElseIf act = "input" Then
                 str_carSql = "INSERT INTO db_rotasi " +
                        "(EmployeeCode, CompanyCode, FullName, Position, Rotasi, RotasiDate) " +

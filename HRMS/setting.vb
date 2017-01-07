@@ -15,13 +15,11 @@
         Dim adapter As New MySql.Data.MySqlClient.MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySql.Data.MySqlClient.MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par)
-
         If tbl_par.Rows.Count > 0 Then
             For index As Integer = 0 To tbl_par.Rows.Count - 1
                 SQLConnection = New MySqlConnection()
                 SQLConnection.ConnectionString = connectionString
                 SQLConnection.Open()
-
                 Try
                     sqlCommand.CommandText = "UPDATE db_user SET username = @username, password= @password, tanggal_ubah=@tanggal ) " +
                                              "WHERE id_user=" + tbl_par.Rows(0).Item(0).ToString()
@@ -30,7 +28,6 @@
                     sqlCommand.Parameters.AddWithValue("@tanggal", Date.Today().ToString())
                     sqlCommand.Connection = SQLConnection
                     sqlCommand.ExecuteNonQuery()
-
                     SQLConnection.Close()
                     MessageBox.Show("Succesfully Changed!!")
                 Catch ex As Exception
@@ -41,7 +38,6 @@
         Else
             MessageBox.Show("Username & Password Didn't Match!!")
         End If
-
         SQLConnection.Close()
     End Sub
 
@@ -71,4 +67,7 @@
         End If
     End Sub
 
+    Private Sub setting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

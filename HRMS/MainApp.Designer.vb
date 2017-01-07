@@ -77,7 +77,6 @@ Partial Class MainApp
         Me.txthasilbjabatan = New DevExpress.XtraEditors.TextEdit()
         Me.lcnettosetahun = New DevExpress.XtraEditors.TextEdit()
         Me.txtphone = New DevExpress.XtraEditors.TextEdit()
-        Me.txtlocation = New DevExpress.XtraEditors.TextEdit()
         Me.txtjht = New DevExpress.XtraEditors.TextEdit()
         Me.txtjk = New DevExpress.XtraEditors.TextEdit()
         Me.txtjkk = New DevExpress.XtraEditors.TextEdit()
@@ -239,7 +238,6 @@ Partial Class MainApp
         Me.lcjkk = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcjk = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcjht = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.lclocation = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcphone = New DevExpress.XtraLayout.LayoutControlItem()
         Me.netosetaun = New DevExpress.XtraLayout.LayoutControlItem()
         Me.bpjspercentage = New DevExpress.XtraLayout.LayoutControlItem()
@@ -282,7 +280,12 @@ Partial Class MainApp
         Me.ProductsTableAdapter1 = New XtraReportsDemos.OddEvenStyles.dsOddEvenStylesTableAdapters.ProductsTableAdapter()
         Me.ProductsTableAdapter2 = New XtraReportsDemos.OddEvenStyles.dsOddEvenStylesTableAdapters.ProductsTableAdapter()
         Me.ProductsTableAdapter3 = New XtraReportsDemos.OddEvenStyles.dsOddEvenStylesTableAdapters.ProductsTableAdapter()
-        Me.testlabel = New DevExpress.XtraEditors.LabelControl()
+        Me.txtlocation = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.lclocation = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtstart = New DevExpress.XtraEditors.TextEdit()
+        Me.lcstart = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtfinish = New DevExpress.XtraEditors.TextEdit()
+        Me.lcfinish = New DevExpress.XtraLayout.LayoutControlItem()
         RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         CType(RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -319,7 +322,6 @@ Partial Class MainApp
         CType(Me.txthasilbjabatan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcnettosetahun.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtphone.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtlocation.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtjht.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtjk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtjkk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -470,7 +472,6 @@ Partial Class MainApp
         CType(Me.lcjkk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcjk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcjht, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lclocation, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcphone, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.netosetaun, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bpjspercentage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -506,6 +507,12 @@ Partial Class MainApp
         CType(Me.lcFotoView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lc6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lc7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtlocation.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lclocation, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtstart.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcstart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtfinish.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcfinish, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -649,6 +656,9 @@ Partial Class MainApp
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.txtfinish)
+        Me.LayoutControl1.Controls.Add(Me.txtstart)
+        Me.LayoutControl1.Controls.Add(Me.txtlocation)
         Me.LayoutControl1.Controls.Add(Me.txtbar7)
         Me.LayoutControl1.Controls.Add(Me.txtbar6)
         Me.LayoutControl1.Controls.Add(Me.txtposition)
@@ -681,7 +691,6 @@ Partial Class MainApp
         Me.LayoutControl1.Controls.Add(Me.txthasilbjabatan)
         Me.LayoutControl1.Controls.Add(Me.lcnettosetahun)
         Me.LayoutControl1.Controls.Add(Me.txtphone)
-        Me.LayoutControl1.Controls.Add(Me.txtlocation)
         Me.LayoutControl1.Controls.Add(Me.txtjht)
         Me.LayoutControl1.Controls.Add(Me.txtjk)
         Me.LayoutControl1.Controls.Add(Me.txtjkk)
@@ -771,7 +780,7 @@ Partial Class MainApp
         '
         'txtbar7
         '
-        Me.txtbar7.Location = New System.Drawing.Point(-460, 399)
+        Me.txtbar7.Location = New System.Drawing.Point(158, 447)
         Me.txtbar7.MenuManager = RibbonControl1
         Me.txtbar7.Name = "txtbar7"
         Me.txtbar7.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -782,7 +791,7 @@ Partial Class MainApp
         '
         'txtbar6
         '
-        Me.txtbar6.Location = New System.Drawing.Point(-460, 351)
+        Me.txtbar6.Location = New System.Drawing.Point(158, 399)
         Me.txtbar6.MenuManager = RibbonControl1
         Me.txtbar6.Name = "txtbar6"
         Me.txtbar6.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -793,7 +802,7 @@ Partial Class MainApp
         '
         'txtposition
         '
-        Me.txtposition.Location = New System.Drawing.Point(-460, 135)
+        Me.txtposition.Location = New System.Drawing.Point(158, 135)
         Me.txtposition.MenuManager = RibbonControl1
         Me.txtposition.Name = "txtposition"
         Me.txtposition.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -804,7 +813,7 @@ Partial Class MainApp
         '
         'txtemail
         '
-        Me.txtemail.Location = New System.Drawing.Point(-460, 447)
+        Me.txtemail.Location = New System.Drawing.Point(158, 495)
         Me.txtemail.MenuManager = RibbonControl1
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(250, 20)
@@ -813,7 +822,7 @@ Partial Class MainApp
         '
         'txtaddress
         '
-        Me.txtaddress.Location = New System.Drawing.Point(-460, 423)
+        Me.txtaddress.Location = New System.Drawing.Point(158, 471)
         Me.txtaddress.MenuManager = RibbonControl1
         Me.txtaddress.Name = "txtaddress"
         Me.txtaddress.Size = New System.Drawing.Size(250, 20)
@@ -823,7 +832,7 @@ Partial Class MainApp
         'txtworkdate
         '
         Me.txtworkdate.EditValue = Nothing
-        Me.txtworkdate.Location = New System.Drawing.Point(-460, 375)
+        Me.txtworkdate.Location = New System.Drawing.Point(158, 423)
         Me.txtworkdate.MenuManager = RibbonControl1
         Me.txtworkdate.Name = "txtworkdate"
         Me.txtworkdate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -837,12 +846,12 @@ Partial Class MainApp
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(-108, 1916)
+        Me.SimpleButton1.Location = New System.Drawing.Point(510, 1964)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(125, 38)
+        Me.SimpleButton1.Size = New System.Drawing.Size(134, 38)
         Me.SimpleButton1.StyleController = Me.LayoutControl1
         Me.SimpleButton1.TabIndex = 91
-        Me.SimpleButton1.Text = "Rotasi Or Mutasi"
+        Me.SimpleButton1.Text = "Rotasi and Demosi"
         '
         'btnNotes
         '
@@ -850,27 +859,27 @@ Partial Class MainApp
         Me.btnNotes.Appearance.Options.UseImage = True
         Me.btnNotes.Image = CType(resources.GetObject("btnNotes.Image"), System.Drawing.Image)
         Me.btnNotes.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.btnNotes.Location = New System.Drawing.Point(196, 1916)
+        Me.btnNotes.Location = New System.Drawing.Point(779, 1964)
         Me.btnNotes.Name = "btnNotes"
-        Me.btnNotes.Size = New System.Drawing.Size(123, 38)
+        Me.btnNotes.Size = New System.Drawing.Size(127, 38)
         Me.btnNotes.StyleController = Me.LayoutControl1
         Me.btnNotes.TabIndex = 3
-        Me.btnNotes.Text = "Employee Notes"
+        Me.btnNotes.Text = "Employee Details"
         '
         'sp1
         '
         Me.sp1.Image = CType(resources.GetObject("sp1.Image"), System.Drawing.Image)
-        Me.sp1.Location = New System.Drawing.Point(21, 1916)
+        Me.sp1.Location = New System.Drawing.Point(648, 1964)
         Me.sp1.Name = "sp1"
-        Me.sp1.Size = New System.Drawing.Size(171, 38)
+        Me.sp1.Size = New System.Drawing.Size(127, 38)
         Me.sp1.StyleController = Me.LayoutControl1
         Me.sp1.TabIndex = 3
-        Me.sp1.Text = "Give SP  To This Employee"
+        Me.sp1.Text = "Surat Peringatan"
         '
         'txtpayment
         '
         Me.txtpayment.EditValue = Nothing
-        Me.txtpayment.Location = New System.Drawing.Point(-460, 159)
+        Me.txtpayment.Location = New System.Drawing.Point(158, 159)
         Me.txtpayment.MenuManager = RibbonControl1
         Me.txtpayment.Name = "txtpayment"
         Me.txtpayment.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -884,7 +893,7 @@ Partial Class MainApp
         '
         'txtpajakpph
         '
-        Me.txtpajakpph.Location = New System.Drawing.Point(-460, 1690)
+        Me.txtpajakpph.Location = New System.Drawing.Point(158, 1738)
         Me.txtpajakpph.MenuManager = RibbonControl1
         Me.txtpajakpph.Name = "txtpajakpph"
         Me.txtpajakpph.Size = New System.Drawing.Size(250, 20)
@@ -893,7 +902,7 @@ Partial Class MainApp
         '
         'rapel
         '
-        Me.rapel.Location = New System.Drawing.Point(-460, 1858)
+        Me.rapel.Location = New System.Drawing.Point(158, 1906)
         Me.rapel.MenuManager = RibbonControl1
         Me.rapel.Name = "rapel"
         Me.rapel.Size = New System.Drawing.Size(250, 20)
@@ -902,7 +911,7 @@ Partial Class MainApp
         '
         'tomonth
         '
-        Me.tomonth.Location = New System.Drawing.Point(-260, 1456)
+        Me.tomonth.Location = New System.Drawing.Point(358, 1504)
         Me.tomonth.MenuManager = RibbonControl1
         Me.tomonth.Name = "tomonth"
         Me.tomonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -913,7 +922,7 @@ Partial Class MainApp
         '
         'frommonth
         '
-        Me.frommonth.Location = New System.Drawing.Point(-460, 1456)
+        Me.frommonth.Location = New System.Drawing.Point(158, 1504)
         Me.frommonth.MenuManager = RibbonControl1
         Me.frommonth.Name = "frommonth"
         Me.frommonth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -924,7 +933,7 @@ Partial Class MainApp
         '
         'txtrapel
         '
-        Me.txtrapel.Location = New System.Drawing.Point(-460, 1432)
+        Me.txtrapel.Location = New System.Drawing.Point(158, 1480)
         Me.txtrapel.MenuManager = RibbonControl1
         Me.txtrapel.Name = "txtrapel"
         Me.txtrapel.Size = New System.Drawing.Size(250, 20)
@@ -934,7 +943,7 @@ Partial Class MainApp
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(-606, 1413)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 1461)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(73, 15)
         Me.LabelControl2.StyleController = Me.LayoutControl1
@@ -943,7 +952,7 @@ Partial Class MainApp
         '
         'cmboxiuranpensiun
         '
-        Me.cmboxiuranpensiun.Location = New System.Drawing.Point(-460, 1389)
+        Me.cmboxiuranpensiun.Location = New System.Drawing.Point(158, 1437)
         Me.cmboxiuranpensiun.MenuManager = RibbonControl1
         Me.cmboxiuranpensiun.Name = "cmboxiuranpensiun"
         Me.cmboxiuranpensiun.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -954,7 +963,7 @@ Partial Class MainApp
         '
         'cmboxbj
         '
-        Me.cmboxbj.Location = New System.Drawing.Point(-460, 1365)
+        Me.cmboxbj.Location = New System.Drawing.Point(158, 1413)
         Me.cmboxbj.MenuManager = RibbonControl1
         Me.cmboxbj.Name = "cmboxbj"
         Me.cmboxbj.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -965,7 +974,7 @@ Partial Class MainApp
         '
         'cmboxottype
         '
-        Me.cmboxottype.Location = New System.Drawing.Point(-460, 1015)
+        Me.cmboxottype.Location = New System.Drawing.Point(158, 1063)
         Me.cmboxottype.MenuManager = RibbonControl1
         Me.cmboxottype.Name = "cmboxottype"
         Me.cmboxottype.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -976,7 +985,7 @@ Partial Class MainApp
         '
         'txtlates
         '
-        Me.txtlates.Location = New System.Drawing.Point(-460, 1106)
+        Me.txtlates.Location = New System.Drawing.Point(158, 1154)
         Me.txtlates.MenuManager = RibbonControl1
         Me.txtlates.Name = "txtlates"
         Me.txtlates.Size = New System.Drawing.Size(250, 20)
@@ -985,7 +994,7 @@ Partial Class MainApp
         '
         'txtloan
         '
-        Me.txtloan.Location = New System.Drawing.Point(-460, 1082)
+        Me.txtloan.Location = New System.Drawing.Point(158, 1130)
         Me.txtloan.MenuManager = RibbonControl1
         Me.txtloan.Name = "txtloan"
         Me.txtloan.Size = New System.Drawing.Size(250, 20)
@@ -994,7 +1003,7 @@ Partial Class MainApp
         '
         'txttaxes
         '
-        Me.txttaxes.Location = New System.Drawing.Point(-460, 1058)
+        Me.txttaxes.Location = New System.Drawing.Point(158, 1106)
         Me.txttaxes.MenuManager = RibbonControl1
         Me.txttaxes.Name = "txttaxes"
         Me.txttaxes.Size = New System.Drawing.Size(250, 20)
@@ -1003,7 +1012,7 @@ Partial Class MainApp
         '
         'txtpphterutang
         '
-        Me.txtpphterutang.Location = New System.Drawing.Point(-460, 1666)
+        Me.txtpphterutang.Location = New System.Drawing.Point(158, 1714)
         Me.txtpphterutang.MenuManager = RibbonControl1
         Me.txtpphterutang.Name = "txtpphterutang"
         Me.txtpphterutang.Size = New System.Drawing.Size(250, 20)
@@ -1012,7 +1021,7 @@ Partial Class MainApp
         '
         'txtpip
         '
-        Me.txtpip.Location = New System.Drawing.Point(-260, 1389)
+        Me.txtpip.Location = New System.Drawing.Point(358, 1437)
         Me.txtpip.MenuManager = RibbonControl1
         Me.txtpip.Name = "txtpip"
         Me.txtpip.Size = New System.Drawing.Size(50, 20)
@@ -1021,7 +1030,7 @@ Partial Class MainApp
         '
         'txtpbj
         '
-        Me.txtpbj.Location = New System.Drawing.Point(-260, 1365)
+        Me.txtpbj.Location = New System.Drawing.Point(358, 1413)
         Me.txtpbj.MenuManager = RibbonControl1
         Me.txtpbj.Name = "txtpbj"
         Me.txtpbj.Size = New System.Drawing.Size(50, 20)
@@ -1030,7 +1039,7 @@ Partial Class MainApp
         '
         'txtpjht
         '
-        Me.txtpjht.Location = New System.Drawing.Point(-260, 1341)
+        Me.txtpjht.Location = New System.Drawing.Point(358, 1389)
         Me.txtpjht.MenuManager = RibbonControl1
         Me.txtpjht.Name = "txtpjht"
         Me.txtpjht.Size = New System.Drawing.Size(50, 20)
@@ -1039,7 +1048,7 @@ Partial Class MainApp
         '
         'txtpkk
         '
-        Me.txtpkk.Location = New System.Drawing.Point(-260, 1293)
+        Me.txtpkk.Location = New System.Drawing.Point(358, 1341)
         Me.txtpkk.MenuManager = RibbonControl1
         Me.txtpkk.Name = "txtpkk"
         Me.txtpkk.Size = New System.Drawing.Size(50, 20)
@@ -1048,7 +1057,7 @@ Partial Class MainApp
         '
         'txtpjk
         '
-        Me.txtpjk.Location = New System.Drawing.Point(-260, 1317)
+        Me.txtpjk.Location = New System.Drawing.Point(358, 1365)
         Me.txtpjk.MenuManager = RibbonControl1
         Me.txtpjk.Name = "txtpjk"
         Me.txtpjk.Size = New System.Drawing.Size(50, 20)
@@ -1057,7 +1066,7 @@ Partial Class MainApp
         '
         'txthasiliuranpensiun
         '
-        Me.txthasiliuranpensiun.Location = New System.Drawing.Point(-460, 1834)
+        Me.txthasiliuranpensiun.Location = New System.Drawing.Point(158, 1882)
         Me.txthasiliuranpensiun.MenuManager = RibbonControl1
         Me.txthasiliuranpensiun.Name = "txthasiliuranpensiun"
         Me.txthasiliuranpensiun.Size = New System.Drawing.Size(250, 20)
@@ -1066,7 +1075,7 @@ Partial Class MainApp
         '
         'txthasilbjabatan
         '
-        Me.txthasilbjabatan.Location = New System.Drawing.Point(-460, 1810)
+        Me.txthasilbjabatan.Location = New System.Drawing.Point(158, 1858)
         Me.txthasilbjabatan.MenuManager = RibbonControl1
         Me.txthasilbjabatan.Name = "txthasilbjabatan"
         Me.txthasilbjabatan.Size = New System.Drawing.Size(250, 20)
@@ -1075,7 +1084,7 @@ Partial Class MainApp
         '
         'lcnettosetahun
         '
-        Me.lcnettosetahun.Location = New System.Drawing.Point(-460, 1786)
+        Me.lcnettosetahun.Location = New System.Drawing.Point(158, 1834)
         Me.lcnettosetahun.MenuManager = RibbonControl1
         Me.lcnettosetahun.Name = "lcnettosetahun"
         Me.lcnettosetahun.Size = New System.Drawing.Size(250, 20)
@@ -1084,25 +1093,16 @@ Partial Class MainApp
         '
         'txtphone
         '
-        Me.txtphone.Location = New System.Drawing.Point(-460, 231)
+        Me.txtphone.Location = New System.Drawing.Point(158, 231)
         Me.txtphone.MenuManager = RibbonControl1
         Me.txtphone.Name = "txtphone"
         Me.txtphone.Size = New System.Drawing.Size(250, 20)
         Me.txtphone.StyleController = Me.LayoutControl1
         Me.txtphone.TabIndex = 3
         '
-        'txtlocation
-        '
-        Me.txtlocation.Location = New System.Drawing.Point(-460, 207)
-        Me.txtlocation.MenuManager = RibbonControl1
-        Me.txtlocation.Name = "txtlocation"
-        Me.txtlocation.Size = New System.Drawing.Size(250, 20)
-        Me.txtlocation.StyleController = Me.LayoutControl1
-        Me.txtlocation.TabIndex = 3
-        '
         'txtjht
         '
-        Me.txtjht.Location = New System.Drawing.Point(-460, 1762)
+        Me.txtjht.Location = New System.Drawing.Point(158, 1810)
         Me.txtjht.MenuManager = RibbonControl1
         Me.txtjht.Name = "txtjht"
         Me.txtjht.Size = New System.Drawing.Size(250, 20)
@@ -1111,7 +1111,7 @@ Partial Class MainApp
         '
         'txtjk
         '
-        Me.txtjk.Location = New System.Drawing.Point(-460, 1738)
+        Me.txtjk.Location = New System.Drawing.Point(158, 1786)
         Me.txtjk.MenuManager = RibbonControl1
         Me.txtjk.Name = "txtjk"
         Me.txtjk.Size = New System.Drawing.Size(250, 20)
@@ -1120,7 +1120,7 @@ Partial Class MainApp
         '
         'txtjkk
         '
-        Me.txtjkk.Location = New System.Drawing.Point(-460, 1714)
+        Me.txtjkk.Location = New System.Drawing.Point(158, 1762)
         Me.txtjkk.MenuManager = RibbonControl1
         Me.txtjkk.Name = "txtjkk"
         Me.txtjkk.Size = New System.Drawing.Size(250, 20)
@@ -1130,7 +1130,7 @@ Partial Class MainApp
         'countButton
         '
         Me.countButton.Image = CType(resources.GetObject("countButton.Image"), System.Drawing.Image)
-        Me.countButton.Location = New System.Drawing.Point(-606, 1480)
+        Me.countButton.Location = New System.Drawing.Point(12, 1528)
         Me.countButton.Name = "countButton"
         Me.countButton.Size = New System.Drawing.Size(396, 38)
         Me.countButton.StyleController = Me.LayoutControl1
@@ -1148,7 +1148,7 @@ Partial Class MainApp
         '
         'txtpkp
         '
-        Me.txtpkp.Location = New System.Drawing.Point(-460, 1642)
+        Me.txtpkp.Location = New System.Drawing.Point(158, 1690)
         Me.txtpkp.MenuManager = RibbonControl1
         Me.txtpkp.Name = "txtpkp"
         Me.txtpkp.Size = New System.Drawing.Size(250, 20)
@@ -1157,7 +1157,7 @@ Partial Class MainApp
         '
         'txtnetincome
         '
-        Me.txtnetincome.Location = New System.Drawing.Point(-460, 1618)
+        Me.txtnetincome.Location = New System.Drawing.Point(158, 1666)
         Me.txtnetincome.MenuManager = RibbonControl1
         Me.txtnetincome.Name = "txtnetincome"
         Me.txtnetincome.Size = New System.Drawing.Size(250, 20)
@@ -1166,7 +1166,7 @@ Partial Class MainApp
         '
         'txtdeduction
         '
-        Me.txtdeduction.Location = New System.Drawing.Point(-460, 1594)
+        Me.txtdeduction.Location = New System.Drawing.Point(158, 1642)
         Me.txtdeduction.MenuManager = RibbonControl1
         Me.txtdeduction.Name = "txtdeduction"
         Me.txtdeduction.Size = New System.Drawing.Size(250, 20)
@@ -1175,7 +1175,7 @@ Partial Class MainApp
         '
         'txtotsalary
         '
-        Me.txtotsalary.Location = New System.Drawing.Point(-460, 1570)
+        Me.txtotsalary.Location = New System.Drawing.Point(158, 1618)
         Me.txtotsalary.MenuManager = RibbonControl1
         Me.txtotsalary.Name = "txtotsalary"
         Me.txtotsalary.Size = New System.Drawing.Size(250, 20)
@@ -1184,7 +1184,7 @@ Partial Class MainApp
         '
         'txtbpjs
         '
-        Me.txtbpjs.Location = New System.Drawing.Point(-460, 1546)
+        Me.txtbpjs.Location = New System.Drawing.Point(158, 1594)
         Me.txtbpjs.MenuManager = RibbonControl1
         Me.txtbpjs.Name = "txtbpjs"
         Me.txtbpjs.Size = New System.Drawing.Size(250, 20)
@@ -1193,7 +1193,7 @@ Partial Class MainApp
         '
         'txtgross
         '
-        Me.txtgross.Location = New System.Drawing.Point(-460, 1522)
+        Me.txtgross.Location = New System.Drawing.Point(158, 1570)
         Me.txtgross.MenuManager = RibbonControl1
         Me.txtgross.Name = "txtgross"
         Me.txtgross.Size = New System.Drawing.Size(250, 20)
@@ -1202,7 +1202,7 @@ Partial Class MainApp
         '
         'compacode
         '
-        Me.compacode.Location = New System.Drawing.Point(-460, 111)
+        Me.compacode.Location = New System.Drawing.Point(158, 111)
         Me.compacode.MenuManager = RibbonControl1
         Me.compacode.Name = "compacode"
         Me.compacode.Size = New System.Drawing.Size(250, 20)
@@ -1211,7 +1211,7 @@ Partial Class MainApp
         '
         'txtTransport
         '
-        Me.txtTransport.Location = New System.Drawing.Point(-460, 761)
+        Me.txtTransport.Location = New System.Drawing.Point(158, 809)
         Me.txtTransport.MenuManager = RibbonControl1
         Me.txtTransport.Name = "txtTransport"
         Me.txtTransport.Size = New System.Drawing.Size(250, 20)
@@ -1220,7 +1220,7 @@ Partial Class MainApp
         '
         'txt5ded
         '
-        Me.txt5ded.Location = New System.Drawing.Point(-260, 1269)
+        Me.txt5ded.Location = New System.Drawing.Point(358, 1317)
         Me.txt5ded.MenuManager = RibbonControl1
         Me.txt5ded.Name = "txt5ded"
         Me.txt5ded.Size = New System.Drawing.Size(50, 20)
@@ -1229,7 +1229,7 @@ Partial Class MainApp
         '
         'txtdeddc5
         '
-        Me.txtdeddc5.Location = New System.Drawing.Point(-460, 1269)
+        Me.txtdeddc5.Location = New System.Drawing.Point(158, 1317)
         Me.txtdeddc5.MenuManager = RibbonControl1
         Me.txtdeddc5.Name = "txtdeddc5"
         Me.txtdeddc5.Size = New System.Drawing.Size(50, 20)
@@ -1238,7 +1238,7 @@ Partial Class MainApp
         '
         'txt4ded
         '
-        Me.txt4ded.Location = New System.Drawing.Point(-260, 1245)
+        Me.txt4ded.Location = New System.Drawing.Point(358, 1293)
         Me.txt4ded.MenuManager = RibbonControl1
         Me.txt4ded.Name = "txt4ded"
         Me.txt4ded.Size = New System.Drawing.Size(50, 20)
@@ -1247,7 +1247,7 @@ Partial Class MainApp
         '
         'txtdeddc4
         '
-        Me.txtdeddc4.Location = New System.Drawing.Point(-460, 1245)
+        Me.txtdeddc4.Location = New System.Drawing.Point(158, 1293)
         Me.txtdeddc4.MenuManager = RibbonControl1
         Me.txtdeddc4.Name = "txtdeddc4"
         Me.txtdeddc4.Size = New System.Drawing.Size(50, 20)
@@ -1256,7 +1256,7 @@ Partial Class MainApp
         '
         'txt3ded
         '
-        Me.txt3ded.Location = New System.Drawing.Point(-260, 1221)
+        Me.txt3ded.Location = New System.Drawing.Point(358, 1269)
         Me.txt3ded.MenuManager = RibbonControl1
         Me.txt3ded.Name = "txt3ded"
         Me.txt3ded.Size = New System.Drawing.Size(50, 20)
@@ -1265,7 +1265,7 @@ Partial Class MainApp
         '
         'txtdeddc3
         '
-        Me.txtdeddc3.Location = New System.Drawing.Point(-460, 1221)
+        Me.txtdeddc3.Location = New System.Drawing.Point(158, 1269)
         Me.txtdeddc3.MenuManager = RibbonControl1
         Me.txtdeddc3.Name = "txtdeddc3"
         Me.txtdeddc3.Size = New System.Drawing.Size(50, 20)
@@ -1274,7 +1274,7 @@ Partial Class MainApp
         '
         'txt2ded
         '
-        Me.txt2ded.Location = New System.Drawing.Point(-260, 1197)
+        Me.txt2ded.Location = New System.Drawing.Point(358, 1245)
         Me.txt2ded.MenuManager = RibbonControl1
         Me.txt2ded.Name = "txt2ded"
         Me.txt2ded.Size = New System.Drawing.Size(50, 20)
@@ -1283,7 +1283,7 @@ Partial Class MainApp
         '
         'txtdeddc2
         '
-        Me.txtdeddc2.Location = New System.Drawing.Point(-460, 1197)
+        Me.txtdeddc2.Location = New System.Drawing.Point(158, 1245)
         Me.txtdeddc2.MenuManager = RibbonControl1
         Me.txtdeddc2.Name = "txtdeddc2"
         Me.txtdeddc2.Size = New System.Drawing.Size(50, 20)
@@ -1292,7 +1292,7 @@ Partial Class MainApp
         '
         'txt1ded
         '
-        Me.txt1ded.Location = New System.Drawing.Point(-260, 1173)
+        Me.txt1ded.Location = New System.Drawing.Point(358, 1221)
         Me.txt1ded.MenuManager = RibbonControl1
         Me.txt1ded.Name = "txt1ded"
         Me.txt1ded.Size = New System.Drawing.Size(50, 20)
@@ -1301,7 +1301,7 @@ Partial Class MainApp
         '
         'txtdeddc1
         '
-        Me.txtdeddc1.Location = New System.Drawing.Point(-460, 1173)
+        Me.txtdeddc1.Location = New System.Drawing.Point(158, 1221)
         Me.txtdeddc1.MenuManager = RibbonControl1
         Me.txtdeddc1.Name = "txtdeddc1"
         Me.txtdeddc1.Size = New System.Drawing.Size(50, 20)
@@ -1310,7 +1310,7 @@ Partial Class MainApp
         '
         'txt5add
         '
-        Me.txt5add.Location = New System.Drawing.Point(-260, 948)
+        Me.txt5add.Location = New System.Drawing.Point(358, 996)
         Me.txt5add.MenuManager = RibbonControl1
         Me.txt5add.Name = "txt5add"
         Me.txt5add.Size = New System.Drawing.Size(50, 20)
@@ -1319,7 +1319,7 @@ Partial Class MainApp
         '
         'txtadddc5
         '
-        Me.txtadddc5.Location = New System.Drawing.Point(-460, 948)
+        Me.txtadddc5.Location = New System.Drawing.Point(158, 996)
         Me.txtadddc5.MenuManager = RibbonControl1
         Me.txtadddc5.Name = "txtadddc5"
         Me.txtadddc5.Size = New System.Drawing.Size(50, 20)
@@ -1328,7 +1328,7 @@ Partial Class MainApp
         '
         'txt4add
         '
-        Me.txt4add.Location = New System.Drawing.Point(-260, 924)
+        Me.txt4add.Location = New System.Drawing.Point(358, 972)
         Me.txt4add.MenuManager = RibbonControl1
         Me.txt4add.Name = "txt4add"
         Me.txt4add.Size = New System.Drawing.Size(50, 20)
@@ -1337,7 +1337,7 @@ Partial Class MainApp
         '
         'txtadddc4
         '
-        Me.txtadddc4.Location = New System.Drawing.Point(-460, 924)
+        Me.txtadddc4.Location = New System.Drawing.Point(158, 972)
         Me.txtadddc4.MenuManager = RibbonControl1
         Me.txtadddc4.Name = "txtadddc4"
         Me.txtadddc4.Size = New System.Drawing.Size(50, 20)
@@ -1346,7 +1346,7 @@ Partial Class MainApp
         '
         'txt3add
         '
-        Me.txt3add.Location = New System.Drawing.Point(-260, 900)
+        Me.txt3add.Location = New System.Drawing.Point(358, 948)
         Me.txt3add.MenuManager = RibbonControl1
         Me.txt3add.Name = "txt3add"
         Me.txt3add.Size = New System.Drawing.Size(50, 20)
@@ -1355,7 +1355,7 @@ Partial Class MainApp
         '
         'txtadddc3
         '
-        Me.txtadddc3.Location = New System.Drawing.Point(-460, 900)
+        Me.txtadddc3.Location = New System.Drawing.Point(158, 948)
         Me.txtadddc3.MenuManager = RibbonControl1
         Me.txtadddc3.Name = "txtadddc3"
         Me.txtadddc3.Size = New System.Drawing.Size(50, 20)
@@ -1364,7 +1364,7 @@ Partial Class MainApp
         '
         'txt2add
         '
-        Me.txt2add.Location = New System.Drawing.Point(-260, 876)
+        Me.txt2add.Location = New System.Drawing.Point(358, 924)
         Me.txt2add.MenuManager = RibbonControl1
         Me.txt2add.Name = "txt2add"
         Me.txt2add.Size = New System.Drawing.Size(50, 20)
@@ -1373,7 +1373,7 @@ Partial Class MainApp
         '
         'txtadddc2
         '
-        Me.txtadddc2.Location = New System.Drawing.Point(-460, 876)
+        Me.txtadddc2.Location = New System.Drawing.Point(158, 924)
         Me.txtadddc2.MenuManager = RibbonControl1
         Me.txtadddc2.Name = "txtadddc2"
         Me.txtadddc2.Size = New System.Drawing.Size(50, 20)
@@ -1382,7 +1382,7 @@ Partial Class MainApp
         '
         'txt1add
         '
-        Me.txt1add.Location = New System.Drawing.Point(-260, 852)
+        Me.txt1add.Location = New System.Drawing.Point(358, 900)
         Me.txt1add.MenuManager = RibbonControl1
         Me.txt1add.Name = "txt1add"
         Me.txt1add.Size = New System.Drawing.Size(50, 20)
@@ -1391,7 +1391,7 @@ Partial Class MainApp
         '
         'txtadddc1
         '
-        Me.txtadddc1.Location = New System.Drawing.Point(-460, 852)
+        Me.txtadddc1.Location = New System.Drawing.Point(158, 900)
         Me.txtadddc1.MenuManager = RibbonControl1
         Me.txtadddc1.Name = "txtadddc1"
         Me.txtadddc1.Size = New System.Drawing.Size(50, 20)
@@ -1400,7 +1400,7 @@ Partial Class MainApp
         '
         'cmboxnpwp
         '
-        Me.cmboxnpwp.Location = New System.Drawing.Point(-460, 809)
+        Me.cmboxnpwp.Location = New System.Drawing.Point(158, 857)
         Me.cmboxnpwp.MenuManager = RibbonControl1
         Me.cmboxnpwp.Name = "cmboxnpwp"
         Me.cmboxnpwp.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1411,7 +1411,7 @@ Partial Class MainApp
         '
         'cmboxjht
         '
-        Me.cmboxjht.Location = New System.Drawing.Point(-460, 1341)
+        Me.cmboxjht.Location = New System.Drawing.Point(158, 1389)
         Me.cmboxjht.MenuManager = RibbonControl1
         Me.cmboxjht.Name = "cmboxjht"
         Me.cmboxjht.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1422,7 +1422,7 @@ Partial Class MainApp
         '
         'cmboxjk
         '
-        Me.cmboxjk.Location = New System.Drawing.Point(-460, 1317)
+        Me.cmboxjk.Location = New System.Drawing.Point(158, 1365)
         Me.cmboxjk.MenuManager = RibbonControl1
         Me.cmboxjk.Name = "cmboxjk"
         Me.cmboxjk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1433,7 +1433,7 @@ Partial Class MainApp
         '
         'cmboxjkk
         '
-        Me.cmboxjkk.Location = New System.Drawing.Point(-460, 1293)
+        Me.cmboxjkk.Location = New System.Drawing.Point(158, 1341)
         Me.cmboxjkk.MenuManager = RibbonControl1
         Me.cmboxjkk.Name = "cmboxjkk"
         Me.cmboxjkk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1445,7 +1445,7 @@ Partial Class MainApp
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(-606, 1154)
+        Me.LabelControl4.Location = New System.Drawing.Point(12, 1202)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(156, 15)
         Me.LabelControl4.StyleController = Me.LayoutControl1
@@ -1455,7 +1455,7 @@ Partial Class MainApp
         'labeldeductions
         '
         Me.labeldeductions.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labeldeductions.Location = New System.Drawing.Point(-606, 1039)
+        Me.labeldeductions.Location = New System.Drawing.Point(12, 1087)
         Me.labeldeductions.Name = "labeldeductions"
         Me.labeldeductions.Size = New System.Drawing.Size(61, 15)
         Me.labeldeductions.StyleController = Me.LayoutControl1
@@ -1465,7 +1465,7 @@ Partial Class MainApp
         'txtbpjspercentage
         '
         Me.txtbpjspercentage.EditValue = "Input Percentage"
-        Me.txtbpjspercentage.Location = New System.Drawing.Point(-460, 1130)
+        Me.txtbpjspercentage.Location = New System.Drawing.Point(158, 1178)
         Me.txtbpjspercentage.MenuManager = RibbonControl1
         Me.txtbpjspercentage.Name = "txtbpjspercentage"
         Me.txtbpjspercentage.Size = New System.Drawing.Size(250, 20)
@@ -1474,7 +1474,7 @@ Partial Class MainApp
         '
         'txtothours
         '
-        Me.txtothours.Location = New System.Drawing.Point(-460, 991)
+        Me.txtothours.Location = New System.Drawing.Point(158, 1039)
         Me.txtothours.MenuManager = RibbonControl1
         Me.txtothours.Name = "txtothours"
         Me.txtothours.Size = New System.Drawing.Size(250, 20)
@@ -1484,7 +1484,7 @@ Partial Class MainApp
         'labelovertime
         '
         Me.labelovertime.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelovertime.Location = New System.Drawing.Point(-606, 972)
+        Me.labelovertime.Location = New System.Drawing.Point(12, 1020)
         Me.labelovertime.Name = "labelovertime"
         Me.labelovertime.Size = New System.Drawing.Size(93, 15)
         Me.labelovertime.StyleController = Me.LayoutControl1
@@ -1495,7 +1495,7 @@ Partial Class MainApp
         '
         Me.labeladditional.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labeladditional.Appearance.ForeColor = System.Drawing.Color.Black
-        Me.labeladditional.Location = New System.Drawing.Point(-606, 833)
+        Me.labeladditional.Location = New System.Drawing.Point(12, 881)
         Me.labeladditional.Name = "labeladditional"
         Me.labeladditional.Size = New System.Drawing.Size(151, 15)
         Me.labeladditional.StyleController = Me.LayoutControl1
@@ -1505,7 +1505,7 @@ Partial Class MainApp
         'txtMeal
         '
         Me.txtMeal.EditValue = ""
-        Me.txtMeal.Location = New System.Drawing.Point(-460, 737)
+        Me.txtMeal.Location = New System.Drawing.Point(158, 785)
         Me.txtMeal.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMeal.MenuManager = RibbonControl1
         Me.txtMeal.Name = "txtMeal"
@@ -1516,7 +1516,7 @@ Partial Class MainApp
         '
         'txtIncentives
         '
-        Me.txtIncentives.Location = New System.Drawing.Point(-460, 713)
+        Me.txtIncentives.Location = New System.Drawing.Point(158, 761)
         Me.txtIncentives.Margin = New System.Windows.Forms.Padding(2)
         Me.txtIncentives.MenuManager = RibbonControl1
         Me.txtIncentives.Name = "txtIncentives"
@@ -1527,7 +1527,7 @@ Partial Class MainApp
         '
         'txtAllowance
         '
-        Me.txtAllowance.Location = New System.Drawing.Point(-460, 689)
+        Me.txtAllowance.Location = New System.Drawing.Point(158, 737)
         Me.txtAllowance.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAllowance.MenuManager = RibbonControl1
         Me.txtAllowance.Name = "txtAllowance"
@@ -1539,7 +1539,7 @@ Partial Class MainApp
         'btnPrint
         '
         Me.btnPrint.Image = CType(resources.GetObject("btnPrint.Image"), System.Drawing.Image)
-        Me.btnPrint.Location = New System.Drawing.Point(323, 1916)
+        Me.btnPrint.Location = New System.Drawing.Point(910, 1964)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(94, 38)
@@ -1549,7 +1549,7 @@ Partial Class MainApp
         '
         'txtGaji
         '
-        Me.txtGaji.Location = New System.Drawing.Point(-460, 665)
+        Me.txtGaji.Location = New System.Drawing.Point(158, 713)
         Me.txtGaji.Margin = New System.Windows.Forms.Padding(2)
         Me.txtGaji.MenuManager = RibbonControl1
         Me.txtGaji.Name = "txtGaji"
@@ -1562,7 +1562,7 @@ Partial Class MainApp
         '
         Me.btnLihat.Enabled = False
         Me.btnLihat.Image = CType(resources.GetObject("btnLihat.Image"), System.Drawing.Image)
-        Me.btnLihat.Location = New System.Drawing.Point(421, 1916)
+        Me.btnLihat.Location = New System.Drawing.Point(1008, 1964)
         Me.btnLihat.Name = "btnLihat"
         Me.btnLihat.Size = New System.Drawing.Size(149, 38)
         Me.btnLihat.StyleController = Me.LayoutControl1
@@ -1573,7 +1573,7 @@ Partial Class MainApp
         '
         Me.btnImport.Enabled = False
         Me.btnImport.Image = CType(resources.GetObject("btnImport.Image"), System.Drawing.Image)
-        Me.btnImport.Location = New System.Drawing.Point(574, 1916)
+        Me.btnImport.Location = New System.Drawing.Point(1161, 1964)
         Me.btnImport.Name = "btnImport"
         Me.btnImport.Size = New System.Drawing.Size(165, 38)
         Me.btnImport.StyleController = Me.LayoutControl1
@@ -1583,7 +1583,7 @@ Partial Class MainApp
         'btnHapus
         '
         Me.btnHapus.Image = CType(resources.GetObject("btnHapus.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(-342, 1916)
+        Me.btnHapus.Location = New System.Drawing.Point(276, 1964)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(132, 38)
         Me.btnHapus.StyleController = Me.LayoutControl1
@@ -1592,7 +1592,7 @@ Partial Class MainApp
         '
         'pictureEdit
         '
-        Me.pictureEdit.Location = New System.Drawing.Point(-606, 1882)
+        Me.pictureEdit.Location = New System.Drawing.Point(12, 1930)
         Me.pictureEdit.Name = "pictureEdit"
         Me.pictureEdit.Size = New System.Drawing.Size(396, 20)
         Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -1601,7 +1601,7 @@ Partial Class MainApp
         '
         'btnBrowse
         '
-        Me.btnBrowse.Location = New System.Drawing.Point(-306, 567)
+        Me.btnBrowse.Location = New System.Drawing.Point(312, 615)
         Me.btnBrowse.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(96, 22)
@@ -1612,7 +1612,7 @@ Partial Class MainApp
         '
         'txtBar11
         '
-        Me.txtBar11.Location = New System.Drawing.Point(-460, 543)
+        Me.txtBar11.Location = New System.Drawing.Point(158, 591)
         Me.txtBar11.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar11.MenuManager = RibbonControl1
         Me.txtBar11.Name = "txtBar11"
@@ -1622,7 +1622,7 @@ Partial Class MainApp
         '
         'txtBar9
         '
-        Me.txtBar9.Location = New System.Drawing.Point(-460, 495)
+        Me.txtBar9.Location = New System.Drawing.Point(158, 543)
         Me.txtBar9.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar9.MenuManager = RibbonControl1
         Me.txtBar9.Name = "txtBar9"
@@ -1632,7 +1632,7 @@ Partial Class MainApp
         '
         'txtBar8
         '
-        Me.txtBar8.Location = New System.Drawing.Point(-460, 471)
+        Me.txtBar8.Location = New System.Drawing.Point(158, 519)
         Me.txtBar8.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar8.MenuManager = RibbonControl1
         Me.txtBar8.Name = "txtBar8"
@@ -1643,7 +1643,7 @@ Partial Class MainApp
         'btnSimpan
         '
         Me.btnSimpan.Image = CType(resources.GetObject("btnSimpan.Image"), System.Drawing.Image)
-        Me.btnSimpan.Location = New System.Drawing.Point(-606, 1916)
+        Me.btnSimpan.Location = New System.Drawing.Point(12, 1964)
         Me.btnSimpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(140, 38)
@@ -1654,7 +1654,7 @@ Partial Class MainApp
         'btnReset
         '
         Me.btnReset.Image = CType(resources.GetObject("btnReset.Image"), System.Drawing.Image)
-        Me.btnReset.Location = New System.Drawing.Point(-462, 1916)
+        Me.btnReset.Location = New System.Drawing.Point(156, 1964)
         Me.btnReset.Margin = New System.Windows.Forms.Padding(2)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(116, 38)
@@ -1664,7 +1664,7 @@ Partial Class MainApp
         '
         'txtBar5
         '
-        Me.txtBar5.Location = New System.Drawing.Point(-460, 279)
+        Me.txtBar5.Location = New System.Drawing.Point(158, 279)
         Me.txtBar5.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar5.MenuManager = RibbonControl1
         Me.txtBar5.Name = "txtBar5"
@@ -1674,7 +1674,7 @@ Partial Class MainApp
         '
         'txtBar4
         '
-        Me.txtBar4.Location = New System.Drawing.Point(-460, 255)
+        Me.txtBar4.Location = New System.Drawing.Point(158, 255)
         Me.txtBar4.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar4.MenuManager = RibbonControl1
         Me.txtBar4.Name = "txtBar4"
@@ -1684,7 +1684,7 @@ Partial Class MainApp
         '
         'txtBar3
         '
-        Me.txtBar3.Location = New System.Drawing.Point(-460, 183)
+        Me.txtBar3.Location = New System.Drawing.Point(158, 183)
         Me.txtBar3.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar3.MenuManager = RibbonControl1
         Me.txtBar3.Name = "txtBar3"
@@ -1694,7 +1694,7 @@ Partial Class MainApp
         '
         'txtBar2
         '
-        Me.txtBar2.Location = New System.Drawing.Point(-460, 87)
+        Me.txtBar2.Location = New System.Drawing.Point(158, 87)
         Me.txtBar2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar2.MenuManager = RibbonControl1
         Me.txtBar2.Name = "txtBar2"
@@ -1704,7 +1704,7 @@ Partial Class MainApp
         '
         'txtBar1
         '
-        Me.txtBar1.Location = New System.Drawing.Point(-460, 39)
+        Me.txtBar1.Location = New System.Drawing.Point(158, 39)
         Me.txtBar1.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBar1.MenuManager = RibbonControl1
         Me.txtBar1.Name = "txtBar1"
@@ -1715,7 +1715,7 @@ Partial Class MainApp
         'btnSegarkan
         '
         Me.btnSegarkan.Image = CType(resources.GetObject("btnSegarkan.Image"), System.Drawing.Image)
-        Me.btnSegarkan.Location = New System.Drawing.Point(-196, 1916)
+        Me.btnSegarkan.Location = New System.Drawing.Point(422, 1964)
         Me.btnSegarkan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSegarkan.Name = "btnSegarkan"
         Me.btnSegarkan.Size = New System.Drawing.Size(84, 38)
@@ -1730,12 +1730,12 @@ Partial Class MainApp
         GridLevelNode2.RelationName = "Level2"
         GridLevelNode3.RelationName = "Level3"
         Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1, GridLevelNode2, GridLevelNode3})
-        Me.GridControl1.Location = New System.Drawing.Point(-196, 36)
+        Me.GridControl1.Location = New System.Drawing.Point(422, 36)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.GridControl1.MenuManager = RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(1019, 1876)
+        Me.GridControl1.Size = New System.Drawing.Size(988, 1924)
         Me.GridControl1.TabIndex = 4
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -1754,7 +1754,7 @@ Partial Class MainApp
         'txtTanggal
         '
         Me.txtTanggal.EditValue = Nothing
-        Me.txtTanggal.Location = New System.Drawing.Point(-460, 303)
+        Me.txtTanggal.Location = New System.Drawing.Point(158, 303)
         Me.txtTanggal.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTanggal.MenuManager = RibbonControl1
         Me.txtTanggal.Name = "txtTanggal"
@@ -1771,7 +1771,7 @@ Partial Class MainApp
         'txtFoto
         '
         Me.txtFoto.EditValue = CType(resources.GetObject("txtFoto.EditValue"), Object)
-        Me.txtFoto.Location = New System.Drawing.Point(-460, 567)
+        Me.txtFoto.Location = New System.Drawing.Point(158, 615)
         Me.txtFoto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFoto.MenuManager = RibbonControl1
         Me.txtFoto.Name = "txtFoto"
@@ -1784,7 +1784,7 @@ Partial Class MainApp
         'marqueBar
         '
         Me.marqueBar.EditValue = 0
-        Me.marqueBar.Location = New System.Drawing.Point(773, 1916)
+        Me.marqueBar.Location = New System.Drawing.Point(1360, 1964)
         Me.marqueBar.Margin = New System.Windows.Forms.Padding(2)
         Me.marqueBar.MenuManager = RibbonControl1
         Me.marqueBar.Name = "marqueBar"
@@ -1796,7 +1796,7 @@ Partial Class MainApp
         '
         'txtText
         '
-        Me.txtText.Location = New System.Drawing.Point(-460, 593)
+        Me.txtText.Location = New System.Drawing.Point(158, 641)
         Me.txtText.Margin = New System.Windows.Forms.Padding(2)
         Me.txtText.MenuManager = RibbonControl1
         Me.txtText.Name = "txtText"
@@ -1809,7 +1809,7 @@ Partial Class MainApp
         'txtTglInterview
         '
         Me.txtTglInterview.EditValue = Nothing
-        Me.txtTglInterview.Location = New System.Drawing.Point(-460, 519)
+        Me.txtTglInterview.Location = New System.Drawing.Point(158, 567)
         Me.txtTglInterview.MenuManager = RibbonControl1
         Me.txtTglInterview.Name = "txtTglInterview"
         Me.txtTglInterview.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1824,7 +1824,7 @@ Partial Class MainApp
         '
         'txtStatEmp
         '
-        Me.txtStatEmp.Location = New System.Drawing.Point(-460, 617)
+        Me.txtStatEmp.Location = New System.Drawing.Point(158, 665)
         Me.txtStatEmp.MenuManager = RibbonControl1
         Me.txtStatEmp.Name = "txtStatEmp"
         Me.txtStatEmp.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1836,7 +1836,7 @@ Partial Class MainApp
         'txtTrainingSampai
         '
         Me.txtTrainingSampai.EditValue = Nothing
-        Me.txtTrainingSampai.Location = New System.Drawing.Point(-460, 641)
+        Me.txtTrainingSampai.Location = New System.Drawing.Point(158, 689)
         Me.txtTrainingSampai.MenuManager = RibbonControl1
         Me.txtTrainingSampai.Name = "txtTrainingSampai"
         Me.txtTrainingSampai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1851,7 +1851,7 @@ Partial Class MainApp
         '
         'txtJnsShift
         '
-        Me.txtJnsShift.Location = New System.Drawing.Point(-460, 327)
+        Me.txtJnsShift.Location = New System.Drawing.Point(158, 327)
         Me.txtJnsShift.MenuManager = RibbonControl1
         Me.txtJnsShift.Name = "txtJnsShift"
         Me.txtJnsShift.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1862,7 +1862,7 @@ Partial Class MainApp
         '
         'txtNamaKaryawan
         '
-        Me.txtNamaKaryawan.Location = New System.Drawing.Point(-460, 63)
+        Me.txtNamaKaryawan.Location = New System.Drawing.Point(158, 63)
         Me.txtNamaKaryawan.MenuManager = RibbonControl1
         Me.txtNamaKaryawan.Name = "txtNamaKaryawan"
         Me.txtNamaKaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -1872,17 +1872,17 @@ Partial Class MainApp
         '
         'tePencarian
         '
-        Me.tePencarian.Location = New System.Drawing.Point(430, 12)
+        Me.tePencarian.Location = New System.Drawing.Point(1033, 12)
         Me.tePencarian.Margin = New System.Windows.Forms.Padding(2)
         Me.tePencarian.MenuManager = RibbonControl1
         Me.tePencarian.Name = "tePencarian"
-        Me.tePencarian.Size = New System.Drawing.Size(393, 20)
+        Me.tePencarian.Size = New System.Drawing.Size(377, 20)
         Me.tePencarian.StyleController = Me.LayoutControl1
         Me.tePencarian.TabIndex = 36
         '
         'txtStatWp
         '
-        Me.txtStatWp.Location = New System.Drawing.Point(-460, 785)
+        Me.txtStatWp.Location = New System.Drawing.Point(158, 833)
         Me.txtStatWp.Margin = New System.Windows.Forms.Padding(2)
         Me.txtStatWp.MenuManager = RibbonControl1
         Me.txtStatWp.Name = "txtStatWp"
@@ -1909,10 +1909,10 @@ Partial Class MainApp
         Me.LayoutControlGroup1.CustomizationFormText = "Root"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.SimpleSeparator1, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.lcForm, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlItem1, Me.lcProgbar, Me.EmptySpaceItem3, Me.LayoutControlItem3, Me.lc1, Me.lc2, Me.lc3, Me.lc4, Me.lc5, Me.EmptySpaceItem9, Me.lc8, Me.lc9, Me.lc11, Me.lcStatReq, Me.lcFoto, Me.lcBtnBrowse, Me.lcTglInt, Me.lcTanggal, Me.LayoutControlItem4, Me.lcBtnInfo, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.lcStatEmp, Me.lcTrainSmp, Me.lcJnsShif, Me.lcKaryawan, Me.lcsearch, Me.lcGaji, Me.LayoutControlItem2, Me.lcTunjangan, Me.lcBiayaJab, Me.lcIuranPen, Me.lcStatWp, Me.lcoda, Me.lcotc, Me.overtimehours, Me.lcded, Me.lcoad, Me.jkk, Me.pjk, Me.jht, Me.txtadddesc1, Me.txtadd1, Me.txtadddesc2, Me.txtadd2, Me.txtadddesc3, Me.txtadd3, Me.txtadddesc4, Me.txtadd4, Me.txtadddesc5, Me.txtadd5, Me.txtdeddesc1, Me.txtded1, Me.txtdeddesc2, Me.txtded2, Me.txtdeddesc3, Me.txtded3, Me.txtdeddesc4, Me.txtded4, Me.txtdeddesc5, Me.txtded5, Me.Transport, Me.compcode, Me.lcgross, Me.lcbpjs, Me.lctotalovertime, Me.lcdeductions, Me.lcnetincome, Me.lcpkp, Me.lcBtnSimpan, Me.lcBtnHapus, Me.lcBtnReset, Me.lcbutton, Me.lcjkk, Me.lcjk, Me.lcjht, Me.lclocation, Me.lcphone, Me.netosetaun, Me.bpjspercentage, Me.npwp, Me.txtbiayajabatan, Me.txtiuranpensiun, Me.lcpersenkk, Me.lcpersenjk, Me.lcpersenjht, Me.lcbiayajabatan1, Me.lciuranpensiun1, Me.lcpphutang, Me.lctaxes, Me.lcloan, Me.lclates, Me.overtimetype, Me.lcbiayajabatan, Me.lciuranpensiun, Me.lcrc, Me.lcrapel, Me.lcfm, Me.lctm, Me.lchasilrapel, Me.lcpphtahun, Me.lcpayment, Me.lcnotes, Me.lcsp1, Me.lcrotasi, Me.lcworkdate, Me.lcaddress, Me.lcemail, Me.lcposition, Me.lcFotoView, Me.lc6, Me.lc7})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(-618, 0)
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.SimpleSeparator1, Me.EmptySpaceItem1, Me.EmptySpaceItem2, Me.lcForm, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlItem1, Me.lcProgbar, Me.EmptySpaceItem3, Me.LayoutControlItem3, Me.lc1, Me.lc2, Me.lc3, Me.lc4, Me.lc5, Me.EmptySpaceItem9, Me.lc8, Me.lc9, Me.lc11, Me.lcStatReq, Me.lcFoto, Me.lcBtnBrowse, Me.lcTglInt, Me.lcTanggal, Me.LayoutControlItem4, Me.lcBtnInfo, Me.EmptySpaceItem11, Me.EmptySpaceItem12, Me.lcStatEmp, Me.lcTrainSmp, Me.lcJnsShif, Me.lcKaryawan, Me.lcsearch, Me.lcGaji, Me.LayoutControlItem2, Me.lcTunjangan, Me.lcBiayaJab, Me.lcIuranPen, Me.lcStatWp, Me.lcoda, Me.lcotc, Me.overtimehours, Me.lcded, Me.lcoad, Me.jkk, Me.pjk, Me.jht, Me.txtadddesc1, Me.txtadd1, Me.txtadddesc2, Me.txtadd2, Me.txtadddesc3, Me.txtadd3, Me.txtadddesc4, Me.txtadd4, Me.txtadddesc5, Me.txtadd5, Me.txtdeddesc1, Me.txtded1, Me.txtdeddesc2, Me.txtded2, Me.txtdeddesc3, Me.txtded3, Me.txtdeddesc4, Me.txtded4, Me.txtdeddesc5, Me.txtded5, Me.Transport, Me.compcode, Me.lcgross, Me.lcbpjs, Me.lctotalovertime, Me.lcdeductions, Me.lcnetincome, Me.lcpkp, Me.lcBtnSimpan, Me.lcBtnHapus, Me.lcBtnReset, Me.lcbutton, Me.lcjkk, Me.lcjk, Me.lcjht, Me.lcphone, Me.netosetaun, Me.bpjspercentage, Me.npwp, Me.txtbiayajabatan, Me.txtiuranpensiun, Me.lcpersenkk, Me.lcpersenjk, Me.lcpersenjht, Me.lcbiayajabatan1, Me.lciuranpensiun1, Me.lcpphutang, Me.lctaxes, Me.lcloan, Me.lclates, Me.overtimetype, Me.lcbiayajabatan, Me.lciuranpensiun, Me.lcrc, Me.lcrapel, Me.lcfm, Me.lctm, Me.lchasilrapel, Me.lcpphtahun, Me.lcpayment, Me.lcnotes, Me.lcsp1, Me.lcrotasi, Me.lcworkdate, Me.lcaddress, Me.lcemail, Me.lcposition, Me.lcFotoView, Me.lc6, Me.lc7, Me.lclocation, Me.lcstart, Me.lcfinish})
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "Root"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1453, 1978)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1422, 2026)
         Me.LayoutControlGroup1.Text = "Root"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -1920,16 +1920,16 @@ Partial Class MainApp
         '
         Me.SimpleSeparator1.AllowHotTrack = False
         Me.SimpleSeparator1.CustomizationFormText = "SimpleSeparator1"
-        Me.SimpleSeparator1.Location = New System.Drawing.Point(0, 1956)
+        Me.SimpleSeparator1.Location = New System.Drawing.Point(0, 2004)
         Me.SimpleSeparator1.Name = "SimpleSeparator1"
-        Me.SimpleSeparator1.Size = New System.Drawing.Size(1433, 2)
+        Me.SimpleSeparator1.Size = New System.Drawing.Size(1402, 2)
         Me.SimpleSeparator1.Text = "SimpleSeparator1"
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
         Me.EmptySpaceItem1.CustomizationFormText = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 1894)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 1942)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
         Me.EmptySpaceItem1.Size = New System.Drawing.Size(400, 10)
         Me.EmptySpaceItem1.Text = "EmptySpaceItem1"
@@ -1966,7 +1966,7 @@ Partial Class MainApp
         Me.EmptySpaceItem4.CustomizationFormText = "EmptySpaceItem4"
         Me.EmptySpaceItem4.Location = New System.Drawing.Point(410, 0)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(480, 24)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(465, 24)
         Me.EmptySpaceItem4.Text = "EmptySpaceItem4"
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -1974,9 +1974,9 @@ Partial Class MainApp
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
         Me.EmptySpaceItem5.CustomizationFormText = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 1946)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 1994)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(1433, 10)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(1402, 10)
         Me.EmptySpaceItem5.Text = "EmptySpaceItem5"
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -1986,7 +1986,7 @@ Partial Class MainApp
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
         Me.LayoutControlItem1.Location = New System.Drawing.Point(410, 24)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1023, 1880)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(992, 1928)
         Me.LayoutControlItem1.Text = "LayoutControlItem1"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextToControlDistance = 0
@@ -1996,7 +1996,7 @@ Partial Class MainApp
         '
         Me.lcProgbar.Control = Me.marqueBar
         Me.lcProgbar.CustomizationFormText = "LayoutControlItem2"
-        Me.lcProgbar.Location = New System.Drawing.Point(1379, 1904)
+        Me.lcProgbar.Location = New System.Drawing.Point(1348, 1952)
         Me.lcProgbar.Name = "lcProgbar"
         Me.lcProgbar.Size = New System.Drawing.Size(54, 42)
         Me.lcProgbar.Text = "lcProgbar"
@@ -2009,7 +2009,7 @@ Partial Class MainApp
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.CustomizationFormText = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(1369, 1904)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(1338, 1952)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
         Me.EmptySpaceItem3.Size = New System.Drawing.Size(10, 42)
         Me.EmptySpaceItem3.Text = "EmptySpaceItem3"
@@ -2019,7 +2019,7 @@ Partial Class MainApp
         '
         Me.LayoutControlItem3.Control = Me.btnSegarkan
         Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(410, 1904)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(410, 1952)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(88, 42)
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
@@ -2088,7 +2088,7 @@ Partial Class MainApp
         Me.EmptySpaceItem9.CustomizationFormText = "EmptySpaceItem9"
         Me.EmptySpaceItem9.Location = New System.Drawing.Point(400, 0)
         Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
-        Me.EmptySpaceItem9.Size = New System.Drawing.Size(10, 1946)
+        Me.EmptySpaceItem9.Size = New System.Drawing.Size(10, 1994)
         Me.EmptySpaceItem9.Text = "EmptySpaceItem9"
         Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
         '
@@ -2096,7 +2096,7 @@ Partial Class MainApp
         '
         Me.lc8.Control = Me.txtBar8
         Me.lc8.CustomizationFormText = "lc8"
-        Me.lc8.Location = New System.Drawing.Point(0, 459)
+        Me.lc8.Location = New System.Drawing.Point(0, 507)
         Me.lc8.Name = "lc8"
         Me.lc8.Size = New System.Drawing.Size(400, 24)
         Me.lc8.Text = "lc8"
@@ -2107,7 +2107,7 @@ Partial Class MainApp
         '
         Me.lc9.Control = Me.txtBar9
         Me.lc9.CustomizationFormText = "lc9"
-        Me.lc9.Location = New System.Drawing.Point(0, 483)
+        Me.lc9.Location = New System.Drawing.Point(0, 531)
         Me.lc9.Name = "lc9"
         Me.lc9.Size = New System.Drawing.Size(400, 24)
         Me.lc9.Text = "lc9"
@@ -2118,7 +2118,7 @@ Partial Class MainApp
         '
         Me.lc11.Control = Me.txtBar11
         Me.lc11.CustomizationFormText = "lc11"
-        Me.lc11.Location = New System.Drawing.Point(0, 531)
+        Me.lc11.Location = New System.Drawing.Point(0, 579)
         Me.lc11.Name = "lc11"
         Me.lc11.Size = New System.Drawing.Size(400, 24)
         Me.lc11.Text = "lc11"
@@ -2129,7 +2129,7 @@ Partial Class MainApp
         '
         Me.lcStatReq.Control = Me.txtText
         Me.lcStatReq.CustomizationFormText = "lc12"
-        Me.lcStatReq.Location = New System.Drawing.Point(0, 581)
+        Me.lcStatReq.Location = New System.Drawing.Point(0, 629)
         Me.lcStatReq.Name = "lcStatReq"
         Me.lcStatReq.Size = New System.Drawing.Size(400, 24)
         Me.lcStatReq.Text = "Recruitment Status"
@@ -2140,7 +2140,7 @@ Partial Class MainApp
         '
         Me.lcFoto.Control = Me.txtFoto
         Me.lcFoto.CustomizationFormText = "lc13"
-        Me.lcFoto.Location = New System.Drawing.Point(0, 555)
+        Me.lcFoto.Location = New System.Drawing.Point(0, 603)
         Me.lcFoto.Name = "lcFoto"
         Me.lcFoto.Size = New System.Drawing.Size(300, 26)
         Me.lcFoto.Text = "New Picture"
@@ -2151,7 +2151,7 @@ Partial Class MainApp
         '
         Me.lcBtnBrowse.Control = Me.btnBrowse
         Me.lcBtnBrowse.CustomizationFormText = "LayoutControlItem21"
-        Me.lcBtnBrowse.Location = New System.Drawing.Point(300, 555)
+        Me.lcBtnBrowse.Location = New System.Drawing.Point(300, 603)
         Me.lcBtnBrowse.Name = "lcBtnBrowse"
         Me.lcBtnBrowse.Size = New System.Drawing.Size(100, 26)
         Me.lcBtnBrowse.Text = "lcBtnBrowse"
@@ -2164,7 +2164,7 @@ Partial Class MainApp
         '
         Me.lcTglInt.Control = Me.txtTglInterview
         Me.lcTglInt.CustomizationFormText = "Tanggal Interview"
-        Me.lcTglInt.Location = New System.Drawing.Point(0, 507)
+        Me.lcTglInt.Location = New System.Drawing.Point(0, 555)
         Me.lcTglInt.Name = "lcTglInt"
         Me.lcTglInt.Size = New System.Drawing.Size(400, 24)
         Me.lcTglInt.Text = "Interview Date"
@@ -2186,7 +2186,7 @@ Partial Class MainApp
         '
         Me.LayoutControlItem4.Control = Me.btnImport
         Me.LayoutControlItem4.CustomizationFormText = "LayoutControlItem4"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(1180, 1904)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(1149, 1952)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(169, 42)
         Me.LayoutControlItem4.Text = "LayoutControlItem4"
@@ -2198,7 +2198,7 @@ Partial Class MainApp
         '
         Me.lcBtnInfo.Control = Me.btnLihat
         Me.lcBtnInfo.CustomizationFormText = "lcBtnInfo"
-        Me.lcBtnInfo.Location = New System.Drawing.Point(1027, 1904)
+        Me.lcBtnInfo.Location = New System.Drawing.Point(996, 1952)
         Me.lcBtnInfo.Name = "lcBtnInfo"
         Me.lcBtnInfo.Size = New System.Drawing.Size(153, 42)
         Me.lcBtnInfo.Text = "lcBtnInfo"
@@ -2210,7 +2210,7 @@ Partial Class MainApp
         '
         Me.EmptySpaceItem11.AllowHotTrack = False
         Me.EmptySpaceItem11.CustomizationFormText = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.Location = New System.Drawing.Point(1349, 1904)
+        Me.EmptySpaceItem11.Location = New System.Drawing.Point(1318, 1952)
         Me.EmptySpaceItem11.Name = "EmptySpaceItem11"
         Me.EmptySpaceItem11.Size = New System.Drawing.Size(10, 42)
         Me.EmptySpaceItem11.Text = "EmptySpaceItem11"
@@ -2220,7 +2220,7 @@ Partial Class MainApp
         '
         Me.EmptySpaceItem12.AllowHotTrack = False
         Me.EmptySpaceItem12.CustomizationFormText = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(1359, 1904)
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(1328, 1952)
         Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
         Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 42)
         Me.EmptySpaceItem12.Text = "EmptySpaceItem12"
@@ -2230,7 +2230,7 @@ Partial Class MainApp
         '
         Me.lcStatEmp.Control = Me.txtStatEmp
         Me.lcStatEmp.CustomizationFormText = "Status Pegawai"
-        Me.lcStatEmp.Location = New System.Drawing.Point(0, 605)
+        Me.lcStatEmp.Location = New System.Drawing.Point(0, 653)
         Me.lcStatEmp.Name = "lcStatEmp"
         Me.lcStatEmp.Size = New System.Drawing.Size(400, 24)
         Me.lcStatEmp.Text = "Employee Status"
@@ -2241,7 +2241,7 @@ Partial Class MainApp
         '
         Me.lcTrainSmp.Control = Me.txtTrainingSampai
         Me.lcTrainSmp.CustomizationFormText = "Tgl Akhir Training"
-        Me.lcTrainSmp.Location = New System.Drawing.Point(0, 629)
+        Me.lcTrainSmp.Location = New System.Drawing.Point(0, 677)
         Me.lcTrainSmp.Name = "lcTrainSmp"
         Me.lcTrainSmp.Size = New System.Drawing.Size(400, 24)
         Me.lcTrainSmp.Text = "Tgl Akhir Training"
@@ -2274,9 +2274,9 @@ Partial Class MainApp
         '
         Me.lcsearch.Control = Me.tePencarian
         Me.lcsearch.CustomizationFormText = "Kata Pencarian"
-        Me.lcsearch.Location = New System.Drawing.Point(890, 0)
+        Me.lcsearch.Location = New System.Drawing.Point(875, 0)
         Me.lcsearch.Name = "lcsearch"
-        Me.lcsearch.Size = New System.Drawing.Size(543, 24)
+        Me.lcsearch.Size = New System.Drawing.Size(527, 24)
         Me.lcsearch.Text = "Search"
         Me.lcsearch.TextSize = New System.Drawing.Size(143, 13)
         '
@@ -2284,7 +2284,7 @@ Partial Class MainApp
         '
         Me.lcGaji.Control = Me.txtGaji
         Me.lcGaji.CustomizationFormText = "Nominal Gaji"
-        Me.lcGaji.Location = New System.Drawing.Point(0, 653)
+        Me.lcGaji.Location = New System.Drawing.Point(0, 701)
         Me.lcGaji.Name = "lcGaji"
         Me.lcGaji.Size = New System.Drawing.Size(400, 24)
         Me.lcGaji.Text = "Basic Rate"
@@ -2295,7 +2295,7 @@ Partial Class MainApp
         '
         Me.LayoutControlItem2.Control = Me.btnPrint
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(929, 1904)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(898, 1952)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Size = New System.Drawing.Size(98, 42)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
@@ -2307,7 +2307,7 @@ Partial Class MainApp
         '
         Me.lcTunjangan.Control = Me.txtAllowance
         Me.lcTunjangan.CustomizationFormText = "Tunjangan /bln"
-        Me.lcTunjangan.Location = New System.Drawing.Point(0, 677)
+        Me.lcTunjangan.Location = New System.Drawing.Point(0, 725)
         Me.lcTunjangan.Name = "lcTunjangan"
         Me.lcTunjangan.Size = New System.Drawing.Size(400, 24)
         Me.lcTunjangan.Text = "Allowances"
@@ -2318,7 +2318,7 @@ Partial Class MainApp
         '
         Me.lcBiayaJab.Control = Me.txtIncentives
         Me.lcBiayaJab.CustomizationFormText = "Biaya Jabatan /bln"
-        Me.lcBiayaJab.Location = New System.Drawing.Point(0, 701)
+        Me.lcBiayaJab.Location = New System.Drawing.Point(0, 749)
         Me.lcBiayaJab.Name = "lcBiayaJab"
         Me.lcBiayaJab.Size = New System.Drawing.Size(400, 24)
         Me.lcBiayaJab.Text = "Incentives"
@@ -2329,7 +2329,7 @@ Partial Class MainApp
         '
         Me.lcIuranPen.Control = Me.txtMeal
         Me.lcIuranPen.CustomizationFormText = "Iuran Pensiun /bln"
-        Me.lcIuranPen.Location = New System.Drawing.Point(0, 725)
+        Me.lcIuranPen.Location = New System.Drawing.Point(0, 773)
         Me.lcIuranPen.Name = "lcIuranPen"
         Me.lcIuranPen.Size = New System.Drawing.Size(400, 24)
         Me.lcIuranPen.Text = "Table Money"
@@ -2340,7 +2340,7 @@ Partial Class MainApp
         '
         Me.lcStatWp.Control = Me.txtStatWp
         Me.lcStatWp.CustomizationFormText = "Status Wajib Pajak"
-        Me.lcStatWp.Location = New System.Drawing.Point(0, 773)
+        Me.lcStatWp.Location = New System.Drawing.Point(0, 821)
         Me.lcStatWp.Name = "lcStatWp"
         Me.lcStatWp.Size = New System.Drawing.Size(400, 24)
         Me.lcStatWp.Text = "Status Wajib Pajak"
@@ -2351,7 +2351,7 @@ Partial Class MainApp
         '
         Me.lcoda.Control = Me.labeladditional
         Me.lcoda.CustomizationFormText = "LayoutControlItem8"
-        Me.lcoda.Location = New System.Drawing.Point(0, 821)
+        Me.lcoda.Location = New System.Drawing.Point(0, 869)
         Me.lcoda.Name = "lcoda"
         Me.lcoda.Size = New System.Drawing.Size(400, 19)
         Me.lcoda.Text = "lcoda"
@@ -2363,7 +2363,7 @@ Partial Class MainApp
         '
         Me.lcotc.Control = Me.labelovertime
         Me.lcotc.CustomizationFormText = "LayoutControlItem19"
-        Me.lcotc.Location = New System.Drawing.Point(0, 960)
+        Me.lcotc.Location = New System.Drawing.Point(0, 1008)
         Me.lcotc.Name = "lcotc"
         Me.lcotc.Size = New System.Drawing.Size(400, 19)
         Me.lcotc.Text = "lcotc"
@@ -2375,7 +2375,7 @@ Partial Class MainApp
         '
         Me.overtimehours.Control = Me.txtothours
         Me.overtimehours.CustomizationFormText = "Overtime Hours"
-        Me.overtimehours.Location = New System.Drawing.Point(0, 979)
+        Me.overtimehours.Location = New System.Drawing.Point(0, 1027)
         Me.overtimehours.Name = "overtimehours"
         Me.overtimehours.Size = New System.Drawing.Size(400, 24)
         Me.overtimehours.Text = "Overtime Hours"
@@ -2385,7 +2385,7 @@ Partial Class MainApp
         '
         Me.lcded.Control = Me.labeldeductions
         Me.lcded.CustomizationFormText = "LayoutControlItem24"
-        Me.lcded.Location = New System.Drawing.Point(0, 1027)
+        Me.lcded.Location = New System.Drawing.Point(0, 1075)
         Me.lcded.Name = "lcded"
         Me.lcded.Size = New System.Drawing.Size(400, 19)
         Me.lcded.Text = "lcded"
@@ -2397,7 +2397,7 @@ Partial Class MainApp
         '
         Me.lcoad.Control = Me.LabelControl4
         Me.lcoad.CustomizationFormText = "Other Additional Deductions"
-        Me.lcoad.Location = New System.Drawing.Point(0, 1142)
+        Me.lcoad.Location = New System.Drawing.Point(0, 1190)
         Me.lcoad.Name = "lcoad"
         Me.lcoad.Size = New System.Drawing.Size(400, 19)
         Me.lcoad.Text = "Other Additional Deductions"
@@ -2409,7 +2409,7 @@ Partial Class MainApp
         '
         Me.jkk.Control = Me.cmboxjkk
         Me.jkk.CustomizationFormText = "Jaminan Kecelakaan Kerja"
-        Me.jkk.Location = New System.Drawing.Point(0, 1281)
+        Me.jkk.Location = New System.Drawing.Point(0, 1329)
         Me.jkk.Name = "jkk"
         Me.jkk.Size = New System.Drawing.Size(200, 24)
         Me.jkk.Text = "Jaminan Kecelakaan Kerja"
@@ -2419,7 +2419,7 @@ Partial Class MainApp
         '
         Me.pjk.Control = Me.cmboxjk
         Me.pjk.CustomizationFormText = "Premi Jaminan Kematian"
-        Me.pjk.Location = New System.Drawing.Point(0, 1305)
+        Me.pjk.Location = New System.Drawing.Point(0, 1353)
         Me.pjk.Name = "pjk"
         Me.pjk.Size = New System.Drawing.Size(200, 24)
         Me.pjk.Text = "Premi Jaminan Kematian"
@@ -2429,7 +2429,7 @@ Partial Class MainApp
         '
         Me.jht.Control = Me.cmboxjht
         Me.jht.CustomizationFormText = "Jaminan Hari Tua"
-        Me.jht.Location = New System.Drawing.Point(0, 1329)
+        Me.jht.Location = New System.Drawing.Point(0, 1377)
         Me.jht.Name = "jht"
         Me.jht.Size = New System.Drawing.Size(200, 24)
         Me.jht.Text = "Jaminan Hari Tua"
@@ -2439,7 +2439,7 @@ Partial Class MainApp
         '
         Me.txtadddesc1.Control = Me.txtadddc1
         Me.txtadddesc1.CustomizationFormText = "Desc"
-        Me.txtadddesc1.Location = New System.Drawing.Point(0, 840)
+        Me.txtadddesc1.Location = New System.Drawing.Point(0, 888)
         Me.txtadddesc1.Name = "txtadddesc1"
         Me.txtadddesc1.Size = New System.Drawing.Size(200, 24)
         Me.txtadddesc1.Text = "Description 1"
@@ -2449,7 +2449,7 @@ Partial Class MainApp
         '
         Me.txtadd1.Control = Me.txt1add
         Me.txtadd1.CustomizationFormText = "LayoutControlItem7"
-        Me.txtadd1.Location = New System.Drawing.Point(200, 840)
+        Me.txtadd1.Location = New System.Drawing.Point(200, 888)
         Me.txtadd1.Name = "txtadd1"
         Me.txtadd1.Size = New System.Drawing.Size(200, 24)
         Me.txtadd1.Text = "Additional 1"
@@ -2459,7 +2459,7 @@ Partial Class MainApp
         '
         Me.txtadddesc2.Control = Me.txtadddc2
         Me.txtadddesc2.CustomizationFormText = "Description 2"
-        Me.txtadddesc2.Location = New System.Drawing.Point(0, 864)
+        Me.txtadddesc2.Location = New System.Drawing.Point(0, 912)
         Me.txtadddesc2.Name = "txtadddesc2"
         Me.txtadddesc2.Size = New System.Drawing.Size(200, 24)
         Me.txtadddesc2.Text = "Description 2"
@@ -2469,7 +2469,7 @@ Partial Class MainApp
         '
         Me.txtadd2.Control = Me.txt2add
         Me.txtadd2.CustomizationFormText = "Additional 2"
-        Me.txtadd2.Location = New System.Drawing.Point(200, 864)
+        Me.txtadd2.Location = New System.Drawing.Point(200, 912)
         Me.txtadd2.Name = "txtadd2"
         Me.txtadd2.Size = New System.Drawing.Size(200, 24)
         Me.txtadd2.Text = "Additional 2"
@@ -2479,7 +2479,7 @@ Partial Class MainApp
         '
         Me.txtadddesc3.Control = Me.txtadddc3
         Me.txtadddesc3.CustomizationFormText = "Description 3"
-        Me.txtadddesc3.Location = New System.Drawing.Point(0, 888)
+        Me.txtadddesc3.Location = New System.Drawing.Point(0, 936)
         Me.txtadddesc3.Name = "txtadddesc3"
         Me.txtadddesc3.Size = New System.Drawing.Size(200, 24)
         Me.txtadddesc3.Text = "Description 3"
@@ -2489,7 +2489,7 @@ Partial Class MainApp
         '
         Me.txtadd3.Control = Me.txt3add
         Me.txtadd3.CustomizationFormText = "Additional 3"
-        Me.txtadd3.Location = New System.Drawing.Point(200, 888)
+        Me.txtadd3.Location = New System.Drawing.Point(200, 936)
         Me.txtadd3.Name = "txtadd3"
         Me.txtadd3.Size = New System.Drawing.Size(200, 24)
         Me.txtadd3.Text = "Additional 3"
@@ -2499,7 +2499,7 @@ Partial Class MainApp
         '
         Me.txtadddesc4.Control = Me.txtadddc4
         Me.txtadddesc4.CustomizationFormText = "Description 4"
-        Me.txtadddesc4.Location = New System.Drawing.Point(0, 912)
+        Me.txtadddesc4.Location = New System.Drawing.Point(0, 960)
         Me.txtadddesc4.Name = "txtadddesc4"
         Me.txtadddesc4.Size = New System.Drawing.Size(200, 24)
         Me.txtadddesc4.Text = "Description 4"
@@ -2509,7 +2509,7 @@ Partial Class MainApp
         '
         Me.txtadd4.Control = Me.txt4add
         Me.txtadd4.CustomizationFormText = "Additional 4"
-        Me.txtadd4.Location = New System.Drawing.Point(200, 912)
+        Me.txtadd4.Location = New System.Drawing.Point(200, 960)
         Me.txtadd4.Name = "txtadd4"
         Me.txtadd4.Size = New System.Drawing.Size(200, 24)
         Me.txtadd4.Text = "Additional 4"
@@ -2519,7 +2519,7 @@ Partial Class MainApp
         '
         Me.txtadddesc5.Control = Me.txtadddc5
         Me.txtadddesc5.CustomizationFormText = "Description 5"
-        Me.txtadddesc5.Location = New System.Drawing.Point(0, 936)
+        Me.txtadddesc5.Location = New System.Drawing.Point(0, 984)
         Me.txtadddesc5.Name = "txtadddesc5"
         Me.txtadddesc5.Size = New System.Drawing.Size(200, 24)
         Me.txtadddesc5.Text = "Description 5"
@@ -2529,7 +2529,7 @@ Partial Class MainApp
         '
         Me.txtadd5.Control = Me.txt5add
         Me.txtadd5.CustomizationFormText = "Additional 5"
-        Me.txtadd5.Location = New System.Drawing.Point(200, 936)
+        Me.txtadd5.Location = New System.Drawing.Point(200, 984)
         Me.txtadd5.Name = "txtadd5"
         Me.txtadd5.Size = New System.Drawing.Size(200, 24)
         Me.txtadd5.Text = "Additional 5"
@@ -2539,7 +2539,7 @@ Partial Class MainApp
         '
         Me.txtdeddesc1.Control = Me.txtdeddc1
         Me.txtdeddesc1.CustomizationFormText = "Description 1"
-        Me.txtdeddesc1.Location = New System.Drawing.Point(0, 1161)
+        Me.txtdeddesc1.Location = New System.Drawing.Point(0, 1209)
         Me.txtdeddesc1.Name = "txtdeddesc1"
         Me.txtdeddesc1.Size = New System.Drawing.Size(200, 24)
         Me.txtdeddesc1.Text = "Description 1"
@@ -2549,7 +2549,7 @@ Partial Class MainApp
         '
         Me.txtded1.Control = Me.txt1ded
         Me.txtded1.CustomizationFormText = "Deductions 1"
-        Me.txtded1.Location = New System.Drawing.Point(200, 1161)
+        Me.txtded1.Location = New System.Drawing.Point(200, 1209)
         Me.txtded1.Name = "txtded1"
         Me.txtded1.Size = New System.Drawing.Size(200, 24)
         Me.txtded1.Text = "Deductions 1"
@@ -2559,7 +2559,7 @@ Partial Class MainApp
         '
         Me.txtdeddesc2.Control = Me.txtdeddc2
         Me.txtdeddesc2.CustomizationFormText = "Description 2"
-        Me.txtdeddesc2.Location = New System.Drawing.Point(0, 1185)
+        Me.txtdeddesc2.Location = New System.Drawing.Point(0, 1233)
         Me.txtdeddesc2.Name = "txtdeddesc2"
         Me.txtdeddesc2.Size = New System.Drawing.Size(200, 24)
         Me.txtdeddesc2.Text = "Description 2"
@@ -2569,7 +2569,7 @@ Partial Class MainApp
         '
         Me.txtded2.Control = Me.txt2ded
         Me.txtded2.CustomizationFormText = "Deductions 2"
-        Me.txtded2.Location = New System.Drawing.Point(200, 1185)
+        Me.txtded2.Location = New System.Drawing.Point(200, 1233)
         Me.txtded2.Name = "txtded2"
         Me.txtded2.Size = New System.Drawing.Size(200, 24)
         Me.txtded2.Text = "Deductions 2"
@@ -2579,7 +2579,7 @@ Partial Class MainApp
         '
         Me.txtdeddesc3.Control = Me.txtdeddc3
         Me.txtdeddesc3.CustomizationFormText = "LayoutControlItem22"
-        Me.txtdeddesc3.Location = New System.Drawing.Point(0, 1209)
+        Me.txtdeddesc3.Location = New System.Drawing.Point(0, 1257)
         Me.txtdeddesc3.Name = "txtdeddesc3"
         Me.txtdeddesc3.Size = New System.Drawing.Size(200, 24)
         Me.txtdeddesc3.Text = "Description 3"
@@ -2589,7 +2589,7 @@ Partial Class MainApp
         '
         Me.txtded3.Control = Me.txt3ded
         Me.txtded3.CustomizationFormText = "LayoutControlItem23"
-        Me.txtded3.Location = New System.Drawing.Point(200, 1209)
+        Me.txtded3.Location = New System.Drawing.Point(200, 1257)
         Me.txtded3.Name = "txtded3"
         Me.txtded3.Size = New System.Drawing.Size(200, 24)
         Me.txtded3.Text = "Deductions 3"
@@ -2599,7 +2599,7 @@ Partial Class MainApp
         '
         Me.txtdeddesc4.Control = Me.txtdeddc4
         Me.txtdeddesc4.CustomizationFormText = "Description 4"
-        Me.txtdeddesc4.Location = New System.Drawing.Point(0, 1233)
+        Me.txtdeddesc4.Location = New System.Drawing.Point(0, 1281)
         Me.txtdeddesc4.Name = "txtdeddesc4"
         Me.txtdeddesc4.Size = New System.Drawing.Size(200, 24)
         Me.txtdeddesc4.Text = "Description 4"
@@ -2609,7 +2609,7 @@ Partial Class MainApp
         '
         Me.txtded4.Control = Me.txt4ded
         Me.txtded4.CustomizationFormText = "Deductions 4"
-        Me.txtded4.Location = New System.Drawing.Point(200, 1233)
+        Me.txtded4.Location = New System.Drawing.Point(200, 1281)
         Me.txtded4.Name = "txtded4"
         Me.txtded4.Size = New System.Drawing.Size(200, 24)
         Me.txtded4.Text = "Deductions 4"
@@ -2619,7 +2619,7 @@ Partial Class MainApp
         '
         Me.txtdeddesc5.Control = Me.txtdeddc5
         Me.txtdeddesc5.CustomizationFormText = "Description 5"
-        Me.txtdeddesc5.Location = New System.Drawing.Point(0, 1257)
+        Me.txtdeddesc5.Location = New System.Drawing.Point(0, 1305)
         Me.txtdeddesc5.Name = "txtdeddesc5"
         Me.txtdeddesc5.Size = New System.Drawing.Size(200, 24)
         Me.txtdeddesc5.Text = "Description 5"
@@ -2629,7 +2629,7 @@ Partial Class MainApp
         '
         Me.txtded5.Control = Me.txt5ded
         Me.txtded5.CustomizationFormText = "Deductions 5"
-        Me.txtded5.Location = New System.Drawing.Point(200, 1257)
+        Me.txtded5.Location = New System.Drawing.Point(200, 1305)
         Me.txtded5.Name = "txtded5"
         Me.txtded5.Size = New System.Drawing.Size(200, 24)
         Me.txtded5.Text = "Deductions 5"
@@ -2639,7 +2639,7 @@ Partial Class MainApp
         '
         Me.Transport.Control = Me.txtTransport
         Me.Transport.CustomizationFormText = "Transport"
-        Me.Transport.Location = New System.Drawing.Point(0, 749)
+        Me.Transport.Location = New System.Drawing.Point(0, 797)
         Me.Transport.Name = "Transport"
         Me.Transport.Size = New System.Drawing.Size(400, 24)
         Me.Transport.Text = "Transport Rate"
@@ -2659,7 +2659,7 @@ Partial Class MainApp
         '
         Me.lcgross.Control = Me.txtgross
         Me.lcgross.CustomizationFormText = "Gross :"
-        Me.lcgross.Location = New System.Drawing.Point(0, 1510)
+        Me.lcgross.Location = New System.Drawing.Point(0, 1558)
         Me.lcgross.Name = "lcgross"
         Me.lcgross.Size = New System.Drawing.Size(400, 24)
         Me.lcgross.Text = "Gross :"
@@ -2669,7 +2669,7 @@ Partial Class MainApp
         '
         Me.lcbpjs.Control = Me.txtbpjs
         Me.lcbpjs.CustomizationFormText = "BPJS :"
-        Me.lcbpjs.Location = New System.Drawing.Point(0, 1534)
+        Me.lcbpjs.Location = New System.Drawing.Point(0, 1582)
         Me.lcbpjs.Name = "lcbpjs"
         Me.lcbpjs.Size = New System.Drawing.Size(400, 24)
         Me.lcbpjs.Text = "BPJS :"
@@ -2679,7 +2679,7 @@ Partial Class MainApp
         '
         Me.lctotalovertime.Control = Me.txtotsalary
         Me.lctotalovertime.CustomizationFormText = "Total Overtime Salary :"
-        Me.lctotalovertime.Location = New System.Drawing.Point(0, 1558)
+        Me.lctotalovertime.Location = New System.Drawing.Point(0, 1606)
         Me.lctotalovertime.Name = "lctotalovertime"
         Me.lctotalovertime.Size = New System.Drawing.Size(400, 24)
         Me.lctotalovertime.Text = "Total Overtime Salary :"
@@ -2689,7 +2689,7 @@ Partial Class MainApp
         '
         Me.lcdeductions.Control = Me.txtdeduction
         Me.lcdeductions.CustomizationFormText = "Total Deductions :"
-        Me.lcdeductions.Location = New System.Drawing.Point(0, 1582)
+        Me.lcdeductions.Location = New System.Drawing.Point(0, 1630)
         Me.lcdeductions.Name = "lcdeductions"
         Me.lcdeductions.Size = New System.Drawing.Size(400, 24)
         Me.lcdeductions.Text = "Total Deductions :"
@@ -2699,7 +2699,7 @@ Partial Class MainApp
         '
         Me.lcnetincome.Control = Me.txtnetincome
         Me.lcnetincome.CustomizationFormText = "NET Income :"
-        Me.lcnetincome.Location = New System.Drawing.Point(0, 1606)
+        Me.lcnetincome.Location = New System.Drawing.Point(0, 1654)
         Me.lcnetincome.Name = "lcnetincome"
         Me.lcnetincome.Size = New System.Drawing.Size(400, 24)
         Me.lcnetincome.Text = "NET Income :"
@@ -2709,7 +2709,7 @@ Partial Class MainApp
         '
         Me.lcpkp.Control = Me.txtpkp
         Me.lcpkp.CustomizationFormText = "Penghasilan Kena Pajak"
-        Me.lcpkp.Location = New System.Drawing.Point(0, 1630)
+        Me.lcpkp.Location = New System.Drawing.Point(0, 1678)
         Me.lcpkp.Name = "lcpkp"
         Me.lcpkp.Size = New System.Drawing.Size(400, 24)
         Me.lcpkp.Text = "Penghasilan Kena Pajak"
@@ -2719,7 +2719,7 @@ Partial Class MainApp
         '
         Me.lcBtnSimpan.Control = Me.btnSimpan
         Me.lcBtnSimpan.CustomizationFormText = "LayoutControlItem12"
-        Me.lcBtnSimpan.Location = New System.Drawing.Point(0, 1904)
+        Me.lcBtnSimpan.Location = New System.Drawing.Point(0, 1952)
         Me.lcBtnSimpan.Name = "lcBtnSimpan"
         Me.lcBtnSimpan.Size = New System.Drawing.Size(144, 42)
         Me.lcBtnSimpan.Text = "lcBtnSimpan"
@@ -2732,7 +2732,7 @@ Partial Class MainApp
         '
         Me.lcBtnHapus.Control = Me.btnHapus
         Me.lcBtnHapus.CustomizationFormText = "LayoutControlItem2"
-        Me.lcBtnHapus.Location = New System.Drawing.Point(264, 1904)
+        Me.lcBtnHapus.Location = New System.Drawing.Point(264, 1952)
         Me.lcBtnHapus.Name = "lcBtnHapus"
         Me.lcBtnHapus.Size = New System.Drawing.Size(136, 42)
         Me.lcBtnHapus.Text = "lcBtnHapus"
@@ -2745,7 +2745,7 @@ Partial Class MainApp
         '
         Me.lcBtnReset.Control = Me.btnReset
         Me.lcBtnReset.CustomizationFormText = "LayoutControlItem11"
-        Me.lcBtnReset.Location = New System.Drawing.Point(144, 1904)
+        Me.lcBtnReset.Location = New System.Drawing.Point(144, 1952)
         Me.lcBtnReset.Name = "lcBtnReset"
         Me.lcBtnReset.Size = New System.Drawing.Size(120, 42)
         Me.lcBtnReset.Text = "lcBtnReset"
@@ -2758,7 +2758,7 @@ Partial Class MainApp
         '
         Me.lcbutton.Control = Me.countButton
         Me.lcbutton.CustomizationFormText = "lcbutton"
-        Me.lcbutton.Location = New System.Drawing.Point(0, 1468)
+        Me.lcbutton.Location = New System.Drawing.Point(0, 1516)
         Me.lcbutton.Name = "lcbutton"
         Me.lcbutton.Size = New System.Drawing.Size(400, 42)
         Me.lcbutton.Text = "lcbutton"
@@ -2770,7 +2770,7 @@ Partial Class MainApp
         '
         Me.lcjkk.Control = Me.txtjkk
         Me.lcjkk.CustomizationFormText = "Jaminan Kecelakaan Kerja :"
-        Me.lcjkk.Location = New System.Drawing.Point(0, 1702)
+        Me.lcjkk.Location = New System.Drawing.Point(0, 1750)
         Me.lcjkk.Name = "lcjkk"
         Me.lcjkk.Size = New System.Drawing.Size(400, 24)
         Me.lcjkk.Text = "Jaminan Kecelakaan Kerja :"
@@ -2780,7 +2780,7 @@ Partial Class MainApp
         '
         Me.lcjk.Control = Me.txtjk
         Me.lcjk.CustomizationFormText = "Premi Jaminan Kematian :"
-        Me.lcjk.Location = New System.Drawing.Point(0, 1726)
+        Me.lcjk.Location = New System.Drawing.Point(0, 1774)
         Me.lcjk.Name = "lcjk"
         Me.lcjk.Size = New System.Drawing.Size(400, 24)
         Me.lcjk.Text = "Premi Jaminan Kematian :"
@@ -2790,21 +2790,11 @@ Partial Class MainApp
         '
         Me.lcjht.Control = Me.txtjht
         Me.lcjht.CustomizationFormText = "Jaminan Hari Tua :"
-        Me.lcjht.Location = New System.Drawing.Point(0, 1750)
+        Me.lcjht.Location = New System.Drawing.Point(0, 1798)
         Me.lcjht.Name = "lcjht"
         Me.lcjht.Size = New System.Drawing.Size(400, 24)
         Me.lcjht.Text = "Jaminan Hari Tua :"
         Me.lcjht.TextSize = New System.Drawing.Size(143, 13)
-        '
-        'lclocation
-        '
-        Me.lclocation.Control = Me.txtlocation
-        Me.lclocation.CustomizationFormText = "lclocation"
-        Me.lclocation.Location = New System.Drawing.Point(0, 195)
-        Me.lclocation.Name = "lclocation"
-        Me.lclocation.Size = New System.Drawing.Size(400, 24)
-        Me.lclocation.Text = "lclocation"
-        Me.lclocation.TextSize = New System.Drawing.Size(143, 13)
         '
         'lcphone
         '
@@ -2820,7 +2810,7 @@ Partial Class MainApp
         '
         Me.netosetaun.Control = Me.lcnettosetahun
         Me.netosetaun.CustomizationFormText = "LayoutControlItem9"
-        Me.netosetaun.Location = New System.Drawing.Point(0, 1774)
+        Me.netosetaun.Location = New System.Drawing.Point(0, 1822)
         Me.netosetaun.Name = "netosetaun"
         Me.netosetaun.Size = New System.Drawing.Size(400, 24)
         Me.netosetaun.Text = "Netto Setahun"
@@ -2830,7 +2820,7 @@ Partial Class MainApp
         '
         Me.bpjspercentage.Control = Me.txtbpjspercentage
         Me.bpjspercentage.CustomizationFormText = "BPJS Percentage"
-        Me.bpjspercentage.Location = New System.Drawing.Point(0, 1118)
+        Me.bpjspercentage.Location = New System.Drawing.Point(0, 1166)
         Me.bpjspercentage.Name = "bpjspercentage"
         Me.bpjspercentage.Size = New System.Drawing.Size(400, 24)
         Me.bpjspercentage.Text = "BPJS Percentage"
@@ -2840,7 +2830,7 @@ Partial Class MainApp
         '
         Me.npwp.Control = Me.cmboxnpwp
         Me.npwp.CustomizationFormText = "Memiliki NPWP ?"
-        Me.npwp.Location = New System.Drawing.Point(0, 797)
+        Me.npwp.Location = New System.Drawing.Point(0, 845)
         Me.npwp.Name = "npwp"
         Me.npwp.Size = New System.Drawing.Size(400, 24)
         Me.npwp.Text = "Memiliki NPWP ?"
@@ -2850,7 +2840,7 @@ Partial Class MainApp
         '
         Me.txtbiayajabatan.Control = Me.txthasilbjabatan
         Me.txtbiayajabatan.CustomizationFormText = "Biaya Jabatan"
-        Me.txtbiayajabatan.Location = New System.Drawing.Point(0, 1798)
+        Me.txtbiayajabatan.Location = New System.Drawing.Point(0, 1846)
         Me.txtbiayajabatan.Name = "txtbiayajabatan"
         Me.txtbiayajabatan.Size = New System.Drawing.Size(400, 24)
         Me.txtbiayajabatan.Text = "Biaya Jabatan"
@@ -2860,7 +2850,7 @@ Partial Class MainApp
         '
         Me.txtiuranpensiun.Control = Me.txthasiliuranpensiun
         Me.txtiuranpensiun.CustomizationFormText = "Iuran Pensiun"
-        Me.txtiuranpensiun.Location = New System.Drawing.Point(0, 1822)
+        Me.txtiuranpensiun.Location = New System.Drawing.Point(0, 1870)
         Me.txtiuranpensiun.Name = "txtiuranpensiun"
         Me.txtiuranpensiun.Size = New System.Drawing.Size(400, 24)
         Me.txtiuranpensiun.Text = "Iuran Pensiun"
@@ -2870,7 +2860,7 @@ Partial Class MainApp
         '
         Me.lcpersenkk.Control = Me.txtpkk
         Me.lcpersenkk.CustomizationFormText = "Persentase Kecelakaan Kerja"
-        Me.lcpersenkk.Location = New System.Drawing.Point(200, 1281)
+        Me.lcpersenkk.Location = New System.Drawing.Point(200, 1329)
         Me.lcpersenkk.Name = "lcpersenkk"
         Me.lcpersenkk.Size = New System.Drawing.Size(200, 24)
         Me.lcpersenkk.Text = "Persentase Kecelakaan Kerja"
@@ -2881,7 +2871,7 @@ Partial Class MainApp
         '
         Me.lcpersenjk.Control = Me.txtpjk
         Me.lcpersenjk.CustomizationFormText = "Persentase Jaminan Kematian"
-        Me.lcpersenjk.Location = New System.Drawing.Point(200, 1305)
+        Me.lcpersenjk.Location = New System.Drawing.Point(200, 1353)
         Me.lcpersenjk.Name = "lcpersenjk"
         Me.lcpersenjk.Size = New System.Drawing.Size(200, 24)
         Me.lcpersenjk.Text = "Persentase Jaminan Kematian"
@@ -2892,7 +2882,7 @@ Partial Class MainApp
         '
         Me.lcpersenjht.Control = Me.txtpjht
         Me.lcpersenjht.CustomizationFormText = "Persentase J. Hari Tua"
-        Me.lcpersenjht.Location = New System.Drawing.Point(200, 1329)
+        Me.lcpersenjht.Location = New System.Drawing.Point(200, 1377)
         Me.lcpersenjht.Name = "lcpersenjht"
         Me.lcpersenjht.Size = New System.Drawing.Size(200, 24)
         Me.lcpersenjht.Text = "Persentase J. Hari Tua"
@@ -2903,7 +2893,7 @@ Partial Class MainApp
         '
         Me.lcbiayajabatan1.Control = Me.txtpbj
         Me.lcbiayajabatan1.CustomizationFormText = "Persentase B.Jabatan"
-        Me.lcbiayajabatan1.Location = New System.Drawing.Point(200, 1353)
+        Me.lcbiayajabatan1.Location = New System.Drawing.Point(200, 1401)
         Me.lcbiayajabatan1.Name = "lcbiayajabatan1"
         Me.lcbiayajabatan1.Size = New System.Drawing.Size(200, 24)
         Me.lcbiayajabatan1.Text = "Persentase B.Jabatan"
@@ -2914,7 +2904,7 @@ Partial Class MainApp
         '
         Me.lciuranpensiun1.Control = Me.txtpip
         Me.lciuranpensiun1.CustomizationFormText = "Persentase Iuran Pensiun"
-        Me.lciuranpensiun1.Location = New System.Drawing.Point(200, 1377)
+        Me.lciuranpensiun1.Location = New System.Drawing.Point(200, 1425)
         Me.lciuranpensiun1.Name = "lciuranpensiun1"
         Me.lciuranpensiun1.Size = New System.Drawing.Size(200, 24)
         Me.lciuranpensiun1.Text = "Persentase Iuran Pensiun"
@@ -2925,7 +2915,7 @@ Partial Class MainApp
         '
         Me.lcpphutang.Control = Me.txtpphterutang
         Me.lcpphutang.CustomizationFormText = "Pph Terhutang"
-        Me.lcpphutang.Location = New System.Drawing.Point(0, 1654)
+        Me.lcpphutang.Location = New System.Drawing.Point(0, 1702)
         Me.lcpphutang.Name = "lcpphutang"
         Me.lcpphutang.Size = New System.Drawing.Size(400, 24)
         Me.lcpphutang.Text = "Pph Terhutang"
@@ -2935,7 +2925,7 @@ Partial Class MainApp
         '
         Me.lctaxes.Control = Me.txttaxes
         Me.lctaxes.CustomizationFormText = "Taxes"
-        Me.lctaxes.Location = New System.Drawing.Point(0, 1046)
+        Me.lctaxes.Location = New System.Drawing.Point(0, 1094)
         Me.lctaxes.Name = "lctaxes"
         Me.lctaxes.Size = New System.Drawing.Size(400, 24)
         Me.lctaxes.Text = "Taxes"
@@ -2945,7 +2935,7 @@ Partial Class MainApp
         '
         Me.lcloan.Control = Me.txtloan
         Me.lcloan.CustomizationFormText = "Loan"
-        Me.lcloan.Location = New System.Drawing.Point(0, 1070)
+        Me.lcloan.Location = New System.Drawing.Point(0, 1118)
         Me.lcloan.Name = "lcloan"
         Me.lcloan.Size = New System.Drawing.Size(400, 24)
         Me.lcloan.Text = "Loan"
@@ -2955,7 +2945,7 @@ Partial Class MainApp
         '
         Me.lclates.Control = Me.txtlates
         Me.lclates.CustomizationFormText = "Lates"
-        Me.lclates.Location = New System.Drawing.Point(0, 1094)
+        Me.lclates.Location = New System.Drawing.Point(0, 1142)
         Me.lclates.Name = "lclates"
         Me.lclates.Size = New System.Drawing.Size(400, 24)
         Me.lclates.Text = "Lates"
@@ -2965,7 +2955,7 @@ Partial Class MainApp
         '
         Me.overtimetype.Control = Me.cmboxottype
         Me.overtimetype.CustomizationFormText = "Overtime Type"
-        Me.overtimetype.Location = New System.Drawing.Point(0, 1003)
+        Me.overtimetype.Location = New System.Drawing.Point(0, 1051)
         Me.overtimetype.Name = "overtimetype"
         Me.overtimetype.Size = New System.Drawing.Size(400, 24)
         Me.overtimetype.Text = "Overtime Type"
@@ -2975,7 +2965,7 @@ Partial Class MainApp
         '
         Me.lcbiayajabatan.Control = Me.cmboxbj
         Me.lcbiayajabatan.CustomizationFormText = "Biaya Jabatan"
-        Me.lcbiayajabatan.Location = New System.Drawing.Point(0, 1353)
+        Me.lcbiayajabatan.Location = New System.Drawing.Point(0, 1401)
         Me.lcbiayajabatan.Name = "lcbiayajabatan"
         Me.lcbiayajabatan.Size = New System.Drawing.Size(200, 24)
         Me.lcbiayajabatan.Text = "Biaya Jabatan"
@@ -2985,7 +2975,7 @@ Partial Class MainApp
         '
         Me.lciuranpensiun.Control = Me.cmboxiuranpensiun
         Me.lciuranpensiun.CustomizationFormText = "Iuran Pensiun"
-        Me.lciuranpensiun.Location = New System.Drawing.Point(0, 1377)
+        Me.lciuranpensiun.Location = New System.Drawing.Point(0, 1425)
         Me.lciuranpensiun.Name = "lciuranpensiun"
         Me.lciuranpensiun.Size = New System.Drawing.Size(200, 24)
         Me.lciuranpensiun.Text = "Iuran Pensiun"
@@ -2995,7 +2985,7 @@ Partial Class MainApp
         '
         Me.lcrc.Control = Me.LabelControl2
         Me.lcrc.CustomizationFormText = "lcrc"
-        Me.lcrc.Location = New System.Drawing.Point(0, 1401)
+        Me.lcrc.Location = New System.Drawing.Point(0, 1449)
         Me.lcrc.Name = "lcrc"
         Me.lcrc.Size = New System.Drawing.Size(400, 19)
         Me.lcrc.Text = "lcrc"
@@ -3007,7 +2997,7 @@ Partial Class MainApp
         '
         Me.lcrapel.Control = Me.txtrapel
         Me.lcrapel.CustomizationFormText = "LayoutControlItem9"
-        Me.lcrapel.Location = New System.Drawing.Point(0, 1420)
+        Me.lcrapel.Location = New System.Drawing.Point(0, 1468)
         Me.lcrapel.Name = "lcrapel"
         Me.lcrapel.Size = New System.Drawing.Size(400, 24)
         Me.lcrapel.Text = "Rapel Rate"
@@ -3017,7 +3007,7 @@ Partial Class MainApp
         '
         Me.lcfm.Control = Me.frommonth
         Me.lcfm.CustomizationFormText = "From Month"
-        Me.lcfm.Location = New System.Drawing.Point(0, 1444)
+        Me.lcfm.Location = New System.Drawing.Point(0, 1492)
         Me.lcfm.Name = "lcfm"
         Me.lcfm.Size = New System.Drawing.Size(200, 24)
         Me.lcfm.Text = "From Month"
@@ -3027,7 +3017,7 @@ Partial Class MainApp
         '
         Me.lctm.Control = Me.tomonth
         Me.lctm.CustomizationFormText = "To Month"
-        Me.lctm.Location = New System.Drawing.Point(200, 1444)
+        Me.lctm.Location = New System.Drawing.Point(200, 1492)
         Me.lctm.Name = "lctm"
         Me.lctm.Size = New System.Drawing.Size(200, 24)
         Me.lctm.Text = "To Month"
@@ -3037,7 +3027,7 @@ Partial Class MainApp
         '
         Me.lchasilrapel.Control = Me.rapel
         Me.lchasilrapel.CustomizationFormText = "Rapel"
-        Me.lchasilrapel.Location = New System.Drawing.Point(0, 1846)
+        Me.lchasilrapel.Location = New System.Drawing.Point(0, 1894)
         Me.lchasilrapel.Name = "lchasilrapel"
         Me.lchasilrapel.Size = New System.Drawing.Size(400, 24)
         Me.lchasilrapel.Text = "Rapel"
@@ -3047,7 +3037,7 @@ Partial Class MainApp
         '
         Me.lcpphtahun.Control = Me.txtpajakpph
         Me.lcpphtahun.CustomizationFormText = "Pajak Pph / Tahun"
-        Me.lcpphtahun.Location = New System.Drawing.Point(0, 1678)
+        Me.lcpphtahun.Location = New System.Drawing.Point(0, 1726)
         Me.lcpphtahun.Name = "lcpphtahun"
         Me.lcpphtahun.Size = New System.Drawing.Size(400, 24)
         Me.lcpphtahun.Text = "Pajak Pph / Tahun"
@@ -3067,9 +3057,9 @@ Partial Class MainApp
         '
         Me.lcnotes.Control = Me.btnNotes
         Me.lcnotes.CustomizationFormText = "lcnotes"
-        Me.lcnotes.Location = New System.Drawing.Point(802, 1904)
+        Me.lcnotes.Location = New System.Drawing.Point(767, 1952)
         Me.lcnotes.Name = "lcnotes"
-        Me.lcnotes.Size = New System.Drawing.Size(127, 42)
+        Me.lcnotes.Size = New System.Drawing.Size(131, 42)
         Me.lcnotes.Text = "lcnotes"
         Me.lcnotes.TextSize = New System.Drawing.Size(0, 0)
         Me.lcnotes.TextToControlDistance = 0
@@ -3079,9 +3069,9 @@ Partial Class MainApp
         '
         Me.lcsp1.Control = Me.sp1
         Me.lcsp1.CustomizationFormText = "lcsp1"
-        Me.lcsp1.Location = New System.Drawing.Point(627, 1904)
+        Me.lcsp1.Location = New System.Drawing.Point(636, 1952)
         Me.lcsp1.Name = "lcsp1"
-        Me.lcsp1.Size = New System.Drawing.Size(175, 42)
+        Me.lcsp1.Size = New System.Drawing.Size(131, 42)
         Me.lcsp1.Text = "lcsp1"
         Me.lcsp1.TextSize = New System.Drawing.Size(0, 0)
         Me.lcsp1.TextToControlDistance = 0
@@ -3091,9 +3081,9 @@ Partial Class MainApp
         '
         Me.lcrotasi.Control = Me.SimpleButton1
         Me.lcrotasi.CustomizationFormText = "Rotasi or Mutasi"
-        Me.lcrotasi.Location = New System.Drawing.Point(498, 1904)
+        Me.lcrotasi.Location = New System.Drawing.Point(498, 1952)
         Me.lcrotasi.Name = "lcrotasi"
-        Me.lcrotasi.Size = New System.Drawing.Size(129, 42)
+        Me.lcrotasi.Size = New System.Drawing.Size(138, 42)
         Me.lcrotasi.Text = "Rotasi or Mutasi"
         Me.lcrotasi.TextSize = New System.Drawing.Size(0, 0)
         Me.lcrotasi.TextToControlDistance = 0
@@ -3103,7 +3093,7 @@ Partial Class MainApp
         '
         Me.lcworkdate.Control = Me.txtworkdate
         Me.lcworkdate.CustomizationFormText = "Work Dates"
-        Me.lcworkdate.Location = New System.Drawing.Point(0, 363)
+        Me.lcworkdate.Location = New System.Drawing.Point(0, 411)
         Me.lcworkdate.Name = "lcworkdate"
         Me.lcworkdate.Size = New System.Drawing.Size(400, 24)
         Me.lcworkdate.Text = "Work Dates"
@@ -3113,7 +3103,7 @@ Partial Class MainApp
         '
         Me.lcaddress.Control = Me.txtaddress
         Me.lcaddress.CustomizationFormText = "Addresses"
-        Me.lcaddress.Location = New System.Drawing.Point(0, 411)
+        Me.lcaddress.Location = New System.Drawing.Point(0, 459)
         Me.lcaddress.Name = "lcaddress"
         Me.lcaddress.Size = New System.Drawing.Size(400, 24)
         Me.lcaddress.Text = "Addresses"
@@ -3123,7 +3113,7 @@ Partial Class MainApp
         '
         Me.lcemail.Control = Me.txtemail
         Me.lcemail.CustomizationFormText = "Email"
-        Me.lcemail.Location = New System.Drawing.Point(0, 435)
+        Me.lcemail.Location = New System.Drawing.Point(0, 483)
         Me.lcemail.Name = "lcemail"
         Me.lcemail.Size = New System.Drawing.Size(400, 24)
         Me.lcemail.Text = "Email"
@@ -3143,7 +3133,7 @@ Partial Class MainApp
         '
         Me.lcFotoView.Control = Me.pictureEdit
         Me.lcFotoView.CustomizationFormText = "lcFotoView"
-        Me.lcFotoView.Location = New System.Drawing.Point(0, 1870)
+        Me.lcFotoView.Location = New System.Drawing.Point(0, 1918)
         Me.lcFotoView.Name = "lcFotoView"
         Me.lcFotoView.Size = New System.Drawing.Size(400, 24)
         Me.lcFotoView.Text = "lcFotoView"
@@ -3155,7 +3145,7 @@ Partial Class MainApp
         '
         Me.lc6.Control = Me.txtbar6
         Me.lc6.CustomizationFormText = "lc6"
-        Me.lc6.Location = New System.Drawing.Point(0, 339)
+        Me.lc6.Location = New System.Drawing.Point(0, 387)
         Me.lc6.Name = "lc6"
         Me.lc6.Size = New System.Drawing.Size(400, 24)
         Me.lc6.Text = "lc6"
@@ -3165,7 +3155,7 @@ Partial Class MainApp
         '
         Me.lc7.Control = Me.txtbar7
         Me.lc7.CustomizationFormText = "lc7"
-        Me.lc7.Location = New System.Drawing.Point(0, 387)
+        Me.lc7.Location = New System.Drawing.Point(0, 435)
         Me.lc7.Name = "lc7"
         Me.lc7.Size = New System.Drawing.Size(400, 24)
         Me.lc7.Text = "lc7"
@@ -3195,13 +3185,64 @@ Partial Class MainApp
         '
         Me.ProductsTableAdapter3.ClearBeforeFill = True
         '
-        'testlabel
+        'txtlocation
         '
-        Me.testlabel.Location = New System.Drawing.Point(348, 128)
-        Me.testlabel.Name = "testlabel"
-        Me.testlabel.Size = New System.Drawing.Size(66, 13)
-        Me.testlabel.TabIndex = 3
-        Me.testlabel.Text = "LabelControl3"
+        Me.txtlocation.Location = New System.Drawing.Point(158, 207)
+        Me.txtlocation.MenuManager = RibbonControl1
+        Me.txtlocation.Name = "txtlocation"
+        Me.txtlocation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtlocation.Properties.Items.AddRange(New Object() {"Head Office", "Factory"})
+        Me.txtlocation.Size = New System.Drawing.Size(250, 20)
+        Me.txtlocation.StyleController = Me.LayoutControl1
+        Me.txtlocation.TabIndex = 96
+        '
+        'lclocation
+        '
+        Me.lclocation.Control = Me.txtlocation
+        Me.lclocation.CustomizationFormText = "lclocation"
+        Me.lclocation.Location = New System.Drawing.Point(0, 195)
+        Me.lclocation.Name = "lclocation"
+        Me.lclocation.Size = New System.Drawing.Size(400, 24)
+        Me.lclocation.Text = "lclocation"
+        Me.lclocation.TextSize = New System.Drawing.Size(143, 13)
+        '
+        'txtstart
+        '
+        Me.txtstart.Location = New System.Drawing.Point(158, 351)
+        Me.txtstart.MenuManager = RibbonControl1
+        Me.txtstart.Name = "txtstart"
+        Me.txtstart.Size = New System.Drawing.Size(250, 20)
+        Me.txtstart.StyleController = Me.LayoutControl1
+        Me.txtstart.TabIndex = 97
+        '
+        'lcstart
+        '
+        Me.lcstart.Control = Me.txtstart
+        Me.lcstart.CustomizationFormText = "lcstart"
+        Me.lcstart.Location = New System.Drawing.Point(0, 339)
+        Me.lcstart.Name = "lcstart"
+        Me.lcstart.Size = New System.Drawing.Size(400, 24)
+        Me.lcstart.Text = "lcstart"
+        Me.lcstart.TextSize = New System.Drawing.Size(143, 13)
+        '
+        'txtfinish
+        '
+        Me.txtfinish.Location = New System.Drawing.Point(158, 375)
+        Me.txtfinish.MenuManager = RibbonControl1
+        Me.txtfinish.Name = "txtfinish"
+        Me.txtfinish.Size = New System.Drawing.Size(250, 20)
+        Me.txtfinish.StyleController = Me.LayoutControl1
+        Me.txtfinish.TabIndex = 98
+        '
+        'lcfinish
+        '
+        Me.lcfinish.Control = Me.txtfinish
+        Me.lcfinish.CustomizationFormText = "lcfinish"
+        Me.lcfinish.Location = New System.Drawing.Point(0, 363)
+        Me.lcfinish.Name = "lcfinish"
+        Me.lcfinish.Size = New System.Drawing.Size(400, 24)
+        Me.lcfinish.Text = "lcfinish"
+        Me.lcfinish.TextSize = New System.Drawing.Size(143, 13)
         '
         'MainApp
         '
@@ -3210,7 +3251,6 @@ Partial Class MainApp
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(856, 505)
         Me.ControlBox = False
-        Me.Controls.Add(Me.testlabel)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(RibbonControl1)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -3252,7 +3292,6 @@ Partial Class MainApp
         CType(Me.txthasilbjabatan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcnettosetahun.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtphone.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtlocation.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtjht.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtjk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtjkk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3403,7 +3442,6 @@ Partial Class MainApp
         CType(Me.lcjkk, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcjk, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcjht, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lclocation, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcphone, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.netosetaun, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bpjspercentage, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3439,8 +3477,13 @@ Partial Class MainApp
         CType(Me.lcFotoView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lc6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lc7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtlocation.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lclocation, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtstart.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcstart, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtfinish.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcfinish, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
@@ -3628,8 +3671,6 @@ Partial Class MainApp
     Friend WithEvents lcjk As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lcjht As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents ProductsTableAdapter2 As XtraReportsDemos.OddEvenStyles.dsOddEvenStylesTableAdapters.ProductsTableAdapter
-    Friend WithEvents txtlocation As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents lclocation As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtphone As DevExpress.XtraEditors.TextEdit
     Friend WithEvents lcphone As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lcnettosetahun As DevExpress.XtraEditors.TextEdit
@@ -3697,5 +3738,10 @@ Partial Class MainApp
     Friend WithEvents lc6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtbar7 As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents lc7 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents testlabel As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtlocation As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents lclocation As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtstart As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents lcstart As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtfinish As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents lcfinish As DevExpress.XtraLayout.LayoutControlItem
 End Class

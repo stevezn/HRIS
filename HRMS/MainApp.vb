@@ -7,7 +7,6 @@ Imports System.Windows.Forms
 Imports System.Web.Script.Serialization
 
 Public Class MainApp
-
     'recruitment
     Dim connectionString As String = "Server=localhost; User Id=root; Password=; Database=db_hris"
     Dim SQLConnection As MySqlConnection = New MySqlConnection
@@ -47,11 +46,13 @@ Public Class MainApp
         txtBar3.Text = ""
         txtBar4.Text = ""
         txtBar5.Text = ""
-        txtBar6.Text = ""
-        txtBar7.Text = ""
+        txtbar6.Text = ""
+        txtbar7.Text = ""
         txtBar8.Text = ""
         txtBar9.Text = ""
         txtText.Text = ""
+        txtstart.Text = ""
+        txtfinish.Text = ""
         txtlocation.Text = ""
         txtphone.Text = ""
         txtadddc1.Text = ""
@@ -130,6 +131,7 @@ Public Class MainApp
         txtpayment.Text = ""
         tomonth.Text = ""
         txtworkdate.Text = ""
+        txtJnsShift.Text = ""
         'pictureEdit.Controls.Remove()
     End Sub
 
@@ -139,8 +141,8 @@ Public Class MainApp
         txtBar3.Text = ""
         txtBar4.Text = ""
         txtBar5.Text = ""
-        txtBar6.Text = ""
-        txtBar7.Text = ""
+        txtbar6.Text = ""
+        txtbar7.Text = ""
         txtBar8.Text = ""
         txtBar9.Text = ""
         txtText.Text = ""
@@ -152,6 +154,10 @@ Public Class MainApp
         txtTrainingSampai.Text = ""
         txtworkdate.Text = ""
         txtposition.Text = ""
+        txtstart.Text = ""
+        txtfinish.Text = ""
+        lcstart.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcfinish.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcsearch.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcrotasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcnotes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -259,6 +265,7 @@ Public Class MainApp
 #Region "menu bar"
     Private Sub BarButtonItem1_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcForm.Text = "Recruitment Form"
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -275,7 +282,7 @@ Public Class MainApp
         lc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc1.Text = "ID Req"
         lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc2.Text = "Interview Ke"
+        lc2.Text = "Interview Times"
         lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc3.Text = "Full Name"
         lc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -288,6 +295,8 @@ Public Class MainApp
         lc7.Text = "Religion"
         lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc8.Text = "ID Card Number"
+        lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+
         lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -301,6 +310,7 @@ Public Class MainApp
         reset()
         resetclear()
         lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcForm.Text = "Employee Form"
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -331,8 +341,7 @@ Public Class MainApp
         lc6.Text = "Gender"
         lc7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc7.Text = "Religion"
-        lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc8.Text = "ID Card Number"
+        lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lclocation.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lclocation.Text = "Office Location"
         lcphone.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -349,6 +358,7 @@ Public Class MainApp
         resetclear()
         reset()
         lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcForm.Text = "Payroll Form"
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         netosetaun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -446,6 +456,7 @@ Public Class MainApp
         reset()
         resetclear()
         lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcForm.Text = "Attendance Form"
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -455,21 +466,20 @@ Public Class MainApp
         GridView1.Columns.Clear()
         btnLihat.Enabled = False
         btnImport.Enabled = False
-        lc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc1.Text = "Id Absensi"
+        lc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         loadDataKaryawan()
         lcKaryawan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc2.Text = "Employee Code"
         lcTanggal.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcTanggal.Text = "Absence Date"
+        lcTanggal.Text = "Attendance Date"
         lcJnsShif.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc6.Text = "Starting Hours (00.00)"
-        lc7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc7.Text = "Finish Hours (00.00)"
-        lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc8.Text = "Overtime Hours"
+        lcstart.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcstart.Text = "Sign In Time"
+        lcfinish.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcfinish.Text = "Sign Out Time"
+        'lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc8.Text = "Overtime Hours"
         btnLihat.Enabled = False
         btnImport.Enabled = False
         loadDataReq()
@@ -504,8 +514,8 @@ Public Class MainApp
         Dim sqlCommand As New MySqlCommand
         Try
             If barJudul.Caption = "Module Recruitment" Then
-                sqlCommand.CommandText = "Select id_rec, InterviewKe, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Status FROM db_recruitment" +
-                                         " WHERE InterviewKe Like '%" + tePencarian.Text + "%' or " +
+                sqlCommand.CommandText = "Select id_rec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Status FROM db_recruitment" +
+                                         " WHERE InterviewTimes Like '%" + tePencarian.Text + "%' or " +
                                          " FullName like'%" + tePencarian.Text + "%' or " +
                                          " PlaceOfBirth like'%" + tePencarian.Text + "%' or " +
                                          " DateOfBirth like'%" + tePencarian.Text + "%' or " +
@@ -639,7 +649,7 @@ Public Class MainApp
                 loaddatapayroll()
             End If
         ElseIf barJudul.Caption = "Module Attendance" Then
-            If txtNamaKaryawan.Text = "" Or lc2.Text = "" Then
+            If txtNamaKaryawan.Text = "" Then
                 MsgBox("Insert Employee Code and Name")
             Else
                 InsertAtt()
@@ -676,8 +686,6 @@ Public Class MainApp
     Private Sub btnImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImport.Click
         importData()
         updatestats()
-        autoEmpCode()
-        autoIDrec()
     End Sub
 
     Dim infoForm As New infoReq
@@ -704,19 +712,20 @@ Public Class MainApp
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
-        testlabel.Text = "0000"
-
+        Dim res As String
+        Dim tes As String
+        res = Date.Now + "0000"
         Dim sqlCommand As New MySqlCommand
         Try
-            sqlCommand.CommandText = "INSERT INTO db_pegawai (FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Photo, status, CompanyCode, EmployeeCode, OfficeLocation, PhoneNumber, TrainingSampai, JenisPegawai)" +
-                                     "SELECT FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Photo, @status, @CompanyCode, @EmployeeCode, @OfficeLocation, @PhoneNumber, @TrainingSampai, @JenisPegawai FROM db_recruitment WHERE Status='Accepted'"
+            sqlCommand.CommandText = "INSERT INTO db_pegawai (FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, status, CompanyCode, EmployeeCode, OfficeLocation, PhoneNumber, TrainingSampai, JenisPegawai)" +
+                                     "SELECT FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, @status, @CompanyCode, @EmployeeCode, @OfficeLocation, @PhoneNumber, @TrainingSampai, @JenisPegawai FROM db_recruitment WHERE Status='Accepted'"
             sqlCommand.Parameters.AddWithValue("@Status", "Active")
             sqlCommand.Parameters.AddWithValue("@CompanyCode", "Fill This")
-            sqlCommand.Parameters.AddWithValue("@EmployeeCode", "")
+            sqlCommand.Parameters.AddWithValue("@EmployeeCode", res)
             sqlCommand.Parameters.AddWithValue("@OfficeLocation", "Fill This")
             sqlCommand.Parameters.AddWithValue("@PhoneNumber", "Fill This")
-            sqlCommand.Parameters.AddWithValue("@TrainingSampai", "")
-            sqlCommand.Parameters.AddWithValue("@JenisPegawai", "")
+            sqlCommand.Parameters.AddWithValue("@TrainingSampai", "Null")
+            sqlCommand.Parameters.AddWithValue("@JenisPegawai", "Fill This")
             sqlCommand.Connection = SQLConnection
             sqlCommand.ExecuteNonQuery()
             SQLConnection.Close()
@@ -726,6 +735,7 @@ Public Class MainApp
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
 
     Private Sub autoEmpCode()
         Dim tempstr As String = ""
@@ -754,7 +764,33 @@ Public Class MainApp
         End Try
     End Sub
 
-
+    Private Sub autoid()
+        Dim str As String = ""
+        Dim strisi As String = ""
+        SQLConnection = New MySqlConnection
+        Dim rd As MySqlDataReader
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "SELECT * FROM db_recruitment ORDER BY id_rec desc"
+            rd = sqlcommand.ExecuteReader
+            If rd.Read Then
+                str = Mid(CType(rd.Item("id_rec"), String), 2, 2)
+                strisi = CType(Val(str) + 1, String)
+                txtBar2.Text = Mid("0000", 1, 2 - strisi.Length) & strisi
+            Else
+                txtBar2.Text = "0001"
+            End If
+            sqlcommand.Parameters.AddWithValue("@id_rec", txtBar2.Text)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
 
     Private Sub autoIDrec()
         Dim str As String = ""
@@ -770,11 +806,11 @@ Public Class MainApp
             If rd.Read Then
                 str = Mid(CType(rd.Item("id_rec"), String), 2, 2)
                 strisi = CType(Val(str) + 1, String)
-                testlabel.Text = Mid("0000", 1, 2 - strisi.Length) & strisi
+                txtBar2.Text = Mid("0000", 1, 2 - strisi.Length) & strisi
             Else
-                testlabel.Text = "0001"
+                txtBar2.Text = "0001"
             End If
-            sqlcommand.Parameters.AddWithValue("@id_rec", testlabel.Text)
+            sqlcommand.Parameters.AddWithValue("@id_rec", txtBar2.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             SQLConnection.Close()
@@ -899,7 +935,7 @@ Public Class MainApp
         Dim sqlCommand As New MySqlCommand
         Try
             If barJudul.Caption = "Module Recruitment" Then
-                sqlCommand.CommandText = "Select id_rec, InterviewKe, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, InterviewDate, Status from db_recruitment"
+                sqlCommand.CommandText = "Select id_rec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, InterviewDate, Status from db_recruitment"
             ElseIf barJudul.Caption = "Module Employee" Then
                 sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, Status, TrainingSampai FROM db_pegawai"
             ElseIf barJudul.Caption = "Module Payroll" Then
@@ -910,7 +946,7 @@ Public Class MainApp
                 '                          " WHERE a.EmployeeCode = b.EmployeeCode" +
                 '                         " GROUP BY SUBSTRING(b.tanggal, 1,2), SUBSTRING(b.tanggal, 7,10)"
             ElseIf barJudul.Caption = "Module Attendance" Then
-                sqlCommand.CommandText = "SELECT a.id_absensi, a.EmployeeCode, b.FullName, a.tanggal, a.shift, a.jam_mulai, a.jam_selesai FROM db_absensi a, db_pegawai b WHERE a.EmployeeCode=b.EmployeeCode"
+                sqlCommand.CommandText = "SELECT EmployeeCode, FullName, Tanggal, Shift, JamMulai, JamSelesai FROM db_absensi"
             ElseIf barJudul.Caption = "Module Payment Details" Then
                 sqlCommand.CommandText = "SELECT EmployeeCode, PaymentDate, FullName, BasicRate, Gross, Bpjs, OvertimeSalary, TotalDeductions, NetIncome, JaminanKecelakaanKerja, PremiJaminanKematian, JaminanHariTua, BiayaJabatan, IuranPensiun, PphTerhutang, PajakPphPerTahun, PenghasilanKenaPajak, NettoSetahun, StatusWajibPajak, Rapel FROM db_payrolldetails"
             ElseIf barJudul.Caption = "Employee Menus" Then
@@ -1087,10 +1123,11 @@ Public Class MainApp
         Try
             If act = "edit" Then
                 str_carSql = "UPDATE db_recruitment SET" +
-                       " InterviewKe = @InterviewKe" +
+                       " InterviewTimes = @InterviewTimes" +
                        ", FullName = @FullName" +
                        ", PlaceOfBirth = @PlaceOfBirth" +
                        ", DateOfBirth = @DateOfBirth" +
+                       ", Address = @Address" +
                        ", Gender  = @Gender" +
                        ", Religion = @Religion" +
                        ", IdNumber = @IdNumber" +
@@ -1101,12 +1138,13 @@ Public Class MainApp
                 sqlCommand.Connection = SQLConnection
                 sqlCommand.CommandText = str_carSql
                 sqlCommand.Parameters.AddWithValue("@id_rec", txtBar1.Text)
-                sqlCommand.Parameters.AddWithValue("@InterviewKe", txtBar2.Text)
+                sqlCommand.Parameters.AddWithValue("@InterviewTimes", txtBar2.Text)
                 sqlCommand.Parameters.AddWithValue("@FullName", txtBar3.Text)
                 sqlCommand.Parameters.AddWithValue("@PlaceOfBirth", txtBar4.Text)
                 sqlCommand.Parameters.AddWithValue("@DateOfBirth", txtTanggal.Text)
-                sqlCommand.Parameters.AddWithValue("@Gender", txtBar6.Text)
-                sqlCommand.Parameters.AddWithValue("@Religion", txtBar7.Text)
+                sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text)
+                sqlCommand.Parameters.AddWithValue("@Gender", txtbar6.Text)
+                sqlCommand.Parameters.AddWithValue("@Religion", txtbar7.Text)
                 sqlCommand.Parameters.AddWithValue("@IdNumber", txtBar8.Text)
                 If Not txtFoto.Text Is Nothing Then 'Jika ada file yang akan disimpan
                     Dim param As New MySqlParameter("@Photo", ImageToByte(pictureEdit))
@@ -1118,17 +1156,18 @@ Public Class MainApp
                 sqlCommand.Parameters.AddWithValue("@InterviewDate", txtTglInterview.Text)
             ElseIf act = "input" Then
                 str_carSql = "INSERT INTO db_recruitment " +
-                       "(id_rec, InterviewKe, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Photo, Status, InterviewDate) " +
-                       "values (@id_rec,@InterviewKe,@FullName,@PlaceOfBirth,@DateOfBirth,@Gender,@Religion,@IdNumber,@Photo,@Status, @InterviewDate)"
+                       "(id_rec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, Status, InterviewDate) " +
+                       "values (@id_rec,@InterviewTimes,@FullName,@PlaceOfBirth,@DateOfBirth,@Address,@Gender,@Religion,@IdNumber,@Photo,@Status,@InterviewDate)"
                 sqlCommand.Connection = SQLConnection
                 sqlCommand.CommandText = str_carSql
                 sqlCommand.Parameters.AddWithValue("@id_rec", txtBar1.Text)
-                sqlCommand.Parameters.AddWithValue("@InterviewKe", txtBar2.Text)
+                sqlCommand.Parameters.AddWithValue("@InterviewTimes", txtBar2.Text)
                 sqlCommand.Parameters.AddWithValue("@FullName", txtBar3.Text)
                 sqlCommand.Parameters.AddWithValue("@PlaceOfBirth", txtBar4.Text)
                 sqlCommand.Parameters.AddWithValue("@DateOfBirth", txtTanggal.Text)
-                sqlCommand.Parameters.AddWithValue("@Gender", txtBar6.Text)
-                sqlCommand.Parameters.AddWithValue("@Religion", txtBar7.Text)
+                sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text)
+                sqlCommand.Parameters.AddWithValue("@Gender", txtbar6.Text)
+                sqlCommand.Parameters.AddWithValue("@Religion", txtbar7.Text)
                 sqlCommand.Parameters.AddWithValue("@IdNumber", txtBar8.Text)
                 If Not txtFoto.Text Is Nothing Then 'Jika ada file yang akan disimpan
                     Dim param As New MySqlParameter("@Photo", ImageToByte(pictureEdit))
@@ -1414,8 +1453,8 @@ Public Class MainApp
             sqlCommand.Parameters.AddWithValue("@Position", txtposition.Text)
             sqlCommand.Parameters.AddWithValue("@PlaceOfBirth", txtBar4.Text)
             sqlCommand.Parameters.AddWithValue("@DateOfBirth", txtTanggal.Text)
-            sqlCommand.Parameters.AddWithValue("@Gender", txtBar6.Text)
-            sqlCommand.Parameters.AddWithValue("@Religion", txtBar7.Text)
+            sqlCommand.Parameters.AddWithValue("@Gender", txtbar6.Text)
+            sqlCommand.Parameters.AddWithValue("@Religion", txtbar7.Text)
             sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text)
             sqlCommand.Parameters.AddWithValue("@Email", txtemail.Text)
             sqlCommand.Parameters.AddWithValue("@IdNumber", txtBar8.Text)
@@ -1458,27 +1497,25 @@ Public Class MainApp
         Try
             If act = "edit" Then
                 str_carSql = "UPDATE db_absensi SET" +
-                       " EmployeeCode = @EmployeeCode" +
-                       ", tanggal = @tanggal" +
-                       ", shift = @shift" +
-                       ", jam_mulai = @jam_mulai" +
-                       ", jam_selesai = @jam_selesai" +
-                       ", lama_lembur = @lama_lembur" +
-                       " WHERE id_absensi = @id_absensi"
+                        " FullName = @FullName" +
+                       ", Tanggal = @Tanggal" +
+                       ", Shift = @Shift" +
+                       ", JamMulai = @JamMulai" +
+                       ", JamSelesai = @JamSelesai" +
+                       " WHERE EmployeeCode = @EmployeeCode"
             Else
                 str_carSql = "INSERT INTO db_absensi " +
-                            "(id_absensi, EmployeeCode, tanggal, shift, jam_mulai, jam_selesai, lama_lembur) " +
-                            "values (@id_absensi,@EmployeeCode,@tanggal,@shift,@jam_mulai,@jam_selesai, @lama_lembur)"
+                            "(EmployeeCode, FullName, Tanggal, Shift, JamMulai, JamSelesai) " +
+                            "values (@EmployeeCode,@FullName,@Tanggal,@Shift,@JamMulai,@JamSelesai)"
             End If
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
-            sqlCommand.Parameters.AddWithValue("@id_absensi", txtBar1.Text)
             sqlCommand.Parameters.AddWithValue("@EmployeeCode", txtBar2.Text)
-            sqlCommand.Parameters.AddWithValue("@tanggal", txtTanggal.Text)
-            sqlCommand.Parameters.AddWithValue("@shift", txtJnsShift.Text)
-            sqlCommand.Parameters.AddWithValue("@jam_mulai", txtBar6.Text)
-            sqlCommand.Parameters.AddWithValue("@jam_selesai", txtBar7.Text)
-            sqlCommand.Parameters.AddWithValue("@lama_lembur", txtBar8.Text)
+            sqlCommand.Parameters.AddWithValue("@FullName", txtNamaKaryawan.Text)
+            sqlCommand.Parameters.AddWithValue("@Tanggal", txtTanggal.Text)
+            sqlCommand.Parameters.AddWithValue("@Shift", txtJnsShift.Text)
+            sqlCommand.Parameters.AddWithValue("@JamMulai", txtstart.Text)
+            sqlCommand.Parameters.AddWithValue("@JamSelesai", txtfinish.Text)
             sqlCommand.ExecuteNonQuery()
             If act = "input" Then
                 MessageBox.Show("Data Successfully Added!")
@@ -1500,20 +1537,19 @@ Public Class MainApp
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         Dim mess As String
-        mess = CType(MsgBox("Sure to delete ?", MsgBoxStyle.YesNo, "Warning"), String)
+        mess = CType(MsgBox("Sure To Delete ?", MsgBoxStyle.YesNo, "Warning"), String)
         If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
             sqlcommand.Connection = SQLConnection
             sqlcommand.CommandType = CommandType.Text
             sqlcommand.CommandText = "DELETE FROM db_sp WHERE EmployeeCode = " + txtBar2.Text
             sqlcommand.ExecuteNonQuery()
-            MsgBox("Data Removed !", MsgBoxStyle.Information, "Success")
+            MsgBox("Data Succesfully Removed!", MsgBoxStyle.Information, "Success")
             GridControl1.RefreshDataSource()
             loadDataReq()
             SQLConnection.Close()
         End If
         Return Nothing
     End Function
-
 
     Public Function DeleteReq() As Boolean
         SQLConnection = New MySqlConnection()
@@ -1529,7 +1565,7 @@ Public Class MainApp
             sqlCommand.CommandType = CommandType.Text
             sqlCommand.CommandText = "DELETE FROM db_recruitment WHERE id_rec = " + txtBar1.Text
             sqlCommand.ExecuteNonQuery()
-            MsgBox("Data Removed !", MsgBoxStyle.Information, "Success")
+            MsgBox("Data Successfully Removed", MsgBoxStyle.Information, "Success")
             GridControl1.RefreshDataSource()
             loadDataReq()
             SQLConnection.Close()
@@ -1552,7 +1588,7 @@ Public Class MainApp
                 sqlCommand.CommandType = CommandType.Text
                 sqlCommand.CommandText = "DELETE FROM db_pegawai WHERE IdNumber = " + txtBar8.Text
                 sqlCommand.ExecuteNonQuery()
-                MsgBox("Data Removed !", MsgBoxStyle.Information, "Success")
+                MsgBox("Data Succesfully Removed !", MsgBoxStyle.Information, "Success")
                 GridControl1.RefreshDataSource()
                 loadDataReq()
                 SQLConnection.Close()
@@ -1585,22 +1621,22 @@ Public Class MainApp
     End Function
 
     Public Function DeleteAtt() As Boolean
-        SQLConnection = New MySqlConnection()
+        SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
-        Dim sqlCommand As New MySqlCommand
-        'Dim str_carSql As String
+        Dim sqlcommand As New MySqlCommand
+
         Dim pesan As String
         pesan = CType(MsgBox("Sure To Delete ?", MsgBoxStyle.YesNo, "Warning"), String)
         If CType(pesan, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
-            sqlCommand.Connection = SQLConnection
-            sqlCommand.CommandType = CommandType.Text
-            sqlCommand.CommandText = "DELETE FROM db_absensi WHERE id_absensi = " + txtBar1.Text
-            sqlCommand.ExecuteNonQuery()
-            MsgBox("Data Removed !", MsgBoxStyle.Information, "Success")
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandType = CommandType.Text
+            sqlcommand.CommandText = "DELETE FROM db_absensi WHERE EmployeeCode = " + txtBar2.Text
+            sqlcommand.ExecuteNonQuery()
+            MsgBox("Data Successfully Removed!", MsgBoxStyle.Information, "Success")
             GridControl1.RefreshDataSource()
             loadDataReq()
-            SQLConnection.Close()
+            SQLConnection.CloseAsync()
         End If
         Return Nothing
     End Function
@@ -1659,8 +1695,8 @@ Public Class MainApp
         txtBar3.Text = ""
         txtBar4.Text = ""
         txtBar5.Text = ""
-        txtBar6.Text = ""
-        txtBar7.Text = ""
+        txtbar6.Text = ""
+        txtbar7.Text = ""
         txtBar8.Text = ""
         txtBar9.Text = ""
         txtText.Text = ""
@@ -1686,7 +1722,7 @@ Public Class MainApp
     Dim act As String = ""
     Dim spform As New SPForms
 
-    Private Sub GridView1_FocusedRowChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+    Private Sub GridView1_FocusedRowChanged(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
@@ -1722,10 +1758,11 @@ Public Class MainApp
                 txtBar3.Text = datatabl.Rows(0).Item(2).ToString()
                 txtBar4.Text = datatabl.Rows(0).Item(3).ToString()
                 txtTanggal.Text = datatabl.Rows(0).Item(4).ToString()
-                txtBar6.Text = datatabl.Rows(0).Item(5).ToString()
-                txtBar7.Text = datatabl.Rows(0).Item(6).ToString()
-                txtBar8.Text = datatabl.Rows(0).Item(7).ToString()
-                Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(8), Byte())
+                txtaddress.Text = datatabl.Rows(0).Item(5).ToString()
+                txtbar6.Text = datatabl.Rows(0).Item(6).ToString()
+                txtbar7.Text = datatabl.Rows(0).Item(7).ToString()
+                txtBar8.Text = datatabl.Rows(0).Item(8).ToString()
+                Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(9), Byte())
                 If filefoto.Length > 0 Then
                     pictureEdit.Image = ByteToImage(filefoto)
                 Else
@@ -1734,8 +1771,8 @@ Public Class MainApp
                 End If
                 'tampilkan foto nya belum
                 '
-                txtText.Text = datatabl.Rows(0).Item(9).ToString()
-                txtTglInterview.Text = datatabl(0).Item(10).ToString()
+                txtText.Text = datatabl.Rows(0).Item(10).ToString()
+                txtTglInterview.Text = datatabl(0).Item(11).ToString()
             End If
         ElseIf barJudul.Caption = "Module Employee" Then
             Dim param2 As String = ""
@@ -1767,8 +1804,8 @@ Public Class MainApp
                 txtposition.Text = datatabl.Rows(0).Item(3).ToString()
                 txtBar4.Text = datatabl.Rows(0).Item(4).ToString()
                 txtTanggal.Text = datatabl.Rows(0).Item(5).ToString()
-                txtBar6.Text = datatabl.Rows(0).Item(6).ToString()
-                txtBar7.Text = datatabl.Rows(0).Item(7).ToString()
+                txtbar6.Text = datatabl.Rows(0).Item(6).ToString()
+                txtbar7.Text = datatabl.Rows(0).Item(7).ToString()
                 txtaddress.Text = datatabl.Rows(0).Item(8).ToString()
                 txtemail.Text = datatabl.Rows(0).Item(9).ToString()
                 txtBar8.Text = datatabl.Rows(0).Item(10).ToString()
@@ -1879,14 +1916,13 @@ Public Class MainApp
                 txtrapel.Text = datatabl.Rows(0).Item(61).ToString()
                 rapel.Text = datatabl.Rows(0).Item(62).ToString()
                 txtpajakpph.Text = datatabl.Rows(0).Item(63).ToString()
-                'txtNamaKaryawan.Text = datatabl.Rows(0).Item(62).ToString()
             End If
-
         ElseIf barJudul.Caption = "Module Attendance" Then
             Dim param2 As String = ""
             Try
-                param2 = "and a.id_absensi='" + GridView1.GetFocusedRowCellValue("id_absensi").ToString() + "'"
+                param2 = "and EmployeeCode ='" + GridView1.GetFocusedRowCellValue("EmployeeCode").ToString() + "'"
             Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
             If param2 = "" Then
                 act = "input"
@@ -1894,7 +1930,7 @@ Public Class MainApp
                 act = "edit"
             End If
             Try
-                sqlCommand.CommandText = "SELECT a.id_absensi, a.EmployeeCode, b.FullName, a.tanggal, a.shift, a.jam_mulai, a.jam_selesai FROM db_absensi a, db_pegawai b WHERE a.EmployeeCode = b.EmployeeCode " + param2.ToString()
+                sqlCommand.CommandText = "SELECT * FROM db_absensi WHERE 1=1 " + param2.ToString()
                 sqlCommand.Connection = SQLConnection
                 Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
                 Dim cb As New MySqlCommandBuilder(adapter)
@@ -1902,18 +1938,16 @@ Public Class MainApp
                 SQLConnection.Close()
             Catch ex As Exception
                 SQLConnection.Close()
-                MsgBox(ex.Message)
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
             If datatabl.Rows.Count > 0 Then
-                txtBar1.Text = datatabl.Rows(0).Item(0).ToString()
-                txtNamaKaryawan.Text = datatabl.Rows(0).Item(2).ToString()
-                txtBar2.Text = datatabl.Rows(0).Item(1).ToString()
-                txtTanggal.Text = datatabl.Rows(0).Item(3).ToString()
-                txtJnsShift.Text = datatabl.Rows(0).Item(4).ToString()
-                txtBar6.Text = datatabl.Rows(0).Item(5).ToString()
-                txtBar7.Text = datatabl.Rows(0).Item(6).ToString()
+                txtBar2.Text = datatabl.Rows(0).Item(0).ToString()
+                txtNamaKaryawan.Text = datatabl.Rows(0).Item(1).ToString()
+                txtTanggal.Text = datatabl.Rows(0).Item(2).ToString
+                txtJnsShift.Text = datatabl.Rows(0).Item(3).ToString
+                txtstart.Text = datatabl.Rows(0).Item(4).ToString
+                txtfinish.Text = datatabl.Rows(0).Item(5).ToString
             End If
-
         ElseIf barJudul.Caption = "Employee Menus" Then
             Dim param2 As String = ""
             Try
@@ -1944,7 +1978,6 @@ Public Class MainApp
             End If
         End If
     End Sub
-
 
 #End Region
     Private Sub txtStatEmp_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -2222,7 +2255,6 @@ Public Class MainApp
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
 
     Public Sub overtime()
         Try
@@ -2713,6 +2745,7 @@ Public Class MainApp
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        btnImport.Enabled = False
         'lcKaryawan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         'lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         'lc2.Text = "Employee Code"
@@ -2776,5 +2809,18 @@ Public Class MainApp
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
 
+    End Sub
+
+    Private Sub txtBar8_EditValueChanged(sender As Object, e As EventArgs) Handles txtBar8.EditValueChanged
+
+
+
+    End Sub
+
+    Private Sub txtBar8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBar8.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
     End Sub
 End Class
