@@ -4,6 +4,7 @@ Public Class RotasiMutasi
     Dim connectionString As String = "Server=localhost; User Id=root; Password=; Database=db_hris"
     Dim SQLConnection As MySqlConnection = New MySqlConnection
     Dim oDt_sched As New DataTable()
+
     Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
 
     End Sub
@@ -257,9 +258,9 @@ Public Class RotasiMutasi
         Dim sqlCommand As New MySqlCommand
         Try
             If barJudul.Caption = "Rotasi" Then
-                sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, Rotasi, RotasiDate FROM db_rotasi"
+                sqlCommand.CommandText = "SELECT EmployeeCode, CompanyCode, FullName, Position, Rotasi, RotasiDate FROM db_rotasi"
             ElseIf barJudul.Caption = "Demosi" Then
-                sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, Demosi, DemosiDate FROM db_demosi"
+                sqlCommand.CommandText = "SELECT EmployeeCode, CompanyCode, FullName, Position, Demosi, DemosiDate FROM db_demosi"
             End If
             sqlCommand.Connection = SQLConnection
             Dim tbl_par As New DataTable

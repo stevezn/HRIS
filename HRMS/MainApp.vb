@@ -152,6 +152,7 @@ Public Class MainApp
         txtTrainingSampai.Text = ""
         txtworkdate.Text = ""
         txtposition.Text = ""
+        lcsearch.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcrotasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcnotes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcsp1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -491,7 +492,7 @@ Public Class MainApp
         'End If
     End Sub
 
-    Private Sub btnCari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCari.Click
+    Private Sub btnCari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'load data ke grid
         'GridControl1.DataSource = DBNull.Value
         GridControl1.RefreshDataSource()
@@ -681,7 +682,6 @@ Public Class MainApp
 
     Dim infoForm As New infoReq
 
-
     Public Sub btnLihat_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLihat.Click
         If infoForm Is Nothing OrElse infoForm.IsDisposed Then
             infoForm = New infoReq
@@ -704,6 +704,8 @@ Public Class MainApp
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
+        testlabel.Text = "0000"
+
         Dim sqlCommand As New MySqlCommand
         Try
             sqlCommand.CommandText = "INSERT INTO db_pegawai (FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Photo, status, CompanyCode, EmployeeCode, OfficeLocation, PhoneNumber, TrainingSampai, JenisPegawai)" +
@@ -742,7 +744,7 @@ Public Class MainApp
                 strisi = CType(Val(tempstr) + 1, String)
                 res = txtworkdate.Text + Mid("0000", 1, 2 - strisi.Length) & strisi
             Else
-                res = CType(txtworkdate.Text <> "0001", String)
+                res = CType(txtworkdate.Text = "0001", String)
             End If
             sqlcommand.Parameters.AddWithValue("@EmployeeCode", res)
             sqlcommand.ExecuteNonQuery()
@@ -751,6 +753,8 @@ Public Class MainApp
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
+
 
     Private Sub autoIDrec()
         Dim str As String = ""
@@ -761,7 +765,7 @@ Public Class MainApp
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         Try
-            sqlcommand.CommandText = "Select * from db_recruitment ORDER BY id_rec desc"
+            sqlcommand.CommandText = "SELECT * FROM db_recruitment ORDER BY id_rec desc"
             rd = sqlcommand.ExecuteReader
             If rd.Read Then
                 str = Mid(CType(rd.Item("id_rec"), String), 2, 2)
@@ -1172,7 +1176,6 @@ Public Class MainApp
                     ", Rotasi = @Rotasi" +
                     ", Demosi = @Demosi" +
                     " WHERE EmployeeCode = @EmployeeCode"
-
             ElseIf act = "input" Then
                 str_carsql = "INSERT INTO db_sp " +
                             "(EmployeeCode, CompanyCode, FullName, Position, SuratPeringatan1, SuratPeringatan2, SuratPeringatan3, Rotasi, Demosi) " +
