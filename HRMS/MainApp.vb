@@ -742,17 +742,15 @@ Public Class MainApp
                 strisi = CType(Val(tempstr) + 1, String)
                 res = txtworkdate.Text + Mid("0000", 1, 2 - strisi.Length) & strisi
             Else
-                res = txtworkdate.Text + "0001"
+                res = CType(txtworkdate.Text <> "0001", String)
             End If
             sqlcommand.Parameters.AddWithValue("@EmployeeCode", res)
             sqlcommand.ExecuteNonQuery()
             SQLConnection.Close()
         Catch ex As Exception
-            SQLConnection.Close()
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
 
     Private Sub autoIDrec()
         Dim str As String = ""

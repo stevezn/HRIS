@@ -57,7 +57,6 @@ Public Class SPForms
         lcTitle.Text = "Surat Peringatan 1"
         btnSP.Text = "Give SP1 To This Employee"
         loadDataKaryawan()
-
     End Sub
 
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
@@ -72,7 +71,6 @@ Public Class SPForms
         lcTitle.Text = "Surat Peringatan 2"
         btnSP.Text = "Give SP2 To This Employee"
         loadDataKaryawan()
-
     End Sub
 
     Private Sub barbuttonitem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles barbuttonitem3.ItemClick
