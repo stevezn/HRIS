@@ -141,7 +141,6 @@ Public Class RotasiMutasi
         End Try
     End Sub
 
-
     Public Sub updatepos()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
@@ -150,7 +149,7 @@ Public Class RotasiMutasi
         Try
             sqlcommand.CommandText = "UPDATE db_pegawai SET" +
                                     " Position = @Position" +
-                                    " Where EmployeeCode = @EmployeeCode"
+                                    " WHERE EmployeeCode = @EmployeeCode"
             sqlcommand.Connection = SQLConnection
             sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtEmpCode.Text)
             sqlcommand.Parameters.AddWithValue("@Position", txtChange.Text)
@@ -284,7 +283,7 @@ Public Class RotasiMutasi
 
     Private Sub txtnamakaryawan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnamakaryawan.SelectedIndexChanged
         For indexing As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtnamakaryawan.SelectedItem = tbl_par.Rows(indexing).Item(1).ToString() Then
+            If txtnamakaryawan.SelectedItem Is tbl_par.Rows(indexing).Item(1).ToString() Then
                 txtEmpCode.Text = tbl_par.Rows(indexing).Item(0).ToString()
                 txtPosition.Text = tbl_par.Rows(indexing).Item(2).ToString()
                 txtCompcode.Text = tbl_par.Rows(indexing).Item(3).ToString()

@@ -20,6 +20,9 @@ Partial Class infoReq
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.lcaddress = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.lcid = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
@@ -36,7 +39,7 @@ Partial Class infoReq
         Me.lcpob = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtidrec = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtnamakaryawan = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.lcinterviewke = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
@@ -48,7 +51,7 @@ Partial Class infoReq
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.lctgl = New DevExpress.XtraEditors.LabelControl()
-        Me.lcNama = New DevExpress.XtraEditors.LabelControl()
+        Me.lcidrec = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
@@ -57,13 +60,10 @@ Partial Class infoReq
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcaddress = New DevExpress.XtraEditors.LabelControl()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtidrec.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtnamakaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,13 +95,13 @@ Partial Class infoReq
         Me.GroupControl1.Controls.Add(Me.lcpob)
         Me.GroupControl1.Controls.Add(Me.LabelControl12)
         Me.GroupControl1.Controls.Add(Me.LabelControl10)
-        Me.GroupControl1.Controls.Add(Me.txtidrec)
+        Me.GroupControl1.Controls.Add(Me.txtnamakaryawan)
         Me.GroupControl1.Controls.Add(Me.lcinterviewke)
         Me.GroupControl1.Controls.Add(Me.LabelControl11)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.PanelControl1)
         Me.GroupControl1.Controls.Add(Me.lctgl)
-        Me.GroupControl1.Controls.Add(Me.lcNama)
+        Me.GroupControl1.Controls.Add(Me.lcidrec)
         Me.GroupControl1.Controls.Add(Me.LabelControl9)
         Me.GroupControl1.Controls.Add(Me.LabelControl5)
         Me.GroupControl1.Controls.Add(Me.LabelControl4)
@@ -113,6 +113,31 @@ Partial Class infoReq
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(527, 519)
         Me.GroupControl1.TabIndex = 0
+        '
+        'lcaddress
+        '
+        Me.lcaddress.Location = New System.Drawing.Point(205, 252)
+        Me.lcaddress.Name = "lcaddress"
+        Me.lcaddress.Size = New System.Drawing.Size(4, 13)
+        Me.lcaddress.TabIndex = 24
+        Me.lcaddress.Text = "-"
+        '
+        'LabelControl16
+        '
+        Me.LabelControl16.Location = New System.Drawing.Point(183, 252)
+        Me.LabelControl16.Name = "LabelControl16"
+        Me.LabelControl16.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl16.TabIndex = 23
+        Me.LabelControl16.Text = ":"
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.LabelControl13.Location = New System.Drawing.Point(32, 252)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(46, 13)
+        Me.LabelControl13.TabIndex = 22
+        Me.LabelControl13.Text = "Address"
         '
         'PictureEdit1
         '
@@ -247,13 +272,13 @@ Partial Class infoReq
         Me.LabelControl10.TabIndex = 6
         Me.LabelControl10.Text = "Place Of Birth"
         '
-        'txtidrec
+        'txtnamakaryawan
         '
-        Me.txtidrec.Location = New System.Drawing.Point(204, 50)
-        Me.txtidrec.Name = "txtidrec"
-        Me.txtidrec.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtidrec.Size = New System.Drawing.Size(100, 20)
-        Me.txtidrec.TabIndex = 5
+        Me.txtnamakaryawan.Location = New System.Drawing.Point(204, 50)
+        Me.txtnamakaryawan.Name = "txtnamakaryawan"
+        Me.txtnamakaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtnamakaryawan.Size = New System.Drawing.Size(100, 20)
+        Me.txtnamakaryawan.TabIndex = 5
         '
         'lcinterviewke
         '
@@ -364,13 +389,13 @@ Partial Class infoReq
         Me.lctgl.TabIndex = 0
         Me.lctgl.Text = "-"
         '
-        'lcNama
+        'lcidrec
         '
-        Me.lcNama.Location = New System.Drawing.Point(205, 87)
-        Me.lcNama.Name = "lcNama"
-        Me.lcNama.Size = New System.Drawing.Size(4, 13)
-        Me.lcNama.TabIndex = 0
-        Me.lcNama.Text = "-"
+        Me.lcidrec.Location = New System.Drawing.Point(205, 87)
+        Me.lcidrec.Name = "lcidrec"
+        Me.lcidrec.Size = New System.Drawing.Size(4, 13)
+        Me.lcidrec.TabIndex = 0
+        Me.lcidrec.Text = "-"
         '
         'LabelControl9
         '
@@ -417,7 +442,7 @@ Partial Class infoReq
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl3.Location = New System.Drawing.Point(30, 87)
+        Me.LabelControl3.Location = New System.Drawing.Point(30, 57)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(54, 13)
         Me.LabelControl3.TabIndex = 0
@@ -426,7 +451,7 @@ Partial Class infoReq
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl2.Location = New System.Drawing.Point(30, 53)
+        Me.LabelControl2.Location = New System.Drawing.Point(30, 87)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(88, 13)
         Me.LabelControl2.TabIndex = 0
@@ -440,31 +465,6 @@ Partial Class infoReq
         Me.LabelControl1.Size = New System.Drawing.Size(223, 24)
         Me.LabelControl1.TabIndex = 1
         Me.LabelControl1.Text = "Recruiter Information"
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.LabelControl13.Location = New System.Drawing.Point(32, 252)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(46, 13)
-        Me.LabelControl13.TabIndex = 22
-        Me.LabelControl13.Text = "Address"
-        '
-        'LabelControl16
-        '
-        Me.LabelControl16.Location = New System.Drawing.Point(183, 252)
-        Me.LabelControl16.Name = "LabelControl16"
-        Me.LabelControl16.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl16.TabIndex = 23
-        Me.LabelControl16.Text = ":"
-        '
-        'lcaddress
-        '
-        Me.lcaddress.Location = New System.Drawing.Point(205, 252)
-        Me.lcaddress.Name = "lcaddress"
-        Me.lcaddress.Size = New System.Drawing.Size(4, 13)
-        Me.lcaddress.TabIndex = 24
-        Me.lcaddress.Text = "-"
         '
         'infoReq
         '
@@ -481,7 +481,7 @@ Partial Class infoReq
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtidrec.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtnamakaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -498,7 +498,7 @@ Partial Class infoReq
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Public WithEvents lcNama As DevExpress.XtraEditors.LabelControl
+    Public WithEvents lcidrec As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
@@ -515,7 +515,7 @@ Partial Class infoReq
     Public WithEvents lcinterviewke As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents txtidrec As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents txtnamakaryawan As DevExpress.XtraEditors.ComboBoxEdit
     Public WithEvents lcpob As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl

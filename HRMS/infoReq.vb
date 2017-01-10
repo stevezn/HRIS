@@ -13,13 +13,13 @@ Public Class infoReq
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT id_rec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, status, InterviewDate FROM db_recruitment"
+        sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, status, InterviewDate FROM db_recruitment"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par)
         For index As Integer = 0 To tbl_par.Rows.Count - 1
-            txtidrec.Properties.Items.Add(tbl_par.Rows(index).Item(0).ToString())
+            txtnamakaryawan.Properties.Items.Add(tbl_par.Rows(index).Item(2).ToString())
         Next
         SQLConnection.Close()
     End Sub
@@ -42,10 +42,10 @@ Public Class infoReq
         Return Image.FromStream(pictureBytes)
     End Function
 
-    Private Sub txtidrec_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtidrec.SelectedIndexChanged
+    Private Sub txtidrec_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnamakaryawan.SelectedIndexChanged
         For indexing As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtidrec.SelectedItem = tbl_par.Rows(indexing).Item(0).ToString() Then
-                lcNama.Text = tbl_par.Rows(indexing).Item(2).ToString()
+            If txtnamakaryawan.SelectedItem Is tbl_par.Rows(indexing).Item(2).ToString() Then
+                lcidrec.Text = tbl_par.Rows(indexing).Item(0).ToString()
                 lctgl.Text = tbl_par.Rows(indexing).Item(11).ToString()
                 lcinterviewke.Text = tbl_par.Rows(indexing).Item(1).ToString()
                 lcpob.Text = tbl_par.Rows(indexing).Item(3).ToString()
@@ -55,7 +55,6 @@ Public Class infoReq
                 lcreligion.Text = tbl_par.Rows(indexing).Item(7).ToString()
                 lcid.Text = tbl_par.Rows(indexing).Item(8).ToString()
                 lcHasil.Text = tbl_par.Rows(indexing).Item(10).ToString()
-
                 Dim filefoto As Byte() = CType(tbl_par.Rows(indexing).Item(9), Byte())
                 If filefoto.Length > 0 Then
                     PictureEdit1.Image = ByteToImage(filefoto)

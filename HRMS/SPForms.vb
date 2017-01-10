@@ -242,7 +242,7 @@ Public Class SPForms
 
     Private Sub txtNamaKaryawan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtNamaKaryawan.SelectedIndexChanged
         For indexing As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtNamaKaryawan.SelectedItem = tbl_par.Rows(indexing).Item(1).ToString() Then
+            If txtNamaKaryawan.SelectedItem Is tbl_par.Rows(indexing).Item(1).ToString() Then
                 txtEmpCode.Text = tbl_par.Rows(indexing).Item(0).ToString()
                 txtPosition.Text = tbl_par.Rows(indexing).Item(2).ToString()
                 txtcompcode.Text = tbl_par.Rows(indexing).Item(3).ToString()
