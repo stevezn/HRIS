@@ -279,6 +279,8 @@ Public Class RotasiMutasi
 
     Private Sub RotasiMutasi_Load_1(sender As Object, e As EventArgs) Handles MyBase.Load
         act = "input"
+        BarButtonItem1.PerformClick()
+        reset()
     End Sub
 
     Private Sub txtnamakaryawan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnamakaryawan.SelectedIndexChanged

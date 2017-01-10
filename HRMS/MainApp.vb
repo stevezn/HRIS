@@ -26,12 +26,13 @@ Public Class MainApp
         If koneksi.State = ConnectionState.Closed Then
             koneksi.Open()
             MsgBox("Settings Connection Succesfully!")
+            BarButtonItem1.PerformClick()
         Else
             MsgBox("Settings Connection Failed, Please Try Again!")
         End If
-        resetclear()
-        reset()
-        clearForm()
+        'resetclear()
+        'reset()
+        'clearForm()
     End Sub
 #End Region
 
@@ -1768,7 +1769,6 @@ Public Class MainApp
                 SQLConnection.Close()
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
-
             If datatabl.Rows.Count > 0 Then
                 txtBar2.Text = datatabl.Rows(0).Item(0).ToString()
                 txtNamaKaryawan.Text = datatabl.Rows(0).Item(1).ToString()
@@ -2023,6 +2023,8 @@ Public Class MainApp
             b = Convert.ToDouble(txtpbj.Text)
             res = a * b / 100
             txthasilbjabatan.Text = res.ToString()
+            txthasilbjabatan.Text = Format(res, "##,##0")
+            txthasilbjabatan.SelectionStart = Len(txthasilbjabatan.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -2036,6 +2038,8 @@ Public Class MainApp
             b = Convert.ToDouble(nilai)
             res = a - b
             txtpkp.Text = res.ToString()
+            txtpkp.Text = Format(res, "##,##0")
+            txtpkp.SelectionStart = Len(txtpkp.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -2055,6 +2059,8 @@ Public Class MainApp
                 res = a * 25 / 100
             End If
             txtpajakpph.Text = res.ToString()
+            txtpajakpph.Text = Format(res, "##,##0")
+            txtpajakpph.SelectionStart = Len(txtpajakpph.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -2080,6 +2086,8 @@ Public Class MainApp
                     nilai1 = c * 30 / 100
                 End If
                 txtpphterutang.Text = nilai1.ToString()
+                txtpphterutang.Text = Format(nilai, "##,##0")
+                txtpphterutang.SelectionStart = Len(txtpphterutang.Text)
             ElseIf cmboxnpwp.SelectedIndex = 1 Then
                 If hasil2 < 50000000 Then
                     nilai1 = c * 5 / 100
@@ -2095,6 +2103,8 @@ Public Class MainApp
                     nilai2 = nilai1 * 120 / 100
                 End If
                 txtpphterutang.Text = nilai1.ToString()
+                txtpphterutang.Text = Format(nilai1, "##,##0")
+                txtpphterutang.SelectionStart = Len(txtpphterutang.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -2116,6 +2126,8 @@ Public Class MainApp
             j = CLng(Convert.ToDouble(txt5add.Text))
             res = a + b + c + d + e + f + g + h + i + j + k + l
             txtgross.Text = res.ToString()
+            txtgross.Text = Format(res, "##,##0")
+            txtgross.SelectionStart = Len(txtgross.Text)
         Catch ex As Exception
             If txtGaji.Text = "" Or txtAllowance.Text = "" Or txtIncentives.Text = "" Or txtMeal.Text = "" Or txtTransport.Text = "" Or txt1add.Text = "" Or txt2add.Text = "" Or txt3add.Text = "" Or txt4add.Text = "" Or txt5add.Text = "" Then ' Or txtotsalary.Text = "" Or rapel.Text = "" Then
                 MsgBox("Allowances Fields Can't Be Empty, Please Input 0 if There Is No Any Additional Allowances")
@@ -2136,6 +2148,8 @@ Public Class MainApp
             h = CLng(Convert.ToDouble(txt5ded.Text))
             res = a + b + c + d + e + f + g + h
             txtdeduction.Text = res.ToString()
+            txtdeduction.Text = Format(res, "##,##0")
+            txtdeduction.SelectionStart = Len(txtdeduction.Text)
         Catch ex As Exception
             If txttaxes.Text = "" Or txtloan.Text = "" Or txtlates.Text = "" Or txt1ded.Text = "" Or txt2ded.Text = "" Or txt3ded.Text = "" Or txt5ded.Text = "" Then ' Or txtbpjs.Text = "" Or txtjkk.Text = "" Or txtjk.Text = "" Or txthasilbjabatan.Text = "" Or txthasiliuranpensiun.Text = "" Then
                 MsgBox("Deductions Fields Can't Be Empty, Please Input 0 If There Is No Any Additional Deductions")
@@ -2151,9 +2165,13 @@ Public Class MainApp
                 b = Convert.ToDouble(txtpjht.Text)
                 res = a * b / 100
                 txtjht.Text = res.ToString()
+                txtjht.Text = Format(res, "##,##0")
+                txtjht.SelectionStart = Len(txtjht.Text)
             Else
                 res = 0
                 txtjht.Text = res.ToString()
+                txtjht.Text = Format(res, "##,##0")
+                txtjht.SelectionStart = Len(txtjht.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -2168,6 +2186,8 @@ Public Class MainApp
                 b = Convert.ToDouble(txtpip.Text)
                 res = a * b / 100
                 txthasiliuranpensiun.Text = res.ToString()
+                txthasiliuranpensiun.Text = Format(res, "##,##0")
+                txthasiliuranpensiun.SelectionStart = Len(txthasiliuranpensiun.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -2193,6 +2213,8 @@ Public Class MainApp
                     totot = value2 + pay2
                 End If
                 txtotsalary.Text = totot.ToString()
+                txtotsalary.Text = Format(totot, "##,##0")
+                txtotsalary.SelectionStart = Len(txtotsalary.Text)
             ElseIf txtottype.Text = "Holiday / Sunday" Then
                 Dim hours, pay, salary, temp, totot2, tempo, value1, value2, pay2, value3 As Double
                 hours = CInt(Convert.ToInt64(txtothours.Text))
@@ -2215,6 +2237,8 @@ Public Class MainApp
                     totot2 = value3 - value2 - value1
                 End If
                 txtotsalary.Text = totot2.ToString()
+                txtotsalary.Text = Format(totot2, "##,##0")
+                txtotsalary.SelectionStart = Len(txtotsalary.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -2229,9 +2253,13 @@ Public Class MainApp
                 b = Convert.ToDouble(txtpkk.Text)
                 res = a * b / 100
                 txtjkk.Text = res.ToString()
+                txtjkk.Text = Format(res, "##,##0")
+                txtjkk.SelectionStart = Len(txtjkk.Text)
             Else
                 res = 0
                 txtjkk.Text = res.ToString()
+                txtjkk.Text = Format(res, "##,##0")
+                txtjkk.SelectionStart = Len(txtjkk.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -2246,9 +2274,13 @@ Public Class MainApp
                 b = Convert.ToDouble(txtpjk.Text)
                 res = a * b / 100
                 txtjk.Text = res.ToString()
+                txtjk.Text = Format(res, "##,##0")
+                txtjk.SelectionStart = Len(txtjk.Text)
             Else
                 res = 0
                 txtjk.Text = res.ToString()
+                txtjk.Text = Format(res, "##,##0")
+                txtjk.SelectionStart = Len(txtjk.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -2261,6 +2293,8 @@ Public Class MainApp
             a = Convert.ToDouble(txtnetincome.Text)
             res = a * 12
             lcnettosetahun.Text = res.ToString()
+            lcnettosetahun.Text = Format(res, "##,##0")
+            lcnettosetahun.SelectionStart = Len(lcnettosetahun.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -2273,6 +2307,8 @@ Public Class MainApp
             b = Convert.ToDouble(txtdeduction.Text)
             res = a - b
             txtnetincome.Text = res.ToString()
+            txtnetincome.Text = Format(res, "##,##0")
+            txtnetincome.SelectionStart = Len(txtnetincome.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -2285,6 +2321,8 @@ Public Class MainApp
             b = Convert.ToDouble(txtGaji.Text)
             res = b * a / 100
             txtbpjs.Text = res.ToString()
+            txtbpjs.Text = Format(res, "##,##0")
+            txtbpjs.SelectionStart = Len(txtbpjs.Text)
         Catch ex As Exception
             If txtbpjspercentage.Text = "" Then
                 MsgBox("Please Input BPJS Percentage First")
@@ -2586,6 +2624,8 @@ Public Class MainApp
         totalvalue = value2 - value
         res = a * totalvalue - a
         rapel.Text = res.ToString
+        rapel.Text = Format(res, "##,##0")
+        rapel.SelectionStart = Len(rapel.Text)
     End Sub
 
     Private Sub tomonth_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tomonth.SelectedIndexChanged

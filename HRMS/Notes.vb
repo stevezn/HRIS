@@ -22,6 +22,7 @@
         Next
         SQLConnection.Close()
     End Sub
+
     Dim tbl_par4 As New DataTable
 
     Sub loadsp()

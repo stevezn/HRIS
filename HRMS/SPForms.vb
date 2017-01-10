@@ -43,6 +43,7 @@ Public Class SPForms
 
     Private Sub SPForms_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         clear()
+        BarButtonItem1.PerformClick()
     End Sub
 
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick

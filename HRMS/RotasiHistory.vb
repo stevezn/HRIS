@@ -28,5 +28,6 @@
         GridControl1.RefreshDataSource()
         GridView1.Columns.Clear()
         loadData()
+
     End Sub
 End Class
