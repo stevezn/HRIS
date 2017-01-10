@@ -74,7 +74,7 @@ Public Class SPForms
     End Sub
 
     Private Sub barbuttonitem3_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles barbuttonitem3.ItemClick
-        barJudul.Caption = "Surat peringatan 3"
+        barJudul.Caption = "Surat Peringatan 3"
         lcnames.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcempcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lccompcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -136,6 +136,7 @@ Public Class SPForms
             'End If
         End Try
     End Sub
+
     Private Sub sp3()
         Dim objword As word.Application = Nothing
         Try
@@ -173,6 +174,7 @@ Public Class SPForms
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
     Private Sub sp2()
         Dim objword As word.Application = Nothing
         Try
@@ -214,24 +216,114 @@ Public Class SPForms
         End Try
     End Sub
 
+    Private Sub insertSP1()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "INSERT INTO db_sp " +
+                        "(EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp2, Sp2Date, Sp3, Sp3Date) " +
+                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp1, @Sp1Date, @Sp2, @Sp2Date, @Sp3, @Sp3Date)"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtEmpCode.Text)
+            sqlcommand.Parameters.AddWithValue("@CompanyCode", txtcompcode.Text)
+            sqlcommand.Parameters.AddWithValue("@FullName", txtNamaKaryawan.Text)
+            sqlcommand.Parameters.AddWithValue("@Sp1", "Sp1")
+            sqlcommand.Parameters.AddWithValue("@Sp1Date", Format(Now, "dd-MM/yyyy"))
+            sqlcommand.Parameters.AddWithValue("@Sp2", "")
+            sqlcommand.Parameters.AddWithValue("@Sp2Date", "")
+            sqlcommand.Parameters.AddWithValue("@Sp3", "")
+            sqlcommand.Parameters.AddWithValue("@Sp3Date", "")
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+        End Try
+    End Sub
+
+    Private Sub insertSP2()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "INSERT INTO db_sp " +
+                        "(EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp2, Sp2Date, Sp3, Sp3Date) " +
+                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp1, @Sp1Date, @Sp2, @Sp2Date, @Sp3, @Sp3Date)"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtEmpCode.Text)
+            sqlcommand.Parameters.AddWithValue("@CompanyCode", txtcompcode.Text)
+            sqlcommand.Parameters.AddWithValue("@FullName", txtNamaKaryawan.Text)
+            sqlcommand.Parameters.AddWithValue("@Sp1", "")
+            sqlcommand.Parameters.AddWithValue("@Sp1Date", "")
+            sqlcommand.Parameters.AddWithValue("@Sp2", "sp2")
+            sqlcommand.Parameters.AddWithValue("@Sp2Date", Format(Now, "dd-MM-yyyy"))
+            sqlcommand.Parameters.AddWithValue("@Sp3", "")
+            sqlcommand.Parameters.AddWithValue("@Sp3Date", "")
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+        End Try
+    End Sub
+
+    Private Sub insertSP3()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "INSERT INTO db_sp " +
+                        "(EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp2, Sp2Date, Sp3, Sp3Date) " +
+                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp1, @Sp1Date, @Sp2, @Sp2Date, @Sp3, @Sp3Date)"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtEmpCode.Text)
+            sqlcommand.Parameters.AddWithValue("@CompanyCode", txtcompcode.Text)
+            sqlcommand.Parameters.AddWithValue("@FullName", txtNamaKaryawan.Text)
+            sqlcommand.Parameters.AddWithValue("@Sp1", "")
+            sqlcommand.Parameters.AddWithValue("@Sp1Date", "")
+            sqlcommand.Parameters.AddWithValue("@Sp2", "")
+            sqlcommand.Parameters.AddWithValue("@Sp2Date", "")
+            sqlcommand.Parameters.AddWithValue("@Sp3", "Sp3")
+            sqlcommand.Parameters.AddWithValue("@Sp3Date", Format(Now, "dd-MM-yyyy"))
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+        End Try
+    End Sub
+
     Private Sub btnSP_Click_1(sender As Object, e As EventArgs) Handles btnSP.Click
         If barJudul.Caption = "Surat Peringatan 1" Then
             If txtcompcode.Text = "" Then
                 MsgBox("Please Input The Employee")
             Else
                 sp1()
+                insertSP1()
             End If
         ElseIf barJudul.Caption = "Surat Peringatan 2" Then
             If txtEmpCode.Text = "" Then
                 MsgBox("Please Input The Employee")
             Else
                 sp2()
+                insertSP2()
             End If
         ElseIf barJudul.Caption = "Surat Peringatan 3" Then
             If txtEmpCode.Text = "" Then
                 MsgBox("Please Input The Employee")
             Else
                 sp3()
+                insertSP3()
             End If
         End If
     End Sub

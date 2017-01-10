@@ -20,7 +20,7 @@ Public Class MainApp
         Dim koneksi As MySqlConnection
         Dim str As String
 
-        str = "Server=localhost; user id = root; password=;Database=db_hris"
+        str = "Server=localhost; user id=root; password=; Database=db_hris"
 
         koneksi = New MySqlConnection(str)
         If koneksi.State = ConnectionState.Closed Then
@@ -38,6 +38,10 @@ Public Class MainApp
     Private Sub MainApp_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         koneksi()
         act = "input"
+        If barJudul.Caption = "Module Employee" Then
+            GridView1.Focus()
+            GridView1.MoveLast()
+        End If
     End Sub
 
     Sub resetclear()
@@ -97,7 +101,7 @@ Public Class MainApp
         cmboxjk.Text = ""
         cmboxnpwp.Text = ""
         cmboxjht.Text = ""
-        cmboxottype.Text = ""
+        txtottype.Text = ""
         rapel.Text = ""
         txtjkk.Text = ""
         txtjk.Text = ""
@@ -287,6 +291,7 @@ Public Class MainApp
         txtBar1.Enabled = False
         lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc2.Text = "Interview Times"
+        txtBar2.Enabled = True
         lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc3.Text = "Full Name"
         lc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -300,7 +305,6 @@ Public Class MainApp
         lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc8.Text = "ID Card Number"
         lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-
         lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -333,6 +337,7 @@ Public Class MainApp
         lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcnotes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lc2.Text = "Employee Code"
+        txtBar2.Enabled = False
         compcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         compcode.Text = "Company Code"
         lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -701,14 +706,11 @@ Public Class MainApp
         End If
         infoForm.Show()
     End Sub
-
 #End Region
 
 #Region "CRUD database"
     'import to employee
-
     Dim table As DataTable
-
     Private Sub importData()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
@@ -717,8 +719,17 @@ Public Class MainApp
         Dim newid As Integer = maxid + 1
         Dim ynow As String = Format(Now, "yy").ToString
         Dim mnow As String = Month(Now).ToString
-        Dim rescode As String = ynow & "-" & mnow & "-" & "0000" + txtnumber.Text
-        'Dim rescode As String = ynow & "-" & mnow & "-" & newid.ToString("0000")
+        Dim null As String = "0000"
+        If CInt(txtnumber.Text) < 9 Then
+            null = "0000"
+        ElseIf CInt(txtnumber.Text) > 9 Then
+            null = "000"
+        ElseIf CInt(txtnumber.Text) > 99 Then
+            null = "00"
+        ElseIf CInt(txtnumber.Text) > 999 Then
+            null = "0"
+        End If
+        Dim rescode As String = ynow & "-" & mnow & "-" & null + txtnumber.Text
         txtBar2.Text = rescode.ToString
         Dim sqlCommand As New MySqlCommand
         Try
@@ -788,7 +799,7 @@ Public Class MainApp
             sqlcommand.Parameters.AddWithValue("@AdditionalAllowance4", txt4add.Text)
             sqlcommand.Parameters.AddWithValue("@AdditionalAllowance5", txt5add.Text)
             sqlcommand.Parameters.AddWithValue("@OvertimeHours", txtothours.Text)
-            sqlcommand.Parameters.AddWithValue("@OvertimeType", cmboxottype.Text)
+            sqlcommand.Parameters.AddWithValue("@OvertimeType", txtottype.Text)
             sqlcommand.Parameters.AddWithValue("@BpjsPercentage", txtbpjspercentage.Text)
             sqlcommand.Parameters.AddWithValue("@Taxes", txttaxes.Text)
             sqlcommand.Parameters.AddWithValue("@Loan", txtloan.Text)
@@ -857,7 +868,7 @@ Public Class MainApp
             If barJudul.Caption = "Module Recruitment" Then
                 sqlCommand.CommandText = "Select IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, InterviewDate, Status from db_recruitment"
             ElseIf barJudul.Caption = "Module Employee" Then
-                sqlCommand.CommandText = "Select  EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, Status, TrainingSampai FROM db_pegawai"
+                sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, Status, TrainingSampai FROM db_pegawai"
             ElseIf barJudul.Caption = "Module Payroll" Then
                 sqlCommand.CommandText = "Select EmployeeCode, PaymentDate, FullName, BasicRate, Gross, Bpjs, OvertimeSalary, TotalDeductions, NetIncome, JaminanKecelakaanKerja, PremiJaminanKematian, JaminanHariTua, BiayaJabatan, IuranPensiun, PphTerhutang, PajakPphPerTahun, PenghasilanKenaPajak, NettoSetahun, StatusWajibPajak, Rapel FROM db_payroll"
                 ' sqlCommand.CommandText = "Select a.EmployeeCode, a.FullName, count(b.EmployeeCode) As jml_masuk, a.jenis_pegawai, a.BasicRate, If(a.jenis_pegawai ='Full Time', a.BasicRate, (a.BasicRate * count(b.EmployeeCode))) as jml_gaji, b.tanggal, IF(sum(b.lama_lembur) > 0, ((1.5 *(1/173)) * a.BasicRate * sum(b.lama_lembur)), 0) as jml_lembur , a.Allowance, JaminanKecelakaanKerja, a.StatusWajibPajak, BiayaJabatan,Iuran_pensiun" +
@@ -1267,7 +1278,7 @@ Public Class MainApp
             sqlcommand.Parameters.AddWithValue("@AdditionalAllowance4", txt4add.Text)
             sqlcommand.Parameters.AddWithValue("@AdditionalAllowance5", txt5add.Text)
             sqlcommand.Parameters.AddWithValue("@OvertimeHours", txtothours.Text)
-            sqlcommand.Parameters.AddWithValue("@OvertimeType", cmboxottype.Text)
+            sqlcommand.Parameters.AddWithValue("@OvertimeType", txtottype.Text)
             sqlcommand.Parameters.AddWithValue("@BpjsPercentage", txtbpjspercentage.Text)
             sqlcommand.Parameters.AddWithValue("@Taxes", txttaxes.Text)
             sqlcommand.Parameters.AddWithValue("@Loan", txtloan.Text)
@@ -1483,6 +1494,8 @@ Public Class MainApp
         End If
         Return Nothing
     End Function
+
+    Private needMoveLastRow As Boolean = True
 
     Public Function DeleteEmp() As Boolean
         Try
@@ -1745,7 +1758,7 @@ Public Class MainApp
                 act = "edit"
             End If
             Try
-                sqlCommand.CommandText = "SELECT EmployeeCode, FullName, PaymentDate, BasicRate, Allowance, Incentives, TableMoney, Transport, OtherAdditionalAllowance1, OtherAdditionalAllowance2, OtherAdditionalAllowance3, OtherAdditionalAllowance4, OtherAdditionalAllowance5, AdditionalAllowance1, AdditionalAllowance2, AdditionalAllowance3, AdditionalAllowance4, AdditionalAllowance5, OvertimeHours, OvertimeType, BpjsPercentage, Taxes, Loan, Lates, OtherAdditionalDeduction1, OtherAdditionalDeduction2, OtherAdditionalDeduction3, OtherAdditionalDeduction4, OtherAdditionalDeduction5, AdditionalDeduction1, AdditionalDeduction2, AdditionalDeduction3, AdditionalDeduction4, AdditionalDeduction5, ResJaminanKecelakaanKerja, ResPremiJaminanKematian, ResJaminanHariTua, ResBiayaJabatan, ResIuranPensiun, PersenKk, PersenJk, PersenJht, PersenBj, PersenIp, MemilikiNpwp, Gross, Bpjs, OvertimeSalary, TotalDeductions, NetIncome, PenghasilanKenaPajak, JaminanKecelakaanKerja, PremiJaminanKematian, JaminanHariTua, PphTerhutang, BiayaJabatan, IuranPensiun, NettoSetahun, StatusWajibPajak, RapelFromMonth, RapelToMonth, RapelRate, Rapel, PajakPphPerTahun FROM db_payroll WHERE 1 = 1 " + param2.ToString()
+                sqlCommand.CommandText = "SELECT * FROM db_payroll WHERE 1 = 1 " + param2.ToString()
                 sqlCommand.Connection = SQLConnection
                 Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
                 Dim cb As New MySqlCommandBuilder(adapter)
@@ -1776,7 +1789,7 @@ Public Class MainApp
                 txt4add.Text = datatabl.Rows(0).Item(16).ToString()
                 txt5add.Text = datatabl.Rows(0).Item(17).ToString()
                 txtothours.Text = datatabl.Rows(0).Item(18).ToString()
-                cmboxottype.Text = datatabl.Rows(0).Item(19).ToString()
+                txtottype.Text = datatabl.Rows(0).Item(19).ToString()
                 txtbpjspercentage.Text = datatabl.Rows(0).Item(20).ToString()
                 txttaxes.Text = datatabl.Rows(0).Item(21).ToString()
                 txtloan.Text = datatabl.Rows(0).Item(22).ToString()
@@ -2163,7 +2176,7 @@ Public Class MainApp
 
     Public Sub overtime()
         Try
-            If cmboxottype.Text = "Regular Day" Then
+            If txtottype.Text = "Regular Day" Then
                 Dim hours, pay, salary, temp, totot, tempo, value1, value2, pay2 As Double
                 hours = CInt(Convert.ToInt64(txtothours.Text))
                 salary = CInt(Convert.ToInt64(txtGaji.Text))
@@ -2180,7 +2193,7 @@ Public Class MainApp
                     totot = value2 + pay2
                 End If
                 txtotsalary.Text = totot.ToString()
-            ElseIf cmboxottype.Text = "Holiday / Sunday" Then
+            ElseIf txtottype.Text = "Holiday / Sunday" Then
                 Dim hours, pay, salary, temp, totot2, tempo, value1, value2, pay2, value3 As Double
                 hours = CInt(Convert.ToInt64(txtothours.Text))
                 salary = CInt(Convert.ToInt64(txtGaji.Text))
@@ -2560,7 +2573,7 @@ Public Class MainApp
         End If
     End Sub
 
-    Private Sub cmboxottype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmboxottype.SelectedIndexChanged
+    Private Sub cmboxottype_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -2712,16 +2725,6 @@ Public Class MainApp
         rotasi.Show()
     End Sub
 
-    Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
-
-    End Sub
-
-    Private Sub txtBar8_EditValueChanged(sender As Object, e As EventArgs) Handles txtBar8.EditValueChanged
-
-
-
-    End Sub
-
     Private Sub txtBar8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBar8.KeyPress
         Dim ch As Char = e.KeyChar
         If Char.IsLetter(ch) Then
@@ -2731,9 +2734,82 @@ Public Class MainApp
 
     Private Sub GridView1_RowLoaded(sender As Object, e As Views.Base.RowEventArgs) Handles GridView1.RowLoaded
         Dim view As ColumnView = TryCast(sender, ColumnView)
-        If movelast Then
-            movelast = False
+        If needMoveLastRow = False Then
             view.MoveLast()
+        End If
+    End Sub
+
+    Private Sub txt1add_EditValueChanged(sender As Object, e As EventArgs) Handles txt1add.EditValueChanged
+
+    End Sub
+
+    Private Sub txt1add_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt1add.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txttaxes_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txttaxes.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtloan_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtloan.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtlates_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtlates.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtpkk_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpkk.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtpjk_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpjk.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtpjht_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpjht.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtpbj_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpbj.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtpip_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpip.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtrapel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtrapel.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
         End If
     End Sub
 End Class

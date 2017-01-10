@@ -24,7 +24,6 @@ Partial Class Notes
     Private Sub InitializeComponent()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
-        Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.lctrain = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
@@ -76,36 +75,74 @@ Partial Class Notes
         Me.lcempcode = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl27 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl30 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtnamakaryawan = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LabelControl33 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl36 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcrotasis = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl39 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl42 = New DevExpress.XtraEditors.LabelControl()
-        Me.lcrotasidates = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl40 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl41 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl43 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtdemosinames = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LabelControl44 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl45 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtdemosi = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl47 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl48 = New DevExpress.XtraEditors.LabelControl()
+        Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
         Me.txtdemosidates = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl48 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl47 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtdemosi = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl45 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl44 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtdemosinames = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.LabelControl43 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl41 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl40 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcrotasidates = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl42 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl39 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcrotasis = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl36 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl33 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtnamakaryawan = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.LabelControl30 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl27 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl46 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl49 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcrotasiec = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl51 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl52 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcdemosiec = New DevExpress.XtraEditors.LabelControl()
+        Me.XtraTabPage3 = New DevExpress.XtraTab.XtraTabPage()
+        Me.LabelControl50 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl53 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl54 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtemp = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.LabelControl55 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl56 = New DevExpress.XtraEditors.LabelControl()
+        Me.lccode = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl58 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl59 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl60 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl61 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl62 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl63 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl64 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl65 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl66 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl67 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl68 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl69 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcsp1 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcsp1date = New DevExpress.XtraEditors.LabelControl()
+        Me.lcsp2 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcsp2date = New DevExpress.XtraEditors.LabelControl()
+        Me.lcsp3 = New DevExpress.XtraEditors.LabelControl()
+        Me.lcsp3date = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl57 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl70 = New DevExpress.XtraEditors.LabelControl()
+        Me.lccocode = New DevExpress.XtraEditors.LabelControl()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
         Me.XtraTabPage1.SuspendLayout()
-        Me.XtraTabPage2.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtnames.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtnamakaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage2.SuspendLayout()
         CType(Me.txtdemosinames.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtnamakaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage3.SuspendLayout()
+        CType(Me.txtemp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'XtraTabControl1
@@ -115,7 +152,7 @@ Partial Class Notes
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
         Me.XtraTabControl1.Size = New System.Drawing.Size(453, 758)
         Me.XtraTabControl1.TabIndex = 0
-        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2})
+        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2, Me.XtraTabPage3})
         '
         'XtraTabPage1
         '
@@ -124,34 +161,12 @@ Partial Class Notes
         Me.XtraTabPage1.Size = New System.Drawing.Size(447, 730)
         Me.XtraTabPage1.Text = "Employee Details"
         '
-        'XtraTabPage2
-        '
-        Me.XtraTabPage2.Controls.Add(Me.txtdemosidates)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl48)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl47)
-        Me.XtraTabPage2.Controls.Add(Me.txtdemosi)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl45)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl44)
-        Me.XtraTabPage2.Controls.Add(Me.txtdemosinames)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl43)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl41)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl40)
-        Me.XtraTabPage2.Controls.Add(Me.lcrotasidates)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl42)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl39)
-        Me.XtraTabPage2.Controls.Add(Me.lcrotasis)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl36)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl33)
-        Me.XtraTabPage2.Controls.Add(Me.txtnamakaryawan)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl30)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl27)
-        Me.XtraTabPage2.Controls.Add(Me.LabelControl24)
-        Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(447, 730)
-        Me.XtraTabPage2.Text = "Rotasi and Demosi Details"
-        '
         'GroupControl1
         '
+        Me.GroupControl1.Appearance.BackColor = System.Drawing.Color.White
+        Me.GroupControl1.Appearance.Options.UseBackColor = True
+        Me.GroupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.White
+        Me.GroupControl1.AppearanceCaption.Options.UseForeColor = True
         Me.GroupControl1.Controls.Add(Me.lctrain)
         Me.GroupControl1.Controls.Add(Me.LabelControl19)
         Me.GroupControl1.Controls.Add(Me.LabelControl14)
@@ -202,9 +217,9 @@ Partial Class Notes
         Me.GroupControl1.Controls.Add(Me.lcempcode)
         Me.GroupControl1.Controls.Add(Me.LabelControl7)
         Me.GroupControl1.Controls.Add(Me.LabelControl8)
-        Me.GroupControl1.Location = New System.Drawing.Point(-3, -13)
+        Me.GroupControl1.Location = New System.Drawing.Point(3, 3)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(453, 599)
+        Me.GroupControl1.Size = New System.Drawing.Size(447, 583)
         Me.GroupControl1.TabIndex = 17
         Me.GroupControl1.Text = "Notes"
         '
@@ -609,86 +624,109 @@ Partial Class Notes
         Me.LabelControl8.TabIndex = 8
         Me.LabelControl8.Text = ":"
         '
-        'LabelControl24
+        'XtraTabPage2
         '
-        Me.LabelControl24.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl24.Location = New System.Drawing.Point(154, 13)
-        Me.LabelControl24.Name = "LabelControl24"
-        Me.LabelControl24.Size = New System.Drawing.Size(114, 19)
-        Me.LabelControl24.TabIndex = 1
-        Me.LabelControl24.Text = "Rotasi Details"
+        Me.XtraTabPage2.Controls.Add(Me.lcdemosiec)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl52)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl51)
+        Me.XtraTabPage2.Controls.Add(Me.lcrotasiec)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl49)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl46)
+        Me.XtraTabPage2.Controls.Add(Me.txtdemosidates)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl48)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl47)
+        Me.XtraTabPage2.Controls.Add(Me.txtdemosi)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl45)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl44)
+        Me.XtraTabPage2.Controls.Add(Me.txtdemosinames)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl43)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl41)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl40)
+        Me.XtraTabPage2.Controls.Add(Me.lcrotasidates)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl42)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl39)
+        Me.XtraTabPage2.Controls.Add(Me.lcrotasis)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl36)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl33)
+        Me.XtraTabPage2.Controls.Add(Me.txtnamakaryawan)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl30)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl27)
+        Me.XtraTabPage2.Controls.Add(Me.LabelControl24)
+        Me.XtraTabPage2.Name = "XtraTabPage2"
+        Me.XtraTabPage2.Size = New System.Drawing.Size(447, 730)
+        Me.XtraTabPage2.Text = "Rotasi and Demosi Details"
         '
-        'LabelControl27
+        'txtdemosidates
         '
-        Me.LabelControl27.Location = New System.Drawing.Point(25, 51)
-        Me.LabelControl27.Name = "LabelControl27"
-        Me.LabelControl27.Size = New System.Drawing.Size(81, 13)
-        Me.LabelControl27.TabIndex = 2
-        Me.LabelControl27.Text = "Employee Names"
+        Me.txtdemosidates.Location = New System.Drawing.Point(209, 329)
+        Me.txtdemosidates.Name = "txtdemosidates"
+        Me.txtdemosidates.Size = New System.Drawing.Size(4, 13)
+        Me.txtdemosidates.TabIndex = 64
+        Me.txtdemosidates.Text = "-"
         '
-        'LabelControl30
+        'LabelControl48
         '
-        Me.LabelControl30.Location = New System.Drawing.Point(154, 51)
-        Me.LabelControl30.Name = "LabelControl30"
-        Me.LabelControl30.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl30.TabIndex = 3
-        Me.LabelControl30.Text = ":"
+        Me.LabelControl48.Location = New System.Drawing.Point(154, 329)
+        Me.LabelControl48.Name = "LabelControl48"
+        Me.LabelControl48.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl48.TabIndex = 63
+        Me.LabelControl48.Text = ":"
         '
-        'txtnamakaryawan
+        'LabelControl47
         '
-        Me.txtnamakaryawan.Location = New System.Drawing.Point(209, 48)
-        Me.txtnamakaryawan.Name = "txtnamakaryawan"
-        Me.txtnamakaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtnamakaryawan.Size = New System.Drawing.Size(109, 20)
-        Me.txtnamakaryawan.TabIndex = 4
+        Me.LabelControl47.Location = New System.Drawing.Point(25, 329)
+        Me.LabelControl47.Name = "LabelControl47"
+        Me.LabelControl47.Size = New System.Drawing.Size(60, 13)
+        Me.LabelControl47.TabIndex = 62
+        Me.LabelControl47.Text = "Demosi Date"
         '
-        'LabelControl33
+        'txtdemosi
         '
-        Me.LabelControl33.Location = New System.Drawing.Point(25, 88)
-        Me.LabelControl33.Name = "LabelControl33"
-        Me.LabelControl33.Size = New System.Drawing.Size(30, 13)
-        Me.LabelControl33.TabIndex = 49
-        Me.LabelControl33.Text = "Rotasi"
+        Me.txtdemosi.Location = New System.Drawing.Point(209, 297)
+        Me.txtdemosi.Name = "txtdemosi"
+        Me.txtdemosi.Size = New System.Drawing.Size(4, 13)
+        Me.txtdemosi.TabIndex = 61
+        Me.txtdemosi.Text = "-"
         '
-        'LabelControl36
+        'LabelControl45
         '
-        Me.LabelControl36.Location = New System.Drawing.Point(154, 88)
-        Me.LabelControl36.Name = "LabelControl36"
-        Me.LabelControl36.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl36.TabIndex = 50
-        Me.LabelControl36.Text = ":"
+        Me.LabelControl45.Location = New System.Drawing.Point(154, 297)
+        Me.LabelControl45.Name = "LabelControl45"
+        Me.LabelControl45.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl45.TabIndex = 60
+        Me.LabelControl45.Text = ":"
         '
-        'lcrotasis
+        'LabelControl44
         '
-        Me.lcrotasis.Location = New System.Drawing.Point(209, 88)
-        Me.lcrotasis.Name = "lcrotasis"
-        Me.lcrotasis.Size = New System.Drawing.Size(4, 13)
-        Me.lcrotasis.TabIndex = 51
-        Me.lcrotasis.Text = "-"
+        Me.LabelControl44.Location = New System.Drawing.Point(25, 297)
+        Me.LabelControl44.Name = "LabelControl44"
+        Me.LabelControl44.Size = New System.Drawing.Size(34, 13)
+        Me.LabelControl44.TabIndex = 59
+        Me.LabelControl44.Text = "Demosi"
         '
-        'LabelControl39
+        'txtdemosinames
         '
-        Me.LabelControl39.Location = New System.Drawing.Point(25, 126)
-        Me.LabelControl39.Name = "LabelControl39"
-        Me.LabelControl39.Size = New System.Drawing.Size(56, 13)
-        Me.LabelControl39.TabIndex = 52
-        Me.LabelControl39.Text = "Rotasi Date"
+        Me.txtdemosinames.Location = New System.Drawing.Point(209, 227)
+        Me.txtdemosinames.Name = "txtdemosinames"
+        Me.txtdemosinames.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtdemosinames.Size = New System.Drawing.Size(109, 20)
+        Me.txtdemosinames.TabIndex = 58
         '
-        'LabelControl42
+        'LabelControl43
         '
-        Me.LabelControl42.Location = New System.Drawing.Point(154, 126)
-        Me.LabelControl42.Name = "LabelControl42"
-        Me.LabelControl42.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl42.TabIndex = 53
-        Me.LabelControl42.Text = ":"
+        Me.LabelControl43.Location = New System.Drawing.Point(154, 230)
+        Me.LabelControl43.Name = "LabelControl43"
+        Me.LabelControl43.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl43.TabIndex = 57
+        Me.LabelControl43.Text = ":"
         '
-        'lcrotasidates
+        'LabelControl41
         '
-        Me.lcrotasidates.Location = New System.Drawing.Point(209, 126)
-        Me.lcrotasidates.Name = "lcrotasidates"
-        Me.lcrotasidates.Size = New System.Drawing.Size(4, 13)
-        Me.lcrotasidates.TabIndex = 54
-        Me.lcrotasidates.Text = "-"
+        Me.LabelControl41.Location = New System.Drawing.Point(25, 230)
+        Me.LabelControl41.Name = "LabelControl41"
+        Me.LabelControl41.Size = New System.Drawing.Size(81, 13)
+        Me.LabelControl41.TabIndex = 56
+        Me.LabelControl41.Text = "Employee Names"
         '
         'LabelControl40
         '
@@ -699,77 +737,393 @@ Partial Class Notes
         Me.LabelControl40.TabIndex = 55
         Me.LabelControl40.Text = "Demosi Details"
         '
-        'LabelControl41
+        'lcrotasidates
         '
-        Me.LabelControl41.Location = New System.Drawing.Point(25, 230)
-        Me.LabelControl41.Name = "LabelControl41"
-        Me.LabelControl41.Size = New System.Drawing.Size(81, 13)
-        Me.LabelControl41.TabIndex = 56
-        Me.LabelControl41.Text = "Employee Names"
+        Me.lcrotasidates.Location = New System.Drawing.Point(209, 147)
+        Me.lcrotasidates.Name = "lcrotasidates"
+        Me.lcrotasidates.Size = New System.Drawing.Size(4, 13)
+        Me.lcrotasidates.TabIndex = 54
+        Me.lcrotasidates.Text = "-"
         '
-        'LabelControl43
+        'LabelControl42
         '
-        Me.LabelControl43.Location = New System.Drawing.Point(154, 230)
-        Me.LabelControl43.Name = "LabelControl43"
-        Me.LabelControl43.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl43.TabIndex = 57
-        Me.LabelControl43.Text = ":"
+        Me.LabelControl42.Location = New System.Drawing.Point(154, 147)
+        Me.LabelControl42.Name = "LabelControl42"
+        Me.LabelControl42.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl42.TabIndex = 53
+        Me.LabelControl42.Text = ":"
         '
-        'txtdemosinames
+        'LabelControl39
         '
-        Me.txtdemosinames.Location = New System.Drawing.Point(209, 227)
-        Me.txtdemosinames.Name = "txtdemosinames"
-        Me.txtdemosinames.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtdemosinames.Size = New System.Drawing.Size(109, 20)
-        Me.txtdemosinames.TabIndex = 58
+        Me.LabelControl39.Location = New System.Drawing.Point(25, 147)
+        Me.LabelControl39.Name = "LabelControl39"
+        Me.LabelControl39.Size = New System.Drawing.Size(56, 13)
+        Me.LabelControl39.TabIndex = 52
+        Me.LabelControl39.Text = "Rotasi Date"
         '
-        'LabelControl44
+        'lcrotasis
         '
-        Me.LabelControl44.Location = New System.Drawing.Point(25, 270)
-        Me.LabelControl44.Name = "LabelControl44"
-        Me.LabelControl44.Size = New System.Drawing.Size(34, 13)
-        Me.LabelControl44.TabIndex = 59
-        Me.LabelControl44.Text = "Demosi"
+        Me.lcrotasis.Location = New System.Drawing.Point(209, 117)
+        Me.lcrotasis.Name = "lcrotasis"
+        Me.lcrotasis.Size = New System.Drawing.Size(4, 13)
+        Me.lcrotasis.TabIndex = 51
+        Me.lcrotasis.Text = "-"
         '
-        'LabelControl45
+        'LabelControl36
         '
-        Me.LabelControl45.Location = New System.Drawing.Point(154, 270)
-        Me.LabelControl45.Name = "LabelControl45"
-        Me.LabelControl45.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl45.TabIndex = 60
-        Me.LabelControl45.Text = ":"
+        Me.LabelControl36.Location = New System.Drawing.Point(154, 117)
+        Me.LabelControl36.Name = "LabelControl36"
+        Me.LabelControl36.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl36.TabIndex = 50
+        Me.LabelControl36.Text = ":"
         '
-        'txtdemosi
+        'LabelControl33
         '
-        Me.txtdemosi.Location = New System.Drawing.Point(209, 270)
-        Me.txtdemosi.Name = "txtdemosi"
-        Me.txtdemosi.Size = New System.Drawing.Size(4, 13)
-        Me.txtdemosi.TabIndex = 61
-        Me.txtdemosi.Text = "-"
+        Me.LabelControl33.Location = New System.Drawing.Point(25, 117)
+        Me.LabelControl33.Name = "LabelControl33"
+        Me.LabelControl33.Size = New System.Drawing.Size(30, 13)
+        Me.LabelControl33.TabIndex = 49
+        Me.LabelControl33.Text = "Rotasi"
         '
-        'LabelControl47
+        'txtnamakaryawan
         '
-        Me.LabelControl47.Location = New System.Drawing.Point(25, 314)
-        Me.LabelControl47.Name = "LabelControl47"
-        Me.LabelControl47.Size = New System.Drawing.Size(60, 13)
-        Me.LabelControl47.TabIndex = 62
-        Me.LabelControl47.Text = "Demosi Date"
+        Me.txtnamakaryawan.Location = New System.Drawing.Point(209, 48)
+        Me.txtnamakaryawan.Name = "txtnamakaryawan"
+        Me.txtnamakaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtnamakaryawan.Size = New System.Drawing.Size(109, 20)
+        Me.txtnamakaryawan.TabIndex = 4
         '
-        'LabelControl48
+        'LabelControl30
         '
-        Me.LabelControl48.Location = New System.Drawing.Point(154, 314)
-        Me.LabelControl48.Name = "LabelControl48"
-        Me.LabelControl48.Size = New System.Drawing.Size(4, 13)
-        Me.LabelControl48.TabIndex = 63
-        Me.LabelControl48.Text = ":"
+        Me.LabelControl30.Location = New System.Drawing.Point(154, 51)
+        Me.LabelControl30.Name = "LabelControl30"
+        Me.LabelControl30.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl30.TabIndex = 3
+        Me.LabelControl30.Text = ":"
         '
-        'txtdemosidates
+        'LabelControl27
         '
-        Me.txtdemosidates.Location = New System.Drawing.Point(209, 314)
-        Me.txtdemosidates.Name = "txtdemosidates"
-        Me.txtdemosidates.Size = New System.Drawing.Size(4, 13)
-        Me.txtdemosidates.TabIndex = 64
-        Me.txtdemosidates.Text = "-"
+        Me.LabelControl27.Location = New System.Drawing.Point(25, 51)
+        Me.LabelControl27.Name = "LabelControl27"
+        Me.LabelControl27.Size = New System.Drawing.Size(81, 13)
+        Me.LabelControl27.TabIndex = 2
+        Me.LabelControl27.Text = "Employee Names"
+        '
+        'LabelControl24
+        '
+        Me.LabelControl24.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl24.Location = New System.Drawing.Point(154, 13)
+        Me.LabelControl24.Name = "LabelControl24"
+        Me.LabelControl24.Size = New System.Drawing.Size(114, 19)
+        Me.LabelControl24.TabIndex = 1
+        Me.LabelControl24.Text = "Rotasi Details"
+        '
+        'LabelControl46
+        '
+        Me.LabelControl46.Location = New System.Drawing.Point(25, 81)
+        Me.LabelControl46.Name = "LabelControl46"
+        Me.LabelControl46.Size = New System.Drawing.Size(74, 13)
+        Me.LabelControl46.TabIndex = 65
+        Me.LabelControl46.Text = "Employee Code"
+        '
+        'LabelControl49
+        '
+        Me.LabelControl49.Location = New System.Drawing.Point(154, 81)
+        Me.LabelControl49.Name = "LabelControl49"
+        Me.LabelControl49.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl49.TabIndex = 66
+        Me.LabelControl49.Text = ":"
+        '
+        'lcrotasiec
+        '
+        Me.lcrotasiec.Location = New System.Drawing.Point(209, 81)
+        Me.lcrotasiec.Name = "lcrotasiec"
+        Me.lcrotasiec.Size = New System.Drawing.Size(4, 13)
+        Me.lcrotasiec.TabIndex = 67
+        Me.lcrotasiec.Text = "-"
+        '
+        'LabelControl51
+        '
+        Me.LabelControl51.Location = New System.Drawing.Point(25, 264)
+        Me.LabelControl51.Name = "LabelControl51"
+        Me.LabelControl51.Size = New System.Drawing.Size(74, 13)
+        Me.LabelControl51.TabIndex = 68
+        Me.LabelControl51.Text = "Employee Code"
+        '
+        'LabelControl52
+        '
+        Me.LabelControl52.Location = New System.Drawing.Point(154, 264)
+        Me.LabelControl52.Name = "LabelControl52"
+        Me.LabelControl52.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl52.TabIndex = 69
+        Me.LabelControl52.Text = ":"
+        '
+        'lcdemosiec
+        '
+        Me.lcdemosiec.Location = New System.Drawing.Point(209, 264)
+        Me.lcdemosiec.Name = "lcdemosiec"
+        Me.lcdemosiec.Size = New System.Drawing.Size(4, 13)
+        Me.lcdemosiec.TabIndex = 70
+        Me.lcdemosiec.Text = "-"
+        '
+        'XtraTabPage3
+        '
+        Me.XtraTabPage3.Controls.Add(Me.lccocode)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl70)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl57)
+        Me.XtraTabPage3.Controls.Add(Me.lcsp3date)
+        Me.XtraTabPage3.Controls.Add(Me.lcsp3)
+        Me.XtraTabPage3.Controls.Add(Me.lcsp2date)
+        Me.XtraTabPage3.Controls.Add(Me.lcsp2)
+        Me.XtraTabPage3.Controls.Add(Me.lcsp1date)
+        Me.XtraTabPage3.Controls.Add(Me.lcsp1)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl69)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl68)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl67)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl66)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl65)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl64)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl63)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl62)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl61)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl60)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl59)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl58)
+        Me.XtraTabPage3.Controls.Add(Me.lccode)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl56)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl55)
+        Me.XtraTabPage3.Controls.Add(Me.txtemp)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl54)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl53)
+        Me.XtraTabPage3.Controls.Add(Me.LabelControl50)
+        Me.XtraTabPage3.Name = "XtraTabPage3"
+        Me.XtraTabPage3.Size = New System.Drawing.Size(447, 730)
+        Me.XtraTabPage3.Text = "Surat Peringatan Details"
+        '
+        'LabelControl50
+        '
+        Me.LabelControl50.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl50.Location = New System.Drawing.Point(115, 22)
+        Me.LabelControl50.Name = "LabelControl50"
+        Me.LabelControl50.Size = New System.Drawing.Size(201, 19)
+        Me.LabelControl50.TabIndex = 2
+        Me.LabelControl50.Text = "Surat Peringatan Details"
+        '
+        'LabelControl53
+        '
+        Me.LabelControl53.Location = New System.Drawing.Point(42, 58)
+        Me.LabelControl53.Name = "LabelControl53"
+        Me.LabelControl53.Size = New System.Drawing.Size(81, 13)
+        Me.LabelControl53.TabIndex = 3
+        Me.LabelControl53.Text = "Employee Names"
+        '
+        'LabelControl54
+        '
+        Me.LabelControl54.Location = New System.Drawing.Point(172, 58)
+        Me.LabelControl54.Name = "LabelControl54"
+        Me.LabelControl54.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl54.TabIndex = 4
+        Me.LabelControl54.Text = ":"
+        '
+        'txtemp
+        '
+        Me.txtemp.Location = New System.Drawing.Point(230, 55)
+        Me.txtemp.Name = "txtemp"
+        Me.txtemp.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtemp.Size = New System.Drawing.Size(109, 20)
+        Me.txtemp.TabIndex = 5
+        '
+        'LabelControl55
+        '
+        Me.LabelControl55.Location = New System.Drawing.Point(42, 92)
+        Me.LabelControl55.Name = "LabelControl55"
+        Me.LabelControl55.Size = New System.Drawing.Size(74, 13)
+        Me.LabelControl55.TabIndex = 66
+        Me.LabelControl55.Text = "Employee Code"
+        '
+        'LabelControl56
+        '
+        Me.LabelControl56.Location = New System.Drawing.Point(172, 92)
+        Me.LabelControl56.Name = "LabelControl56"
+        Me.LabelControl56.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl56.TabIndex = 67
+        Me.LabelControl56.Text = ":"
+        '
+        'lccode
+        '
+        Me.lccode.Location = New System.Drawing.Point(230, 92)
+        Me.lccode.Name = "lccode"
+        Me.lccode.Size = New System.Drawing.Size(4, 13)
+        Me.lccode.TabIndex = 68
+        Me.lccode.Text = "-"
+        '
+        'LabelControl58
+        '
+        Me.LabelControl58.Location = New System.Drawing.Point(43, 164)
+        Me.LabelControl58.Name = "LabelControl58"
+        Me.LabelControl58.Size = New System.Drawing.Size(21, 13)
+        Me.LabelControl58.TabIndex = 69
+        Me.LabelControl58.Text = "SP 1"
+        '
+        'LabelControl59
+        '
+        Me.LabelControl59.Location = New System.Drawing.Point(43, 199)
+        Me.LabelControl59.Name = "LabelControl59"
+        Me.LabelControl59.Size = New System.Drawing.Size(47, 13)
+        Me.LabelControl59.TabIndex = 70
+        Me.LabelControl59.Text = "SP 1 Date"
+        '
+        'LabelControl60
+        '
+        Me.LabelControl60.Location = New System.Drawing.Point(42, 229)
+        Me.LabelControl60.Name = "LabelControl60"
+        Me.LabelControl60.Size = New System.Drawing.Size(21, 13)
+        Me.LabelControl60.TabIndex = 71
+        Me.LabelControl60.Text = "SP 2"
+        '
+        'LabelControl61
+        '
+        Me.LabelControl61.Location = New System.Drawing.Point(42, 261)
+        Me.LabelControl61.Name = "LabelControl61"
+        Me.LabelControl61.Size = New System.Drawing.Size(47, 13)
+        Me.LabelControl61.TabIndex = 72
+        Me.LabelControl61.Text = "SP 2 Date"
+        '
+        'LabelControl62
+        '
+        Me.LabelControl62.Location = New System.Drawing.Point(42, 298)
+        Me.LabelControl62.Name = "LabelControl62"
+        Me.LabelControl62.Size = New System.Drawing.Size(21, 13)
+        Me.LabelControl62.TabIndex = 73
+        Me.LabelControl62.Text = "SP 3"
+        '
+        'LabelControl63
+        '
+        Me.LabelControl63.Location = New System.Drawing.Point(42, 330)
+        Me.LabelControl63.Name = "LabelControl63"
+        Me.LabelControl63.Size = New System.Drawing.Size(47, 13)
+        Me.LabelControl63.TabIndex = 74
+        Me.LabelControl63.Text = "SP 3 Date"
+        '
+        'LabelControl64
+        '
+        Me.LabelControl64.Location = New System.Drawing.Point(172, 164)
+        Me.LabelControl64.Name = "LabelControl64"
+        Me.LabelControl64.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl64.TabIndex = 75
+        Me.LabelControl64.Text = ":"
+        '
+        'LabelControl65
+        '
+        Me.LabelControl65.Location = New System.Drawing.Point(172, 199)
+        Me.LabelControl65.Name = "LabelControl65"
+        Me.LabelControl65.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl65.TabIndex = 76
+        Me.LabelControl65.Text = ":"
+        '
+        'LabelControl66
+        '
+        Me.LabelControl66.Location = New System.Drawing.Point(172, 229)
+        Me.LabelControl66.Name = "LabelControl66"
+        Me.LabelControl66.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl66.TabIndex = 77
+        Me.LabelControl66.Text = ":"
+        '
+        'LabelControl67
+        '
+        Me.LabelControl67.Location = New System.Drawing.Point(172, 261)
+        Me.LabelControl67.Name = "LabelControl67"
+        Me.LabelControl67.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl67.TabIndex = 78
+        Me.LabelControl67.Text = ":"
+        '
+        'LabelControl68
+        '
+        Me.LabelControl68.Location = New System.Drawing.Point(172, 298)
+        Me.LabelControl68.Name = "LabelControl68"
+        Me.LabelControl68.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl68.TabIndex = 79
+        Me.LabelControl68.Text = ":"
+        '
+        'LabelControl69
+        '
+        Me.LabelControl69.Location = New System.Drawing.Point(172, 330)
+        Me.LabelControl69.Name = "LabelControl69"
+        Me.LabelControl69.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl69.TabIndex = 80
+        Me.LabelControl69.Text = ":"
+        '
+        'lcsp1
+        '
+        Me.lcsp1.Location = New System.Drawing.Point(230, 164)
+        Me.lcsp1.Name = "lcsp1"
+        Me.lcsp1.Size = New System.Drawing.Size(4, 13)
+        Me.lcsp1.TabIndex = 81
+        Me.lcsp1.Text = "-"
+        '
+        'lcsp1date
+        '
+        Me.lcsp1date.Location = New System.Drawing.Point(230, 199)
+        Me.lcsp1date.Name = "lcsp1date"
+        Me.lcsp1date.Size = New System.Drawing.Size(4, 13)
+        Me.lcsp1date.TabIndex = 82
+        Me.lcsp1date.Text = "-"
+        '
+        'lcsp2
+        '
+        Me.lcsp2.Location = New System.Drawing.Point(230, 229)
+        Me.lcsp2.Name = "lcsp2"
+        Me.lcsp2.Size = New System.Drawing.Size(4, 13)
+        Me.lcsp2.TabIndex = 83
+        Me.lcsp2.Text = "-"
+        '
+        'lcsp2date
+        '
+        Me.lcsp2date.Location = New System.Drawing.Point(230, 261)
+        Me.lcsp2date.Name = "lcsp2date"
+        Me.lcsp2date.Size = New System.Drawing.Size(4, 13)
+        Me.lcsp2date.TabIndex = 84
+        Me.lcsp2date.Text = "-"
+        '
+        'lcsp3
+        '
+        Me.lcsp3.Location = New System.Drawing.Point(230, 298)
+        Me.lcsp3.Name = "lcsp3"
+        Me.lcsp3.Size = New System.Drawing.Size(4, 13)
+        Me.lcsp3.TabIndex = 85
+        Me.lcsp3.Text = "-"
+        '
+        'lcsp3date
+        '
+        Me.lcsp3date.Location = New System.Drawing.Point(230, 330)
+        Me.lcsp3date.Name = "lcsp3date"
+        Me.lcsp3date.Size = New System.Drawing.Size(4, 13)
+        Me.lcsp3date.TabIndex = 86
+        Me.lcsp3date.Text = "-"
+        '
+        'LabelControl57
+        '
+        Me.LabelControl57.Location = New System.Drawing.Point(43, 130)
+        Me.LabelControl57.Name = "LabelControl57"
+        Me.LabelControl57.Size = New System.Drawing.Size(73, 13)
+        Me.LabelControl57.TabIndex = 87
+        Me.LabelControl57.Text = "Company Code"
+        '
+        'LabelControl70
+        '
+        Me.LabelControl70.Location = New System.Drawing.Point(172, 130)
+        Me.LabelControl70.Name = "LabelControl70"
+        Me.LabelControl70.Size = New System.Drawing.Size(4, 13)
+        Me.LabelControl70.TabIndex = 88
+        Me.LabelControl70.Text = ":"
+        '
+        'lccocode
+        '
+        Me.lccocode.Location = New System.Drawing.Point(230, 130)
+        Me.lccocode.Name = "lccocode"
+        Me.lccocode.Size = New System.Drawing.Size(4, 13)
+        Me.lccocode.TabIndex = 89
+        Me.lccocode.Text = "-"
         '
         'Notes
         '
@@ -785,15 +1139,18 @@ Partial Class Notes
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
         Me.XtraTabPage1.ResumeLayout(False)
-        Me.XtraTabPage2.ResumeLayout(False)
-        Me.XtraTabPage2.PerformLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtnames.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtnamakaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage2.ResumeLayout(False)
+        Me.XtraTabPage2.PerformLayout()
         CType(Me.txtdemosinames.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtnamakaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage3.ResumeLayout(False)
+        Me.XtraTabPage3.PerformLayout()
+        CType(Me.txtemp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -872,4 +1229,39 @@ Partial Class Notes
     Friend WithEvents txtdemosinames As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LabelControl43 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl41 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lcrotasiec As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl49 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl46 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lcdemosiec As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl52 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl51 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents XtraTabPage3 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents lcsp3date As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lcsp3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lcsp2date As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lcsp2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lcsp1date As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lcsp1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl69 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl68 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl67 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl66 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl65 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl64 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl63 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl62 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl61 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl60 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl59 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl58 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lccode As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl56 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl55 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtemp As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents LabelControl54 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl53 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl50 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lccocode As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl70 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl57 As DevExpress.XtraEditors.LabelControl
 End Class
