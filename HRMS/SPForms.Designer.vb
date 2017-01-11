@@ -31,32 +31,32 @@ Partial Class SPForms
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.barJudul = New DevExpress.XtraBars.BarButtonItem()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.txtEmpCode = New DevExpress.XtraEditors.TextEdit()
-        Me.lcempcode = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtcompcode = New DevExpress.XtraEditors.TextEdit()
-        Me.lccompcode = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtPosition = New DevExpress.XtraEditors.TextEdit()
-        Me.lcposition = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtNamaKaryawan = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.lcnames = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.btnSP = New DevExpress.XtraEditors.SimpleButton()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.btnReset = New DevExpress.XtraEditors.SimpleButton()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcTitle = New DevExpress.XtraEditors.LabelControl()
+        Me.btnReset = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnSP = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtNamaKaryawan = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtPosition = New DevExpress.XtraEditors.TextEdit()
+        Me.txtcompcode = New DevExpress.XtraEditors.TextEdit()
+        Me.txtEmpCode = New DevExpress.XtraEditors.TextEdit()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.lcempcode = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lccompcode = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcposition = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcnames = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtEmpCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lcempcode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtPosition.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lcposition, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNamaKaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPosition.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtEmpCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcempcode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcposition, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcnames, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,6 +135,74 @@ Partial Class SPForms
         Me.LayoutControl1.TabIndex = 13
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'lcTitle
+        '
+        Me.lcTitle.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lcTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center
+        Me.lcTitle.Location = New System.Drawing.Point(177, 12)
+        Me.lcTitle.Name = "lcTitle"
+        Me.lcTitle.Size = New System.Drawing.Size(20, 18)
+        Me.lcTitle.StyleController = Me.LayoutControl1
+        Me.lcTitle.TabIndex = 14
+        Me.lcTitle.Text = "SP"
+        '
+        'btnReset
+        '
+        Me.btnReset.Image = CType(resources.GetObject("btnReset.Image"), System.Drawing.Image)
+        Me.btnReset.Location = New System.Drawing.Point(189, 130)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(173, 38)
+        Me.btnReset.StyleController = Me.LayoutControl1
+        Me.btnReset.TabIndex = 14
+        Me.btnReset.Text = "Reset"
+        '
+        'btnSP
+        '
+        Me.btnSP.Image = CType(resources.GetObject("btnSP.Image"), System.Drawing.Image)
+        Me.btnSP.Location = New System.Drawing.Point(12, 130)
+        Me.btnSP.Name = "btnSP"
+        Me.btnSP.Size = New System.Drawing.Size(173, 38)
+        Me.btnSP.StyleController = Me.LayoutControl1
+        Me.btnSP.TabIndex = 14
+        Me.btnSP.Text = "Give SP"
+        '
+        'txtNamaKaryawan
+        '
+        Me.txtNamaKaryawan.Location = New System.Drawing.Point(96, 34)
+        Me.txtNamaKaryawan.MenuManager = Me.RibbonControl1
+        Me.txtNamaKaryawan.Name = "txtNamaKaryawan"
+        Me.txtNamaKaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtNamaKaryawan.Size = New System.Drawing.Size(266, 20)
+        Me.txtNamaKaryawan.StyleController = Me.LayoutControl1
+        Me.txtNamaKaryawan.TabIndex = 14
+        '
+        'txtPosition
+        '
+        Me.txtPosition.Location = New System.Drawing.Point(96, 106)
+        Me.txtPosition.MenuManager = Me.RibbonControl1
+        Me.txtPosition.Name = "txtPosition"
+        Me.txtPosition.Size = New System.Drawing.Size(266, 20)
+        Me.txtPosition.StyleController = Me.LayoutControl1
+        Me.txtPosition.TabIndex = 17
+        '
+        'txtcompcode
+        '
+        Me.txtcompcode.Location = New System.Drawing.Point(96, 82)
+        Me.txtcompcode.MenuManager = Me.RibbonControl1
+        Me.txtcompcode.Name = "txtcompcode"
+        Me.txtcompcode.Size = New System.Drawing.Size(266, 20)
+        Me.txtcompcode.StyleController = Me.LayoutControl1
+        Me.txtcompcode.TabIndex = 16
+        '
+        'txtEmpCode
+        '
+        Me.txtEmpCode.Location = New System.Drawing.Point(96, 58)
+        Me.txtEmpCode.MenuManager = Me.RibbonControl1
+        Me.txtEmpCode.Name = "txtEmpCode"
+        Me.txtEmpCode.Size = New System.Drawing.Size(266, 20)
+        Me.txtEmpCode.StyleController = Me.LayoutControl1
+        Me.txtEmpCode.TabIndex = 15
+        '
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
@@ -147,15 +215,6 @@ Partial Class SPForms
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
-        'txtEmpCode
-        '
-        Me.txtEmpCode.Location = New System.Drawing.Point(97, 58)
-        Me.txtEmpCode.MenuManager = Me.RibbonControl1
-        Me.txtEmpCode.Name = "txtEmpCode"
-        Me.txtEmpCode.Size = New System.Drawing.Size(265, 20)
-        Me.txtEmpCode.StyleController = Me.LayoutControl1
-        Me.txtEmpCode.TabIndex = 15
-        '
         'lcempcode
         '
         Me.lcempcode.Control = Me.txtEmpCode
@@ -165,15 +224,6 @@ Partial Class SPForms
         Me.lcempcode.Size = New System.Drawing.Size(354, 24)
         Me.lcempcode.Text = "Employee Code"
         Me.lcempcode.TextSize = New System.Drawing.Size(81, 13)
-        '
-        'txtcompcode
-        '
-        Me.txtcompcode.Location = New System.Drawing.Point(97, 82)
-        Me.txtcompcode.MenuManager = Me.RibbonControl1
-        Me.txtcompcode.Name = "txtcompcode"
-        Me.txtcompcode.Size = New System.Drawing.Size(265, 20)
-        Me.txtcompcode.StyleController = Me.LayoutControl1
-        Me.txtcompcode.TabIndex = 16
         '
         'lccompcode
         '
@@ -185,15 +235,6 @@ Partial Class SPForms
         Me.lccompcode.Text = "Company Code"
         Me.lccompcode.TextSize = New System.Drawing.Size(81, 13)
         '
-        'txtPosition
-        '
-        Me.txtPosition.Location = New System.Drawing.Point(97, 106)
-        Me.txtPosition.MenuManager = Me.RibbonControl1
-        Me.txtPosition.Name = "txtPosition"
-        Me.txtPosition.Size = New System.Drawing.Size(265, 20)
-        Me.txtPosition.StyleController = Me.LayoutControl1
-        Me.txtPosition.TabIndex = 17
-        '
         'lcposition
         '
         Me.lcposition.Control = Me.txtPosition
@@ -204,16 +245,6 @@ Partial Class SPForms
         Me.lcposition.Text = "Position"
         Me.lcposition.TextSize = New System.Drawing.Size(81, 13)
         '
-        'txtNamaKaryawan
-        '
-        Me.txtNamaKaryawan.Location = New System.Drawing.Point(97, 34)
-        Me.txtNamaKaryawan.MenuManager = Me.RibbonControl1
-        Me.txtNamaKaryawan.Name = "txtNamaKaryawan"
-        Me.txtNamaKaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtNamaKaryawan.Size = New System.Drawing.Size(265, 20)
-        Me.txtNamaKaryawan.StyleController = Me.LayoutControl1
-        Me.txtNamaKaryawan.TabIndex = 14
-        '
         'lcnames
         '
         Me.lcnames.Control = Me.txtNamaKaryawan
@@ -223,16 +254,6 @@ Partial Class SPForms
         Me.lcnames.Size = New System.Drawing.Size(354, 24)
         Me.lcnames.Text = "Employee Names"
         Me.lcnames.TextSize = New System.Drawing.Size(81, 13)
-        '
-        'btnSP
-        '
-        Me.btnSP.Image = CType(resources.GetObject("btnSP.Image"), System.Drawing.Image)
-        Me.btnSP.Location = New System.Drawing.Point(12, 130)
-        Me.btnSP.Name = "btnSP"
-        Me.btnSP.Size = New System.Drawing.Size(173, 38)
-        Me.btnSP.StyleController = Me.LayoutControl1
-        Me.btnSP.TabIndex = 14
-        Me.btnSP.Text = "Give SP"
         '
         'LayoutControlItem1
         '
@@ -246,16 +267,6 @@ Partial Class SPForms
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
         '
-        'btnReset
-        '
-        Me.btnReset.Image = CType(resources.GetObject("btnReset.Image"), System.Drawing.Image)
-        Me.btnReset.Location = New System.Drawing.Point(189, 130)
-        Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(173, 38)
-        Me.btnReset.StyleController = Me.LayoutControl1
-        Me.btnReset.TabIndex = 14
-        Me.btnReset.Text = "Reset"
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.btnReset
@@ -267,17 +278,6 @@ Partial Class SPForms
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
-        '
-        'lcTitle
-        '
-        Me.lcTitle.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lcTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center
-        Me.lcTitle.Location = New System.Drawing.Point(177, 12)
-        Me.lcTitle.Name = "lcTitle"
-        Me.lcTitle.Size = New System.Drawing.Size(20, 18)
-        Me.lcTitle.StyleController = Me.LayoutControl1
-        Me.lcTitle.TabIndex = 14
-        Me.lcTitle.Text = "SP"
         '
         'LayoutControlItem3
         '
@@ -307,14 +307,14 @@ Partial Class SPForms
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtEmpCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lcempcode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtPosition.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lcposition, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNamaKaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPosition.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtEmpCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcempcode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcposition, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcnames, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()

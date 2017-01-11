@@ -342,4 +342,8 @@ Public Class SPForms
             End If
         Next
     End Sub
+
+    Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
+
+    End Sub
 End Class
