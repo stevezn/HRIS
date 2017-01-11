@@ -1,11 +1,8 @@
-﻿Imports MySql.Data.MySqlClient
-Imports System.IO
-Imports System.Drawing.Printing
+﻿Imports System.IO
 Imports DevExpress.XtraGrid
-Imports System.Globalization
-Imports System.Windows.Forms
-Imports System.Web.Script.Serialization
 Imports DevExpress.XtraGrid.Views.Base
+Imports DevExpress.XtraGrid.Views.Grid
+Imports DevExpress.Utils.Menu
 
 Public Class MainApp
     'recruitment
@@ -21,18 +18,17 @@ Public Class MainApp
         Dim str As String
 
         str = "Server=localhost; user id=root; password=; Database=db_hris"
-
-        koneksi = New MySqlConnection(str)
-        If koneksi.State = ConnectionState.Closed Then
-            koneksi.Open()
-            MsgBox("Settings Connection Succesfully!")
-            BarButtonItem1.PerformClick()
-        Else
-            MsgBox("Settings Connection Failed, Please Try Again!")
-        End If
-        'resetclear()
-        'reset()
-        'clearForm()
+        Try
+            koneksi = New MySqlConnection(str)
+            If koneksi.State = ConnectionState.Closed Then
+                koneksi.Open()
+                'MsgBox("Settings Connection Succesfully!")
+                BarButtonItem1.PerformClick()
+            Else
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 #End Region
 
@@ -162,6 +158,8 @@ Public Class MainApp
         txtposition.Text = ""
         txtstart.Text = ""
         txtfinish.Text = ""
+        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcnumber.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcstart.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcfinish.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -269,48 +267,22 @@ Public Class MainApp
         txtded5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
     End Sub
 
-
 #Region "menu bar"
     Private Sub BarButtonItem1_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcForm.Text = "Recruitment Form"
-        lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         btnLihat.Enabled = True
         clearForm()
         reset()
         resetclear()
-        barJudul.Caption = "Module Recruitment"
+        lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         btnImport.Enabled = False
-        ' GridControl1.DataSource = DBNull.Value
+        barJudul.Caption = "Module Recruitment"
         GridControl1.RefreshDataSource()
         GridView1.Columns.Clear()
-        lcTglInt.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc1.Text = "ID Rec"
-        txtBar1.Enabled = False
-        lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc2.Text = "Interview Times"
-        txtBar2.Enabled = True
-        lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc3.Text = "Full Name"
-        lc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc4.Text = "Place Of Birth"
-        lcTanggal.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcTanggal.Text = "Date Of Birth"
-        lc6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc6.Text = "Gender"
-        lc7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc7.Text = "Religion"
-        lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc8.Text = "ID Card Number"
-        lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         loadDataReq()
     End Sub
 
@@ -707,11 +679,14 @@ Public Class MainApp
         End If
         infoForm.Show()
     End Sub
+
+
 #End Region
 
 #Region "CRUD database"
     'import to employee
     Dim table As DataTable
+
     Private Sub importData()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
@@ -731,7 +706,6 @@ Public Class MainApp
             null = "0"
         End If
         Dim rescode As String = ynow & "-" & mnow & "-" & null + txtnumber.Text
-        txtBar2.Text = rescode.ToString
         Dim sqlCommand As New MySqlCommand
         Try
             sqlCommand.CommandText = "INSERT INTO db_pegawai (FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, status, CompanyCode, EmployeeCode, OfficeLocation, PhoneNumber, TrainingSampai)" +
@@ -740,17 +714,19 @@ Public Class MainApp
             sqlCommand.Parameters.AddWithValue("@CompanyCode", "Fill This")
             sqlCommand.Parameters.AddWithValue("@EmployeeCode", rescode)
             sqlCommand.Parameters.AddWithValue("@OfficeLocation", "Fill This")
-            sqlCommand.Parameters.AddWithValue("@PhoneNumber", "Fill This")
-            sqlCommand.Parameters.AddWithValue("@TrainingSampai", "Null")
+            sqlCommand.Parameters.AddWithValue("@PhoneNumber", employees.txtphone.Text)
+            sqlCommand.Parameters.AddWithValue("@TrainingSampai", "No Trains")
             sqlCommand.Connection = SQLConnection
             sqlCommand.ExecuteNonQuery()
             SQLConnection.Close()
             MessageBox.Show("Import Data Succesfully!! Please Refresh The Data")
         Catch ex As Exception
             SQLConnection.Close()
-            MsgBox("There's Already an Exist Employee, Please Check Again.", MsgBoxStyle.Information)
+            MsgBox("There's Already an Exist Employee With The Same ID Number, Please Check Again.", MsgBoxStyle.Information)
         End Try
     End Sub
+
+    'SELECT CONCAT(DATE_FORMAT(Now(),'%y-%m'),"-", LPAD((RIGHT(MAX(EmployeeCode),4)+1),4,'0')) FROM db_pegawai 
 
     Public Sub updatestats()
         SQLConnection = New MySqlConnection
@@ -867,7 +843,7 @@ Public Class MainApp
         Dim sqlCommand As New MySqlCommand
         Try
             If barJudul.Caption = "Module Recruitment" Then
-                sqlCommand.CommandText = "Select IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, InterviewDate, Status from db_recruitment"
+                sqlCommand.CommandText = "Select IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, InterviewDate, Status, Reason from db_recruitment"
             ElseIf barJudul.Caption = "Module Employee" Then
                 sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, Status, TrainingSampai FROM db_pegawai"
             ElseIf barJudul.Caption = "Module Payroll" Then
@@ -1062,6 +1038,7 @@ Public Class MainApp
                        ", Address = @Address" +
                        ", Gender  = @Gender" +
                        ", Religion = @Religion" +
+                       ", PhoneNumber = @PhoneNumber" +
                        ", IdNumber = @IdNumber" +
                        ", Photo = @Photo" +
                        ", Status = @Status" +
@@ -1077,6 +1054,7 @@ Public Class MainApp
                 sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text)
                 sqlCommand.Parameters.AddWithValue("@Gender", txtbar6.Text)
                 sqlCommand.Parameters.AddWithValue("@Religion", txtbar7.Text)
+                sqlCommand.Parameters.AddWithValue("@PhoneNumber", txtphone.Text)
                 sqlCommand.Parameters.AddWithValue("@IdNumber", txtBar8.Text)
                 If Not txtFoto.Text Is Nothing Then 'Jika ada file yang akan disimpan
                     Dim param As New MySqlParameter("@Photo", ImageToByte(pictureEdit))
@@ -1088,8 +1066,8 @@ Public Class MainApp
                 sqlCommand.Parameters.AddWithValue("@InterviewDate", txtTglInterview.Text)
             ElseIf act = "input" Then
                 str_carSql = "INSERT INTO db_recruitment " +
-                       "(IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, Status, InterviewDate) " +
-                       "values (@IdRec,@InterviewTimes,@FullName,@PlaceOfBirth,@DateOfBirth,@Address,@Gender,@Religion,@IdNumber,@Photo,@Status,@InterviewDate)"
+                       "(IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, Status, InterviewDate) " +
+                       "values (@IdRec,@InterviewTimes,@FullName,@PlaceOfBirth,@DateOfBirth,@Address,@Gender,@Religion, @PhoneNumber, @IdNumber,@Photo,@Status,@InterviewDate)"
                 sqlCommand.Connection = SQLConnection
                 sqlCommand.CommandText = str_carSql
                 sqlCommand.Parameters.AddWithValue("@IdRec", txtBar1.Text)
@@ -1100,6 +1078,7 @@ Public Class MainApp
                 sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text)
                 sqlCommand.Parameters.AddWithValue("@Gender", txtbar6.Text)
                 sqlCommand.Parameters.AddWithValue("@Religion", txtbar7.Text)
+                sqlCommand.Parameters.AddWithValue("@PhoneNumber", txtphone.Text)
                 sqlCommand.Parameters.AddWithValue("@IdNumber", txtBar8.Text)
                 If Not txtFoto.Text Is Nothing Then 'Jika ada file yang akan disimpan
                     Dim param As New MySqlParameter("@Photo", ImageToByte(pictureEdit))
@@ -1507,6 +1486,7 @@ Public Class MainApp
             'Dim str_carSql As String
             Dim pesan As String
             pesan = CType(MsgBox("Sure To Delete ?", MsgBoxStyle.YesNo, "Warning"), String)
+            MsgBox(txtnumber.Text)
             If CType(pesan, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
                 sqlCommand.Connection = SQLConnection
                 sqlCommand.CommandType = CommandType.Text
@@ -1518,6 +1498,9 @@ Public Class MainApp
                 SQLConnection.Close()
             End If
         Catch ex As Exception
+            SQLConnection.Close()
+
+
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
         Return Nothing
@@ -1685,8 +1668,9 @@ Public Class MainApp
                 txtaddress.Text = datatabl.Rows(0).Item(5).ToString()
                 txtbar6.Text = datatabl.Rows(0).Item(6).ToString()
                 txtbar7.Text = datatabl.Rows(0).Item(7).ToString()
-                txtBar8.Text = datatabl.Rows(0).Item(8).ToString()
-                Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(9), Byte())
+                txtphone.Text = datatabl.Rows(0).Item(8).ToString()
+                txtBar8.Text = datatabl.Rows(0).Item(9).ToString()
+                Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(10), Byte())
                 If filefoto.Length > 0 Then
                     pictureEdit.Image = ByteToImage(filefoto)
                 Else
@@ -1695,8 +1679,8 @@ Public Class MainApp
                 End If
                 'tampilkan foto nya belum
                 '
-                txtText.Text = datatabl.Rows(0).Item(10).ToString()
-                txtTglInterview.Text = datatabl(0).Item(11).ToString()
+                txtText.Text = datatabl.Rows(0).Item(11).ToString()
+                txtTglInterview.Text = datatabl(0).Item(12).ToString()
             End If
         ElseIf barJudul.Caption = "Module Employee" Then
             Dim param2 As String = ""
@@ -2851,5 +2835,92 @@ Public Class MainApp
         If Char.IsLetter(ch) Then
             e.Handled = True
         End If
+    End Sub
+
+    Dim employees As New NewRec
+
+
+    Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+        If employees Is Nothing OrElse employees.IsDisposed Then
+            employees = New NewRec
+        End If
+        employees.Show()
+        employees.BarButtonItem1.PerformClick()
+        'lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcForm.Text = "Recruitment Form"
+        'lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'btnLihat.Enabled = True
+        'clearForm()
+        'reset()
+        'resetclear()
+        'barJudul.Caption = "Module Recruitment"
+        'btnImport.Enabled = False
+        '' GridControl1.DataSource = DBNull.Value
+        'GridControl1.RefreshDataSource()
+        'GridView1.Columns.Clear()
+        'lcTglInt.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcphone.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcphone.Text = "Phone Number"
+        'lc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc1.Text = "ID Rec"
+        'txtBar1.Enabled = False
+        'lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc2.Text = "Interview Times"
+        'txtBar2.Enabled = True
+        'lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc3.Text = "Full Name"
+        'lc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc4.Text = "Place Of Birth"
+        'lcTanggal.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcTanggal.Text = "Date Of Birth"
+        'lc6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc6.Text = "Gender"
+        'lc7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc7.Text = "Religion"
+        'lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc8.Text = "ID Card Number"
+        'lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        ''lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        'loadDataReq()
+    End Sub
+
+    Dim proses As New RecProcess
+
+    Private Sub btnChange_Click(sender As Object, e As EventArgs) Handles btnChange.Click
+        If employees Is Nothing OrElse employees.IsDisposed Then
+            employees = New NewRec
+        End If
+        employees.Show()
+        employees.BarButtonItem2.PerformClick()
+    End Sub
+
+    Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
+        Dim view As GridView = CType(sender, GridView)
+        ' Check whether a row is right-clicked.
+        If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
+            Dim rowHandle As Integer = e.HitInfo.RowHandle
+            ' Delete existing menu items, if any.
+            e.Menu.Items.Clear()
+            ' Add a submenu with a single menu item.
+            'e.Menu.Items.Add(CreateRowSubMenu(view, rowHandle))
+            ' Add a check menu item.           
+            Dim item As DXMenuItem = CreateMergingEnabledMenuItem(view, rowHandle)
+            item.BeginGroup = True
+            e.Menu.Items.Add(item)
+        End If
+    End Sub
+
+    Private Sub btnProg_Click(sender As Object, e As EventArgs) Handles btnProg.Click
+        If proses Is Nothing OrElse proses.IsDisposed Then
+            proses = New RecProcess
+        End If
+        proses.Show()
     End Sub
 End Class

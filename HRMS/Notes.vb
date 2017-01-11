@@ -5,8 +5,6 @@
     Dim oDt_sched As New DataTable()
 
     Dim tbl_par As New DataTable
-
-
     Sub loadD()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString

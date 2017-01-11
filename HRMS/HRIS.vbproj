@@ -135,6 +135,7 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGrid.vb" />
     <Compile Include="DemosiHistory.Designer.vb">
       <DependentUpon>DemosiHistory.vb</DependentUpon>
     </Compile>
@@ -159,6 +160,12 @@
     <Compile Include="MainApp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewRec.Designer.vb">
+      <DependentUpon>NewRec.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewRec.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Notes.Designer.vb">
       <DependentUpon>Notes.vb</DependentUpon>
     </Compile>
@@ -167,6 +174,12 @@
     </Compile>
     <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="RecProcess.Designer.vb">
+      <DependentUpon>RecProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecProcess.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RotasiHistory.Designer.vb">
       <DependentUpon>RotasiHistory.vb</DependentUpon>
     </Compile>
@@ -215,8 +228,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="NewRec.resx">
+      <DependentUpon>NewRec.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notes.resx">
       <DependentUpon>Notes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecProcess.resx">
+      <DependentUpon>RecProcess.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RotasiHistory.resx">
       <DependentUpon>RotasiHistory.vb</DependentUpon>

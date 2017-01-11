@@ -503,3 +503,5 @@ E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Core.dll
 E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.Microsoft.Office.Interop.Word.dll
 E:\New folder\New folder\HRMS\obj\x86\Debug\Interop.VBIDE.dll
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRIS.vbproj.ResolveComReference.cache
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.NewRec.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.RecProcess.resources
