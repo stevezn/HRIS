@@ -7,8 +7,7 @@ Module DataGrid
     ' Create a check menu item that triggers the Boolean AllowCellMerge option.
     Function CreateMergingEnabledMenuItem(ByVal view As GridView,
     ByVal rowHandle As Integer) As DXMenuCheckItem
-        Dim checkItem As New DXMenuCheckItem("&Merging Enabled",
-          view.OptionsView.AllowCellMerge, Nothing, AddressOf OnMergingEnabledClick)
+        Dim checkItem As New DXMenuCheckItem("&Merging Enabled", view.OptionsView.AllowCellMerge, Nothing, AddressOf OnMergingEnabledClick)
         checkItem.Tag = New RowInfo(view, rowHandle)
         Return checkItem
     End Function
@@ -36,7 +35,7 @@ Module DataGrid
         Public Sub New(ByVal view As GridView, ByVal rowHandle As Integer)
             Me.RowHandle = rowHandle
             Me.View = view
-        End Sub 'New
+        End Sub
         Public View As GridView
         Public RowHandle As Integer
     End Class

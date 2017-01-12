@@ -72,12 +72,10 @@ Partial Class RecProcess
         Me.lcreason = New DevExpress.XtraLayout.LayoutControlItem()
         Me.pictureEdit = New System.Windows.Forms.PictureBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.btnView = New DevExpress.XtraEditors.SimpleButton()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.btnView = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.lcphone, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtphone.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,8 +122,6 @@ Partial Class RecProcess
         Me.LayoutControl2.SuspendLayout()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lcphone
@@ -156,7 +152,7 @@ Partial Class RecProcess
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.Employee})
-        Me.RibbonControl1.Size = New System.Drawing.Size(1124, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(520, 142)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above
         '
@@ -639,6 +635,16 @@ Partial Class RecProcess
         Me.GroupControl1.Size = New System.Drawing.Size(505, 528)
         Me.GroupControl1.TabIndex = 35
         '
+        'btnView
+        '
+        Me.btnView.Image = CType(resources.GetObject("btnView.Image"), System.Drawing.Image)
+        Me.btnView.Location = New System.Drawing.Point(349, 205)
+        Me.btnView.Name = "btnView"
+        Me.btnView.Size = New System.Drawing.Size(142, 38)
+        Me.btnView.StyleController = Me.LayoutControl1
+        Me.btnView.TabIndex = 31
+        Me.btnView.Text = "View CV"
+        '
         'LayoutControl2
         '
         Me.LayoutControl2.Controls.Add(Me.LayoutControl1)
@@ -673,37 +679,11 @@ Partial Class RecProcess
         Me.LayoutControlItem2.TextToControlDistance = 0
         Me.LayoutControlItem2.TextVisible = False
         '
-        'GridControl2
-        '
-        Me.GridControl2.Location = New System.Drawing.Point(515, 148)
-        Me.GridControl2.MainView = Me.GridView2
-        Me.GridControl2.MenuManager = Me.RibbonControl1
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(599, 528)
-        Me.GridControl2.TabIndex = 36
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.GridControl2
-        Me.GridView2.Name = "GridView2"
-        '
-        'btnView
-        '
-        Me.btnView.Image = CType(resources.GetObject("btnView.Image"), System.Drawing.Image)
-        Me.btnView.Location = New System.Drawing.Point(349, 205)
-        Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(142, 38)
-        Me.btnView.StyleController = Me.LayoutControl1
-        Me.btnView.TabIndex = 31
-        Me.btnView.Text = "View CV"
-        '
         'RecProcess
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1124, 733)
-        Me.Controls.Add(Me.GridControl2)
+        Me.ClientSize = New System.Drawing.Size(520, 733)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "RecProcess"
@@ -755,8 +735,6 @@ Partial Class RecProcess
         Me.LayoutControl2.ResumeLayout(False)
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -813,7 +791,5 @@ Partial Class RecProcess
     Friend WithEvents LayoutControl2 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents LayoutControlGroup2 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents btnView As DevExpress.XtraEditors.SimpleButton
 End Class

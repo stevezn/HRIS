@@ -88,7 +88,7 @@ Public Class RecProcess
             sqlCommand.Parameters.AddWithValue("@Status", txtstatus.Text)
             sqlCommand.Parameters.AddWithValue("@InterviewDate", txtinterviewdate.Text)
             sqlCommand.Parameters.AddWithValue("@Cv", txtcv.Text)
-            sqlCommand.Parameters.AddWithValue("@Reason", "")
+            sqlCommand.Parameters.AddWithValue("@Reason", txtreason.Text)
             sqlCommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
             Return True
@@ -105,7 +105,7 @@ Public Class RecProcess
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, Status, InterviewDate, Cv, Reason FROM db_recruitment"
+        sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, status, InterviewDate, Cv, Reason FROM db_recruitment"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
@@ -158,33 +158,45 @@ Public Class RecProcess
         Next
     End Sub
 
-    Private Sub loadDataReq()
-        GridControl2.RefreshDataSource()
-        Dim table As New DataTable
+    'Private Sub loadDataReq()
+    '    GridControl2.RefreshDataSource()
+    '    Dim table As New DataTable
 
-        SQLConnection = New MySqlConnection()
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Dim sqlCommand As New MySqlCommand
-        Try
-            If barJudul.Caption = "" Then
-                sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, Status, TrainingSampai FROM db_pegawai"
-            End If
-            sqlCommand.Connection = SQLConnection
-            Dim tbl_par As New DataTable
-            Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
-            Dim cb As New MySqlCommandBuilder(adapter)
-            adapter.Fill(table)
-            GridControl2.DataSource = table
-            SQLConnection.Close()
-        Catch ex As Exception
-            SQLConnection.Close()
-            MsgBox(ex.Message)
-        End Try
-    End Sub
+    '    SQLConnection = New MySqlConnection()
+    '    SQLConnection.ConnectionString = connectionString
+    '    SQLConnection.Open()
+    '    Dim sqlCommand As New MySqlCommand
+    '    Try
+    '        If barJudul.Caption = "Recruitment Process" Then
+    '            sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, status, TrainingSampai FROM db_pegawai"
+    '        End If
+    '        sqlCommand.Connection = SQLConnection
+    '        Dim tbl_par As New DataTable
+    '        Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
+    '        Dim cb As New MySqlCommandBuilder(adapter)
+    '        adapter.Fill(table)
+    '        GridControl2.DataSource = table
+    '        SQLConnection.Close()
+    '    Catch ex As Exception
+    '        SQLConnection.Close()
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Sub
 
     Private Sub RecProcess_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataKaryawan()
-        loadDataReq()
+        'loadDataReq()
+    End Sub
+
+    Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
+
+    End Sub
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        barJudul.Caption = "Recruitment Process"
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        cleartxt()
     End Sub
 End Class

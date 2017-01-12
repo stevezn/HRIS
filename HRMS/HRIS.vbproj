@@ -46,7 +46,10 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v13.1" />
+    <Reference Include="DevExpress.DataAccess.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v13.1.UI, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DemoData.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DemoData.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DemoReports.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=4c3bc44151be4b47, processorArchitecture=MSIL" />
@@ -80,6 +83,7 @@
     <Reference Include="DevExpress.XtraSpellChecker.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -160,16 +164,34 @@
     <Compile Include="MainApp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewEmp.Designer.vb">
+      <DependentUpon>NewEmp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewRec.Designer.vb">
       <DependentUpon>NewRec.vb</DependentUpon>
     </Compile>
     <Compile Include="NewRec.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewSalary.Designer.vb">
+      <DependentUpon>NewSalary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewSalary.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Notes.Designer.vb">
       <DependentUpon>Notes.vb</DependentUpon>
     </Compile>
     <Compile Include="Notes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollCount.Designer.vb">
+      <DependentUpon>PayrollCount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollCount.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.vb" />
@@ -228,11 +250,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="NewEmp.resx">
+      <DependentUpon>NewEmp.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewRec.resx">
       <DependentUpon>NewRec.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewSalary.resx">
+      <DependentUpon>NewSalary.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notes.resx">
       <DependentUpon>Notes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollCount.resx">
+      <DependentUpon>PayrollCount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecProcess.resx">
       <DependentUpon>RecProcess.vb</DependentUpon>

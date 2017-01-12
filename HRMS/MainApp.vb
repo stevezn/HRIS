@@ -111,7 +111,7 @@ Public Class MainApp
         txtTanggal.Text = ""
         txtStatEmp.Text = ""
         txtTglInterview.Text = ""
-        txtTrainingSampai.Text = ""
+        'txtTrainingSampai.Text = ""
         pictureEdit.Refresh()
         txtGaji.Text = ""
         txtAllowance.Text = ""
@@ -121,11 +121,11 @@ Public Class MainApp
         txtpphterutang.Text = ""
         cmboxbj.Text = ""
         cmboxiuranpensiun.Text = ""
-        txtpkk.Text = ""
-        txtpjk.Text = ""
-        txtpjht.Text = ""
-        txtpbj.Text = ""
-        txtpip.Text = ""
+        'txtpkk.Text = ""
+        'txtpjk.Text = ""
+        'txtpjht.Text = ""
+        'txtpbj.Text = ""
+        'txtpip.Text = ""
         txtpajakpph.Text = ""
         txtrapel.Text = ""
         frommonth.Text = ""
@@ -153,11 +153,12 @@ Public Class MainApp
         txtTanggal.Text = ""
         txtStatEmp.Text = ""
         txtTglInterview.Text = ""
-        txtTrainingSampai.Text = ""
+        ';txtTrainingSampai.Text = ""
         txtworkdate.Text = ""
         txtposition.Text = ""
         txtstart.Text = ""
         txtfinish.Text = ""
+        lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcnumber.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -179,15 +180,15 @@ Public Class MainApp
         lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcemail.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcpphutang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        'lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        'lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        'lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        ' lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lciuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         txtbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         txtiuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        'lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         netosetaun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcphone.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lclocation.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -225,7 +226,7 @@ Public Class MainApp
         lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        'lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcJnsShif.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcGaji.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         loadDataKaryawan()
@@ -273,6 +274,7 @@ Public Class MainApp
         clearForm()
         reset()
         resetclear()
+        lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -287,51 +289,25 @@ Public Class MainApp
     End Sub
 
     Private Sub BarButtonItem2_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-        clearForm()
-        reset()
-        resetclear()
-        lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcForm.Text = "Employee Form"
-        lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        barJudul.Caption = "Module Employee"
-        'GridControl1.DataSource = DBNull.Value
-        GridControl1.RefreshDataSource()
-        GridView1.Columns.Clear()
         btnLihat.Enabled = False
         btnImport.Enabled = True
-        lcsp1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'clearForm()
+        reset()
+        resetclear()
         lcrotasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcposition.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcworkdate.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcemail.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcsp1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcnotes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc2.Text = "Employee Code"
-        txtBar2.Enabled = False
-        compcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        compcode.Text = "Company Code"
-        lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc3.Text = "Full Name"
-        lc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc4.Text = "Place Of Birth"
-        lcTanggal.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcTanggal.Text = "Date Of Birth"
-        lc6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc6.Text = "Gender"
-        lc7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc7.Text = "Religion"
-        lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lclocation.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lclocation.Text = "Office Location"
-        lcphone.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcphone.Text = "Phone Number"
-        lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        barJudul.Caption = "Module Employee"
+        GridControl1.RefreshDataSource()
+        GridView1.Columns.Clear()
         loadDataReq()
         GridView1.Focus()
         GridView1.MoveLast()
@@ -341,95 +317,90 @@ Public Class MainApp
         clearForm()
         resetclear()
         reset()
-        lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcForm.Text = "Payroll Form"
-        lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        netosetaun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcbutton.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         barJudul.Caption = "Module Payroll"
         'GridControl1.DataSource = DBNull.Value
         GridControl1.RefreshDataSource()
         GridView1.Columns.Clear()
         btnLihat.Enabled = False
         btnImport.Enabled = False
-        lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcpayment.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lciuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtiuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcpphtahun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcpphutang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcrc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcrapel.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcfm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lctm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lchasilrapel.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lccode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lccode.Text = "Employee Code"        
+        'lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcpayment.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lciuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtiuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcpphtahun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcpphutang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcrc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcrapel.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcfm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lctm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lchasilrapel.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        ''lccode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        ''lccode.Text = "Employee Code"        
         loadDataKaryawan()
-        lcKaryawan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lc2.Text = "Employee Code"
-        lcoad.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcded.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcotc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcoda.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lctotalovertime.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcGaji.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcTipePenggajian.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcStatWp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcTunjangan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcBiayaJab.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcIuranPen.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcgross.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcbpjs.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcdeductions.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcnetincome.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcpkp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcpajak.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcjkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        countButton.Enabled = True
-        'lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        overtimehours.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        overtimetype.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        bpjspercentage.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lctaxes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcloan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lclates.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        jkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        pjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        jht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        npwp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        Transport.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadddesc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadddesc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadddesc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadddesc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadddesc5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadd1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadd2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadd3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadd4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtadd5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtdeddesc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtdeddesc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtdeddesc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtdeddesc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtdeddesc5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtded1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtded2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtded3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtded4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        txtded5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcKaryawan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lc2.Text = "Employee Code"
+        'lcoad.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcded.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcotc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcoda.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lctotalovertime.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcGaji.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        ''lcTipePenggajian.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcStatWp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcTunjangan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcBiayaJab.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcIuranPen.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcgross.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcbpjs.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcdeductions.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcnetincome.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcpkp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        ''lcpajak.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcjkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'countButton.Enabled = True
+        ''lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'overtimehours.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'overtimetype.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'bpjspercentage.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lctaxes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lcloan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'lclates.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'jkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'pjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'jht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'npwp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'Transport.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadddesc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadddesc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadddesc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadddesc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadddesc5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadd1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadd2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadd3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadd4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtadd5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtdeddesc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtdeddesc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtdeddesc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtdeddesc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtdeddesc5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtded1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtded2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtded3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtded4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        'txtded5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         btnLihat.Enabled = False
         btnImport.Enabled = False
         loadDataReq()
@@ -687,6 +658,7 @@ Public Class MainApp
     'import to employee
     Dim table As DataTable
 
+
     Private Sub importData()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
@@ -695,19 +667,29 @@ Public Class MainApp
         Dim newid As Integer = maxid + 1
         Dim ynow As String = Format(Now, "yy").ToString
         Dim mnow As String = Month(Now).ToString
-        Dim null As String = "0000"
-        If CInt(txtnumber.Text) < 9 Then
-            null = "0000"
-        ElseIf CInt(txtnumber.Text) > 9 Then
-            null = "000"
-        ElseIf CInt(txtnumber.Text) > 99 Then
-            null = "00"
-        ElseIf CInt(txtnumber.Text) > 999 Then
-            null = "0"
-        End If
-        Dim rescode As String = ynow & "-" & mnow & "-" & null + txtnumber.Text
+        Dim lastn As Integer
+        Try
+            Dim cmd = SQLConnection.CreateCommand()
+            cmd.CommandText = "SELECT last_num FROM view_emp_last_code"
+
+            lastn = DirectCast(cmd.ExecuteScalar(), Integer) + 1
+        Catch ex As Exception
+            MsgBox("error")
+        End Try
+
+        'If CInt(txtnumber.Text) < 9 Then
+        '    null = "0000"
+        'ElseIf CInt(txtnumber.Text) > 9 Then
+        '    null = "000"
+        'ElseIf CInt(txtnumber.Text) > 99 Then
+        '    null = "00"
+        'ElseIf CInt(txtnumber.Text) > 999 Then
+        ''    null = "0"
+        'End If
+        Dim rescode As String = ynow & "-" & mnow & "-" & Strings.Right("0000" & lastn, 4)
         Dim sqlCommand As New MySqlCommand
         Try
+
             sqlCommand.CommandText = "INSERT INTO db_pegawai (FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, status, CompanyCode, EmployeeCode, OfficeLocation, PhoneNumber, TrainingSampai)" +
                                              "SELECT FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, @status, @CompanyCode, @EmployeeCode, @OfficeLocation, @PhoneNumber, @TrainingSampai FROM db_recruitment WHERE Status='Accepted'"
             sqlCommand.Parameters.AddWithValue("@Status", "Active")
@@ -796,11 +778,11 @@ Public Class MainApp
             sqlcommand.Parameters.AddWithValue("@ResJaminanHariTua", cmboxjht.Text)
             sqlcommand.Parameters.AddWithValue("@ResBiayajabatan", cmboxbj.Text)
             sqlcommand.Parameters.AddWithValue("@ResIuranPensiun", cmboxiuranpensiun.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenKk", txtpkk.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenJk", txtpjk.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenKk", txtpkk.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenJk", txtpjk.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
             sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", cmboxnpwp.Text)
             sqlcommand.Parameters.AddWithValue("@Gross", txtgross.Text)
             sqlcommand.Parameters.AddWithValue("@Bpjs", txtbpjs.Text)
@@ -1278,11 +1260,11 @@ Public Class MainApp
             sqlcommand.Parameters.AddWithValue("@ResJaminanHariTua", cmboxjht.Text)
             sqlcommand.Parameters.AddWithValue("@ResBiayajabatan", cmboxbj.Text)
             sqlcommand.Parameters.AddWithValue("@ResIuranPensiun", cmboxiuranpensiun.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenKk", txtpkk.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenJk", txtpjk.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
-            sqlcommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenKk", txtpkk.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenJk", txtpjk.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
+            'sqlcommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
             sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", cmboxnpwp.Text)
             sqlcommand.Parameters.AddWithValue("@Gross", txtgross.Text)
             sqlcommand.Parameters.AddWithValue("@Bpjs", txtbpjs.Text)
@@ -1325,8 +1307,7 @@ Public Class MainApp
         Try
             If act = "edit" Then
                 str_carSql = "UPDATE db_pegawai SET" +
-                       " EmployeeCode = @EmployeeCode" +
-                       ", CompanyCode = @CompanyCode" +
+                       " CompanyCode = @CompanyCode" +
                        ", FullName = @FullName" +
                        ", Position = @Position" +
                        ", PlaceOfBirth = @PlaceOfBirth" +
@@ -1341,17 +1322,16 @@ Public Class MainApp
                        ", Photo = @Photo" +
                        ", Status = @Status" +
                        ", TrainingSampai = @TrainingSampai" +
-                       " WHERE Number = @Number"
+                       " WHERE EmployeeCode = @EmployeeCode"
             ElseIf act = "input" Then
                 str_carSql = "INSERT INTO db_pegawai " +
-                            "(Number, EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, OfficeLocation, WorkDate, PhoneNumber, Photo, Status, TrainingSampai) " +
-                            "values (@Number, @EmployeeCode,@CompanyCode,@FullName,@Position,@PlaceOfBirth,@DateOfBirth,@Gender,@Religion,@Address,@Email,@OfficeLocation,@WorkDate,@PhoneNumber, @Photo, @Status, @TrainingSampai)"
+                            "(EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, OfficeLocation, WorkDate, PhoneNumber, Photo, Status, TrainingSampai) " +
+                            "values (@EmployeeCode,@CompanyCode,@FullName,@Position,@PlaceOfBirth,@DateOfBirth,@Gender,@Religion,@Address,@Email,@OfficeLocation,@WorkDate,@PhoneNumber, @Photo, @Status, @TrainingSampai)"
             Else
-                str_carSql = "DELETE FROM db_pegawai WHERE Number = @Number"
+                str_carSql = "DELETE FROM db_pegawai WHERE EmployeeCode = @EmployeeCode"
             End If
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
-            sqlCommand.Parameters.AddWithValue("@Number", txtnumber.Text)
             sqlCommand.Parameters.AddWithValue("@EmployeeCode", txtBar2.Text)
             sqlCommand.Parameters.AddWithValue("@CompanyCode", compacode.Text)
             sqlCommand.Parameters.AddWithValue("@FullName", txtBar3.Text)
@@ -1373,7 +1353,7 @@ Public Class MainApp
                 sqlCommand.Parameters.AddWithValue("@Photo", "")
             End If
             sqlCommand.Parameters.AddWithValue("@Status", txtStatEmp.Text)
-            sqlCommand.Parameters.AddWithValue("@TrainingSampai", txtTrainingSampai.Text)
+            'sqlCommand.Parameters.AddWithValue("@TrainingSampai", txtTrainingSampai.Text)
             sqlCommand.ExecuteNonQuery()
             If act = "input" Then
                 MessageBox.Show("Data Succesfully Added!")
@@ -1486,11 +1466,10 @@ Public Class MainApp
             'Dim str_carSql As String
             Dim pesan As String
             pesan = CType(MsgBox("Sure To Delete ?", MsgBoxStyle.YesNo, "Warning"), String)
-            MsgBox(txtnumber.Text)
             If CType(pesan, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
                 sqlCommand.Connection = SQLConnection
                 sqlCommand.CommandType = CommandType.Text
-                sqlCommand.CommandText = "DELETE FROM db_pegawai WHERE Number = " + txtnumber.Text
+                sqlCommand.CommandText = "DELETE FROM db_pegawai WHERE EmployeeCode = " + txtBar2.Text
                 sqlCommand.ExecuteNonQuery()
                 MsgBox("Data Succesfully Removed !", MsgBoxStyle.Information, "Success")
                 GridControl1.RefreshDataSource()
@@ -1499,8 +1478,6 @@ Public Class MainApp
             End If
         Catch ex As Exception
             SQLConnection.Close()
-
-
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
         Return Nothing
@@ -1706,30 +1683,29 @@ Public Class MainApp
                 MsgBox(ex.Message, MsgBoxStyle.Critical)
             End Try
             If datatabl.Rows.Count > 0 Then
-                txtnumber.Text = datatabl.Rows(0).Item(0).ToString()
-                txtBar2.Text = datatabl.Rows(0).Item(1).ToString()
-                compacode.Text = datatabl.Rows(0).Item(2).ToString()
-                txtBar3.Text = datatabl.Rows(0).Item(3).ToString()
-                txtposition.Text = datatabl.Rows(0).Item(4).ToString()
-                txtBar4.Text = datatabl.Rows(0).Item(5).ToString()
-                txtTanggal.Text = datatabl.Rows(0).Item(6).ToString()
-                txtbar6.Text = datatabl.Rows(0).Item(7).ToString()
-                txtbar7.Text = datatabl.Rows(0).Item(8).ToString()
-                txtaddress.Text = datatabl.Rows(0).Item(9).ToString()
-                txtemail.Text = datatabl.Rows(0).Item(10).ToString()
-                txtBar8.Text = datatabl.Rows(0).Item(11).ToString()
-                txtlocation.Text = datatabl.Rows(0).Item(12).ToString()
-                txtworkdate.Text = datatabl.Rows(0).Item(13).ToString()
-                txtphone.Text = datatabl.Rows(0).Item(14).ToString()
-                Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(15), Byte())
+                txtBar2.Text = datatabl.Rows(0).Item(0).ToString()
+                compacode.Text = datatabl.Rows(0).Item(1).ToString()
+                txtBar3.Text = datatabl.Rows(0).Item(2).ToString()
+                txtposition.Text = datatabl.Rows(0).Item(3).ToString()
+                txtBar4.Text = datatabl.Rows(0).Item(4).ToString()
+                txtTanggal.Text = datatabl.Rows(0).Item(5).ToString()
+                txtbar6.Text = datatabl.Rows(0).Item(6).ToString()
+                txtbar7.Text = datatabl.Rows(0).Item(7).ToString()
+                txtaddress.Text = datatabl.Rows(0).Item(8).ToString()
+                txtemail.Text = datatabl.Rows(0).Item(9).ToString()
+                txtBar8.Text = datatabl.Rows(0).Item(10).ToString()
+                txtlocation.Text = datatabl.Rows(0).Item(11).ToString()
+                txtworkdate.Text = datatabl.Rows(0).Item(12).ToString()
+                txtphone.Text = datatabl.Rows(0).Item(13).ToString()
+                Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(14), Byte())
                 If filefoto.Length > 0 Then
                     pictureEdit.Image = ByteToImage(filefoto)
                 Else
                     pictureEdit.Image = Nothing
                     pictureEdit.Refresh()
                 End If
-                txtStatEmp.Text = datatabl.Rows(0).Item(16).ToString()
-                txtTrainingSampai.Text = datatabl.Rows(0).Item(17).ToString()
+                txtStatEmp.Text = datatabl.Rows(0).Item(15).ToString()
+                'txtTrainingSampai.Text = datatabl.Rows(0).Item(16).ToString()
             End If
         ElseIf barJudul.Caption = "Module Payroll" Then
             Dim param2 As String = ""
@@ -1793,11 +1769,11 @@ Public Class MainApp
                 cmboxjht.Text = datatabl.Rows(0).Item(36).ToString()
                 cmboxbj.Text = datatabl.Rows(0).Item(37).ToString()
                 cmboxiuranpensiun.Text = datatabl.Rows(0).Item(38).ToString()
-                txtpkk.Text = datatabl.Rows(0).Item(39).ToString()
-                txtpjk.Text = datatabl.Rows(0).Item(40).ToString()
-                txtpjht.Text = datatabl.Rows(0).Item(41).ToString()
-                txtpbj.Text = datatabl.Rows(0).Item(42).ToString()
-                txtpip.Text = datatabl.Rows(0).Item(43).ToString()
+                'txtpkk.Text = datatabl.Rows(0).Item(39).ToString()
+                'txtpjk.Text = datatabl.Rows(0).Item(40).ToString()
+                'txtpjht.Text = datatabl.Rows(0).Item(41).ToString()
+                'txtpbj.Text = datatabl.Rows(0).Item(42).ToString()
+                'txtpip.Text = datatabl.Rows(0).Item(43).ToString()
                 cmboxnpwp.Text = datatabl.Rows(0).Item(44).ToString()
                 txtgross.Text = datatabl.Rows(0).Item(45).ToString()
                 txtbpjs.Text = datatabl.Rows(0).Item(46).ToString()
@@ -1895,16 +1871,6 @@ Public Class MainApp
     End Sub
 
     Private Sub txtStatEmp_SelectedValueChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtStatEmp.SelectedValueChanged
-        If txtStatEmp.SelectedIndex = 0 Then
-            txtStatEmp.SelectedItem = "Active"
-            lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        ElseIf txtStatEmp.SelectedIndex = 1 Then
-            txtStatEmp.SelectedItem = "Training"
-            lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        ElseIf txtStatEmp.SelectedIndex = 2 Then
-            txtStatEmp.SelectedItem = "Fired"
-            lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        End If
     End Sub
 
     Private Sub txtJnsShift_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtJnsShift.SelectedValueChanged
@@ -2004,7 +1970,7 @@ Public Class MainApp
         Try
             Dim a, b, res As Double
             a = Convert.ToDouble(txtGaji.Text)
-            b = Convert.ToDouble(txtpbj.Text)
+            'b = Convert.ToDouble(txtpbj.Text)
             res = a * b / 100
             txthasilbjabatan.Text = res.ToString()
             txthasilbjabatan.Text = Format(res, "##,##0")
@@ -2146,7 +2112,7 @@ Public Class MainApp
             Dim a, b, res As Double
             If cmboxjht.Text = "Yes" Then
                 a = Convert.ToDouble(txtGaji.Text)
-                b = Convert.ToDouble(txtpjht.Text)
+                'b = Convert.ToDouble(txtpjht.Text)
                 res = a * b / 100
                 txtjht.Text = res.ToString()
                 txtjht.Text = Format(res, "##,##0")
@@ -2167,7 +2133,7 @@ Public Class MainApp
             Dim a, b, res As Double
             If cmboxiuranpensiun.Text = "Yes" Then
                 a = Convert.ToDouble(txtGaji.Text)
-                b = Convert.ToDouble(txtpip.Text)
+                ' b = Convert.ToDouble(txtpip.Text)
                 res = a * b / 100
                 txthasiliuranpensiun.Text = res.ToString()
                 txthasiliuranpensiun.Text = Format(res, "##,##0")
@@ -2234,7 +2200,7 @@ Public Class MainApp
             Dim a, b, res As Double
             If cmboxjkk.Text = "Yes" Then
                 a = Convert.ToDouble(txtGaji.Text)
-                b = Convert.ToDouble(txtpkk.Text)
+                ' b = Convert.ToDouble(txtpkk.Text)
                 res = a * b / 100
                 txtjkk.Text = res.ToString()
                 txtjkk.Text = Format(res, "##,##0")
@@ -2255,7 +2221,7 @@ Public Class MainApp
             Dim a, b, res As Double
             If cmboxjk.Text = "Yes" Then
                 a = Convert.ToDouble(txtGaji.Text)
-                b = Convert.ToDouble(txtpjk.Text)
+                'b = Convert.ToDouble(txtpjk.Text)
                 res = a * b / 100
                 txtjk.Text = res.ToString()
                 txtjk.Text = Format(res, "##,##0")
@@ -2518,33 +2484,33 @@ Public Class MainApp
     Private Sub cmboxjkk_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmboxjkk.SelectedIndexChanged
         If cmboxjkk.SelectedIndex = 0 Then
             cmboxjkk.SelectedItem = "Yes"
-            lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+            'lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf cmboxjkk.SelectedIndex = 1 Then
             cmboxjkk.SelectedItem = "No"
-            lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-            txtpkk.Text = "0"
+            'lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            'txtpkk.Text = "0"
         End If
     End Sub
 
     Private Sub cmboxjk_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmboxjk.SelectedIndexChanged
         If cmboxjk.SelectedIndex = 0 Then
             cmboxjk.SelectedItem = "Yes"
-            lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+            'lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf cmboxjk.SelectedIndex = 1 Then
             cmboxjk.SelectedItem = "No"
-            lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-            txtpjk.Text = "0"
+            'lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            ' txtpjk.Text = "0"
         End If
     End Sub
 
     Private Sub cmboxjht_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmboxjht.SelectedIndexChanged
         If cmboxjht.SelectedIndex = 0 Then
             cmboxjht.SelectedItem = "Yes"
-            lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+            'lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf cmboxjht.SelectedIndex = 1 Then
             cmboxjht.SelectedItem = "No"
-            lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-            txtpjht.Text = "0"
+            'lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            'txtpjht.Text = "0"
         End If
     End Sub
 
@@ -2576,22 +2542,22 @@ Public Class MainApp
     Private Sub cmboxiuranpensiun_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmboxiuranpensiun.SelectedIndexChanged
         If cmboxiuranpensiun.SelectedIndex = 0 Then
             cmboxiuranpensiun.SelectedItem = "Yes"
-            lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+            ' lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf cmboxiuranpensiun.SelectedIndex = 1 Then
             cmboxiuranpensiun.SelectedItem = "No"
-            lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-            txtpip.Text = "0"
+            ' lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            ' txtpip.Text = "0"
         End If
     End Sub
 
     Private Sub cmboxbj_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmboxbj.SelectedIndexChanged
         If cmboxbj.SelectedIndex = 0 Then
             cmboxbj.SelectedItem = "Yes"
-            lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+            ' lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf cmboxbj.SelectedIndex = 1 Then
             cmboxbj.SelectedItem = "No"
-            lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-            txtpbj.Text = "0"
+            'lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            'txtpbj.Text = "0"
         End If
     End Sub
 
@@ -2795,35 +2761,35 @@ Public Class MainApp
         End If
     End Sub
 
-    Private Sub txtpkk_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpkk.KeyPress
+    Private Sub txtpkk_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim ch As Char = e.KeyChar
         If Char.IsLetter(ch) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub txtpjk_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpjk.KeyPress
+    Private Sub txtpjk_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim ch As Char = e.KeyChar
         If Char.IsLetter(ch) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub txtpjht_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpjht.KeyPress
+    Private Sub txtpjht_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim ch As Char = e.KeyChar
         If Char.IsLetter(ch) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub txtpbj_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpbj.KeyPress
+    Private Sub txtpbj_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim ch As Char = e.KeyChar
         If Char.IsLetter(ch) Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub txtpip_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpip.KeyPress
+    Private Sub txtpip_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim ch As Char = e.KeyChar
         If Char.IsLetter(ch) Then
             e.Handled = True
@@ -2838,67 +2804,53 @@ Public Class MainApp
     End Sub
 
     Dim employees As New NewRec
-
+    Dim newemps As New NewEmp
+    Dim salary As New NewSalary
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
-        If employees Is Nothing OrElse employees.IsDisposed Then
-            employees = New NewRec
+        If barJudul.Caption = "Module Recruitment" Then
+            If employees Is Nothing OrElse employees.IsDisposed Then
+                employees = New NewRec
+            End If
+            employees.Show()
+            employees.BarButtonItem1.PerformClick()
+        ElseIf barJudul.Caption = "Module Employee" Then
+            If newemps Is Nothing OrElse newemps.IsDisposed Then
+                newemps = New NewEmp
+            End If
+            newemps.Show()
+            newemps.BarButtonItem1.PerformClick()
+        ElseIf barJudul.Caption = "Module Payroll" Then
+            If salary Is Nothing OrElse salary.IsDisposed Then
+                salary = New NewSalary
+            End If
+            salary.Show()
+            salary.BarButtonItem1.PerformClick()
         End If
-        employees.Show()
-        employees.BarButtonItem1.PerformClick()
-        'lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcForm.Text = "Recruitment Form"
-        'lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'btnLihat.Enabled = True
-        'clearForm()
-        'reset()
-        'resetclear()
-        'barJudul.Caption = "Module Recruitment"
-        'btnImport.Enabled = False
-        '' GridControl1.DataSource = DBNull.Value
-        'GridControl1.RefreshDataSource()
-        'GridView1.Columns.Clear()
-        'lcTglInt.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcphone.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcphone.Text = "Phone Number"
-        'lc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc1.Text = "ID Rec"
-        'txtBar1.Enabled = False
-        'lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc2.Text = "Interview Times"
-        'txtBar2.Enabled = True
-        'lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc3.Text = "Full Name"
-        'lc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc4.Text = "Place Of Birth"
-        'lcTanggal.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcTanggal.Text = "Date Of Birth"
-        'lc6.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc6.Text = "Gender"
-        'lc7.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc7.Text = "Religion"
-        'lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc8.Text = "ID Card Number"
-        'lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcBtnBrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        ''lcFotoView.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'loadDataReq()
     End Sub
 
     Dim proses As New RecProcess
 
     Private Sub btnChange_Click(sender As Object, e As EventArgs) Handles btnChange.Click
-        If employees Is Nothing OrElse employees.IsDisposed Then
-            employees = New NewRec
+        If barJudul.Caption = "Module Recruitment" Then
+            If employees Is Nothing OrElse employees.IsDisposed Then
+                employees = New NewRec
+            End If
+            employees.Show()
+            employees.BarButtonItem2.PerformClick()
+        ElseIf barJudul.Caption = "Module Employee" Then
+            If newemps Is Nothing OrElse newemps.IsDisposed Then
+                newemps = New NewEmp
+            End If
+            newemps.Show()
+            newemps.BarButtonItem2.PerformClick()
+        ElseIf barJudul.Caption = "Module Payroll" Then
+            If salary Is Nothing OrElse salary.IsDisposed Then
+                salary = New NewSalary
+            End If
+            salary.Show()
+            salary.BarButtonItem2.PerformClick()
         End If
-        employees.Show()
-        employees.BarButtonItem2.PerformClick()
     End Sub
 
     Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
@@ -2922,5 +2874,13 @@ Public Class MainApp
             proses = New RecProcess
         End If
         proses.Show()
+    End Sub
+
+    Private Sub txtTrainingSampai_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtStatEmp_SelectedIndexChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class
