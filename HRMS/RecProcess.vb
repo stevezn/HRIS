@@ -12,19 +12,10 @@ Public Class RecProcess
         lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcfullname.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcpob.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcdob.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcCv.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcbtncv.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcbrowse.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcgender.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcreligion.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcidcard.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcphone.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcstats.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcbtnsave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcbtnreset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
     End Sub
 
     Function ImageToByte(ByVal pbImg As PictureBox) As Byte()
@@ -44,17 +35,12 @@ Public Class RecProcess
     Sub cleartxt()
         txtid.Text = ""
         txtinterview.Text = ""
-        txtpob.Text = ""
-        txtdob.Text = ""
         txtaddress.Text = ""
-        txtgender.Text = ""
-        txtreligion.Text = ""
         txtphone.Text = ""
         txtidcard.Text = ""
         txtstatus.Text = ""
         pictureEdit.Controls.Clear()
         txtinterviewdate.Text = ""
-        txtcv.Text = ""
     End Sub
 
     Public Function InsertReq() As Boolean
@@ -64,30 +50,18 @@ Public Class RecProcess
         Dim sqlCommand As New MySqlCommand
         Dim str_carSql As String
         Try
-            str_carSql = "INSERT INTO db_recruitment " +
-                   "(IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, Status, InterviewDate, Cv, Reason) " +
-                   "values (@IdRec,@InterviewTimes,@FullName,@PlaceOfBirth,@DateOfBirth,@Address,@Gender,@Religion, @PhoneNumber, @IdNumber,@Photo,@Status,@InterviewDate,@Cv,@Reason)"
+            str_carSql = "INSERT INTO db_recruit " +
+                   "(IdRec, InterviewTimes, FullName,PhoneNumber, IdNumber, Status, InterviewDate,Reason) " +
+                   "values (@IdRec,@InterviewTimes,@FullName,@PhoneNumber,@IdNumber,@Status,@InterviewDate,@Reason)"
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
             sqlCommand.Parameters.AddWithValue("@IdRec", txtid.Text)
             sqlCommand.Parameters.AddWithValue("@InterviewTimes", txtinterview.Text)
             sqlCommand.Parameters.AddWithValue("@FullName", txtfullname.Text)
-            sqlCommand.Parameters.AddWithValue("@PlaceOfBirth", txtpob.Text)
-            sqlCommand.Parameters.AddWithValue("@DateOfBirth", txtdob.Text)
-            sqlCommand.Parameters.AddWithValue("@Address", txtaddress.Text)
-            sqlCommand.Parameters.AddWithValue("@Gender", txtgender.Text)
-            sqlCommand.Parameters.AddWithValue("@Religion", txtreligion.Text)
             sqlCommand.Parameters.AddWithValue("@PhoneNumber", txtphone.Text)
             sqlCommand.Parameters.AddWithValue("@IdNumber", txtidcard.Text)
-            If Not txtbrowse.Text Is Nothing Then
-                Dim param As New MySqlParameter("@Photo", ImageToByte(pictureEdit))
-                sqlCommand.Parameters.Add(param)
-            Else
-                sqlCommand.Parameters.AddWithValue("@Photo", "")
-            End If
             sqlCommand.Parameters.AddWithValue("@Status", txtstatus.Text)
             sqlCommand.Parameters.AddWithValue("@InterviewDate", txtinterviewdate.Text)
-            sqlCommand.Parameters.AddWithValue("@Cv", txtcv.Text)
             sqlCommand.Parameters.AddWithValue("@Reason", txtreason.Text)
             sqlCommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
@@ -123,24 +97,12 @@ Public Class RecProcess
 
     End Sub
 
-    Private Sub btnPhoto_Click(sender As Object, e As EventArgs) Handles btnPhoto.Click
-        Using dialog As New OpenFileDialog
-            If dialog.ShowDialog() <> DialogResult.OK Then Return
-            txtbrowse.Image = Image.FromFile(dialog.FileName)
-            pictureEdit.Image = Image.FromFile(dialog.FileName)
-        End Using
-    End Sub
-
     Private Sub txtfullname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtfullname.SelectedIndexChanged
         For indexing As Integer = 0 To tbl_par.Rows.Count - 1
             If txtfullname.SelectedItem Is tbl_par.Rows(indexing).Item(2).ToString() Then
                 txtid.Text = tbl_par.Rows(indexing).Item(0).ToString()
                 txtinterview.Text = tbl_par.Rows(indexing).Item(1).ToString()
-                txtpob.Text = tbl_par.Rows(indexing).Item(3).ToString()
-                txtdob.Text = tbl_par.Rows(indexing).Item(4).ToString()
                 txtaddress.Text = tbl_par.Rows(indexing).Item(5).ToString()
-                txtgender.Text = tbl_par.Rows(indexing).Item(6).ToString()
-                txtreligion.Text = tbl_par.Rows(indexing).Item(7).ToString()
                 txtphone.Text = tbl_par.Rows(indexing).Item(8).ToString()
                 txtidcard.Text = tbl_par.Rows(indexing).Item(9).ToString()
                 Dim filefoto As Byte() = CType(tbl_par.Rows(indexing).Item(10), Byte())
@@ -152,40 +114,38 @@ Public Class RecProcess
                 End If
                 txtstatus.Text = tbl_par.Rows(indexing).Item(11).ToString
                 txtinterviewdate.Text = tbl_par.Rows(indexing).Item(12).ToString
-                txtcv.Text = tbl_par.Rows(indexing).Item(13).ToString
                 txtreason.Text = tbl_par.Rows(indexing).Item(14).ToString
             End If
         Next
     End Sub
 
-    'Private Sub loadDataReq()
-    '    GridControl2.RefreshDataSource()
-    '    Dim table As New DataTable
+    Private Sub loadDataReq()
+        GridControl1.RefreshDataSource()
+        Dim table As New DataTable
 
-    '    SQLConnection = New MySqlConnection()
-    '    SQLConnection.ConnectionString = connectionString
-    '    SQLConnection.Open()
-    '    Dim sqlCommand As New MySqlCommand
-    '    Try
-    '        If barJudul.Caption = "Recruitment Process" Then
-    '            sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, status, TrainingSampai FROM db_pegawai"
-    '        End If
-    '        sqlCommand.Connection = SQLConnection
-    '        Dim tbl_par As New DataTable
-    '        Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
-    '        Dim cb As New MySqlCommandBuilder(adapter)
-    '        adapter.Fill(table)
-    '        GridControl2.DataSource = table
-    '        SQLConnection.Close()
-    '    Catch ex As Exception
-    '        SQLConnection.Close()
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
+        SQLConnection = New MySqlConnection()
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlCommand As New MySqlCommand
+        Try
+            If barJudul.Caption = "Recruitment Process" Then
+                sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PhoneNumber, IdNumber, Status, InterviewDate, Reason FROM db_recruitment"
+            End If
+            sqlCommand.Connection = SQLConnection
+            Dim tbl_par As New DataTable
+            Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(table)
+            GridControl1.DataSource = table
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub RecProcess_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataKaryawan()
-        'loadDataReq()
     End Sub
 
     Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
@@ -194,9 +154,104 @@ Public Class RecProcess
 
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         barJudul.Caption = "Recruitment Process"
+        GridControl1.RefreshDataSource()
+        GridView1.Columns.Clear()
+        loadDataReq()
     End Sub
 
-    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+    Private Sub btnReset_Click(sender As Object, e As EventArgs)
         cleartxt()
+    End Sub
+
+    Private Sub txtphone_EditValueChanged(sender As Object, e As EventArgs) Handles txtphone.EditValueChanged
+
+    End Sub
+
+    Private Sub barJudul_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles barJudul.ItemClick
+
+    End Sub
+
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+
+    End Sub
+
+    Private Sub LayoutControl1_Click(sender As Object, e As EventArgs) Handles LayoutControl1.Click
+
+    End Sub
+
+    Private Sub txtreason_TextChanged(sender As Object, e As EventArgs) Handles txtreason.TextChanged
+
+    End Sub
+
+    Private Sub txtcv_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnCV_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtinterviewdate_EditValueChanged(sender As Object, e As EventArgs) Handles txtinterviewdate.EditValueChanged
+
+    End Sub
+
+    Private Sub txtinterview_EditValueChanged(sender As Object, e As EventArgs) Handles txtinterview.EditValueChanged
+
+    End Sub
+
+    Private Sub txtstatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtstatus.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub txtreligion_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtgender_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtdob_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtbrowse_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtaddress_EditValueChanged(sender As Object, e As EventArgs) Handles txtaddress.EditValueChanged
+
+    End Sub
+
+    Private Sub txtpob_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtidcard_EditValueChanged(sender As Object, e As EventArgs) Handles txtidcard.EditValueChanged
+
+    End Sub
+
+    Private Sub txtid_EditValueChanged(sender As Object, e As EventArgs) Handles txtid.EditValueChanged
+
+    End Sub
+
+    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
+
+    End Sub
+
+    Private Sub LayoutControl2_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        reset()
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        InsertReq()
     End Sub
 End Class

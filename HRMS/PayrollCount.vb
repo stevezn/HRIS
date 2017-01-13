@@ -154,18 +154,16 @@
         End Try
     End Sub
 
-    Public Function Insertpay() As Boolean
+    Private Sub Insertpay()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        Dim str_carSql As String
         Try
-            str_carSql = "INSERT INTO db_payroll " +
+            sqlCommand.CommandText = "INSERT INTO db_payroll " +
                             "(EmployeeCode, CompanyCode, FullName, PaymentDate, BasicRate, Allowance, Incentives, TableMoney, Transport, OtherAdditionalAllowance1, OtherAdditionalAllowance2, OtherAdditionalAllowance3, OtherAdditionalAllowance4, OtherAdditionalAllowance5, AdditionalAllowance1, AdditionalAllowance2, AdditionalAllowance3, AdditionalAllowance4, AdditionalAllowance5, OvertimeHours, OvertimeType, BpjsPercentage, Taxes, Loan, Lates, OtherAdditionalDeduction1, OtherAdditionalDeduction2, OtherAdditionalDeduction3, OtherAdditionalDeduction4, OtherAdditionalDeduction5, AdditionalDeduction1, AdditionalDeduction2, AdditionalDeduction3, AdditionalDeduction4, AdditionalDeduction5, ResJaminanKecelakaanKerja, ResPremiJaminanKematian, ResJaminanHariTua, ResBiayaJabatan, ResIuranPensiun, PersenKk, PersenJk, PersenJht, PersenBj, PersenIp, MemilikiNpwp, Gross, Bpjs, OvertimeSalary, TotalDeductions, NetIncome, PenghasilanKenaPajak, JaminanKecelakaanKerja, PremiJaminanKematian, JaminanHariTua, PphTerhutang, BiayaJabatan, IuranPensiun, NettoSetahun, StatusWajibPajak, RapelFromMonth, RapelToMonth, RapelRate, Rapel, PajakPphPerTahun) " +
                             "values (@EmployeeCode, @CompanyCode, @FullName, @PaymentDate, @BasicRate, @Allowance, @Incentives, @TableMoney, @Transport, @OtherAdditionalAllowance1, @OtherAdditionalAllowance2, @OtherAdditionalAllowance3, @OtherAdditionalAllowance4, @OtherAdditionalAllowance5, @AdditionalAllowance1, @AdditionalAllowance2, @AdditionalAllowance3, @AdditionalAllowance4, @AdditionalAllowance5, @OvertimeHours, @OvertimeType, @BpjsPercentage, @Taxes, @Loan, @Lates, @OtherAdditionalDeduction1, @OtherAdditionalDeduction2, @OtherAdditionalDeduction3, @OtherAdditionalDeduction4, @OtherAdditionalDeduction5, @AdditionalDeduction1, @AdditionalDeduction2, @AdditionalDeduction3, @AdditionalDeduction4, @AdditionalDeduction5, @ResJaminanKecelakaanKerja, @ResPremiJaminanKematian, @ResJaminanHariTua, @ResBiayaJabatan, @ResIuranPensiun, @PersenKk, @PersenJk, @PersenJht, @PersenBj, @PersenIp, @MemilikiNpwp, @Gross, @Bpjs, @OvertimeSalary, @TotalDeductions, @NetIncome, @PenghasilanKenaPajak, @JaminanKecelakaanKerja, @PremiJaminanKematian, @JaminanHariTua, @PphTerhutang, @BiayaJabatan, @IuranPensiun, @NettoSetahun, @StatusWajibPajak, @RapelFromMonth, @RapelToMonth, @RapelRate, @Rapel, @PajakPphPerTahun)"
             sqlCommand.Connection = SQLConnection
-            sqlCommand.CommandText = str_carSql
             sqlCommand.Parameters.AddWithValue("@EmployeeCode", datapayroll.txtempcode.Text)
             sqlCommand.Parameters.AddWithValue("@CompanyCode", datapayroll.txtcompcode.Text)
             sqlCommand.Parameters.AddWithValue("@FullName", datapayroll.txtnames.Text)
@@ -231,23 +229,42 @@
             sqlCommand.Parameters.AddWithValue("@RapelRate", datapayroll.txtrapel.Text)
             sqlCommand.Parameters.AddWithValue("@Rapel", txtrapel.Text)
             sqlCommand.Parameters.AddWithValue("@PajakPphPerTahun", txtpajak.Text)
+            sqlCommand.Connection = SQLConnection
             sqlCommand.ExecuteNonQuery()
+            SQLConnection.Close()
             MessageBox.Show("Data Succesfully Added!")
-            Return True
         Catch ex As Exception
-            Return False
-            MsgBox("Error Occured: Could Not Insert Records")
+            SQLConnection.Close()
+            MsgBox(ex.Message)
         End Try
-    End Function
+    End Sub
+
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If datapayroll.barJudul.Caption = "Add Payroll Data" Then
-            Insertpay()
-        Else
-            updatechange()
-        End If
+        Insertpay()
     End Sub
+
     Private Sub PayrollCount_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub btnChange_Click(sender As Object, e As EventArgs) Handles btnChange.Click
+        updatechange()
+    End Sub
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        barJudul.Caption = "New Result"
+        lcsave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        BarButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        RibbonPageGroup2.Visible = False
+    End Sub
+
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        barJudul.Caption = "Change Result"
+        lcsave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        RibbonPageGroup1.Visible = False
     End Sub
 End Class

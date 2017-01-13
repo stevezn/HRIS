@@ -31,6 +31,7 @@ Partial Class NewSalary
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtnama = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.txtnpwp = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -86,6 +87,7 @@ Partial Class NewSalary
         Me.lcnames = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcnama = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
         Me.txtpip = New DevExpress.XtraEditors.TextEdit()
         Me.txtip = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -167,11 +169,47 @@ Partial Class NewSalary
         Me.lcded4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcdeddesc5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcded5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtnama = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.lcnama = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControl5 = New DevExpress.XtraLayout.LayoutControl()
+        Me.LayoutControl7 = New DevExpress.XtraLayout.LayoutControl()
+        Me.btnsave = New DevExpress.XtraEditors.SimpleButton()
+        Me.LayoutControlGroup6 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtresrapel = New DevExpress.XtraEditors.TextEdit()
+        Me.txtresip = New DevExpress.XtraEditors.TextEdit()
+        Me.txtresbj = New DevExpress.XtraEditors.TextEdit()
+        Me.txtnetto = New DevExpress.XtraEditors.TextEdit()
+        Me.txtresjht = New DevExpress.XtraEditors.TextEdit()
+        Me.txtpremi = New DevExpress.XtraEditors.TextEdit()
+        Me.txtresjkk = New DevExpress.XtraEditors.TextEdit()
+        Me.txtpajak = New DevExpress.XtraEditors.TextEdit()
+        Me.txtpph = New DevExpress.XtraEditors.TextEdit()
+        Me.txtpkp = New DevExpress.XtraEditors.TextEdit()
+        Me.txtnetincome = New DevExpress.XtraEditors.TextEdit()
+        Me.txtded = New DevExpress.XtraEditors.TextEdit()
+        Me.txtresbpjs = New DevExpress.XtraEditors.TextEdit()
+        Me.txtgross = New DevExpress.XtraEditors.TextEdit()
+        Me.txtots = New DevExpress.XtraEditors.TextEdit()
+        Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.lcots = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcgross = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lctoded = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcnetincome = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem18 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcpph = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.lcpajak = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem19 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem22 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem23 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem24 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.Rapel = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem25 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtnama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtnpwp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtadd5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtdesc5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -222,6 +260,7 @@ Partial Class NewSalary
         CType(Me.lcnames, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcnama, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl2.SuspendLayout()
         CType(Me.txtpip.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -297,8 +336,44 @@ Partial Class NewSalary
         CType(Me.lcded4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcdeddesc5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcded5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtnama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lcnama, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControl5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl5.SuspendLayout()
+        CType(Me.LayoutControl7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl7.SuspendLayout()
+        CType(Me.LayoutControlGroup6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtresrapel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtresip.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtresbj.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtnetto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtresjht.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtpremi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtresjkk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtpajak.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtpph.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtpkp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtnetincome.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtded.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtresbpjs.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtgross.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtots.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcots, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcgross, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lctoded, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcnetincome, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcpph, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcpajak, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Rapel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -309,7 +384,7 @@ Partial Class NewSalary
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(1051, 144)
+        Me.RibbonControl1.Size = New System.Drawing.Size(1123, 144)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above
         '
@@ -389,6 +464,16 @@ Partial Class NewSalary
         Me.LayoutControl1.Size = New System.Drawing.Size(370, 552)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtnama
+        '
+        Me.txtnama.Location = New System.Drawing.Point(105, 76)
+        Me.txtnama.MenuManager = Me.RibbonControl1
+        Me.txtnama.Name = "txtnama"
+        Me.txtnama.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtnama.Size = New System.Drawing.Size(253, 20)
+        Me.txtnama.StyleController = Me.LayoutControl1
+        Me.txtnama.TabIndex = 23
         '
         'LabelControl14
         '
@@ -941,6 +1026,16 @@ Partial Class NewSalary
         Me.LayoutControlItem14.TextToControlDistance = 0
         Me.LayoutControlItem14.TextVisible = False
         '
+        'lcnama
+        '
+        Me.lcnama.Control = Me.txtnama
+        Me.lcnama.CustomizationFormText = "LayoutControlItem15"
+        Me.lcnama.Location = New System.Drawing.Point(0, 64)
+        Me.lcnama.Name = "lcnama"
+        Me.lcnama.Size = New System.Drawing.Size(350, 24)
+        Me.lcnama.Text = "Full Name"
+        Me.lcnama.TextSize = New System.Drawing.Size(90, 13)
+        '
         'LayoutControl2
         '
         Me.LayoutControl2.Controls.Add(Me.txtpip)
@@ -1122,7 +1217,7 @@ Partial Class NewSalary
         Me.txtottype.MenuManager = Me.RibbonControl1
         Me.txtottype.Name = "txtottype"
         Me.txtottype.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtottype.Properties.Items.AddRange(New Object() {"Regular", "Holiday / Sunday"})
+        Me.txtottype.Properties.Items.AddRange(New Object() {"Regular Day", "Holiday / Sunday"})
         Me.txtottype.Size = New System.Drawing.Size(224, 20)
         Me.txtottype.StyleController = Me.LayoutControl2
         Me.txtottype.TabIndex = 16
@@ -1404,7 +1499,7 @@ Partial Class NewSalary
         Me.LayoutControl3.Location = New System.Drawing.Point(759, 164)
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.Root = Me.LayoutControlGroup3
-        Me.LayoutControl3.Size = New System.Drawing.Size(280, 138)
+        Me.LayoutControl3.Size = New System.Drawing.Size(280, 137)
         Me.LayoutControl3.TabIndex = 18
         Me.LayoutControl3.Text = "LayoutControl3"
         '
@@ -1435,7 +1530,7 @@ Partial Class NewSalary
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl10.Location = New System.Drawing.Point(12, 32)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(256, 16)
+        Me.LabelControl10.Size = New System.Drawing.Size(0, 16)
         Me.LabelControl10.StyleController = Me.LayoutControl3
         Me.LabelControl10.TabIndex = 19
         '
@@ -1456,7 +1551,7 @@ Partial Class NewSalary
         Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem8, Me.lcrapel, Me.LayoutControlItem11, Me.lcfm, Me.lctm})
         Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(280, 138)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(280, 137)
         Me.LayoutControlGroup3.Text = "LayoutControlGroup3"
         Me.LayoutControlGroup3.TextVisible = False
         '
@@ -1510,16 +1605,16 @@ Partial Class NewSalary
         Me.lctm.CustomizationFormText = "To Month"
         Me.lctm.Location = New System.Drawing.Point(0, 88)
         Me.lctm.Name = "lctm"
-        Me.lctm.Size = New System.Drawing.Size(260, 30)
+        Me.lctm.Size = New System.Drawing.Size(260, 29)
         Me.lctm.Text = "To Month"
         Me.lctm.TextSize = New System.Drawing.Size(57, 13)
         '
         'btnCount
         '
         Me.btnCount.Image = CType(resources.GetObject("btnCount.Image"), System.Drawing.Image)
-        Me.btnCount.Location = New System.Drawing.Point(771, 307)
+        Me.btnCount.Location = New System.Drawing.Point(771, 294)
         Me.btnCount.Name = "btnCount"
-        Me.btnCount.Size = New System.Drawing.Size(147, 53)
+        Me.btnCount.Size = New System.Drawing.Size(215, 38)
         Me.btnCount.TabIndex = 19
         Me.btnCount.Text = "Count"
         '
@@ -1789,31 +1884,375 @@ Partial Class NewSalary
         Me.lcded5.Text = "Deductions 5"
         Me.lcded5.TextSize = New System.Drawing.Size(62, 13)
         '
-        'txtnama
+        'LayoutControl5
         '
-        Me.txtnama.Location = New System.Drawing.Point(105, 76)
-        Me.txtnama.MenuManager = Me.RibbonControl1
-        Me.txtnama.Name = "txtnama"
-        Me.txtnama.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtnama.Size = New System.Drawing.Size(253, 20)
-        Me.txtnama.StyleController = Me.LayoutControl1
-        Me.txtnama.TabIndex = 23
+        Me.LayoutControl5.Controls.Add(Me.LayoutControl7)
+        Me.LayoutControl5.Controls.Add(Me.txtresrapel)
+        Me.LayoutControl5.Controls.Add(Me.txtresip)
+        Me.LayoutControl5.Controls.Add(Me.txtresbj)
+        Me.LayoutControl5.Controls.Add(Me.txtnetto)
+        Me.LayoutControl5.Controls.Add(Me.txtresjht)
+        Me.LayoutControl5.Controls.Add(Me.txtpremi)
+        Me.LayoutControl5.Controls.Add(Me.txtresjkk)
+        Me.LayoutControl5.Controls.Add(Me.txtpajak)
+        Me.LayoutControl5.Controls.Add(Me.txtpph)
+        Me.LayoutControl5.Controls.Add(Me.txtpkp)
+        Me.LayoutControl5.Controls.Add(Me.txtnetincome)
+        Me.LayoutControl5.Controls.Add(Me.txtded)
+        Me.LayoutControl5.Controls.Add(Me.txtresbpjs)
+        Me.LayoutControl5.Controls.Add(Me.txtgross)
+        Me.LayoutControl5.Controls.Add(Me.txtots)
+        Me.LayoutControl5.Location = New System.Drawing.Point(760, 339)
+        Me.LayoutControl5.Name = "LayoutControl5"
+        Me.LayoutControl5.Root = Me.LayoutControlGroup7
+        Me.LayoutControl5.Size = New System.Drawing.Size(279, 459)
+        Me.LayoutControl5.TabIndex = 23
+        Me.LayoutControl5.Text = "LayoutControl5"
         '
-        'lcnama
+        'LayoutControl7
         '
-        Me.lcnama.Control = Me.txtnama
-        Me.lcnama.CustomizationFormText = "LayoutControlItem15"
-        Me.lcnama.Location = New System.Drawing.Point(0, 64)
-        Me.lcnama.Name = "lcnama"
-        Me.lcnama.Size = New System.Drawing.Size(350, 24)
-        Me.lcnama.Text = "Full Name"
-        Me.lcnama.TextSize = New System.Drawing.Size(90, 13)
+        Me.LayoutControl7.Controls.Add(Me.btnsave)
+        Me.LayoutControl7.Location = New System.Drawing.Point(12, 372)
+        Me.LayoutControl7.Name = "LayoutControl7"
+        Me.LayoutControl7.Root = Me.LayoutControlGroup6
+        Me.LayoutControl7.Size = New System.Drawing.Size(255, 75)
+        Me.LayoutControl7.TabIndex = 1
+        Me.LayoutControl7.Text = "LayoutControl7"
+        '
+        'btnsave
+        '
+        Me.btnsave.Image = CType(resources.GetObject("btnsave.Image"), System.Drawing.Image)
+        Me.btnsave.Location = New System.Drawing.Point(12, 12)
+        Me.btnsave.Name = "btnsave"
+        Me.btnsave.Size = New System.Drawing.Size(231, 38)
+        Me.btnsave.StyleController = Me.LayoutControl7
+        Me.btnsave.TabIndex = 1
+        Me.btnsave.Text = "Save"
+        '
+        'LayoutControlGroup6
+        '
+        Me.LayoutControlGroup6.CustomizationFormText = "LayoutControlGroup2"
+        Me.LayoutControlGroup6.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.LayoutControlGroup6.GroupBordersVisible = False
+        Me.LayoutControlGroup6.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem15})
+        Me.LayoutControlGroup6.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup6.Name = "LayoutControlGroup2"
+        Me.LayoutControlGroup6.Size = New System.Drawing.Size(255, 75)
+        Me.LayoutControlGroup6.Text = "LayoutControlGroup2"
+        Me.LayoutControlGroup6.TextVisible = False
+        '
+        'LayoutControlItem15
+        '
+        Me.LayoutControlItem15.Control = Me.btnsave
+        Me.LayoutControlItem15.CustomizationFormText = "lcsave"
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem15.Name = "lcsave"
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(235, 55)
+        Me.LayoutControlItem15.Text = "lcsave"
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem15.TextToControlDistance = 0
+        Me.LayoutControlItem15.TextVisible = False
+        '
+        'txtresrapel
+        '
+        Me.txtresrapel.Location = New System.Drawing.Point(130, 348)
+        Me.txtresrapel.Name = "txtresrapel"
+        Me.txtresrapel.Size = New System.Drawing.Size(137, 20)
+        Me.txtresrapel.StyleController = Me.LayoutControl5
+        Me.txtresrapel.TabIndex = 13
+        '
+        'txtresip
+        '
+        Me.txtresip.Location = New System.Drawing.Point(130, 324)
+        Me.txtresip.Name = "txtresip"
+        Me.txtresip.Size = New System.Drawing.Size(137, 20)
+        Me.txtresip.StyleController = Me.LayoutControl5
+        Me.txtresip.TabIndex = 14
+        '
+        'txtresbj
+        '
+        Me.txtresbj.Location = New System.Drawing.Point(130, 300)
+        Me.txtresbj.Name = "txtresbj"
+        Me.txtresbj.Size = New System.Drawing.Size(137, 20)
+        Me.txtresbj.StyleController = Me.LayoutControl5
+        Me.txtresbj.TabIndex = 13
+        '
+        'txtnetto
+        '
+        Me.txtnetto.Location = New System.Drawing.Point(130, 276)
+        Me.txtnetto.Name = "txtnetto"
+        Me.txtnetto.Size = New System.Drawing.Size(137, 20)
+        Me.txtnetto.StyleController = Me.LayoutControl5
+        Me.txtnetto.TabIndex = 12
+        '
+        'txtresjht
+        '
+        Me.txtresjht.Location = New System.Drawing.Point(130, 252)
+        Me.txtresjht.Name = "txtresjht"
+        Me.txtresjht.Size = New System.Drawing.Size(137, 20)
+        Me.txtresjht.StyleController = Me.LayoutControl5
+        Me.txtresjht.TabIndex = 11
+        '
+        'txtpremi
+        '
+        Me.txtpremi.Location = New System.Drawing.Point(130, 228)
+        Me.txtpremi.Name = "txtpremi"
+        Me.txtpremi.Size = New System.Drawing.Size(137, 20)
+        Me.txtpremi.StyleController = Me.LayoutControl5
+        Me.txtpremi.TabIndex = 10
+        '
+        'txtresjkk
+        '
+        Me.txtresjkk.Location = New System.Drawing.Point(130, 204)
+        Me.txtresjkk.Name = "txtresjkk"
+        Me.txtresjkk.Size = New System.Drawing.Size(137, 20)
+        Me.txtresjkk.StyleController = Me.LayoutControl5
+        Me.txtresjkk.TabIndex = 9
+        '
+        'txtpajak
+        '
+        Me.txtpajak.Location = New System.Drawing.Point(130, 180)
+        Me.txtpajak.Name = "txtpajak"
+        Me.txtpajak.Size = New System.Drawing.Size(137, 20)
+        Me.txtpajak.StyleController = Me.LayoutControl5
+        Me.txtpajak.TabIndex = 8
+        '
+        'txtpph
+        '
+        Me.txtpph.Location = New System.Drawing.Point(130, 156)
+        Me.txtpph.Name = "txtpph"
+        Me.txtpph.Size = New System.Drawing.Size(137, 20)
+        Me.txtpph.StyleController = Me.LayoutControl5
+        Me.txtpph.TabIndex = 8
+        '
+        'txtpkp
+        '
+        Me.txtpkp.Location = New System.Drawing.Point(130, 132)
+        Me.txtpkp.Name = "txtpkp"
+        Me.txtpkp.Size = New System.Drawing.Size(137, 20)
+        Me.txtpkp.StyleController = Me.LayoutControl5
+        Me.txtpkp.TabIndex = 8
+        '
+        'txtnetincome
+        '
+        Me.txtnetincome.Location = New System.Drawing.Point(130, 108)
+        Me.txtnetincome.Name = "txtnetincome"
+        Me.txtnetincome.Size = New System.Drawing.Size(137, 20)
+        Me.txtnetincome.StyleController = Me.LayoutControl5
+        Me.txtnetincome.TabIndex = 7
+        '
+        'txtded
+        '
+        Me.txtded.Location = New System.Drawing.Point(130, 84)
+        Me.txtded.Name = "txtded"
+        Me.txtded.Size = New System.Drawing.Size(137, 20)
+        Me.txtded.StyleController = Me.LayoutControl5
+        Me.txtded.TabIndex = 5
+        '
+        'txtresbpjs
+        '
+        Me.txtresbpjs.Location = New System.Drawing.Point(130, 36)
+        Me.txtresbpjs.Name = "txtresbpjs"
+        Me.txtresbpjs.Size = New System.Drawing.Size(137, 20)
+        Me.txtresbpjs.StyleController = Me.LayoutControl5
+        Me.txtresbpjs.TabIndex = 6
+        '
+        'txtgross
+        '
+        Me.txtgross.Location = New System.Drawing.Point(130, 12)
+        Me.txtgross.Name = "txtgross"
+        Me.txtgross.Size = New System.Drawing.Size(137, 20)
+        Me.txtgross.StyleController = Me.LayoutControl5
+        Me.txtgross.TabIndex = 5
+        '
+        'txtots
+        '
+        Me.txtots.Location = New System.Drawing.Point(130, 60)
+        Me.txtots.Name = "txtots"
+        Me.txtots.Size = New System.Drawing.Size(137, 20)
+        Me.txtots.StyleController = Me.LayoutControl5
+        Me.txtots.TabIndex = 4
+        '
+        'LayoutControlGroup7
+        '
+        Me.LayoutControlGroup7.CustomizationFormText = "LayoutControlGroup1"
+        Me.LayoutControlGroup7.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.LayoutControlGroup7.GroupBordersVisible = False
+        Me.LayoutControlGroup7.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcots, Me.lcgross, Me.LayoutControlItem17, Me.lctoded, Me.lcnetincome, Me.LayoutControlItem18, Me.lcpph, Me.lcpajak, Me.LayoutControlItem19, Me.LayoutControlItem20, Me.LayoutControlItem21, Me.LayoutControlItem22, Me.LayoutControlItem23, Me.LayoutControlItem24, Me.Rapel, Me.LayoutControlItem25})
+        Me.LayoutControlGroup7.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup7.Name = "LayoutControlGroup1"
+        Me.LayoutControlGroup7.Size = New System.Drawing.Size(279, 459)
+        Me.LayoutControlGroup7.Text = "LayoutControlGroup1"
+        Me.LayoutControlGroup7.TextVisible = False
+        '
+        'lcots
+        '
+        Me.lcots.Control = Me.txtots
+        Me.lcots.CustomizationFormText = "Overtime Salary"
+        Me.lcots.Location = New System.Drawing.Point(0, 48)
+        Me.lcots.Name = "lcots"
+        Me.lcots.Size = New System.Drawing.Size(259, 24)
+        Me.lcots.Text = "Overtime Salary"
+        Me.lcots.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'lcgross
+        '
+        Me.lcgross.Control = Me.txtgross
+        Me.lcgross.CustomizationFormText = "Gross"
+        Me.lcgross.Location = New System.Drawing.Point(0, 0)
+        Me.lcgross.Name = "lcgross"
+        Me.lcgross.Size = New System.Drawing.Size(259, 24)
+        Me.lcgross.Text = "Gross"
+        Me.lcgross.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem17
+        '
+        Me.LayoutControlItem17.Control = Me.txtresbpjs
+        Me.LayoutControlItem17.CustomizationFormText = "BPJS"
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem17.Name = "lcbpjs"
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem17.Text = "BPJS"
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'lctoded
+        '
+        Me.lctoded.Control = Me.txtded
+        Me.lctoded.CustomizationFormText = "total Deductions"
+        Me.lctoded.Location = New System.Drawing.Point(0, 72)
+        Me.lctoded.Name = "lctoded"
+        Me.lctoded.Size = New System.Drawing.Size(259, 24)
+        Me.lctoded.Text = "total Deductions"
+        Me.lctoded.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'lcnetincome
+        '
+        Me.lcnetincome.Control = Me.txtnetincome
+        Me.lcnetincome.CustomizationFormText = "Net Income"
+        Me.lcnetincome.Location = New System.Drawing.Point(0, 96)
+        Me.lcnetincome.Name = "lcnetincome"
+        Me.lcnetincome.Size = New System.Drawing.Size(259, 24)
+        Me.lcnetincome.Text = "Net Income"
+        Me.lcnetincome.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem18
+        '
+        Me.LayoutControlItem18.Control = Me.txtpkp
+        Me.LayoutControlItem18.CustomizationFormText = "Penghasilan Kena Pajak"
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(0, 120)
+        Me.LayoutControlItem18.Name = "LayoutControlItem1"
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem18.Text = "Penghasilan Kena Pajak"
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'lcpph
+        '
+        Me.lcpph.Control = Me.txtpph
+        Me.lcpph.CustomizationFormText = "Pph Terhutang"
+        Me.lcpph.Location = New System.Drawing.Point(0, 144)
+        Me.lcpph.Name = "lcpph"
+        Me.lcpph.Size = New System.Drawing.Size(259, 24)
+        Me.lcpph.Text = "Pph Terhutang"
+        Me.lcpph.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'lcpajak
+        '
+        Me.lcpajak.Control = Me.txtpajak
+        Me.lcpajak.CustomizationFormText = "Pajak Pph / Tahun"
+        Me.lcpajak.Location = New System.Drawing.Point(0, 168)
+        Me.lcpajak.Name = "lcpajak"
+        Me.lcpajak.Size = New System.Drawing.Size(259, 24)
+        Me.lcpajak.Text = "Pajak Pph / Tahun"
+        Me.lcpajak.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem19
+        '
+        Me.LayoutControlItem19.Control = Me.txtresjkk
+        Me.LayoutControlItem19.CustomizationFormText = "Jaminan Kec Kerja"
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 192)
+        Me.LayoutControlItem19.Name = "LayoutControlItem2"
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem19.Text = "Jaminan Kec Kerja"
+        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem20
+        '
+        Me.LayoutControlItem20.Control = Me.txtpremi
+        Me.LayoutControlItem20.CustomizationFormText = "Premi Jaminan Kematian"
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 216)
+        Me.LayoutControlItem20.Name = "LayoutControlItem3"
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem20.Text = "Premi Jaminan Kematian"
+        Me.LayoutControlItem20.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem21
+        '
+        Me.LayoutControlItem21.Control = Me.txtresjht
+        Me.LayoutControlItem21.CustomizationFormText = "Jaminan Hari Tua"
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(0, 240)
+        Me.LayoutControlItem21.Name = "LayoutControlItem4"
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem21.Text = "Jaminan Hari Tua"
+        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem22
+        '
+        Me.LayoutControlItem22.Control = Me.txtnetto
+        Me.LayoutControlItem22.CustomizationFormText = "Netto Setahun"
+        Me.LayoutControlItem22.Location = New System.Drawing.Point(0, 264)
+        Me.LayoutControlItem22.Name = "LayoutControlItem5"
+        Me.LayoutControlItem22.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem22.Text = "Netto Setahun"
+        Me.LayoutControlItem22.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem23
+        '
+        Me.LayoutControlItem23.Control = Me.txtresbj
+        Me.LayoutControlItem23.CustomizationFormText = "Biaya Jabatan"
+        Me.LayoutControlItem23.Location = New System.Drawing.Point(0, 288)
+        Me.LayoutControlItem23.Name = "LayoutControlItem6"
+        Me.LayoutControlItem23.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem23.Text = "Biaya Jabatan"
+        Me.LayoutControlItem23.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem24
+        '
+        Me.LayoutControlItem24.Control = Me.txtresip
+        Me.LayoutControlItem24.CustomizationFormText = "Iuran Pensiun"
+        Me.LayoutControlItem24.Location = New System.Drawing.Point(0, 312)
+        Me.LayoutControlItem24.Name = "LayoutControlItem7"
+        Me.LayoutControlItem24.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem24.Text = "Iuran Pensiun"
+        Me.LayoutControlItem24.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'Rapel
+        '
+        Me.Rapel.Control = Me.txtresrapel
+        Me.Rapel.CustomizationFormText = "Rapel"
+        Me.Rapel.Location = New System.Drawing.Point(0, 336)
+        Me.Rapel.Name = "Rapel"
+        Me.Rapel.Size = New System.Drawing.Size(259, 24)
+        Me.Rapel.Text = "Rapel"
+        Me.Rapel.TextSize = New System.Drawing.Size(115, 13)
+        '
+        'LayoutControlItem25
+        '
+        Me.LayoutControlItem25.Control = Me.LayoutControl7
+        Me.LayoutControlItem25.CustomizationFormText = "LayoutControlItem10"
+        Me.LayoutControlItem25.Location = New System.Drawing.Point(0, 360)
+        Me.LayoutControlItem25.Name = "LayoutControlItem10"
+        Me.LayoutControlItem25.Size = New System.Drawing.Size(259, 79)
+        Me.LayoutControlItem25.Text = "LayoutControlItem10"
+        Me.LayoutControlItem25.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem25.TextToControlDistance = 0
+        Me.LayoutControlItem25.TextVisible = False
         '
         'NewSalary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1051, 722)
+        Me.ClientSize = New System.Drawing.Size(1123, 785)
+        Me.Controls.Add(Me.LayoutControl5)
         Me.Controls.Add(Me.LayoutControl4)
         Me.Controls.Add(Me.btnCount)
         Me.Controls.Add(Me.LayoutControl3)
@@ -1827,6 +2266,7 @@ Partial Class NewSalary
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtnama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtnpwp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtadd5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtdesc5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1877,6 +2317,7 @@ Partial Class NewSalary
         CType(Me.lcnames, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcnama, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl2.ResumeLayout(False)
         CType(Me.txtpip.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1952,8 +2393,44 @@ Partial Class NewSalary
         CType(Me.lcded4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcdeddesc5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcded5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtnama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lcnama, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControl5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl5.ResumeLayout(False)
+        CType(Me.LayoutControl7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl7.ResumeLayout(False)
+        CType(Me.LayoutControlGroup6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtresrapel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtresip.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtresbj.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtnetto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtresjht.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtpremi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtresjkk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtpajak.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtpph.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtpkp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtnetincome.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtded.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtresbpjs.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtgross.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtots.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcots, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcgross, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lctoded, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcnetincome, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcpph, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcpajak, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Rapel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2104,4 +2581,41 @@ Partial Class NewSalary
     Friend WithEvents LayoutControlItem14 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtnama As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents lcnama As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControl5 As DevExpress.XtraLayout.LayoutControl
+    Friend WithEvents LayoutControl7 As DevExpress.XtraLayout.LayoutControl
+    Friend WithEvents btnsave As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LayoutControlGroup6 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents LayoutControlItem15 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtresrapel As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtresip As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtresbj As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtnetto As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtresjht As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtpremi As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtresjkk As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtpajak As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtpph As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtpkp As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtnetincome As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtded As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtresbpjs As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtgross As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtots As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlGroup7 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents lcots As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lcgross As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lctoded As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lcnetincome As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lcpph As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents lcpajak As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem19 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem20 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem22 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem23 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem24 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents Rapel As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem25 As DevExpress.XtraLayout.LayoutControlItem
 End Class

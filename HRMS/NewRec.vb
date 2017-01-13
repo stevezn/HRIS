@@ -47,7 +47,8 @@ Public Class NewRec
         Dim sqlcommand As New MySqlCommand
         Try
             sqlcommand.CommandText = "UPDATE db_recruitment SET" +
-                                     " InterviewTimes = @InterviewTimes" +
+                                     " IdRec = @IdRec" +
+                                     ", InterviewTimes = @InterviewTimes" +
                                      ", FullName = @FullName" +
                                      ", PlaceOfBirth = @PlaceOfBirth" +
                                      ", DateOfBirth = @DateOfBirth" +
@@ -61,8 +62,9 @@ Public Class NewRec
                                      ", InterviewDate = @InterviewDate" +
                                      ", Cv = @Cv" +
                                      ", Reason = @Reason " +
-                                     " WHERE IdRec = @IdRec"
+                                     " WHERE No = @No"
             sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("@No", txtno.Text)
             sqlcommand.Parameters.AddWithValue("@IdRec", txtid.Text)
             sqlcommand.Parameters.AddWithValue("@InterviewTimes", txtinterview.Text)
             sqlcommand.Parameters.AddWithValue("@FullName", txtfullname.Text)
@@ -110,10 +112,35 @@ Public Class NewRec
         txtcv.Text = ""
     End Sub
 
+    Dim main As MainApp
+
     Public Function InsertReq() As Boolean
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
+        Dim ynow As String = Format(Now, "yy").ToString
+        Dim mnow As String = Month(Now).ToString
+        Dim lastn As Integer
+        Dim n As String
+        Dim interview As Integer = 0
+        Try
+            Dim cmd = SQLConnection.CreateCommand
+            cmd.CommandText = " SELECT IdNumber, COUNT(*) FROM db_recruitment Group by IdNumber HAVING ( COUNT(IdNumber) > 1 )"
+            n = DirectCast(cmd.ExecuteScalar(), String)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        If n > 1 Then
+            interview = +1
+        End If
+        Try
+            Dim cmd = SQLConnection.CreateCommand()
+            cmd.CommandText = "SELECT IdRec FROM id_last_num"
+            lastn = DirectCast(cmd.ExecuteScalar(), Integer) + 1
+        Catch ex As Exception
+            MsgBox("error")
+        End Try
+        Dim rescode As String = "REQ" & "-" & ynow & "-" & mnow & "-" & Strings.Right("00000" & lastn, 5)
         Dim sqlCommand As New MySqlCommand
         Dim str_carSql As String
         Try
@@ -122,8 +149,8 @@ Public Class NewRec
                    "values (@IdRec,@InterviewTimes,@FullName,@PlaceOfBirth,@DateOfBirth,@Address,@Gender,@Religion, @PhoneNumber, @IdNumber,@Photo,@Status,@InterviewDate,@Cv,@Reason)"
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
-            sqlCommand.Parameters.AddWithValue("@IdRec", txtid.Text)
-            sqlCommand.Parameters.AddWithValue("@InterviewTimes", txtinterview.Text)
+            sqlCommand.Parameters.AddWithValue("@IdRec", rescode)
+            sqlCommand.Parameters.AddWithValue("@InterviewTimes", interview)
             sqlCommand.Parameters.AddWithValue("@FullName", txtnames.Text)
             sqlCommand.Parameters.AddWithValue("@PlaceOfBirth", txtpob.Text)
             sqlCommand.Parameters.AddWithValue("@DateOfBirth", txtdob.Text)
@@ -158,13 +185,13 @@ Public Class NewRec
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, Status, InterviewDate, Cv, Reason FROM db_recruitment"
+        sqlCommand.CommandText = "SELECT No, IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, Status, InterviewDate, Cv, Reason FROM db_recruitment"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par)
         For index As Integer = 0 To tbl_par.Rows.Count - 1
-            txtfullname.Properties.Items.Add(tbl_par.Rows(index).Item(2).ToString())
+            txtfullname.Properties.Items.Add(tbl_par.Rows(index).Item(3).ToString())
         Next
         SQLConnection.Close()
     End Sub
@@ -298,33 +325,33 @@ Public Class NewRec
         btnSave.Text = "Change"
         lcbtnreset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         RibbonPageGroup1.Visible = False
     End Sub
 
     Private Sub txtfullname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtfullname.SelectedIndexChanged
         For indexing As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtfullname.SelectedItem Is tbl_par.Rows(indexing).Item(2).ToString() Then
-                txtid.Text = tbl_par.Rows(indexing).Item(0).ToString()
-                txtinterview.Text = tbl_par.Rows(indexing).Item(1).ToString()
-                txtpob.Text = tbl_par.Rows(indexing).Item(3).ToString()
-                txtdob.Text = tbl_par.Rows(indexing).Item(4).ToString()
-                txtaddress.Text = tbl_par.Rows(indexing).Item(5).ToString()
-                txtgender.Text = tbl_par.Rows(indexing).Item(6).ToString()
-                txtreligion.Text = tbl_par.Rows(indexing).Item(7).ToString()
-                txtphone.Text = tbl_par.Rows(indexing).Item(8).ToString()
-                txtidcard.Text = tbl_par.Rows(indexing).Item(9).ToString()
-                Dim filefoto As Byte() = CType(tbl_par.Rows(indexing).Item(10), Byte())
+            If txtfullname.SelectedItem Is tbl_par.Rows(indexing).Item(3).ToString() Then
+                txtno.Text = tbl_par.Rows(indexing).Item(0).ToString
+                txtid.Text = tbl_par.Rows(indexing).Item(1).ToString()
+                txtinterview.Text = tbl_par.Rows(indexing).Item(2).ToString()
+                txtpob.Text = tbl_par.Rows(indexing).Item(4).ToString()
+                txtdob.Text = tbl_par.Rows(indexing).Item(5).ToString()
+                txtaddress.Text = tbl_par.Rows(indexing).Item(6).ToString()
+                txtgender.Text = tbl_par.Rows(indexing).Item(7).ToString()
+                txtreligion.Text = tbl_par.Rows(indexing).Item(8).ToString()
+                txtphone.Text = tbl_par.Rows(indexing).Item(9).ToString()
+                txtidcard.Text = tbl_par.Rows(indexing).Item(10).ToString()
+                Dim filefoto As Byte() = CType(tbl_par.Rows(indexing).Item(11), Byte())
                 If filefoto.Length > 0 Then
                     pictureEdit.Image = ByteToImage(filefoto)
                 Else
                     pictureEdit.Image = Nothing
                     pictureEdit.Refresh()
                 End If
-                txtstatus.Text = tbl_par.Rows(indexing).Item(11).ToString
-                txtinterviewdate.Text = tbl_par.Rows(indexing).Item(12).ToString
-                txtcv.Text = tbl_par.Rows(indexing).Item(13).ToString
-                txtreason.Text = tbl_par.Rows(indexing).Item(14).ToString
+                txtstatus.Text = tbl_par.Rows(indexing).Item(12).ToString
+                txtinterviewdate.Text = tbl_par.Rows(indexing).Item(13).ToString
+                txtcv.Text = tbl_par.Rows(indexing).Item(14).ToString
+                txtreason.Text = tbl_par.Rows(indexing).Item(15).ToString
             End If
         Next
     End Sub

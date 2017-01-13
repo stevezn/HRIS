@@ -136,16 +136,7 @@ Public Class NewEmp
         Catch ex As Exception
             MsgBox("error")
         End Try
-        'If CInt(txtnumber.Text) < 9 Then
-        '    null = "0000"
-        'ElseIf CInt(txtnumber.Text) > 9 Then
-        '    null = "000"
-        'ElseIf CInt(txtnumber.Text) > 99 Then
-        '    null = "00"
-        'ElseIf CInt(txtnumber.Text) > 999 Then
-        ''    null = "0"
-        'End If
-        Dim rescode As String = ynow & "-" & mnow & "-" & Strings.Right("00000" & lastn, 4)
+        Dim rescode As String = ynow & "-" & mnow & "-" & Strings.Right("00000" & lastn, 5)
         Dim sqlCommand As New MySqlCommand
         Dim str_carSql As String
         Try

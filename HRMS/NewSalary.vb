@@ -171,26 +171,26 @@ Public Class NewSalary
             sqlcommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
             sqlcommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
             sqlcommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
-            sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", txtwp.Text)
-            sqlcommand.Parameters.AddWithValue("@Gross", newform.txtgross.Text)
-            sqlcommand.Parameters.AddWithValue("@Bpjs", newform.txtbpjs.Text)
-            sqlcommand.Parameters.AddWithValue("@OvertimeSalary", newform.txtots.Text)
-            sqlcommand.Parameters.AddWithValue("@TotalDeductions", newform.txtded.Text)
-            sqlcommand.Parameters.AddWithValue("@Netincome", newform.txtnetincome.Text)
-            sqlcommand.Parameters.AddWithValue("@PenghasilanKenaPajak", newform.txtpkp.Text)
-            sqlcommand.Parameters.AddWithValue("@JaminanKecelakaanKerja", newform.txtjkk.Text)
-            sqlcommand.Parameters.AddWithValue("@PremiJaminanKematian", newform.txtpremi.Text)
-            sqlcommand.Parameters.AddWithValue("@JaminanHariTua", newform.txtjht.Text)
-            sqlcommand.Parameters.AddWithValue("@PphTerhutang", newform.txtpph.Text)
-            sqlcommand.Parameters.AddWithValue("@BiayaJabatan", newform.txtbj.Text)
-            sqlcommand.Parameters.AddWithValue("@IuranPensiun", newform.txtip.Text)
-            sqlcommand.Parameters.AddWithValue("@NettoSetahun", newform.txtnetto.Text)
+            sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", txtnpwp.Text)
+            sqlcommand.Parameters.AddWithValue("@Gross", txtgross.Text)
+            sqlcommand.Parameters.AddWithValue("@Bpjs", txtresbpjs.Text)
+            sqlcommand.Parameters.AddWithValue("@OvertimeSalary", txtots.Text)
+            sqlcommand.Parameters.AddWithValue("@TotalDeductions", txtded.Text)
+            sqlcommand.Parameters.AddWithValue("@Netincome", txtnetincome.Text)
+            sqlcommand.Parameters.AddWithValue("@PenghasilanKenaPajak", txtpkp.Text)
+            sqlcommand.Parameters.AddWithValue("@JaminanKecelakaanKerja", txtresjkk.Text)
+            sqlcommand.Parameters.AddWithValue("@PremiJaminanKematian", txtpremi.Text)
+            sqlcommand.Parameters.AddWithValue("@JaminanHariTua", txtresjht.Text)
+            sqlcommand.Parameters.AddWithValue("@PphTerhutang", txtpph.Text)
+            sqlcommand.Parameters.AddWithValue("@BiayaJabatan", txtresbj.Text)
+            sqlcommand.Parameters.AddWithValue("@IuranPensiun", txtresip.Text)
+            sqlcommand.Parameters.AddWithValue("@NettoSetahun", txtnetto.Text)
             sqlcommand.Parameters.AddWithValue("@StatusWajibPajak", txtwp.Text)
             sqlcommand.Parameters.AddWithValue("@RapelFromMonth", frommonth.Text)
             sqlcommand.Parameters.AddWithValue("@RapelToMonth", tomonth.Text)
-            sqlcommand.Parameters.AddWithValue("@RapelRate", txtrapel.Text)
-            sqlcommand.Parameters.AddWithValue("@Rapel", newform.txtrapel.Text)
-            sqlcommand.Parameters.AddWithValue("@PajakPphPerTahun", newform.txtpajak.Text)
+            sqlcommand.Parameters.AddWithValue("@RapelRate", txtresrapel.Text)
+            sqlcommand.Parameters.AddWithValue("@Rapel", txtrapel.Text)
+            sqlcommand.Parameters.AddWithValue("@PajakPphPerTahun", txtpajak.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             MessageBox.Show("Data Successfully Changed!")
@@ -269,7 +269,7 @@ Public Class NewSalary
             sqlCommand.CommandText = str_carSql
             sqlCommand.Parameters.AddWithValue("@EmployeeCode", txtempcode.Text)
             sqlCommand.Parameters.AddWithValue("@CompanyCode", txtcompcode.Text)
-            sqlCommand.Parameters.AddWithValue("@FullName", txtnames.Text)
+            sqlCommand.Parameters.AddWithValue("@FullName", txtnama.Text)
             sqlCommand.Parameters.AddWithValue("@PaymentDate", txtpayment.Text)
             sqlCommand.Parameters.AddWithValue("@BasicRate", txtbasicrate.Text)
             sqlCommand.Parameters.AddWithValue("@Allowance", txtallowance.Text)
@@ -312,26 +312,26 @@ Public Class NewSalary
             sqlCommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
             sqlCommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
             sqlCommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
-            sqlCommand.Parameters.AddWithValue("@MemilikiNpwp", txtwp.Text)
-            sqlCommand.Parameters.AddWithValue("@Gross", newform.txtgross.Text)
-            sqlCommand.Parameters.AddWithValue("@Bpjs", newform.txtbpjs.Text)
-            sqlCommand.Parameters.AddWithValue("@OvertimeSalary", newform.txtots.Text)
-            sqlCommand.Parameters.AddWithValue("@TotalDeductions", newform.txtded.Text)
-            sqlCommand.Parameters.AddWithValue("@Netincome", newform.txtnetincome.Text)
-            sqlCommand.Parameters.AddWithValue("@PenghasilanKenaPajak", newform.txtpkp.Text)
-            sqlCommand.Parameters.AddWithValue("@JaminanKecelakaanKerja", newform.txtjkk.Text)
-            sqlCommand.Parameters.AddWithValue("@PremiJaminanKematian", newform.txtpremi.Text)
-            sqlCommand.Parameters.AddWithValue("@JaminanHariTua", newform.txtjht.Text)
-            sqlCommand.Parameters.AddWithValue("@PphTerhutang", newform.txtpph.Text)
-            sqlCommand.Parameters.AddWithValue("@BiayaJabatan", newform.txtbj.Text)
-            sqlCommand.Parameters.AddWithValue("@IuranPensiun", newform.txtip.Text)
-            sqlCommand.Parameters.AddWithValue("@NettoSetahun", newform.txtnetto.Text)
+            sqlCommand.Parameters.AddWithValue("@MemilikiNpwp", txtnpwp.Text)
+            sqlCommand.Parameters.AddWithValue("@Gross", txtgross.Text)
+            sqlCommand.Parameters.AddWithValue("@Bpjs", txtresbpjs.Text)
+            sqlCommand.Parameters.AddWithValue("@OvertimeSalary", txtots.Text)
+            sqlCommand.Parameters.AddWithValue("@TotalDeductions", txtded.Text)
+            sqlCommand.Parameters.AddWithValue("@Netincome", txtnetincome.Text)
+            sqlCommand.Parameters.AddWithValue("@PenghasilanKenaPajak", txtpkp.Text)
+            sqlCommand.Parameters.AddWithValue("@JaminanKecelakaanKerja", txtresjkk.Text)
+            sqlCommand.Parameters.AddWithValue("@PremiJaminanKematian", txtpremi.Text)
+            sqlCommand.Parameters.AddWithValue("@JaminanHariTua", txtresjht.Text)
+            sqlCommand.Parameters.AddWithValue("@PphTerhutang", txtpph.Text)
+            sqlCommand.Parameters.AddWithValue("@BiayaJabatan", txtresbj.Text)
+            sqlCommand.Parameters.AddWithValue("@IuranPensiun", txtresip.Text)
+            sqlCommand.Parameters.AddWithValue("@NettoSetahun", txtnetto.Text)
             sqlCommand.Parameters.AddWithValue("@StatusWajibPajak", txtwp.Text)
             sqlCommand.Parameters.AddWithValue("@RapelFromMonth", frommonth.Text)
             sqlCommand.Parameters.AddWithValue("@RapelToMonth", tomonth.Text)
-            sqlCommand.Parameters.AddWithValue("@RapelRate", txtrapel.Text)
-            sqlCommand.Parameters.AddWithValue("@Rapel", newform.txtrapel.Text)
-            sqlCommand.Parameters.AddWithValue("@PajakPphPerTahun", newform.txtpajak.Text)
+            sqlCommand.Parameters.AddWithValue("@RapelRate", txtresrapel.Text)
+            sqlCommand.Parameters.AddWithValue("@Rapel", txtrapel.Text)
+            sqlCommand.Parameters.AddWithValue("@PajakPphPerTahun", txtpajak.Text)
             sqlCommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
             Return True
@@ -348,7 +348,7 @@ Public Class NewSalary
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT EmployeeCode, CompanyCode, FullName, PaymentDate, BasicRate, Allowance, Incentives, TableMoney, Transport, OtherAdditionalAllowance1, OtherAdditionalAllowance2, OtherAdditionalAllowance3, OtherAdditionalAllowance4, OtherAdditionalAllowance5, AdditionalAllowance1, AdditionalAllowance2, AdditionalAllowance3, AdditionalAllowance4, AdditionalAllowance5, OvertimeHours, OvertimeType, BpjsPercentage, Taxes, Loan, Lates, OtherAdditionalDeduction1, OtherAdditionalDeduction2, OtherAdditionalDeduction3, OtherAdditionalDeduction4, OtherAdditionalDeduction5, AdditionalDeduction1, AdditionalDeduction2, AdditionalDeduction3, AdditionalDeduction4, AdditionalDeduction5, ResJaminanKecelakaanKerja, ResPremiJaminanKematian, ResJaminanHariTua, ResBiayaJabatan, ResIuranPensiun, PersenKk, PersenJk, PersenJht, PersenBj, PersenIp, MemilikiNpwp, StatusWajibPajak, RapelFromMonth, RapelToMonth, RapelRate from db_payroll"
+        sqlCommand.CommandText = "SELECT EmployeeCode, CompanyCode, FullName, PaymentDate, BasicRate, Allowance, Incentives, TableMoney, Transport, OtherAdditionalAllowance1, OtherAdditionalAllowance2, OtherAdditionalAllowance3, OtherAdditionalAllowance4, OtherAdditionalAllowance5, AdditionalAllowance1, AdditionalAllowance2, AdditionalAllowance3, AdditionalAllowance4, AdditionalAllowance5, OvertimeHours, OvertimeType, BpjsPercentage, Taxes, Loan, Lates, OtherAdditionalDeduction1, OtherAdditionalDeduction2, OtherAdditionalDeduction3, OtherAdditionalDeduction4, OtherAdditionalDeduction5, AdditionalDeduction1, AdditionalDeduction2, AdditionalDeduction3, AdditionalDeduction4, AdditionalDeduction5, ResJaminanKecelakaanKerja, ResPremiJaminanKematian, ResJaminanHariTua, ResBiayaJabatan, ResIuranPensiun, PersenKk, PersenJk, PersenJht PersenBj, PersenIp, MemilikiNpwp, Gross, Bpjs, OvertimeSalary, TotalDeductions, NetIncome, PenghasilanKenaPajak, JaminanKecelakaanKerja, PremiJaminanKematian, JaminanHariTua, PphTerhutang, BiayaJabatan, IuranPensiun, NettoSetahun, StatusWajibPajak, RapelFromMonth, RapelToMonth, RapelRate, Rapel, PajakPphPerTahun FROm db_payroll"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
@@ -379,17 +379,18 @@ Public Class NewSalary
     Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
         cleartxt()
         barJudul.Caption = "Change Data"
-        'reset()
         lcnama.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         RibbonPageGroup1.Visible = False
+        btnsave.Text = "Change"
     End Sub
 
     Private Sub txtnames_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnames.SelectedIndexChanged
         For indexing As Integer = 0 To tbl_par.Rows.Count - 1
             If txtnames.SelectedItem Is tbl_par.Rows(indexing).Item(2).ToString() Then
                 txtempcode.Text = tbl_par.Rows(indexing).Item(0).ToString()
-                txtcompcode.Text = tbl_par.Rows(indexing).Item(1).ToString()
+                txtcompcode.Text = tbl_par.Rows(indexing).Item(1).ToString
+                txtnames.Text = tbl_par.Rows(indexing).Item(2).ToString
                 txtpayment.Text = tbl_par.Rows(indexing).Item(3).ToString
                 txtbasicrate.Text = tbl_par.Rows(indexing).Item(4).ToString
                 txtallowance.Text = tbl_par.Rows(indexing).Item(5).ToString
@@ -399,7 +400,7 @@ Public Class NewSalary
                 txtdesc1.Text = tbl_par.Rows(indexing).Item(9).ToString
                 txtdesc2.Text = tbl_par.Rows(indexing).Item(10).ToString
                 txtdesc3.Text = tbl_par.Rows(indexing).Item(11).ToString
-                txtdesc4.Text = tbl_par.Rows(indexing).Item(12).ToString()
+                txtdesc4.Text = tbl_par.Rows(indexing).Item(12).ToString
                 txtdesc5.Text = tbl_par.Rows(indexing).Item(13).ToString
                 txtadd1.Text = tbl_par.Rows(indexing).Item(14).ToString
                 txtadd2.Text = tbl_par.Rows(indexing).Item(15).ToString
@@ -417,7 +418,7 @@ Public Class NewSalary
                 txtdesc33.Text = tbl_par.Rows(indexing).Item(27).ToString
                 txtdesc44.Text = tbl_par.Rows(indexing).Item(28).ToString
                 txtdesc55.Text = tbl_par.Rows(indexing).Item(29).ToString
-                txtded1.Text = tbl_par.Rows(indexing).Item(30).ToString()
+                txtded1.Text = tbl_par.Rows(indexing).Item(30).ToString
                 txtded2.Text = tbl_par.Rows(indexing).Item(31).ToString
                 txtded3.Text = tbl_par.Rows(indexing).Item(32).ToString
                 txtded4.Text = tbl_par.Rows(indexing).Item(33).ToString
@@ -431,12 +432,12 @@ Public Class NewSalary
                 txtppjk.Text = tbl_par.Rows(indexing).Item(41).ToString
                 txtpjht.Text = tbl_par.Rows(indexing).Item(42).ToString
                 txtpbj.Text = tbl_par.Rows(indexing).Item(43).ToString
-                txtpip.Text = tbl_par.Rows(indexing).Item(44).ToString
-                txtwp.Text = tbl_par.Rows(indexing).Item(45).ToString
-                txtnpwp.Text = tbl_par.Rows(indexing).Item(46).ToString
-                frommonth.Text = tbl_par.Rows(indexing).Item(47).ToString
-                tomonth.Text = tbl_par.Rows(indexing).Item(48).ToString
-                txtrapel.Text = tbl_par.Rows(indexing).Item(49).ToString
+                txtpip.Text = tbl_par.Rows(indexing).Item(43).ToString
+                txtnpwp.Text = tbl_par.Rows(indexing).Item(44).ToString
+                txtwp.Text = tbl_par.Rows(indexing).Item(58).ToString
+                frommonth.Text = tbl_par.Rows(indexing).Item(59).ToString
+                tomonth.Text = tbl_par.Rows(indexing).Item(60).ToString
+                txtrapel.Text = tbl_par.Rows(indexing).Item(62).ToString
             End If
         Next
     End Sub
@@ -450,10 +451,23 @@ Public Class NewSalary
     End Sub
 
     Private Sub btnCount_Click(sender As Object, e As EventArgs) Handles btnCount.Click
-        If payroll Is Nothing OrElse payroll.IsDisposed Then
-            payroll = New PayrollCount
-        End If
-        payroll.Show()
+        'If payroll Is Nothing OrElse payroll.IsDisposed Then
+        '    payroll = New PayrollCount
+        'End If
+        'payroll.Show()
+        'If barJudul.Caption = "Add Payroll Data" Then
+        '    If payroll Is Nothing OrElse payroll.IsDisposed Then
+        '        payroll = New PayrollCount
+        '    End If
+        '    payroll.Show()
+        '    payroll.BarButtonItem1.PerformClick()
+        'ElseIf barJudul.Caption = "Change Data" Then
+        '    If payroll Is Nothing OrElse payroll.IsDisposed Then
+        '        payroll = New PayrollCount
+        '    End If
+        '    payroll.Show()
+        '    payroll.BarButtonItem2.PerformClick()
+        'End If
         Call gross()
         Call bpjs()
         Call overtime()
@@ -472,13 +486,13 @@ Public Class NewSalary
     End Sub
 
     Private Sub hitungrapel()
-        Dim a, totalvalue, res As Long
-        a = CLng(Convert.ToDouble(txtrapel.Text))
+        Dim a, totalvalue, res As Double
+        a = Convert.ToDouble(txtrapel.Text)
         totalvalue = value2 - value
         res = a * totalvalue - a
-        payroll.txtrapel.Text = res.ToString
-        payroll.txtrapel.Text = Format(res, "##,##0")
-        payroll.txtrapel.SelectionStart = Len(payroll.txtrapel.Text)
+        txtresrapel.Text = res.ToString
+        txtresrapel.Text = Format(res, "##,##0")
+        txtresrapel.SelectionStart = Len(txtresrapel.Text)
     End Sub
 
     Private Sub biayajabatan()
@@ -487,9 +501,9 @@ Public Class NewSalary
             a = Convert.ToDouble(txtbasicrate.Text)
             b = Convert.ToDouble(txtpbj.Text)
             res = a * b / 100
-            payroll.txtbj.Text = res.ToString()
-            payroll.txtbj.Text = Format(res, "##,##0")
-            payroll.txtbj.SelectionStart = Len(payroll.txtbj.Text)
+            txtresbj.Text = res.ToString()
+            txtresbj.Text = Format(res, "##,##0")
+            txtresbj.SelectionStart = Len(txtresbj.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -498,12 +512,12 @@ Public Class NewSalary
     Private Sub pkpn()
         Try
             Dim a, b, res As Double
-            a = Convert.ToDouble(payroll.txtnetto.Text)
+            a = Convert.ToDouble(txtnetto.Text)
             b = Convert.ToDouble(nilai)
             res = a - b
-            payroll.txtpkp.Text = res.ToString()
-            payroll.txtpkp.Text = Format(res, "##,##0")
-            payroll.txtpkp.SelectionStart = Len(payroll.txtpkp.Text)
+            txtpkp.Text = res.ToString()
+            txtpkp.Text = Format(res, "##,##0")
+            txtpkp.SelectionStart = Len(txtpkp.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -512,7 +526,7 @@ Public Class NewSalary
     Private Sub pphtahun()
         Try
             Dim a, res As Double
-            a = Convert.ToDouble(payroll.txtpkp.Text)
+            a = Convert.ToDouble(txtpkp.Text)
             If (a < 25000000) Then
                 res = a * 5 / 100
             ElseIf (a > 250000000) Then
@@ -522,9 +536,9 @@ Public Class NewSalary
             ElseIf (a > 1000000000) Then
                 res = a * 25 / 100
             End If
-            payroll.txtpajak.Text = res.ToString()
-            payroll.txtpajak.Text = Format(res, "##,##0")
-            payroll.txtpajak.SelectionStart = Len(payroll.txtpajak.Text)
+            txtpajak.Text = res.ToString()
+            txtpajak.Text = Format(res, "##,##0")
+            txtpajak.SelectionStart = Len(txtpajak.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -533,7 +547,7 @@ Public Class NewSalary
     Private Sub pphterutang()
         Try
             Dim a, b, c As Double
-            a = Convert.ToDouble(payroll.txtnetto.Text)
+            a = Convert.ToDouble(txtnetto.Text)
             b = Convert.ToDouble(nilai)
             c = a - b
             Dim hasil1, hasil2, nilai1, nilai2 As Double
@@ -549,9 +563,9 @@ Public Class NewSalary
                 Else
                     nilai1 = c * 30 / 100
                 End If
-                payroll.txtpph.Text = nilai1.ToString()
-                payroll.txtpph.Text = Format(nilai, "##,##0")
-                payroll.txtpph.SelectionStart = Len(payroll.txtpph.Text)
+                txtpph.Text = nilai1.ToString()
+                txtpph.Text = Format(nilai, "##,##0")
+                txtpph.SelectionStart = Len(txtpph.Text)
             ElseIf txtnpwp.SelectedIndex = 1 Then
                 If hasil2 < 50000000 Then
                     nilai1 = c * 5 / 100
@@ -566,9 +580,9 @@ Public Class NewSalary
                     nilai1 = c * 30 / 100
                     nilai2 = nilai1 * 120 / 100
                 End If
-                payroll.txtpph.Text = nilai1.ToString()
-                payroll.txtpph.Text = Format(nilai1, "##,##0")
-                payroll.txtpph.SelectionStart = Len(payroll.txtpph.Text)
+                txtpph.Text = nilai1.ToString()
+                txtpph.Text = Format(nilai1, "##,##0")
+                txtpph.SelectionStart = Len(txtpph.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -589,9 +603,9 @@ Public Class NewSalary
             i = CLng(Convert.ToDouble(txtadd4.Text))
             j = CLng(Convert.ToDouble(txtadd5.Text))
             res = a + b + c + d + e + f + g + h + i + j + k + l
-            payroll.txtgross.Text = res.ToString()
-            payroll.txtgross.Text = Format(res, "##,##0")
-            payroll.txtgross.SelectionStart = Len(payroll.txtgross.Text)
+            txtgross.Text = res.ToString()
+            txtgross.Text = Format(res, "##,##0")
+            txtgross.SelectionStart = Len(txtgross.Text)
         Catch ex As Exception
             If txtbasicrate.Text = "" Or txtallowance.Text = "" Or txtincentives.Text = "" Or txtmeal.Text = "" Or txttransport.Text = "" Or txtadd1.Text = "" Or txtadd2.Text = "" Or txtadd3.Text = "" Or txtadd4.Text = "" Or txtadd5.Text = "" Then ' Or txtotsalary.Text = "" Or rapel.Text = "" Then
                 MsgBox("Allowances Fields Can't Be Empty, Please Input 0 if There Is No Any Additional Allowances")
@@ -611,9 +625,9 @@ Public Class NewSalary
             g = CLng(Convert.ToDouble(txtded4.Text))
             h = CLng(Convert.ToDouble(txtded5.Text))
             res = a + b + c + d + e + f + g + h
-            payroll.txtded.Text = res.ToString()
-            payroll.txtded.Text = Format(res, "##,##0")
-            payroll.txtded.SelectionStart = Len(payroll.txtded.Text)
+            txtded.Text = res.ToString()
+            txtded.Text = Format(res, "##,##0")
+            txtded.SelectionStart = Len(txtded.Text)
         Catch ex As Exception
             If txttaxes.Text = "" Or txtloan.Text = "" Or txtlates.Text = "" Or txtded1.Text = "" Or txtded2.Text = "" Or txtded3.Text = "" Or txtded4.Text = "" Then ' Or txtbpjs.Text = "" Or txtjkk.Text = "" Or txtjk.Text = "" Or txthasilbjabatan.Text = "" Or txthasiliuranpensiun.Text = "" Then
                 MsgBox("Deductions Fields Can't Be Empty, Please Input 0 If There Is No Any Additional Deductions")
@@ -628,14 +642,14 @@ Public Class NewSalary
                 a = Convert.ToDouble(txtbasicrate.Text)
                 b = Convert.ToDouble(txtpjht.Text)
                 res = a * b / 100
-                payroll.txtjht.Text = res.ToString()
-                payroll.txtjht.Text = Format(res, "##,##0")
-                payroll.txtjht.SelectionStart = Len(payroll.txtjht.Text)
+                txtresjht.Text = res.ToString()
+                txtresjht.Text = Format(res, "##,##0")
+                txtresjht.SelectionStart = Len(txtresjht.Text)
             Else
                 res = 0
-                payroll.txtjht.Text = res.ToString()
-                payroll.txtjht.Text = Format(res, "##,##0")
-                payroll.txtjht.SelectionStart = Len(payroll.txtjht.Text)
+                txtresjht.Text = res.ToString()
+                txtresjht.Text = Format(res, "##,##0")
+                txtresjht.SelectionStart = Len(txtresjht.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -649,9 +663,9 @@ Public Class NewSalary
                 a = Convert.ToDouble(txtbasicrate.Text)
                 b = Convert.ToDouble(txtpip.Text)
                 res = a * b / 100
-                payroll.txtip.Text = res.ToString()
-                payroll.txtip.Text = Format(res, "##,##0")
-                payroll.txtip.SelectionStart = Len(payroll.txtip.Text)
+                txtresip.Text = res.ToString()
+                txtresip.Text = Format(res, "##,##0")
+                txtresip.SelectionStart = Len(txtresip.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -676,9 +690,9 @@ Public Class NewSalary
                     value2 = tempo
                     totot = value2 + pay2
                 End If
-                payroll.txtots.Text = totot.ToString()
-                payroll.txtots.Text = Format(totot, "##,##0")
-                payroll.txtots.SelectionStart = Len(payroll.txtots.Text)
+                txtots.Text = totot.ToString()
+                txtots.Text = Format(totot, "##,##0")
+                txtots.SelectionStart = Len(txtots.Text)
             ElseIf txtottype.Text = "Holiday / Sunday" Then
                 Dim hours, pay, salary, temp, totot2, tempo, value1, value2, pay2, value3 As Double
                 hours = CInt(Convert.ToInt64(txtothours.Text))
@@ -700,9 +714,9 @@ Public Class NewSalary
                     value3 = tempo
                     totot2 = value3 - value2 - value1
                 End If
-                payroll.txtots.Text = totot2.ToString()
-                payroll.txtots.Text = Format(totot2, "##,##0")
-                payroll.txtots.SelectionStart = Len(payroll.txtots.Text)
+                txtots.Text = totot2.ToString()
+                txtots.Text = Format(totot2, "##,##0")
+                txtots.SelectionStart = Len(txtots.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -716,14 +730,14 @@ Public Class NewSalary
                 a = Convert.ToDouble(txtbasicrate.Text)
                 b = Convert.ToDouble(txtpkk.Text)
                 res = a * b / 100
-                payroll.txtjkk.Text = res.ToString()
-                payroll.txtjkk.Text = Format(res, "##,##0")
-                payroll.txtjkk.SelectionStart = Len(payroll.txtjkk.Text)
+                txtresjkk.Text = res.ToString()
+                txtresjkk.Text = Format(res, "##,##0")
+                txtresjkk.SelectionStart = Len(txtresjkk.Text)
             Else
                 res = 0
-                payroll.txtjkk.Text = res.ToString()
-                payroll.txtjkk.Text = Format(res, "##,##0")
-                payroll.txtjkk.SelectionStart = Len(payroll.txtjkk.Text)
+                txtresjkk.Text = res.ToString()
+                txtresjkk.Text = Format(res, "##,##0")
+                txtresjkk.SelectionStart = Len(txtresjkk.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -737,14 +751,14 @@ Public Class NewSalary
                 a = Convert.ToDouble(txtbasicrate.Text)
                 b = Convert.ToDouble(txtppjk.Text)
                 res = a * b / 100
-                payroll.txtpremi.Text = res.ToString()
-                payroll.txtpremi.Text = Format(res, "##,##0")
-                payroll.txtpremi.SelectionStart = Len(payroll.txtpremi.Text)
+                txtpremi.Text = res.ToString()
+                txtpremi.Text = Format(res, "##,##0")
+                txtpremi.SelectionStart = Len(txtpremi.Text)
             Else
                 res = 0
-                payroll.txtpremi.Text = res.ToString()
-                payroll.txtpremi.Text = Format(res, "##,##0")
-                payroll.txtpremi.SelectionStart = Len(payroll.txtpremi.Text)
+                txtpremi.Text = res.ToString()
+                txtpremi.Text = Format(res, "##,##0")
+                txtpremi.SelectionStart = Len(txtpremi.Text)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -754,11 +768,11 @@ Public Class NewSalary
     Private Sub nettosetahun()
         Try
             Dim a, res As Double
-            a = Convert.ToDouble(payroll.txtnetincome.Text)
+            a = Convert.ToDouble(txtnetincome.Text)
             res = a * 12
-            payroll.txtnetto.Text = res.ToString()
-            payroll.txtnetto.Text = Format(res, "##,##0")
-            payroll.txtnetto.SelectionStart = Len(payroll.txtnetto.Text)
+            txtnetto.Text = res.ToString()
+            txtnetto.Text = Format(res, "##,##0")
+            txtnetto.SelectionStart = Len(txtnetto.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -767,12 +781,12 @@ Public Class NewSalary
     Private Sub netincome()
         Try
             Dim a, b, res As Double
-            a = Convert.ToDouble(payroll.txtgross.Text)
-            b = Convert.ToDouble(payroll.txtded.Text)
+            a = Convert.ToDouble(txtgross.Text)
+            b = Convert.ToDouble(txtded.Text)
             res = a - b
-            payroll.txtnetincome.Text = res.ToString()
-            payroll.txtnetincome.Text = Format(res, "##,##0")
-            payroll.txtnetincome.SelectionStart = Len(payroll.txtnetincome.Text)
+            txtnetincome.Text = res.ToString()
+            txtnetincome.Text = Format(res, "##,##0")
+            txtnetincome.SelectionStart = Len(txtnetincome.Text)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -784,9 +798,9 @@ Public Class NewSalary
             a = Convert.ToDouble(txtbpjs.Text)
             b = Convert.ToDouble(txtbasicrate.Text)
             res = b * a / 100
-            payroll.txtbpjs.Text = res.ToString()
-            payroll.txtbpjs.Text = Format(res, "##,##0")
-            payroll.txtbpjs.SelectionStart = Len(txtbpjs.Text)
+            txtresbpjs.Text = res.ToString()
+            txtresbpjs.Text = Format(res, "##,##0")
+            txtresbpjs.SelectionStart = Len(txtresbpjs.Text)
         Catch ex As Exception
             If txtbpjs.Text = "" Then
                 MsgBox("Please Input BPJS Percentage First")
@@ -851,7 +865,7 @@ Public Class NewSalary
             lcppjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf txtpjk.SelectedIndex = 1 Then
             txtpjk.SelectedItem = "No"
-            lcpjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            lcppjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
             txtppjk.Text = "0"
         End If
     End Sub
@@ -859,10 +873,10 @@ Public Class NewSalary
     Private Sub txtjht_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtjht.SelectedIndexChanged
         If txtjht.SelectedIndex = 0 Then
             txtjht.SelectedItem = "Yes"
-            lcjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+            lcpjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf txtjht.SelectedIndex = 1 Then
             txtjht.SelectedItem = "No"
-            lcjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            lcpjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
             txtpjht.Text = "0"
         End If
     End Sub
@@ -870,10 +884,10 @@ Public Class NewSalary
     Private Sub txtbj_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtbj.SelectedIndexChanged
         If txtbj.SelectedIndex = 0 Then
             txtbj.SelectedItem = "Yes"
-            lcbj.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+            lcpbj.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         ElseIf txtbj.SelectedIndex = 1 Then
             txtbj.SelectedItem = "No"
-            lcbj.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+            lcpbj.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
             txtpbj.Text = "0"
         End If
     End Sub
@@ -928,30 +942,39 @@ Public Class NewSalary
             txtwp.SelectedItem = "Kawin, Penghasilan Digabung Tanggungan 3"
         End If
     End Sub
+    Dim tbl_par2 As New DataTable
 
     Sub loadData()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT EmployeeCode, FullName, Position, CompanyCode FROM db_pegawai WHERE Status!='Fired'"
+        sqlCommand.CommandText = "SELECT EmployeeCode, FullName, CompanyCode FROM db_pegawai WHERE Status!='Fired'"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
-        adapter.Fill(tbl_par)
-        For index As Integer = 0 To tbl_par.Rows.Count - 1
-            txtnama.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
+        adapter.Fill(tbl_par2)
+        For index As Integer = 0 To tbl_par2.Rows.Count - 1
+            txtnama.Properties.Items.Add(tbl_par2.Rows(index).Item(1).ToString())
         Next
         SQLConnection.Close()
     End Sub
 
     Private Sub txtnama_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnama.SelectedIndexChanged
-        For indexing As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtnama.SelectedItem Is tbl_par.Rows(indexing).Item(1).ToString() Then
-                txtempcode.Text = tbl_par.Rows(indexing).Item(0).ToString()
-                txtcompcode.Text = tbl_par.Rows(indexing).Item(2).ToString()
+        For indexing As Integer = 0 To tbl_par2.Rows.Count - 1
+            If txtnama.SelectedItem Is tbl_par2.Rows(indexing).Item(1).ToString() Then
+                txtempcode.Text = tbl_par2.Rows(indexing).Item(0).ToString()
+                txtcompcode.Text = tbl_par2.Rows(indexing).Item(2).ToString()
             End If
         Next
+    End Sub
+
+    Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        If barJudul.Caption = "Add Payroll Data" Then
+            InsertReq()
+        ElseIf barJudul.Caption = "Change Data" Then
+            updatechange()
+        End If
     End Sub
 
     Private Sub frommonth_SelectedIndexChanged(sender As Object, e As EventArgs) Handles frommonth.SelectedIndexChanged

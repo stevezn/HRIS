@@ -274,7 +274,7 @@ Public Class MainApp
         clearForm()
         reset()
         resetclear()
-        lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -297,7 +297,6 @@ Public Class MainApp
         lcrotasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcsp1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcnotes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcForm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnSimpan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -676,16 +675,6 @@ Public Class MainApp
         Catch ex As Exception
             MsgBox("error")
         End Try
-
-        'If CInt(txtnumber.Text) < 9 Then
-        '    null = "0000"
-        'ElseIf CInt(txtnumber.Text) > 9 Then
-        '    null = "000"
-        'ElseIf CInt(txtnumber.Text) > 99 Then
-        '    null = "00"
-        'ElseIf CInt(txtnumber.Text) > 999 Then
-        ''    null = "0"
-        'End If
         Dim rescode As String = ynow & "-" & mnow & "-" & Strings.Right("0000" & lastn, 4)
         Dim sqlCommand As New MySqlCommand
         Try
@@ -778,11 +767,6 @@ Public Class MainApp
             sqlcommand.Parameters.AddWithValue("@ResJaminanHariTua", cmboxjht.Text)
             sqlcommand.Parameters.AddWithValue("@ResBiayajabatan", cmboxbj.Text)
             sqlcommand.Parameters.AddWithValue("@ResIuranPensiun", cmboxiuranpensiun.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenKk", txtpkk.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenJk", txtpjk.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
             sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", cmboxnpwp.Text)
             sqlcommand.Parameters.AddWithValue("@Gross", txtgross.Text)
             sqlcommand.Parameters.AddWithValue("@Bpjs", txtbpjs.Text)
@@ -829,7 +813,7 @@ Public Class MainApp
             ElseIf barJudul.Caption = "Module Employee" Then
                 sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, FullName, Position, PlaceOfBirth, DateOfBirth, Gender, Religion, Address, Email, IdNumber, OfficeLocation, WorkDate, PhoneNumber, Status, TrainingSampai FROM db_pegawai"
             ElseIf barJudul.Caption = "Module Payroll" Then
-                sqlCommand.CommandText = "Select EmployeeCode, PaymentDate, FullName, BasicRate, Gross, Bpjs, OvertimeSalary, TotalDeductions, NetIncome, JaminanKecelakaanKerja, PremiJaminanKematian, JaminanHariTua, BiayaJabatan, IuranPensiun, PphTerhutang, PajakPphPerTahun, PenghasilanKenaPajak, NettoSetahun, StatusWajibPajak, Rapel FROM db_payroll"
+                sqlCommand.CommandText = "Select EmployeeCode, CompanyCode, PaymentDate, FullName, BasicRate, Gross, Bpjs, OvertimeSalary, TotalDeductions, NetIncome, JaminanKecelakaanKerja, PremiJaminanKematian, JaminanHariTua, BiayaJabatan, IuranPensiun, PphTerhutang, PajakPphPerTahun, PenghasilanKenaPajak, NettoSetahun, StatusWajibPajak, Rapel FROM db_payroll"
                 ' sqlCommand.CommandText = "Select a.EmployeeCode, a.FullName, count(b.EmployeeCode) As jml_masuk, a.jenis_pegawai, a.BasicRate, If(a.jenis_pegawai ='Full Time', a.BasicRate, (a.BasicRate * count(b.EmployeeCode))) as jml_gaji, b.tanggal, IF(sum(b.lama_lembur) > 0, ((1.5 *(1/173)) * a.BasicRate * sum(b.lama_lembur)), 0) as jml_lembur , a.Allowance, JaminanKecelakaanKerja, a.StatusWajibPajak, BiayaJabatan,Iuran_pensiun" +
                 '                            " FROM" +
                 '                           " db_pegawai a, db_absensi b" +
@@ -1625,7 +1609,7 @@ Public Class MainApp
                 act = "input"
             End If
             Try
-                sqlCommand.CommandText = "SELECT * FROM db_recruitment WHERE 1 = 1 " + param.ToString()
+                sqlCommand.CommandText = "SELECT IdRec,InterviewTimes FROM db_recruitment WHERE 1 = 1 " + param.ToString()
                 sqlCommand.Connection = SQLConnection
 
                 Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
@@ -1639,25 +1623,25 @@ Public Class MainApp
             If datatabl.Rows.Count > 0 Then
                 txtBar1.Text = datatabl.Rows(0).Item(0).ToString()
                 txtBar2.Text = datatabl.Rows(0).Item(1).ToString()
-                txtBar3.Text = datatabl.Rows(0).Item(2).ToString()
-                txtBar4.Text = datatabl.Rows(0).Item(3).ToString()
-                txtTanggal.Text = datatabl.Rows(0).Item(4).ToString()
-                txtaddress.Text = datatabl.Rows(0).Item(5).ToString()
-                txtbar6.Text = datatabl.Rows(0).Item(6).ToString()
-                txtbar7.Text = datatabl.Rows(0).Item(7).ToString()
-                txtphone.Text = datatabl.Rows(0).Item(8).ToString()
-                txtBar8.Text = datatabl.Rows(0).Item(9).ToString()
-                Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(10), Byte())
-                If filefoto.Length > 0 Then
-                    pictureEdit.Image = ByteToImage(filefoto)
-                Else
-                    pictureEdit.Image = Nothing
-                    pictureEdit.Refresh()
-                End If
-                'tampilkan foto nya belum
-                '
-                txtText.Text = datatabl.Rows(0).Item(11).ToString()
-                txtTglInterview.Text = datatabl(0).Item(12).ToString()
+                'txtBar3.Text = datatabl.Rows(0).Item(2).ToString()
+                'txtBar4.Text = datatabl.Rows(0).Item(3).ToString()
+                'txtTanggal.Text = datatabl.Rows(0).Item(4).ToString()
+                'txtaddress.Text = datatabl.Rows(0).Item(5).ToString()
+                'txtbar6.Text = datatabl.Rows(0).Item(6).ToString()
+                'txtbar7.Text = datatabl.Rows(0).Item(7).ToString()
+                'txtphone.Text = datatabl.Rows(0).Item(8).ToString()
+                'txtBar8.Text = datatabl.Rows(0).Item(9).ToString()
+                'Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(10), Byte())
+                'If filefoto.Length > 0 Then
+                '    pictureEdit.Image = ByteToImage(filefoto)
+                'Else
+                '    pictureEdit.Image = Nothing
+                '    pictureEdit.Refresh()
+                'End If
+                ''tampilkan foto nya belum
+                ''
+                'txtText.Text = datatabl.Rows(0).Item(11).ToString()
+                'txtTglInterview.Text = datatabl(0).Item(12).ToString()
             End If
         ElseIf barJudul.Caption = "Module Employee" Then
             Dim param2 As String = ""
