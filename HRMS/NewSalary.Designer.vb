@@ -1530,7 +1530,7 @@ Partial Class NewSalary
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl10.Location = New System.Drawing.Point(12, 32)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(0, 16)
+        Me.LabelControl10.Size = New System.Drawing.Size(256, 16)
         Me.LabelControl10.StyleController = Me.LayoutControl3
         Me.LabelControl10.TabIndex = 19
         '

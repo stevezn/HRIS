@@ -196,6 +196,12 @@
     </Compile>
     <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Rapel.Designer.vb">
+      <DependentUpon>Rapel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rapel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RecProcess.Designer.vb">
       <DependentUpon>RecProcess.vb</DependentUpon>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PayrollCount.resx">
       <DependentUpon>PayrollCount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapel.resx">
+      <DependentUpon>Rapel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecProcess.resx">
       <DependentUpon>RecProcess.vb</DependentUpon>

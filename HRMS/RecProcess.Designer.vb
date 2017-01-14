@@ -31,7 +31,6 @@ Partial Class RecProcess
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.Employee = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.txtreason = New DevExpress.Tutorials.Controls.RichTextBoxEx()
         Me.txtfullname = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -92,7 +91,7 @@ Partial Class RecProcess
         Me.lcphone.CustomizationFormText = "Phone Number"
         Me.lcphone.Location = New System.Drawing.Point(0, 120)
         Me.lcphone.Name = "lcphone"
-        Me.lcphone.Size = New System.Drawing.Size(333, 24)
+        Me.lcphone.Size = New System.Drawing.Size(289, 24)
         Me.lcphone.Text = "Phone Number"
         Me.lcphone.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -102,7 +101,7 @@ Partial Class RecProcess
         Me.txtphone.Location = New System.Drawing.Point(102, 132)
         Me.txtphone.MenuManager = Me.RibbonControl1
         Me.txtphone.Name = "txtphone"
-        Me.txtphone.Size = New System.Drawing.Size(239, 20)
+        Me.txtphone.Size = New System.Drawing.Size(195, 20)
         Me.txtphone.StyleController = Me.LayoutControl1
         Me.txtphone.TabIndex = 13
         '
@@ -114,7 +113,7 @@ Partial Class RecProcess
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.Employee})
-        Me.RibbonControl1.Size = New System.Drawing.Size(850, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(813, 142)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above
         '
@@ -142,7 +141,7 @@ Partial Class RecProcess
         '
         'Employee
         '
-        Me.Employee.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2})
+        Me.Employee.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
         Me.Employee.Name = "Employee"
         Me.Employee.Text = "Employee"
         '
@@ -151,11 +150,6 @@ Partial Class RecProcess
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "                                  "
-        '
-        'RibbonPageGroup2
-        '
-        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Text = "                                                        "
         '
         'LayoutControl1
         '
@@ -172,7 +166,7 @@ Partial Class RecProcess
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(409, 411, 250, 350)
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(353, 298)
+        Me.LayoutControl1.Size = New System.Drawing.Size(309, 298)
         Me.LayoutControl1.TabIndex = 29
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -180,7 +174,7 @@ Partial Class RecProcess
         '
         Me.txtreason.Location = New System.Drawing.Point(102, 204)
         Me.txtreason.Name = "txtreason"
-        Me.txtreason.Size = New System.Drawing.Size(239, 82)
+        Me.txtreason.Size = New System.Drawing.Size(195, 82)
         Me.txtreason.TabIndex = 34
         Me.txtreason.Text = ""
         '
@@ -190,7 +184,7 @@ Partial Class RecProcess
         Me.txtfullname.MenuManager = Me.RibbonControl1
         Me.txtfullname.Name = "txtfullname"
         Me.txtfullname.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtfullname.Size = New System.Drawing.Size(239, 20)
+        Me.txtfullname.Size = New System.Drawing.Size(195, 20)
         Me.txtfullname.StyleController = Me.LayoutControl1
         Me.txtfullname.TabIndex = 31
         '
@@ -207,7 +201,7 @@ Partial Class RecProcess
         Me.txtinterviewdate.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
         Me.txtinterviewdate.Properties.Mask.EditMask = ""
         Me.txtinterviewdate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
-        Me.txtinterviewdate.Size = New System.Drawing.Size(239, 20)
+        Me.txtinterviewdate.Size = New System.Drawing.Size(195, 20)
         Me.txtinterviewdate.StyleController = Me.LayoutControl1
         Me.txtinterviewdate.TabIndex = 30
         '
@@ -216,7 +210,7 @@ Partial Class RecProcess
         Me.txtinterview.Location = New System.Drawing.Point(102, 60)
         Me.txtinterview.MenuManager = Me.RibbonControl1
         Me.txtinterview.Name = "txtinterview"
-        Me.txtinterview.Size = New System.Drawing.Size(239, 20)
+        Me.txtinterview.Size = New System.Drawing.Size(195, 20)
         Me.txtinterview.StyleController = Me.LayoutControl1
         Me.txtinterview.TabIndex = 28
         '
@@ -227,7 +221,7 @@ Partial Class RecProcess
         Me.txtstatus.Name = "txtstatus"
         Me.txtstatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtstatus.Properties.Items.AddRange(New Object() {"Pending", "In Progress", "Accepted", "Rejected", "Blocked"})
-        Me.txtstatus.Size = New System.Drawing.Size(239, 20)
+        Me.txtstatus.Size = New System.Drawing.Size(195, 20)
         Me.txtstatus.StyleController = Me.LayoutControl1
         Me.txtstatus.TabIndex = 27
         '
@@ -236,7 +230,7 @@ Partial Class RecProcess
         Me.txtaddress.Location = New System.Drawing.Point(102, 108)
         Me.txtaddress.MenuManager = Me.RibbonControl1
         Me.txtaddress.Name = "txtaddress"
-        Me.txtaddress.Size = New System.Drawing.Size(239, 20)
+        Me.txtaddress.Size = New System.Drawing.Size(195, 20)
         Me.txtaddress.StyleController = Me.LayoutControl1
         Me.txtaddress.TabIndex = 10
         '
@@ -245,7 +239,7 @@ Partial Class RecProcess
         Me.txtidcard.Location = New System.Drawing.Point(102, 84)
         Me.txtidcard.MenuManager = Me.RibbonControl1
         Me.txtidcard.Name = "txtidcard"
-        Me.txtidcard.Size = New System.Drawing.Size(239, 20)
+        Me.txtidcard.Size = New System.Drawing.Size(195, 20)
         Me.txtidcard.StyleController = Me.LayoutControl1
         Me.txtidcard.TabIndex = 7
         '
@@ -255,7 +249,7 @@ Partial Class RecProcess
         Me.txtid.Location = New System.Drawing.Point(102, 36)
         Me.txtid.MenuManager = Me.RibbonControl1
         Me.txtid.Name = "txtid"
-        Me.txtid.Size = New System.Drawing.Size(239, 20)
+        Me.txtid.Size = New System.Drawing.Size(195, 20)
         Me.txtid.StyleController = Me.LayoutControl1
         Me.txtid.TabIndex = 6
         '
@@ -267,7 +261,7 @@ Partial Class RecProcess
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcid, Me.lcidcard, Me.lcaddress, Me.lcphone, Me.lcstats, Me.lcinterview, Me.lcinterviewdate, Me.lcfullname, Me.lcreason})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(353, 298)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(309, 298)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -277,7 +271,7 @@ Partial Class RecProcess
         Me.lcid.CustomizationFormText = "ID Rec"
         Me.lcid.Location = New System.Drawing.Point(0, 24)
         Me.lcid.Name = "lcid"
-        Me.lcid.Size = New System.Drawing.Size(333, 24)
+        Me.lcid.Size = New System.Drawing.Size(289, 24)
         Me.lcid.Text = "ID Rec"
         Me.lcid.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -287,7 +281,7 @@ Partial Class RecProcess
         Me.lcidcard.CustomizationFormText = "LayoutControlItem4"
         Me.lcidcard.Location = New System.Drawing.Point(0, 72)
         Me.lcidcard.Name = "lcidcard"
-        Me.lcidcard.Size = New System.Drawing.Size(333, 24)
+        Me.lcidcard.Size = New System.Drawing.Size(289, 24)
         Me.lcidcard.Text = "ID Number"
         Me.lcidcard.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -297,7 +291,7 @@ Partial Class RecProcess
         Me.lcaddress.CustomizationFormText = "Address"
         Me.lcaddress.Location = New System.Drawing.Point(0, 96)
         Me.lcaddress.Name = "lcaddress"
-        Me.lcaddress.Size = New System.Drawing.Size(333, 24)
+        Me.lcaddress.Size = New System.Drawing.Size(289, 24)
         Me.lcaddress.Text = "Address"
         Me.lcaddress.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -307,7 +301,7 @@ Partial Class RecProcess
         Me.lcstats.CustomizationFormText = "Status"
         Me.lcstats.Location = New System.Drawing.Point(0, 168)
         Me.lcstats.Name = "lcstats"
-        Me.lcstats.Size = New System.Drawing.Size(333, 24)
+        Me.lcstats.Size = New System.Drawing.Size(289, 24)
         Me.lcstats.Text = "Status"
         Me.lcstats.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -317,7 +311,7 @@ Partial Class RecProcess
         Me.lcinterview.CustomizationFormText = "Interview Times"
         Me.lcinterview.Location = New System.Drawing.Point(0, 48)
         Me.lcinterview.Name = "lcinterview"
-        Me.lcinterview.Size = New System.Drawing.Size(333, 24)
+        Me.lcinterview.Size = New System.Drawing.Size(289, 24)
         Me.lcinterview.Text = "Interview Times"
         Me.lcinterview.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -327,7 +321,7 @@ Partial Class RecProcess
         Me.lcinterviewdate.CustomizationFormText = "Tanggal Interview"
         Me.lcinterviewdate.Location = New System.Drawing.Point(0, 144)
         Me.lcinterviewdate.Name = "lcinterviewdate"
-        Me.lcinterviewdate.Size = New System.Drawing.Size(333, 24)
+        Me.lcinterviewdate.Size = New System.Drawing.Size(289, 24)
         Me.lcinterviewdate.Text = "Tanggal Interview"
         Me.lcinterviewdate.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -337,7 +331,7 @@ Partial Class RecProcess
         Me.lcfullname.CustomizationFormText = "Full Name"
         Me.lcfullname.Location = New System.Drawing.Point(0, 0)
         Me.lcfullname.Name = "lcfullname"
-        Me.lcfullname.Size = New System.Drawing.Size(333, 24)
+        Me.lcfullname.Size = New System.Drawing.Size(289, 24)
         Me.lcfullname.Text = "Full Name"
         Me.lcfullname.TextSize = New System.Drawing.Size(87, 13)
         '
@@ -347,16 +341,16 @@ Partial Class RecProcess
         Me.lcreason.CustomizationFormText = "Reason"
         Me.lcreason.Location = New System.Drawing.Point(0, 192)
         Me.lcreason.Name = "lcreason"
-        Me.lcreason.Size = New System.Drawing.Size(333, 86)
+        Me.lcreason.Size = New System.Drawing.Size(289, 86)
         Me.lcreason.Text = "Reason"
         Me.lcreason.TextSize = New System.Drawing.Size(87, 13)
         '
         'pictureEdit
         '
         Me.pictureEdit.Image = Global.HRMS.My.Resources.Resources.user_icon_6
-        Me.pictureEdit.Location = New System.Drawing.Point(14, 17)
+        Me.pictureEdit.Location = New System.Drawing.Point(14, 24)
         Me.pictureEdit.Name = "pictureEdit"
-        Me.pictureEdit.Size = New System.Drawing.Size(148, 164)
+        Me.pictureEdit.Size = New System.Drawing.Size(148, 157)
         Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictureEdit.TabIndex = 30
         Me.pictureEdit.TabStop = False
@@ -371,16 +365,16 @@ Partial Class RecProcess
         Me.GroupControl1.Controls.Add(Me.LayoutControl1)
         Me.GroupControl1.Location = New System.Drawing.Point(0, 148)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(850, 478)
+        Me.GroupControl1.Size = New System.Drawing.Size(812, 478)
         Me.GroupControl1.TabIndex = 35
         '
         'GridControl1
         '
-        Me.GridControl1.Location = New System.Drawing.Point(351, 17)
+        Me.GridControl1.Location = New System.Drawing.Point(308, 24)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(494, 446)
+        Me.GridControl1.Size = New System.Drawing.Size(494, 437)
         Me.GridControl1.TabIndex = 34
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -393,27 +387,27 @@ Partial Class RecProcess
         'SimpleButton2
         '
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"), System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(168, 99)
+        Me.SimpleButton2.Location = New System.Drawing.Point(168, 54)
         Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(178, 38)
+        Me.SimpleButton2.Size = New System.Drawing.Size(134, 38)
         Me.SimpleButton2.TabIndex = 33
         Me.SimpleButton2.Text = "Reset"
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(168, 143)
+        Me.SimpleButton1.Location = New System.Drawing.Point(168, 98)
         Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(81, 38)
+        Me.SimpleButton1.Size = New System.Drawing.Size(134, 38)
         Me.SimpleButton1.TabIndex = 32
         Me.SimpleButton1.Text = "Save"
         '
         'btnView
         '
         Me.btnView.Image = CType(resources.GetObject("btnView.Image"), System.Drawing.Image)
-        Me.btnView.Location = New System.Drawing.Point(257, 143)
+        Me.btnView.Location = New System.Drawing.Point(168, 143)
         Me.btnView.Name = "btnView"
-        Me.btnView.Size = New System.Drawing.Size(89, 38)
+        Me.btnView.Size = New System.Drawing.Size(134, 38)
         Me.btnView.StyleController = Me.LayoutControl1
         Me.btnView.TabIndex = 31
         Me.btnView.Text = "View CV"
@@ -422,7 +416,7 @@ Partial Class RecProcess
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(850, 623)
+        Me.ClientSize = New System.Drawing.Size(813, 623)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.Name = "RecProcess"
@@ -467,7 +461,6 @@ Partial Class RecProcess
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents Employee As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents txtreason As DevExpress.Tutorials.Controls.RichTextBoxEx
     Friend WithEvents txtfullname As DevExpress.XtraEditors.ComboBoxEdit

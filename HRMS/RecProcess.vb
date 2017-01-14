@@ -1,5 +1,7 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraGrid
+Imports DevExpress.XtraGrid.Views.Grid
+Imports DevExpress.Utils.Menu
 
 Public Class RecProcess
 
@@ -129,7 +131,7 @@ Public Class RecProcess
         Dim sqlCommand As New MySqlCommand
         Try
             If barJudul.Caption = "Recruitment Process" Then
-                sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PhoneNumber, IdNumber, Status, InterviewDate, Reason FROM db_recruitment"
+                sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PhoneNumber, IdNumber, Status, InterviewDate, Reason FROM db_recruitment where status = 'Pending'"
             End If
             sqlCommand.Connection = SQLConnection
             Dim tbl_par As New DataTable
@@ -146,6 +148,7 @@ Public Class RecProcess
 
     Private Sub RecProcess_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadDataKaryawan()
+        BarButtonItem1.PerformClick()
     End Sub
 
     Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
@@ -253,5 +256,18 @@ Public Class RecProcess
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         InsertReq()
+    End Sub
+
+    Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
+        Dim view As GridView = CType(sender, GridView)
+        ' Check whether a row is right-clicked.
+        If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
+            Dim rowHandle As Integer = e.HitInfo.RowHandle
+            ' Delete existing menu items, if any.
+            e.Menu.Items.Clear()
+            Dim item As DXMenuItem = CreateMergingEnabledMenuItem(view, rowHandle)
+            item.BeginGroup = True
+            e.Menu.Items.Add(item)
+        End If
     End Sub
 End Class

@@ -451,23 +451,6 @@ Public Class NewSalary
     End Sub
 
     Private Sub btnCount_Click(sender As Object, e As EventArgs) Handles btnCount.Click
-        'If payroll Is Nothing OrElse payroll.IsDisposed Then
-        '    payroll = New PayrollCount
-        'End If
-        'payroll.Show()
-        'If barJudul.Caption = "Add Payroll Data" Then
-        '    If payroll Is Nothing OrElse payroll.IsDisposed Then
-        '        payroll = New PayrollCount
-        '    End If
-        '    payroll.Show()
-        '    payroll.BarButtonItem1.PerformClick()
-        'ElseIf barJudul.Caption = "Change Data" Then
-        '    If payroll Is Nothing OrElse payroll.IsDisposed Then
-        '        payroll = New PayrollCount
-        '    End If
-        '    payroll.Show()
-        '    payroll.BarButtonItem2.PerformClick()
-        'End If
         Call gross()
         Call bpjs()
         Call overtime()

@@ -158,6 +158,7 @@ Public Class MainApp
         txtposition.Text = ""
         txtstart.Text = ""
         txtfinish.Text = ""
+        lcproc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcprogress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -316,6 +317,7 @@ Public Class MainApp
         clearForm()
         resetclear()
         reset()
+        lcproc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         barJudul.Caption = "Module Payroll"
@@ -1590,7 +1592,7 @@ Public Class MainApp
     Dim act As String = ""
     Dim spform As New SPForms
 
-    Private Sub GridView1_FocusedRowChanged(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+    Private Sub GridView1_FocusedRowChanged(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs)
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
@@ -2706,7 +2708,7 @@ Public Class MainApp
         End If
     End Sub
 
-    Private Sub GridView1_RowLoaded(sender As Object, e As Views.Base.RowEventArgs) Handles GridView1.RowLoaded
+    Private Sub GridView1_RowLoaded(sender As Object, e As Views.Base.RowEventArgs)
         Dim view As ColumnView = TryCast(sender, ColumnView)
         If needMoveLastRow = False Then
             view.MoveLast()
@@ -2837,21 +2839,10 @@ Public Class MainApp
         End If
     End Sub
 
-    Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
-        Dim view As GridView = CType(sender, GridView)
-        ' Check whether a row is right-clicked.
-        If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
-            Dim rowHandle As Integer = e.HitInfo.RowHandle
-            ' Delete existing menu items, if any.
-            e.Menu.Items.Clear()
-            ' Add a submenu with a single menu item.
-            'e.Menu.Items.Add(CreateRowSubMenu(view, rowHandle))
-            ' Add a check menu item.           
-            Dim item As DXMenuItem = CreateMergingEnabledMenuItem(view, rowHandle)
-            item.BeginGroup = True
-            e.Menu.Items.Add(item)
-        End If
+    Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs)
+
     End Sub
+
 
     Private Sub btnProg_Click(sender As Object, e As EventArgs) Handles btnProg.Click
         If proses Is Nothing OrElse proses.IsDisposed Then
@@ -2866,5 +2857,30 @@ Public Class MainApp
 
     Private Sub txtStatEmp_SelectedIndexChanged(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Dim proc As New Rapel
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles btnProc.Click
+        If proc Is Nothing OrElse proc.IsDisposed Then
+            proc = New Rapel
+        End If
+        proc.Show()
+    End Sub
+
+    Private Sub GridView1_PopupMenuShowing_1(sender As Object, e As PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
+        Dim view As GridView = CType(sender, GridView)
+        ' Check whether a row is right-clicked.
+        If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
+            Dim rowHandle As Integer = e.HitInfo.RowHandle
+            ' Delete existing menu items, if any.
+            e.Menu.Items.Clear()
+            ' Add a submenu with a single menu item.
+            ' e.Menu.Items.Add(CreateRowSubMenu(view, rowHandle))
+            ' Add a check menu item.           
+            Dim item As DXMenuItem = CreateMergingEnabledMenuItem(view, rowHandle)
+            item.BeginGroup = True
+            e.Menu.Items.Add(item)
+        End If
     End Sub
 End Class

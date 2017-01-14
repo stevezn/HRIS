@@ -27,7 +27,6 @@ Module DataGrid
         Dim info As RowInfo = CType(item.Tag, RowInfo)
         info.View.OptionsView.AllowCellMerge = item.Checked
     End Sub
-
     ' ...
 
     ' The class that stores menu specific information

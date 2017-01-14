@@ -30,7 +30,9 @@ Partial Class NewRec
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.barJudul = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtno = New DevExpress.XtraEditors.TextEdit()
         Me.txtreason = New DevExpress.Tutorials.Controls.RichTextBoxEx()
         Me.txtcv = New DevExpress.XtraEditors.TextEdit()
         Me.btnCV = New DevExpress.XtraEditors.SimpleButton()
@@ -72,13 +74,12 @@ Partial Class NewRec
         Me.lcbtncv = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcCv = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcreason = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.pictureEdit = New System.Windows.Forms.PictureBox()
-        Me.txtno = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.pictureEdit = New System.Windows.Forms.PictureBox()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtno.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtcv.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtfullname.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtinterviewdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,9 +118,8 @@ Partial Class NewRec
         CType(Me.lcbtncv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcCv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcreason, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtno.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Employee
@@ -174,6 +174,12 @@ Partial Class NewRec
         Me.barJudul.Id = 3
         Me.barJudul.Name = "barJudul"
         '
+        'BarButtonItem3
+        '
+        Me.BarButtonItem3.Caption = "In Progress"
+        Me.BarButtonItem3.Id = 5
+        Me.BarButtonItem3.Name = "BarButtonItem3"
+        '
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.txtno)
@@ -204,6 +210,16 @@ Partial Class NewRec
         Me.LayoutControl1.Size = New System.Drawing.Size(292, 489)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtno
+        '
+        Me.txtno.Location = New System.Drawing.Point(111, 376)
+        Me.txtno.MenuManager = Me.RibbonControl1
+        Me.txtno.Name = "txtno"
+        Me.txtno.Size = New System.Drawing.Size(169, 20)
+        Me.txtno.StyleController = Me.LayoutControl1
+        Me.txtno.TabIndex = 29
+        Me.txtno.Visible = False
         '
         'txtreason
         '
@@ -636,25 +652,6 @@ Partial Class NewRec
         Me.lcreason.Text = "Reason"
         Me.lcreason.TextSize = New System.Drawing.Size(96, 13)
         '
-        'pictureEdit
-        '
-        Me.pictureEdit.Location = New System.Drawing.Point(310, 162)
-        Me.pictureEdit.Name = "pictureEdit"
-        Me.pictureEdit.Size = New System.Drawing.Size(148, 150)
-        Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pictureEdit.TabIndex = 27
-        Me.pictureEdit.TabStop = False
-        '
-        'txtno
-        '
-        Me.txtno.Location = New System.Drawing.Point(111, 376)
-        Me.txtno.MenuManager = Me.RibbonControl1
-        Me.txtno.Name = "txtno"
-        Me.txtno.Size = New System.Drawing.Size(169, 20)
-        Me.txtno.StyleController = Me.LayoutControl1
-        Me.txtno.TabIndex = 29
-        Me.txtno.Visible = False
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.txtno
@@ -666,11 +663,15 @@ Partial Class NewRec
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(96, 13)
         Me.LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
-        'BarButtonItem3
+        'pictureEdit
         '
-        Me.BarButtonItem3.Caption = "In Progress"
-        Me.BarButtonItem3.Id = 5
-        Me.BarButtonItem3.Name = "BarButtonItem3"
+        Me.pictureEdit.Image = Global.HRMS.My.Resources.Resources.user_icon_6
+        Me.pictureEdit.Location = New System.Drawing.Point(310, 162)
+        Me.pictureEdit.Name = "pictureEdit"
+        Me.pictureEdit.Size = New System.Drawing.Size(148, 150)
+        Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pictureEdit.TabIndex = 27
+        Me.pictureEdit.TabStop = False
         '
         'NewRec
         '
@@ -687,6 +688,7 @@ Partial Class NewRec
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtno.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtcv.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtfullname.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtinterviewdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -725,9 +727,8 @@ Partial Class NewRec
         CType(Me.lcbtncv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcCv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcreason, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtno.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
