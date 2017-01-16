@@ -121,7 +121,7 @@ Public Class NewRec
         Dim ynow As String = Format(Now, "yy").ToString
         Dim mnow As String = Month(Now).ToString
         Dim lastn As Integer
-        Dim n As String
+        Dim n As String = ""
         Dim interview As Integer = 0
         Try
             Dim cmd = SQLConnection.CreateCommand

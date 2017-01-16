@@ -152,6 +152,12 @@
     <Compile Include="infoReq.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoanForm.Designer.vb">
+      <DependentUpon>LoanForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoanForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="infoReq.resx">
       <DependentUpon>infoReq.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoanForm.resx">
+      <DependentUpon>LoanForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

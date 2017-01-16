@@ -2860,12 +2860,13 @@ Public Class MainApp
     End Sub
 
     Dim proc As New Rapel
+    Dim loan As New Payments
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles btnProc.Click
-        If proc Is Nothing OrElse proc.IsDisposed Then
-            proc = New Rapel
+        If loan Is Nothing OrElse loan.IsDisposed Then
+            loan = New Payments
         End If
-        proc.Show()
+        loan.Show()
     End Sub
 
     Private Sub GridView1_PopupMenuShowing_1(sender As Object, e As PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
