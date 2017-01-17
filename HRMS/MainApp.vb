@@ -2867,6 +2867,8 @@ Public Class MainApp
             loan = New Payments
         End If
         loan.Show()
+        loan.BarButtonItem1.PerformClick()
+        loan.XtraTabPage5.Show()
     End Sub
 
     Private Sub GridView1_PopupMenuShowing_1(sender As Object, e As PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing

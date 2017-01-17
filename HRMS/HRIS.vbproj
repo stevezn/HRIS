@@ -200,6 +200,12 @@
     <Compile Include="PayrollCount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PayrollSet.Designer.vb">
+      <DependentUpon>PayrollSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Rapel.Designer.vb">
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PayrollCount.resx">
       <DependentUpon>PayrollCount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollSet.resx">
+      <DependentUpon>PayrollSet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rapel.resx">
       <DependentUpon>Rapel.vb</DependentUpon>

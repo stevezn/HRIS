@@ -53,13 +53,13 @@
             sqlCommand.Parameters.AddWithValue("@FullName", txtname1.Text)
             sqlCommand.Parameters.AddWithValue("@EmployeeCode", txtempcode1.Text)
             sqlCommand.Parameters.AddWithValue("@ApprovedBy", txtapp1.Text)
-            sqlCommand.Parameters.AddWithValue("@Reason", txtreason.Text)
-            sqlCommand.Parameters.AddWithValue("@Dates", txtdate1.Text)
-            sqlCommand.Parameters.AddWithValue("@Amount", txtaddamount.Text)
-            sqlCommand.Parameters.AddWithValue("@Months", txtmonths.Text)
-            sqlCommand.Parameters.AddWithValue("@Year", txtyear.Text)
-            sqlCommand.Parameters.AddWithValue("@Current", txtnowvalue.Text)
-            sqlCommand.Parameters.AddWithValue("@New", txtnewvalue.Text)
+            sqlCommand.Parameters.AddWithValue("@Reason", "")
+            sqlCommand.Parameters.AddWithValue("@Dates", "")
+            sqlCommand.Parameters.AddWithValue("@Amount", "")
+            sqlCommand.Parameters.AddWithValue("@Months", "")
+            sqlCommand.Parameters.AddWithValue("@Year", "")
+            sqlCommand.Parameters.AddWithValue("@Current", "")
+            sqlCommand.Parameters.AddWithValue("@New", "")
             sqlCommand.Connection = SQLConnection
             sqlCommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
@@ -72,7 +72,7 @@
     End Function
 
     Private Sub loadDataReq()
-        GridControl2.RefreshDataSource()
+        GridControl3.RefreshDataSource()
         Dim table As New DataTable
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
@@ -87,7 +87,7 @@
             Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
             Dim cb As New MySqlCommandBuilder(adapter)
             adapter.Fill(table)
-            GridControl2.DataSource = table
+            GridControl3.DataSource = table
             SQLConnection.Close()
         Catch ex As Exception
             SQLConnection.Close()
@@ -105,7 +105,7 @@
                                     " BasicRate = @BasicRate" +
                                     " WHERE EmployeeCode = @EmployeeCode"
             sqlcommand.Connection = SQLConnection
-            sqlcommand.Parameters.AddWithValue("@BasicRate", txtnewvalue.Text)
+            sqlcommand.Parameters.AddWithValue("@BasicRate", "")
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             SQLConnection.Close()
@@ -210,18 +210,18 @@
         For index As Integer = 0 To tbl_par2.Rows.Count - 1
             If txtname1.SelectedItem Is tbl_par2.Rows(index).Item(1).ToString Then
                 txtempcode1.Text = tbl_par2.Rows(index).Item(0).ToString
-                txtnowvalue.Text = tbl_par2.Rows(index).Item(2).ToString
+                'txtnowvalue.Text = tbl_par2.Rows(index).Item(2).ToString
             End If
         Next
     End Sub
 
-    Private Sub txtmonths_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtmonths.SelectedIndexChanged
-        txtyear.Text = Year(Now).ToString
-        Dim a, b, res As Integer
-        a = Convert.ToInt32(txtaddamount.Text)
-        b = Convert.ToInt32(txtnowvalue.Text)
-        res = a + b
-        txtnewvalue.Text = res.ToString
+    Private Sub txtmonths_SelectedIndexChanged(sender As Object, e As EventArgs)
+        'txtyear.Text = Year(Now).ToString
+        'Dim a, b, res As Integer
+        'a = Convert.ToInt32(txtaddamount.Text)
+        'b = Convert.ToInt32(txtnowvalue.Text)
+        'res = a + b
+        'txtnewvalue.Text = res.ToString
     End Sub
 
     Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
@@ -235,7 +235,7 @@
             InsertAdjust()
             updatestats()
         End If
-        GridControl2.RefreshDataSource()
+        GridControl3.RefreshDataSource()
     End Sub
     Dim proc As New NewSalary
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
@@ -244,5 +244,9 @@
             proc = New NewSalary
         End If
         proc.Show()
+    End Sub
+
+    Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
+        barJudul.Caption = "Paid Holiday"
     End Sub
 End Class
