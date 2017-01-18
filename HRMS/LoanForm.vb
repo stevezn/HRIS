@@ -9,57 +9,187 @@
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
-        sqlcommand.CommandText = "SELECT a.EmployeeCode, a.FullName, b.BasicRate From db_pegawai a, db_payroll b"
+        sqlcommand.CommandText = "SELECT EmployeeCode, FullName From db_pegawai"
         sqlcommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par)
         For index As Integer = 0 To tbl_par.Rows.Count - 1
+            txtname1.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
             txtname.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
-            ' txtname1.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
         Next
         SQLConnection.Close()
     End Sub
+
     Dim tbl_par2 As New DataTable
 
-    Sub loaddatapayrol()
+    Sub loaddata1()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
-        sqlcommand.CommandText = "SELECT EmployeeCode, FullName, BasicRate from db_payroll"
+        sqlcommand.CommandText = "SELECT FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan From db_payrolldata"
         sqlcommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par2)
         For index As Integer = 0 To tbl_par2.Rows.Count - 1
-            txtname1.Properties.Items.Add(tbl_par2.Rows(index).Item(1).ToString())
+            txtname2.Properties.Items.Add(tbl_par2.Rows(index).Item(0).ToString())
+            txtname3.Properties.Items.Add(tbl_par2.Rows(index).Item(0).ToString())
         Next
         SQLConnection.Close()
     End Sub
 
-    Public Function InsertAdjust() As Boolean
+    Public Sub updatechange()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "UPDATE db_payrolldata SET" +
+                    " FullName = @FullName" +
+                    ", EmployeeCode = @EmployeeCode" +
+                    ", StatusWajibPajak = @StatusWajibPajak" +
+                    ", MemilikiNpwp = @MemilikiNpwp" +
+                    ", BasicRate = @BasicRate" +
+                    ", Allowance = @Allowance" +
+                    ", Incentives = @Incentives" +
+                    ", MealRate = @MealRate" +
+                    ", Transport = @Transport" +
+                    ", JaminanKesehatan = @JaminanKesehatan" +
+                    ", Bpjs = @Bpjs" +
+                    ", JaminanKecelakaanKerja = @JaminanKecelakaanKerja" +
+                    ", JaminanKematian = @JaminanKematian" +
+                    ", JaminanHariTua = @JaminanHariTua" +
+                    ", IuranPensiun = @IuranPensiun" +
+                    ", BiayaJabatan = @BiayaJabatan" +
+                    ", Rapel = @Rapel" +
+                    ", Loan = @Loan" +
+                    " WHERE EmployeeCode = @EmployeeCode"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("@FullName", txtname2.Text)
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode2.Text)
+            sqlcommand.Parameters.AddWithValue("@StatusWajibPajak", txtwp1.Text)
+            sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", txtnpwp1.Text)
+            sqlcommand.Parameters.AddWithValue("@BasicRate", txtbasicrate1.Text)
+            sqlcommand.Parameters.AddWithValue("@Allowance", txtallowance1.Text)
+            sqlcommand.Parameters.AddWithValue("@Incentives", txtincentives1.Text)
+            sqlcommand.Parameters.AddWithValue("@MealRate", txtmealrate1.Text)
+            sqlcommand.Parameters.AddWithValue("@Transport", txttransport1.Text)
+            sqlcommand.Parameters.AddWithValue("@JaminanKesehatan", cjk1.Checked)
+            sqlcommand.Parameters.AddWithValue("@Bpjs", cbpjs1.Checked)
+            sqlcommand.Parameters.AddWithValue("@JaminanKecelakaanKerja", cjkk1.Checked)
+            sqlcommand.Parameters.AddWithValue("@JaminanKematian", cjamkem1.Checked)
+            sqlcommand.Parameters.AddWithValue("@JaminanHariTua", cjht1.Checked)
+            sqlcommand.Parameters.AddWithValue("@IuranPensiun", ciupe1.Checked)
+            sqlcommand.Parameters.AddWithValue("@BiayaJabatan", cbj1.Checked)
+            sqlcommand.Parameters.AddWithValue("@Rapel", crapel1.Checked)
+            sqlcommand.Parameters.AddWithValue("@Loan", cloan1.Checked)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            MessageBox.Show("Data Successfully Changed!")
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Function InsertLoan() As Boolean
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "INSERT INTO db_loan " +
+                            "(FullName, EmployeeCode, ApprovedBy, Reason, Dates, AmountOfLoan, Month, Months, SalaryInclude, FromMonths, Year, PaymentPerMonth, CompletedOn ) " +
+                            " Values (@FullName, @EmployeeCode, @ApprovedBy, @Reason, @Dates, @AmountOfLoan, @Month, @Months, @SalaryInclude, @FromMonths, @Year, @PaymentPerMonth, @CompletedOn)"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@FullName", txtname.Text)
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode.Text)
+            sqlcommand.Parameters.AddWithValue("@ApprovedBy", txtapproved.Text)
+            sqlcommand.Parameters.AddWithValue("@Reason", txtreason.Text)
+            sqlcommand.Parameters.AddWithValue("@Dates", txtdates.Text)
+            sqlcommand.Parameters.AddWithValue("@AmountOfLoan", txtloan.Text)
+            sqlcommand.Parameters.AddWithValue("@Month", "")
+            sqlcommand.Parameters.AddWithValue("@Months", txtrangemon.Text)
+            sqlcommand.Parameters.AddWithValue("@SalaryInclude", CheckEdit2.Checked)
+            sqlcommand.Parameters.AddWithValue("@FromMonths", txtmonth.Text)
+            sqlcommand.Parameters.AddWithValue("@Year", txtyears.Text)
+            sqlcommand.Parameters.AddWithValue("@PaymentPerMonth", lcpayment.Text)
+            sqlcommand.Parameters.AddWithValue("@CompletedOn", txtcompletedon.Text)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            MessageBox.Show("Data Succesfully Added!")
+            Return True
+        Catch ex As Exception
+            SQLConnection.Close()
+            Return False
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Public Function InsertRapel() As Boolean
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "Insert into db_rapel " +
+                        "(FullName, EmployeeCode, RapelRate, EffSince, Until, Payment/Month )" +
+                        "values (@FullName, @EmployeeCode, @RapelRate, @EffSince, @Until, @Payment/Month)"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@FullName", txtname3.Text)
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode3.Text)
+            sqlcommand.Parameters.AddWithValue("@RapelRate", txtrapel.Text)
+            sqlcommand.Parameters.AddWithValue("@EffSince", txteffective.Text)
+            sqlcommand.Parameters.AddWithValue("@Until", txtuntil.Text)
+            sqlcommand.Parameters.AddWithValue("@Payment/Month", txtpaymon.Text)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            MessageBox.Show("Data Succesfully Added!")
+            Return True
+        Catch ex As Exception
+            SQLConnection.Close()
+            Return False
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Public Function InsertPayroll() As Boolean
+        'included()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
         Dim str_carSql As String
         Try
-            str_carSql = "INSERT INTO db_salaryadjustment " +
-                            "(FullName, EmployeeCode, ApprovedBy, Reason, Dates, Amount, Months, Year, Current, New) " +
-                            "values (@FullName, @EmployeeCode, @ApprovedBy, @Reason, @Dates, @Amount, @Months, @Year, @Current, @New)"
+            str_carSql = "INSERT INTO db_payrolldata " +
+                            "(FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan) " +
+                            "values (@FullName, @EmployeeCode, @StatusWajibPajak, @MemilikiNpwp, @BasicRate, @Allowance, @Incentives, @MealRate, @Transport, @JaminanKesehatan, @Bpjs, @JaminanKecelakaanKerja, @JaminanKematian, @JaminanHariTua, @IuranPensiun, @BiayaJabatan, @Rapel, @Loan)"
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
             sqlCommand.Parameters.AddWithValue("@FullName", txtname1.Text)
             sqlCommand.Parameters.AddWithValue("@EmployeeCode", txtempcode1.Text)
-            sqlCommand.Parameters.AddWithValue("@ApprovedBy", txtapp1.Text)
-            sqlCommand.Parameters.AddWithValue("@Reason", "")
-            sqlCommand.Parameters.AddWithValue("@Dates", "")
-            sqlCommand.Parameters.AddWithValue("@Amount", "")
-            sqlCommand.Parameters.AddWithValue("@Months", "")
-            sqlCommand.Parameters.AddWithValue("@Year", "")
-            sqlCommand.Parameters.AddWithValue("@Current", "")
-            sqlCommand.Parameters.AddWithValue("@New", "")
+            sqlCommand.Parameters.AddWithValue("@StatusWajibPajak", txtwajibpajak.Text)
+            sqlCommand.Parameters.AddWithValue("@MemilikiNpwp", txtnpwp.Text)
+            sqlCommand.Parameters.AddWithValue("@BasicRate", txtbasicrate.Text)
+            sqlCommand.Parameters.AddWithValue("@Allowance", txtallowance.Text)
+            sqlCommand.Parameters.AddWithValue("@Incentives", txtincentives.Text)
+            sqlCommand.Parameters.AddWithValue("@MealRate", txtmealrate.Text)
+            sqlCommand.Parameters.AddWithValue("@Transport", txttransport.Text)
+            sqlCommand.Parameters.AddWithValue("@JaminanKesehatan", cjk.Checked)
+            sqlCommand.Parameters.AddWithValue("@Bpjs", cbpjs.Checked)
+            sqlCommand.Parameters.AddWithValue("@JaminanKecelakaanKerja", cjkk.Checked)
+            sqlCommand.Parameters.AddWithValue("@JaminanKematian", cjamkem.Checked)
+            sqlCommand.Parameters.AddWithValue("@JaminanHariTua", cjht.Checked)
+            sqlCommand.Parameters.AddWithValue("@IuranPensiun", ciupe.Checked)
+            sqlCommand.Parameters.AddWithValue("@BiayaJabatan", cbj.Checked)
+            sqlCommand.Parameters.AddWithValue("@Rapel", crapel.Checked)
+            sqlCommand.Parameters.AddWithValue("@Loan", cloan.Checked)
             sqlCommand.Connection = SQLConnection
             sqlCommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
@@ -67,27 +197,37 @@
         Catch ex As Exception
             SQLConnection.Close()
             Return False
-            MsgBox("Error Occured: Could Not Insert Records")
+            MsgBox(ex.Message)
         End Try
     End Function
 
-    Private Sub loadDataReq()
-        GridControl3.RefreshDataSource()
+    Private Sub loanpay()
+        Try
+            Dim a, b, res As Double
+            a = Convert.ToDouble(txtloan.Text)
+            b = Convert.ToDouble(txtrangemon.Text)
+            res = a / b
+            lcpayment.Text = res.ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub loadpayroll()
+        GridControl2.RefreshDataSource()
         Dim table As New DataTable
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
         Try
-            If XtraTabPage7.Text = "Salary Adjustment History" Then
-                sqlCommand.CommandText = "Select FullName, EmployeeCode, ApprovedBy, Amount, Current, New FROM db_salaryadjustment"
-            End If
+            sqlCommand.CommandText = "Select FullName, EmployeeCode, BasicRate FROM db_payrolldata"
             sqlCommand.Connection = SQLConnection
             Dim tbl_par As New DataTable
             Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
             Dim cb As New MySqlCommandBuilder(adapter)
             adapter.Fill(table)
-            GridControl3.DataSource = table
+            GridControl2.DataSource = table
             SQLConnection.Close()
         Catch ex As Exception
             SQLConnection.Close()
@@ -95,22 +235,69 @@
         End Try
     End Sub
 
-    Public Sub updatestats()
+    Private Sub loadrapel()
+        GridControl5.RefreshDataSource()
+        Dim table As New DataTable
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         Try
-            sqlcommand.CommandText = "UPDATE db_payroll SET" +
-                                    " BasicRate = @BasicRate" +
-                                    " WHERE EmployeeCode = @EmployeeCode"
+            sqlcommand.CommandText = "Select FullName, EmployeeCode, RapelRate, EffSince, Until, PaymentPerMonth from db_rapel"
             sqlcommand.Connection = SQLConnection
-            sqlcommand.Parameters.AddWithValue("@BasicRate", "")
-            sqlcommand.Connection = SQLConnection
-            sqlcommand.ExecuteNonQuery()
+            Dim tbl_par As New DataTable
+            Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(table)
+            GridControl5.DataSource = table
             SQLConnection.Close()
         Catch ex As Exception
             SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub loadloan()
+        GridControl1.RefreshDataSource()
+        Dim table As New DataTable
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "select FullName, EmployeeCode, AmountOfLoan, Month, Realisasi From db_loan "
+            sqlcommand.Connection = SQLConnection
+            Dim tbl_par As New DataTable
+            Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(table)
+            GridControl1.DataSource = table
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub loadpayroll1()
+        GridControl4.RefreshDataSource()
+        Dim table As New DataTable
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "SELECT FullName, EmployeeCode, BasicRate FROM db_payrolldata"
+            sqlcommand.Connection = SQLConnection
+            Dim tbl_par As New DataTable
+            Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(table)
+            GridControl4.DataSource = table
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -131,8 +318,11 @@
 
     Private Sub LoanForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loaddata()
-        loadDataReq()
-        loaddatapayrol()
+        loaddata1()
+        loadpayroll()
+        loadpayroll1()
+        loadloan()
+        loadrapel()
     End Sub
 
     Private Sub txtname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname.SelectedIndexChanged
@@ -178,10 +368,14 @@
         Else
             value = 12
         End If
-        Dim a, res As Integer
-        a = Convert.ToInt32(txtrangemon.Text)
-        res = value + a
-        txtcompletedon.Text = res.ToString
+        Try
+            Dim a, res As Integer
+            a = Convert.ToInt32(txtrangemon.Text)
+            res = value + a
+            txtcompletedon.Text = res.ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub txtmon_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -207,21 +401,14 @@
     End Sub
 
     Private Sub txtname1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname1.SelectedIndexChanged
-        For index As Integer = 0 To tbl_par2.Rows.Count - 1
-            If txtname1.SelectedItem Is tbl_par2.Rows(index).Item(1).ToString Then
-                txtempcode1.Text = tbl_par2.Rows(index).Item(0).ToString
-                'txtnowvalue.Text = tbl_par2.Rows(index).Item(2).ToString
+        For index As Integer = 0 To tbl_par.Rows.Count - 1
+            If txtname1.SelectedItem Is tbl_par.Rows(index).Item(1).ToString Then
+                txtempcode1.Text = tbl_par.Rows(index).Item(0).ToString
             End If
         Next
     End Sub
 
     Private Sub txtmonths_SelectedIndexChanged(sender As Object, e As EventArgs)
-        'txtyear.Text = Year(Now).ToString
-        'Dim a, b, res As Integer
-        'a = Convert.ToInt32(txtaddamount.Text)
-        'b = Convert.ToInt32(txtnowvalue.Text)
-        'res = a + b
-        'txtnewvalue.Text = res.ToString
     End Sub
 
     Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
@@ -229,15 +416,15 @@
     End Sub
 
     Private Sub btnapp1_Click(sender As Object, e As EventArgs) Handles btnapp1.Click
-        If txtempcode1.Text = "" Then
-            MsgBox("Please insert the data properly!")
+        If txtname1.Text = "" OrElse txtempcode1.Text = "" Then
+            MsgBox("Please Insert Employee Name or Employee Code")
         Else
-            InsertAdjust()
-            updatestats()
+            InsertPayroll()
         End If
-        GridControl3.RefreshDataSource()
+        loadpayroll()
+        loadpayroll1()
     End Sub
-    Dim proc As New NewSalary
+
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
         barJudul.Caption = "Calculate Salary"
         If proc Is Nothing OrElse proc.IsDisposed Then
@@ -246,7 +433,171 @@
         proc.Show()
     End Sub
 
+    Private Sub GridControl6_Click(sender As Object, e As EventArgs) Handles GridControl6.Click
+
+    End Sub
+
+    Dim proc As New NewSalary
+
+    Private Sub ComboBoxEdit6_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname2.SelectedIndexChanged
+        For index As Integer = 0 To tbl_par2.Rows.Count - 1
+            If txtname2.SelectedItem Is tbl_par2.Rows(index).Item(0).ToString Then
+                txtempcode2.Text = tbl_par2.Rows(index).Item(1).ToString
+                txtwp1.Text = tbl_par2.Rows(index).Item(2).ToString
+                txtnpwp1.Text = tbl_par2.Rows(index).Item(3).ToString
+                txtbasicrate1.Text = tbl_par2.Rows(index).Item(4).ToString
+                txtallowance1.Text = tbl_par2.Rows(index).Item(5).ToString
+                txtincentives1.Text = tbl_par2.Rows(index).Item(6).ToString
+                txtmealrate1.Text = tbl_par2.Rows(index).Item(7).ToString
+                txttransport1.Text = tbl_par2.Rows(index).Item(8).ToString
+                cjk1.Checked = CBool(tbl_par2.Rows(index).Item(9).ToString)
+                cbpjs1.Checked = CBool(tbl_par2.Rows(index).Item(10).ToString)
+                cjkk1.Checked = CBool(tbl_par2.Rows(index).Item(11).ToString)
+                cjamkem1.Checked = CBool(tbl_par2.Rows(index).Item(12).ToString)
+                cjht1.Checked = CBool(tbl_par2.Rows(index).Item(13).ToString)
+                ciupe1.Checked = CBool(tbl_par2.Rows(index).Item(14).ToString)
+                cbj1.Checked = CBool(tbl_par2.Rows(index).Item(15).ToString)
+                crapel1.Checked = CBool(tbl_par2.Rows(index).Item(16).ToString)
+                cloan1.Checked = CBool(tbl_par2.Rows(index).Item(17).ToString)
+            End If
+        Next
+    End Sub
+
+    Private Sub cjk_CheckedChanged(sender As Object, e As EventArgs) Handles cjk.CheckedChanged
+
+    End Sub
+
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+        If txtname2.Text = "" OrElse txtempcode2.Text = "" Then
+            MsgBox("Please Input Employee Name or Employee Code!")
+        Else
+            updatechange()
+        End If
+        loadpayroll1()
+        loadpayroll()
+    End Sub
+
+    Private Sub CheckEdit2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit2.CheckedChanged
+        If CheckEdit2.Checked = True Then
+            txtmonth.Enabled = True
+            txtyears.Enabled = True
+        Else
+            txtmonth.Enabled = False
+            txtyears.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnApp_Click(sender As Object, e As EventArgs) Handles btnApp.Click
+        If txtname.Text = "" OrElse txtempcode.Text = "" Then
+            MsgBox("Please Insert Employee Name Or Employee Code!")
+        Else
+            InsertLoan()
+        End If
+    End Sub
+
+    Private Sub txtrangemon_EditValueChanged(sender As Object, e As EventArgs) Handles txtrangemon.EditValueChanged
+        loanpay()
+        months()
+    End Sub
+
+    Private Sub BarButtonItem6_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem6.ItemClick
+        XtraTabPage8.Show()
+    End Sub
+    Dim proses As New PayrollSet
+
+    Private Sub BarButtonItem7_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem7.ItemClick
+        If proses Is Nothing OrElse proses.IsDisposed Then
+            proses = New PayrollSet
+        End If
+        proses.Show()
+    End Sub
+
+    Private Sub txtname3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname3.SelectedIndexChanged
+        For index As Integer = 0 To tbl_par2.Rows.Count - 1
+            If txtname3.SelectedItem Is tbl_par2.Rows(index).Item(0).ToString Then
+                txtempcode3.Text = tbl_par2.Rows(index).Item(1).ToString
+            End If
+        Next
+    End Sub
+
     Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
-        barJudul.Caption = "Paid Holiday"
+        XtraTabPage6.Show()
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        hitungrapel()
+        If txtname3.Text = "" Or txtempcode3.Text = "" Then
+            MsgBox("Please Insert Employee Code or Employee Name")
+        Else
+            InsertRapel()
+        End If
+    End Sub
+
+    Dim value1, value2 As Integer
+
+    Private Sub txtuntil_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtuntil.SelectedIndexChanged
+        If txtuntil.Text = "January" Then
+            value2 = 1
+        ElseIf txtuntil.Text = "February" Then
+            value2 = 2
+        ElseIf txtuntil.Text = "March" Then
+            value2 = 3
+        ElseIf txtuntil.Text = "April" Then
+            value2 = 4
+        ElseIf txtuntil.Text = "May" Then
+            value2 = 5
+        ElseIf txtuntil.Text = "June" Then
+            value2 = 6
+        ElseIf txtuntil.Text = "July" Then
+            value2 = 7
+        ElseIf txtuntil.Text = "August" Then
+            value2 = 8
+        ElseIf txtuntil.Text = "September" Then
+            value2 = 9
+        ElseIf txtuntil.Text = "October" Then
+            value2 = 10
+        ElseIf txtuntil.Text = "November" Then
+            value2 = 11
+        Else
+            value2 = 12
+        End If
+    End Sub
+
+    Private Sub hitungrapel()
+        Dim a, totalvalue, res As Double
+        a = Convert.ToDouble(txtrapel.Text)
+        totalvalue = value2 - value
+        res = a * totalvalue - a
+        txtpaymon.Text = res.ToString
+        txtpaymon.Text = Format(res, "##,##0")
+        txtpaymon.SelectionStart = Len(txtpaymon.Text)
+    End Sub
+
+    Private Sub txteffective_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txteffective.SelectedIndexChanged
+        If txteffective.Text = "January" Then
+            value = 0
+        ElseIf txteffective.Text = "February" Then
+            value = 1
+        ElseIf txteffective.Text = "March" Then
+            value = 2
+        ElseIf txteffective.Text = "April" Then
+            value = 3
+        ElseIf txteffective.Text = "May" Then
+            value = 4
+        ElseIf txteffective.Text = "June" Then
+            value = 5
+        ElseIf txteffective.Text = "July" Then
+            value = 6
+        ElseIf txteffective.Text = "August" Then
+            value = 7
+        ElseIf txteffective.Text = "September" Then
+            value = 8
+        ElseIf txteffective.Text = "October" Then
+            value = 9
+        ElseIf txteffective.Text = "November" Then
+            value = 10
+        Else
+            value = 11
+        End If
     End Sub
 End Class

@@ -2843,7 +2843,6 @@ Public Class MainApp
 
     End Sub
 
-
     Private Sub btnProg_Click(sender As Object, e As EventArgs) Handles btnProg.Click
         If proses Is Nothing OrElse proses.IsDisposed Then
             proses = New RecProcess
