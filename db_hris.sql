@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2017 at 10:57 AM
+-- Generation Time: Jan 19, 2017 at 10:53 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -118,7 +118,9 @@ CREATE TABLE `db_loan` (
 --
 
 INSERT INTO `db_loan` (`No`, `FullName`, `EmployeeCode`, `ApprovedBy`, `Reason`, `Dates`, `AmountOfLoan`, `Month`, `Months`, `SalaryInclude`, `FromMonths`, `Year`, `PaymentPerMonth`, `CompletedOn`, `Realisasi`) VALUES
-(3, 'Jeruk', '17-1-00006', 'Hrd', 'Reason / Purpose', '1/5/2017', '50000', '', '5', '1', 'September', '2018', '10000', '14', '');
+(5, 'Jeruk', '17-1-00006', 'ME', 'Nothing Whatsoever', '12/30/2016', '5000000', '', '5', '1', 'March', '2017', '1000000', '8', ''),
+(6, 'Duri', '17-1-00007', 'Me', 'Nothing Whatsoever', '1/5/2017', '500000', '', '5', '1', 'March', '2017', '100000', '8', ''),
+(7, 'Pohon', '17-1-0011', 'noont', 'Reason / Purpose', '1/6/2017', '7000000', '', '5', '1', 'February', '2017', '1400000', '7', '');
 
 -- --------------------------------------------------------
 
@@ -234,10 +236,13 @@ CREATE TABLE `db_payrolldata` (
 --
 
 INSERT INTO `db_payrolldata` (`FullName`, `EmployeeCode`, `StatusWajibPajak`, `MemilikiNpwp`, `BasicRate`, `Allowance`, `Incentives`, `MealRate`, `Transport`, `JaminanKesehatan`, `Bpjs`, `JaminanKecelakaanKerja`, `JaminanKematian`, `JaminanHariTua`, `IuranPensiun`, `BiayaJabatan`, `Rapel`, `Loan`) VALUES
-('Apel', '17-1-00002', 'Tidak Kawin, Tanpa Tanggungan', 'Yes', '300000', '0', '0', '0', '0', 'Included', '', '', '', '', '', '', 'Included', ''),
-('Jeruk', '17-1-00006', 'Tidak Kawin, Tanggungan 1', 'Yes', '90000000', '20000', '0', '0', '0', '1', '1', '1', '1', '1', '0', '0', '0', '0'),
+('Apel', '17-1-00002', 'Tidak Kawin, Tanpa Tanggungan', 'Yes', '2000000', '0', '0', '0', '0', '1', '1', '1', '1', '1', '1', '1', '1', '1'),
+('Jeruk', '17-1-00006', 'Tidak Kawin, Tanggungan 1', 'Yes', '90000000', '20000', '0', '0', '0', '1', '1', '1', '1', '1', '0', '0', '1', '0'),
+('Duri', '17-1-00007', 'Tidak Kawin, Tanggungan 2', 'Yes', '500000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+('Steve', '17-1-0008', 'Tidak Kawin, Tanggungan 1', 'Yes', '25000000', '0', '00', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'),
+('Jonny', '17-1-0009', 'Tidak Kawin, Tanpa Tanggungan', 'Yes', '5000000', '2000', '0', '0', '0', '1', '1', '1', '1', '1', '0', '1', '1', '0'),
 ('Steven', '17-1-0010', 'Kawin, Tanpa Tanggungan', 'Yes', '10000000', '0', '0', '0', '0', '1', '1', '1', '1', '0', '0', '0', '1', '0'),
-('Pohon', '17-1-0011', 'Tidak Kawin, Tanpa Tanggungan', 'Yes', '3000000', '0', '0', '0', '0', '1', '1', '1', '0', '0', '0', '0', '0', '0');
+('Pohon', '17-1-0011', 'Tidak Kawin, Tanpa Tanggungan', 'Yes', '3000000', '0', '0', '0', '0', '1', '1', '1', '0', '0', '1', '1', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -392,22 +397,21 @@ INSERT INTO `db_pegawai` (`EmployeeCode`, `CompanyCode`, `FullName`, `Position`,
 --
 
 CREATE TABLE `db_rapel` (
-  `No` varchar(50) NOT NULL,
   `FullName` varchar(50) NOT NULL,
   `EmployeeCode` varchar(50) NOT NULL,
   `RapelRate` varchar(50) NOT NULL,
   `EffSince` varchar(50) NOT NULL,
-  `Until` varchar(50) NOT NULL,
-  `PaymentPerMonth` varchar(50) NOT NULL
+  `Until` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `db_rapel`
 --
 
-INSERT INTO `db_rapel` (`No`, `FullName`, `EmployeeCode`, `RapelRate`, `EffSince`, `Until`, `PaymentPerMonth`) VALUES
-('00003', 'Jeruk', '17-1-00006', '123694', 'January', 'March', '247,388'),
-('00004', 'Apel', '17-1-00002', '50000', 'January', 'January', '0');
+INSERT INTO `db_rapel` (`FullName`, `EmployeeCode`, `RapelRate`, `EffSince`, `Until`) VALUES
+('Apel', '17-1-00002', '50000', 'March', 'June'),
+('Steve', '17-1-0008', '50000', 'March', 'June'),
+('Jonny', '17-1-0009', '6000000', 'January', 'June');
 
 -- --------------------------------------------------------
 
@@ -435,6 +439,7 @@ INSERT INTO `db_recruit` (`IdRec`, `InterviewTimes`, `FullName`, `PhoneNumber`, 
 ('REQ-17-1-00001', '1', 'Steven', '0023', '001', 'Processed', '1/18/2017', 'yhyy'),
 ('REQ-17-1-00002', '1', 'Pohon', '0046456', '007', 'Processed', '1/3/2017', 'None'),
 ('REQ-17-1-00002', '1', 'Pohon', '0046456', '007', 'Processed', '1/3/2017', 'None'),
+('', '', '', '', '', '', '', ''),
 ('', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
@@ -529,6 +534,31 @@ INSERT INTO `db_rotasihistory` (`Number`, `EmployeeCode`, `CompanyCode`, `FullNa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `db_setpayroll`
+--
+
+CREATE TABLE `db_setpayroll` (
+  `Num` int(11) NOT NULL,
+  `Bpjs` varchar(20) NOT NULL,
+  `JamKecelakaanKerja` varchar(20) NOT NULL,
+  `JaminanKesehatan` varchar(20) NOT NULL,
+  `IuranPensiun` varchar(20) NOT NULL,
+  `JaminanHariTua` varchar(20) NOT NULL,
+  `BiayaJabatan` varchar(20) NOT NULL,
+  `Lates` varchar(20) NOT NULL,
+  `JaminanKematian` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `db_setpayroll`
+--
+
+INSERT INTO `db_setpayroll` (`Num`, `Bpjs`, `JamKecelakaanKerja`, `JaminanKesehatan`, `IuranPensiun`, `JaminanHariTua`, `BiayaJabatan`, `Lates`, `JaminanKematian`) VALUES
+(2, '1', '2', '3', '4', '5', '6', '7', '8');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `db_sp`
 --
 
@@ -589,7 +619,6 @@ CREATE TABLE `id_last_num` (
 -- Stand-in structure for view `no`
 --
 CREATE TABLE `no` (
-`id_no` int(4)
 );
 
 -- --------------------------------------------------------
@@ -702,7 +731,7 @@ ALTER TABLE `db_pegawai`
 -- Indexes for table `db_rapel`
 --
 ALTER TABLE `db_rapel`
-  ADD PRIMARY KEY (`No`);
+  ADD PRIMARY KEY (`EmployeeCode`);
 
 --
 -- Indexes for table `db_recruitment`
@@ -721,6 +750,12 @@ ALTER TABLE `db_rotasi`
 --
 ALTER TABLE `db_rotasihistory`
   ADD PRIMARY KEY (`Number`);
+
+--
+-- Indexes for table `db_setpayroll`
+--
+ALTER TABLE `db_setpayroll`
+  ADD PRIMARY KEY (`Num`);
 
 --
 -- Indexes for table `db_sp`
@@ -747,7 +782,7 @@ ALTER TABLE `db_demotehistory`
 -- AUTO_INCREMENT for table `db_loan`
 --
 ALTER TABLE `db_loan`
-  MODIFY `No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `db_payrolldetails`
 --
@@ -763,6 +798,11 @@ ALTER TABLE `db_recruitment`
 --
 ALTER TABLE `db_rotasihistory`
   MODIFY `Number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `db_setpayroll`
+--
+ALTER TABLE `db_setpayroll`
+  MODIFY `Num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `db_sp`
 --

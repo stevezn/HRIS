@@ -449,6 +449,7 @@ Public Class MainApp
             setting.Close()
             rotasi.Close()
             employeenotes.Close()
+            loan.Close()
         End If
         'Dim pesan As String
         'pesan = CType(MsgBox("Log Off Application?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Warning"), String)
@@ -672,15 +673,13 @@ Public Class MainApp
         Try
             Dim cmd = SQLConnection.CreateCommand()
             cmd.CommandText = "SELECT last_num FROM view_emp_last_code"
-
             lastn = DirectCast(cmd.ExecuteScalar(), Integer) + 1
         Catch ex As Exception
-            MsgBox("error")
+            MsgBox(ex.Message)
         End Try
-        Dim rescode As String = ynow & "-" & mnow & "-" & Strings.Right("0000" & lastn, 4)
+        Dim rescode As String = ynow & "-" & mnow & "-" & Strings.Right("0000" & lastn, 5)
         Dim sqlCommand As New MySqlCommand
         Try
-
             sqlCommand.CommandText = "INSERT INTO db_pegawai (FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, status, CompanyCode, EmployeeCode, OfficeLocation, PhoneNumber, TrainingSampai)" +
                                              "SELECT FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, IdNumber, Photo, @status, @CompanyCode, @EmployeeCode, @OfficeLocation, @PhoneNumber, @TrainingSampai FROM db_recruitment WHERE Status='Accepted'"
             sqlCommand.Parameters.AddWithValue("@Status", "Active")
@@ -692,7 +691,7 @@ Public Class MainApp
             sqlCommand.Connection = SQLConnection
             sqlCommand.ExecuteNonQuery()
             SQLConnection.Close()
-            MessageBox.Show("Import Data Succesfully!! Please Refresh The Data")
+            MessageBox.Show("Import Data Succesfully! Please Click Refresh To Load")
         Catch ex As Exception
             SQLConnection.Close()
             MsgBox("There's Already an Exist Employee With The Same ID Number, Please Check Again.", MsgBoxStyle.Information)
@@ -1634,11 +1633,11 @@ Public Class MainApp
                 'txtphone.Text = datatabl.Rows(0).Item(8).ToString()
                 'txtBar8.Text = datatabl.Rows(0).Item(9).ToString()
                 'Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(10), Byte())
-                'If filefoto.Length > 0 Then
+                'If filefoto.Length > 0 
+                '    pictureEdit.Refresh()Then
                 '    pictureEdit.Image = ByteToImage(filefoto)
                 'Else
                 '    pictureEdit.Image = Nothing
-                '    pictureEdit.Refresh()
                 'End If
                 ''tampilkan foto nya belum
                 ''
@@ -2862,7 +2861,7 @@ Public Class MainApp
     Dim loan As New Payments
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles btnProc.Click
-        If loan Is Nothing OrElse loan.IsDisposed Then
+        If loan Is Nothing OrElse loan.IsDisposed OrElse loan.MinimizeBox Then
             loan = New Payments
         End If
         loan.Show()

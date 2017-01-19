@@ -21,6 +21,24 @@
         SQLConnection.Close()
     End Sub
 
+    Dim tbl_par3 As New DataTable
+
+    Sub loanlists()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        sqlcommand.CommandText = "SELECT FullName, EmployeeCode from db_loan"
+        sqlcommand.Connection = SQLConnection
+        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+        Dim cb As New MySqlCommandBuilder(adapter)
+        adapter.Fill(tbl_par3)
+        For index As Integer = 0 To tbl_par3.Rows.Count - 1
+            txtloanname.Properties.Items.Add(tbl_par3.Rows(index).Item(0).ToString())
+        Next
+        SQLConnection.Close()
+    End Sub
+
     Dim tbl_par2 As New DataTable
 
     Sub loaddata1()
@@ -94,6 +112,7 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+
     Public Function InsertLoan() As Boolean
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
@@ -130,7 +149,7 @@
         End Try
     End Function
 
-    Public Function InsertRapel() As Boolean
+    Public Function insertrapel2() As Boolean
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
@@ -138,8 +157,8 @@
         Dim str_carsql As String
         Try
             str_carsql = "Insert into db_rapel " +
-                        "(FullName, EmployeeCode, RapelRate, EffSince, Until, Payment/Month )" +
-                        "values (@FullName, @EmployeeCode, @RapelRate, @EffSince, @Until, @Payment/Month)"
+                        "(FullName, EmployeeCode, RapelRate, EffSince, Until)" +
+                        "Values (@FullName, @EmployeeCode, @RapelRate, @EffSince, @Until)"
             sqlcommand.Connection = SQLConnection
             sqlcommand.CommandText = str_carsql
             sqlcommand.Parameters.AddWithValue("@FullName", txtname3.Text)
@@ -147,10 +166,9 @@
             sqlcommand.Parameters.AddWithValue("@RapelRate", txtrapel.Text)
             sqlcommand.Parameters.AddWithValue("@EffSince", txteffective.Text)
             sqlcommand.Parameters.AddWithValue("@Until", txtuntil.Text)
-            sqlcommand.Parameters.AddWithValue("@Payment/Month", txtpaymon.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
-            MessageBox.Show("Data Succesfully Added!")
+            MessageBox.Show("Data Successfully Added!")
             Return True
         Catch ex As Exception
             SQLConnection.Close()
@@ -160,7 +178,6 @@
     End Function
 
     Public Function InsertPayroll() As Boolean
-        'included()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
@@ -243,7 +260,7 @@
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         Try
-            sqlcommand.CommandText = "Select FullName, EmployeeCode, RapelRate, EffSince, Until, PaymentPerMonth from db_rapel"
+            sqlcommand.CommandText = "Select FullName, EmployeeCode, RapelRate, EffSince, Until from db_rapel"
             sqlcommand.Connection = SQLConnection
             Dim tbl_par As New DataTable
             Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
@@ -258,6 +275,28 @@
     End Sub
 
     Private Sub loadloan()
+        GridControl7.RefreshDataSource()
+        Dim table As New DataTable
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "select FullName, EmployeeCode, AmountOfLoan, FromMonths, PaymentPerMonth, CompletedOn From db_loan "
+            sqlcommand.Connection = SQLConnection
+            Dim tbl_par As New DataTable
+            Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(table)
+            GridControl7.DataSource = table
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub loadloanname()
         GridControl1.RefreshDataSource()
         Dim table As New DataTable
         SQLConnection = New MySqlConnection
@@ -265,7 +304,7 @@
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         Try
-            sqlcommand.CommandText = "select FullName, EmployeeCode, AmountOfLoan, Month, Realisasi From db_loan "
+            sqlcommand.CommandText = "select FullName, EmployeeCode, AmountOfLoan, Month, Realisasi from db_loan where FullName Like '%" + txtloanname.Text + "%'"
             sqlcommand.Connection = SQLConnection
             Dim tbl_par As New DataTable
             Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
@@ -287,7 +326,7 @@
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         Try
-            sqlcommand.CommandText = "SELECT FullName, EmployeeCode, BasicRate FROM db_payrolldata"
+            sqlcommand.CommandText = "Select FullName, EmployeeCode, BasicRate FROM db_payrolldata"
             sqlcommand.Connection = SQLConnection
             Dim tbl_par As New DataTable
             Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
@@ -322,6 +361,7 @@
         loadpayroll()
         loadpayroll1()
         loadloan()
+        loanlists()
         loadrapel()
     End Sub
 
@@ -417,7 +457,7 @@
 
     Private Sub btnapp1_Click(sender As Object, e As EventArgs) Handles btnapp1.Click
         If txtname1.Text = "" OrElse txtempcode1.Text = "" Then
-            MsgBox("Please Insert Employee Name or Employee Code")
+            MsgBox("Please Insert Employee Name Or Employee Code")
         Else
             InsertPayroll()
         End If
@@ -469,11 +509,18 @@
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         If txtname2.Text = "" OrElse txtempcode2.Text = "" Then
-            MsgBox("Please Input Employee Name or Employee Code!")
+            MsgBox("Please Input Employee Name Or Employee Code!")
         Else
-            updatechange()
-        End If
-        loadpayroll1()
+            'updatechange()
+            Dim mess As String
+            mess = CType(MsgBox("Is there any additional or deductions left?", MsgBoxStyle.YesNo, "Warning"), String)
+            If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
+                XtraTabPage1.Show()
+            Else
+                updatechange()
+                End If
+            End If
+            loadpayroll1()
         loadpayroll()
     End Sub
 
@@ -493,6 +540,7 @@
         Else
             InsertLoan()
         End If
+        loadloan()
     End Sub
 
     Private Sub txtrangemon_EditValueChanged(sender As Object, e As EventArgs) Handles txtrangemon.EditValueChanged
@@ -503,6 +551,7 @@
     Private Sub BarButtonItem6_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem6.ItemClick
         XtraTabPage8.Show()
     End Sub
+
     Dim proses As New PayrollSet
 
     Private Sub BarButtonItem7_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem7.ItemClick
@@ -524,13 +573,22 @@
         XtraTabPage6.Show()
     End Sub
 
+    Sub reset()
+        txtname3.Text = ""
+        txtempcode3.Text = ""
+        txtrapel.Text = ""
+        txteffective.Text = ""
+        txtuntil.Text = ""
+    End Sub
+
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        hitungrapel()
         If txtname3.Text = "" Or txtempcode3.Text = "" Then
-            MsgBox("Please Insert Employee Code or Employee Name")
+            MsgBox("Please Insert Employee Code Or Employee Name")
         Else
-            InsertRapel()
+            insertrapel2()
+            reset()
         End If
+        loadrapel()
     End Sub
 
     Dim value1, value2 As Integer
@@ -563,14 +621,66 @@
         End If
     End Sub
 
-    Private Sub hitungrapel()
-        Dim a, totalvalue, res As Double
-        a = Convert.ToDouble(txtrapel.Text)
-        totalvalue = value2 - value
-        res = a * totalvalue - a
-        txtpaymon.Text = res.ToString
-        txtpaymon.Text = Format(res, "##,##0")
-        txtpaymon.SelectionStart = Len(txtpaymon.Text)
+    Private Sub txtloanname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtloanname.SelectedIndexChanged
+        For index As Integer = 0 To tbl_par3.Rows.Count - 1
+            If txtloanname.SelectedItem Is tbl_par3.Rows(index).Item(0).ToString Then
+            End If
+        Next
+    End Sub
+
+    Private Sub btnLookup_Click(sender As Object, e As EventArgs) Handles btnLookup.Click
+        loadloanname()
+    End Sub
+
+    Dim act As String = ""
+
+    Private Sub GridView7_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView7.FocusedRowChanged
+
+    End Sub
+
+    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+        SQLConnection = New MySqlConnection()
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim datatabl As New DataTable
+        Dim sqlCommand As New MySqlCommand
+        datatabl.Clear()
+        Dim param As String = ""
+            Try
+            param = "And EmployeeCode='" + GridView1.GetFocusedRowCellValue("EmployeeCode").ToString() + "'"
+        Catch ex As Exception
+            End Try
+            If param > "" Then
+                act = "edit"
+            Else
+                act = "input"
+            End If
+            Try
+            sqlCommand.CommandText = "SELECT FullName, EmployeeCode FROM db_loan WHERE 1 = 1 " + param.ToString()
+            sqlCommand.Connection = SQLConnection
+            Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
+                Dim cb As New MySqlCommandBuilder(adapter)
+                adapter.Fill(datatabl)
+                SQLConnection.Close()
+            Catch ex As Exception
+                SQLConnection.Close()
+                MsgBox(ex.Message, MsgBoxStyle.Critical)
+            End Try
+        If datatabl.Rows.Count > 0 Then
+            txtloanname.Text = datatabl.Rows(0).Item(0).ToString()
+            txtempcode.Text = datatabl.Rows(0).Item(1).ToString()
+        End If
+    End Sub
+
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+
+    End Sub
+    Dim pay As New Payslip
+    Private Sub BarButtonItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem8.ItemClick
+        If pay Is Nothing OrElse pay.IsDisposed Then
+            pay = New Payslip
+        End If
+        pay.Show()
     End Sub
 
     Private Sub txteffective_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txteffective.SelectedIndexChanged

@@ -523,3 +523,4 @@ E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.PayrollCount.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Rapel.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Payments.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.PayrollSet.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Payslip.resources

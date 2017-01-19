@@ -20,7 +20,7 @@ Public Class SPForms
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT EmployeeCode, FullName, Position, CompanyCode FROM db_pegawai WHERE Status!='Fired'"
+        sqlCommand.CommandText = "SELECT EmployeeCode, FullName, Position, CompanyCode FROM db_pegawai WHERE Status != 'Fired'"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
