@@ -94,6 +94,26 @@
         End Try
     End Sub
 
+    Public Sub updatejht2()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "UPDATE db_setpayroll Set" +
+                                    " JaminanHariTua = @JaminanHariTua"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("@JaminanHariTua", txtnew.Text)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            MsgBox("Changed!")
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Public Sub updatejamkes()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString

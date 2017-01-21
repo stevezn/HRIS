@@ -53,7 +53,7 @@ Public Class RecProcess
         Dim str_carSql As String
         Try
             str_carSql = "INSERT INTO db_recruit " +
-                   "(IdRec, InterviewTimes, FullName,PhoneNumber, IdNumber, Status, InterviewDate,Reason) " +
+                   "(IdRec, InterviewTimes, FullName,PhoneNumber, IdNumber, Status, InterviewDate, Reason) " +
                    "values (@IdRec,@InterviewTimes,@FullName,@PhoneNumber,@IdNumber,@Status,@InterviewDate,@Reason)"
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
@@ -81,7 +81,7 @@ Public Class RecProcess
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, status, InterviewDate, Cv, Reason FROM db_recruitment"
+        sqlCommand.CommandText = "SELECT IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Address, Gender, Religion, PhoneNumber, IdNumber, Photo, status, InterviewDate, Cv, Reason FROM db_recruitment where status = 'Pending'"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
@@ -151,10 +151,6 @@ Public Class RecProcess
         BarButtonItem1.PerformClick()
     End Sub
 
-    Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
-
-    End Sub
-
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         barJudul.Caption = "Recruitment Process"
         GridControl1.RefreshDataSource()
@@ -166,96 +162,16 @@ Public Class RecProcess
         cleartxt()
     End Sub
 
-    Private Sub txtphone_EditValueChanged(sender As Object, e As EventArgs) Handles txtphone.EditValueChanged
-
-    End Sub
-
-    Private Sub barJudul_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles barJudul.ItemClick
-
-    End Sub
-
-    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-
-    End Sub
-
-    Private Sub LayoutControl1_Click(sender As Object, e As EventArgs) Handles LayoutControl1.Click
-
-    End Sub
-
-    Private Sub txtreason_TextChanged(sender As Object, e As EventArgs) Handles txtreason.TextChanged
-
-    End Sub
-
-    Private Sub txtcv_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnCV_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtinterviewdate_EditValueChanged(sender As Object, e As EventArgs) Handles txtinterviewdate.EditValueChanged
-
-    End Sub
-
-    Private Sub txtinterview_EditValueChanged(sender As Object, e As EventArgs) Handles txtinterview.EditValueChanged
-
-    End Sub
-
-    Private Sub txtstatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtstatus.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub txtreligion_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtgender_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtdob_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtbrowse_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnSave_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtaddress_EditValueChanged(sender As Object, e As EventArgs) Handles txtaddress.EditValueChanged
-
-    End Sub
-
-    Private Sub txtpob_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtidcard_EditValueChanged(sender As Object, e As EventArgs) Handles txtidcard.EditValueChanged
-
-    End Sub
-
-    Private Sub txtid_EditValueChanged(sender As Object, e As EventArgs) Handles txtid.EditValueChanged
-
-    End Sub
-
-    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
-
-    End Sub
-
-    Private Sub LayoutControl2_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        reset()
+        cleartxt()
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        InsertReq()
+        If txtfullname.Text = "" OrElse txtid.Text = "" Then
+            MsgBox("Please insert an employee name or employee code")
+        Else
+            InsertReq()
+        End If
     End Sub
 
     Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
@@ -269,5 +185,14 @@ Public Class RecProcess
             item.BeginGroup = True
             e.Menu.Items.Add(item)
         End If
+    End Sub
+
+    Dim view As New pdfviewer
+
+    Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
+        If view Is Nothing OrElse view.IsDisposed Then
+            view = New pdfviewer
+        End If
+        view.Show()
     End Sub
 End Class

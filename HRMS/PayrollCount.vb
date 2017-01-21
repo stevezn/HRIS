@@ -240,7 +240,7 @@
     End Sub
 
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) 
         Insertpay()
     End Sub
 
@@ -248,23 +248,8 @@
 
     End Sub
 
-    Private Sub btnChange_Click(sender As Object, e As EventArgs) Handles btnChange.Click
+    Private Sub btnChange_Click(sender As Object, e As EventArgs) 
         updatechange()
     End Sub
 
-    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        barJudul.Caption = "New Result"
-        lcsave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        BarButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        RibbonPageGroup2.Visible = False
-    End Sub
-
-    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-        barJudul.Caption = "Change Result"
-        lcsave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        RibbonPageGroup1.Visible = False
-    End Sub
 End Class

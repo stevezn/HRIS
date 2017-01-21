@@ -31,6 +31,7 @@ Partial Class Payslip
         Me.txtempcode = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtperiod.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtperiod.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,7 +42,7 @@ Partial Class Payslip
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(5, 24)
+        Me.LabelControl1.Location = New System.Drawing.Point(5, 11)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(86, 13)
         Me.LabelControl1.TabIndex = 0
@@ -49,7 +50,7 @@ Partial Class Payslip
         '
         'txtname
         '
-        Me.txtname.Location = New System.Drawing.Point(100, 24)
+        Me.txtname.Location = New System.Drawing.Point(102, 8)
         Me.txtname.Name = "txtname"
         Me.txtname.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtname.Size = New System.Drawing.Size(100, 20)
@@ -58,7 +59,7 @@ Partial Class Payslip
         'txtperiod
         '
         Me.txtperiod.EditValue = Nothing
-        Me.txtperiod.Location = New System.Drawing.Point(100, 75)
+        Me.txtperiod.Location = New System.Drawing.Point(102, 60)
         Me.txtperiod.Name = "txtperiod"
         Me.txtperiod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtperiod.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -69,7 +70,7 @@ Partial Class Payslip
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(5, 82)
+        Me.LabelControl2.Location = New System.Drawing.Point(5, 63)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(63, 13)
         Me.LabelControl2.TabIndex = 3
@@ -77,7 +78,7 @@ Partial Class Payslip
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(5, 53)
+        Me.LabelControl3.Location = New System.Drawing.Point(5, 37)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(74, 13)
         Me.LabelControl3.TabIndex = 4
@@ -85,13 +86,15 @@ Partial Class Payslip
         '
         'txtempcode
         '
-        Me.txtempcode.Location = New System.Drawing.Point(100, 50)
+        Me.txtempcode.Location = New System.Drawing.Point(102, 34)
         Me.txtempcode.Name = "txtempcode"
         Me.txtempcode.Size = New System.Drawing.Size(100, 20)
         Me.txtempcode.TabIndex = 5
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.SimpleButton1)
+        Me.GroupControl1.Controls.Add(Me.RadioButton1)
         Me.GroupControl1.Controls.Add(Me.LabelControl1)
         Me.GroupControl1.Controls.Add(Me.txtperiod)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
@@ -100,24 +103,34 @@ Partial Class Payslip
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Location = New System.Drawing.Point(2, 1)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(207, 100)
+        Me.GroupControl1.Size = New System.Drawing.Size(211, 165)
         Me.GroupControl1.TabIndex = 6
         '
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(102, 102)
+        Me.SimpleButton1.Location = New System.Drawing.Point(102, 119)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(100, 38)
         Me.SimpleButton1.TabIndex = 7
         Me.SimpleButton1.Text = "Preview"
         '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(57, 96)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(145, 17)
+        Me.RadioButton1.TabIndex = 6
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Print All Employee Payslip"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
         'Payslip
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(205, 140)
-        Me.Controls.Add(Me.SimpleButton1)
+        Me.ClientSize = New System.Drawing.Size(213, 164)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "Payslip"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -141,4 +154,5 @@ Partial Class Payslip
     Friend WithEvents txtempcode As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents RadioButton1 As RadioButton
 End Class

@@ -94,7 +94,7 @@ Public Class SPForms
         Try
             objword = New word.Application
             'Dim objdoc As word.Document
-            objword.Documents.Open("E:\Word\sp1.docx")
+            objword.Documents.Open("E:\Backup\141113007Latihan4.pdf")
             Dim findobject As word.Find = objword.Selection.Find
             With findobject
                 .ClearFormatting()

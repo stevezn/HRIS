@@ -121,18 +121,18 @@ Public Class NewRec
         Dim ynow As String = Format(Now, "yy").ToString
         Dim mnow As String = Month(Now).ToString
         Dim lastn As Integer
-        Dim n As String = ""
-        Dim interview As Integer = 0
-        Try
-            Dim cmd = SQLConnection.CreateCommand
-            cmd.CommandText = " SELECT IdNumber, COUNT(*) FROM db_recruitment Group by IdNumber HAVING ( COUNT(IdNumber) > 1 )"
-            n = DirectCast(cmd.ExecuteScalar(), String)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        If n > 1 Then
-            interview = +1
-        End If
+        'Dim n As String = ""
+        'Dim interview As Integer = 0
+        'Try
+        '    Dim cmd = SQLConnection.CreateCommand
+        '    cmd.CommandText = " SELECT IdNumber, COUNT(*) FROM db_recruitment Group by IdNumber HAVING ( COUNT(IdNumber) > 1 )"
+        '    n = DirectCast(cmd.ExecuteScalar(), String)
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
+        'If n > 1 Then
+        '    interview = +1
+        'End If
         Try
             Dim cmd = SQLConnection.CreateCommand()
             cmd.CommandText = "SELECT IdRec FROM id_last_num"
@@ -150,7 +150,7 @@ Public Class NewRec
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
             sqlCommand.Parameters.AddWithValue("@IdRec", rescode)
-            sqlCommand.Parameters.AddWithValue("@InterviewTimes", interview)
+            sqlCommand.Parameters.AddWithValue("@InterviewTimes", txtinterview.Text)
             sqlCommand.Parameters.AddWithValue("@FullName", txtnames.Text)
             sqlCommand.Parameters.AddWithValue("@PlaceOfBirth", txtpob.Text)
             sqlCommand.Parameters.AddWithValue("@DateOfBirth", txtdob.Text)

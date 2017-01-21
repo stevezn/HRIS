@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PayrollCount
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,8 @@ Partial Class PayrollCount
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayrollCount))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.txtrapel = New DevExpress.XtraEditors.TextEdit()
         Me.txtip = New DevExpress.XtraEditors.TextEdit()
@@ -55,20 +54,6 @@ Partial Class PayrollCount
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.Rapel = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
-        Me.LayoutControl2 = New DevExpress.XtraLayout.LayoutControl()
-        Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.lcsave = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.btnChange = New DevExpress.XtraEditors.SimpleButton()
-        Me.lcchange = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
-        Me.barJudul = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.txtrapel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,18 +87,10 @@ Partial Class PayrollCount
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rapel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LayoutControl2.SuspendLayout()
-        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lcsave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lcchange, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
-        Me.LayoutControl1.Controls.Add(Me.LayoutControl2)
         Me.LayoutControl1.Controls.Add(Me.txtrapel)
         Me.LayoutControl1.Controls.Add(Me.txtip)
         Me.LayoutControl1.Controls.Add(Me.txtbj)
@@ -129,10 +106,10 @@ Partial Class PayrollCount
         Me.LayoutControl1.Controls.Add(Me.txtbpjs)
         Me.LayoutControl1.Controls.Add(Me.txtgross)
         Me.LayoutControl1.Controls.Add(Me.txtots)
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 148)
+        Me.LayoutControl1.Location = New System.Drawing.Point(1, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(329, 454)
+        Me.LayoutControl1.Size = New System.Drawing.Size(329, 384)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -261,10 +238,10 @@ Partial Class PayrollCount
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcots, Me.lcgross, Me.lcbpjs, Me.lctoded, Me.lcnetincome, Me.LayoutControlItem1, Me.lcpph, Me.lcpajak, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.Rapel, Me.LayoutControlItem10})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcots, Me.lcgross, Me.lcbpjs, Me.lctoded, Me.lcnetincome, Me.LayoutControlItem1, Me.lcpph, Me.lcpajak, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.Rapel})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(329, 454)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(329, 384)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -414,147 +391,15 @@ Partial Class PayrollCount
         Me.Rapel.CustomizationFormText = "Rapel"
         Me.Rapel.Location = New System.Drawing.Point(0, 336)
         Me.Rapel.Name = "Rapel"
-        Me.Rapel.Size = New System.Drawing.Size(309, 24)
+        Me.Rapel.Size = New System.Drawing.Size(309, 28)
         Me.Rapel.Text = "Rapel"
         Me.Rapel.TextSize = New System.Drawing.Size(115, 13)
-        '
-        'btnSave
-        '
-        Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(12, 12)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(138, 38)
-        Me.btnSave.StyleController = Me.LayoutControl2
-        Me.btnSave.TabIndex = 1
-        Me.btnSave.Text = "Save"
-        '
-        'LayoutControl2
-        '
-        Me.LayoutControl2.Controls.Add(Me.btnChange)
-        Me.LayoutControl2.Controls.Add(Me.btnSave)
-        Me.LayoutControl2.Location = New System.Drawing.Point(12, 372)
-        Me.LayoutControl2.Name = "LayoutControl2"
-        Me.LayoutControl2.Root = Me.LayoutControlGroup2
-        Me.LayoutControl2.Size = New System.Drawing.Size(305, 70)
-        Me.LayoutControl2.TabIndex = 1
-        Me.LayoutControl2.Text = "LayoutControl2"
-        '
-        'LayoutControlGroup2
-        '
-        Me.LayoutControlGroup2.CustomizationFormText = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.LayoutControlGroup2.GroupBordersVisible = False
-        Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcsave, Me.lcchange})
-        Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(305, 70)
-        Me.LayoutControlGroup2.Text = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.TextVisible = False
-        '
-        'lcsave
-        '
-        Me.lcsave.Control = Me.btnSave
-        Me.lcsave.CustomizationFormText = "lcsave"
-        Me.lcsave.Location = New System.Drawing.Point(0, 0)
-        Me.lcsave.Name = "lcsave"
-        Me.lcsave.Size = New System.Drawing.Size(142, 50)
-        Me.lcsave.Text = "lcsave"
-        Me.lcsave.TextSize = New System.Drawing.Size(0, 0)
-        Me.lcsave.TextToControlDistance = 0
-        Me.lcsave.TextVisible = False
-        '
-        'btnChange
-        '
-        Me.btnChange.Image = CType(resources.GetObject("btnChange.Image"), System.Drawing.Image)
-        Me.btnChange.Location = New System.Drawing.Point(154, 12)
-        Me.btnChange.Name = "btnChange"
-        Me.btnChange.Size = New System.Drawing.Size(139, 38)
-        Me.btnChange.StyleController = Me.LayoutControl2
-        Me.btnChange.TabIndex = 4
-        Me.btnChange.Text = "Change"
-        '
-        'lcchange
-        '
-        Me.lcchange.Control = Me.btnChange
-        Me.lcchange.CustomizationFormText = "lcchange"
-        Me.lcchange.Location = New System.Drawing.Point(142, 0)
-        Me.lcchange.Name = "lcchange"
-        Me.lcchange.Size = New System.Drawing.Size(143, 50)
-        Me.lcchange.Text = "lcchange"
-        Me.lcchange.TextSize = New System.Drawing.Size(0, 0)
-        Me.lcchange.TextToControlDistance = 0
-        Me.lcchange.TextVisible = False
-        '
-        'RibbonControl1
-        '
-        Me.RibbonControl1.ExpandCollapseItem.Id = 0
-        Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.BarButtonItem1, Me.barJudul, Me.BarButtonItem2})
-        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 5
-        Me.RibbonControl1.Name = "RibbonControl1"
-        Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(329, 142)
-        Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
-        Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above
-        '
-        'BarButtonItem1
-        '
-        Me.BarButtonItem1.Caption = "New Payroll Result"
-        Me.BarButtonItem1.Glyph = CType(resources.GetObject("BarButtonItem1.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem1.Id = 1
-        Me.BarButtonItem1.Name = "BarButtonItem1"
-        Me.BarButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
-        '
-        'barJudul
-        '
-        Me.barJudul.Caption = "barJudul"
-        Me.barJudul.Id = 3
-        Me.barJudul.Name = "barJudul"
-        '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.Caption = "Changed Payroll Result"
-        Me.BarButtonItem2.Glyph = CType(resources.GetObject("BarButtonItem2.Glyph"), System.Drawing.Image)
-        Me.BarButtonItem2.Id = 4
-        Me.BarButtonItem2.Name = "BarButtonItem2"
-        Me.BarButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large
-        '
-        'RibbonPage1
-        '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2})
-        Me.RibbonPage1.Name = "RibbonPage1"
-        Me.RibbonPage1.Text = "Payroll"
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "                                                           "
-        '
-        'RibbonPageGroup2
-        '
-        Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem2)
-        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Text = "                                              "
-        '
-        'LayoutControlItem10
-        '
-        Me.LayoutControlItem10.Control = Me.LayoutControl2
-        Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 360)
-        Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(309, 74)
-        Me.LayoutControlItem10.Text = "LayoutControlItem10"
-        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem10.TextToControlDistance = 0
-        Me.LayoutControlItem10.TextVisible = False
         '
         'PayrollCount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(329, 588)
-        Me.Controls.Add(Me.RibbonControl1)
+        Me.ClientSize = New System.Drawing.Size(328, 381)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Name = "PayrollCount"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -592,13 +437,6 @@ Partial Class PayrollCount
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Rapel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LayoutControl2.ResumeLayout(False)
-        CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lcsave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lcchange, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -635,18 +473,4 @@ Partial Class PayrollCount
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents Rapel As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents btnSave As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LayoutControl2 As DevExpress.XtraLayout.LayoutControl
-    Friend WithEvents btnChange As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LayoutControlGroup2 As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents lcsave As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents lcchange As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem10 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents RibbonControl1 As DevExpress.XtraBars.Ribbon.RibbonControl
-    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents barJudul As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
-    Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

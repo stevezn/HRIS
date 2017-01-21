@@ -2857,7 +2857,6 @@ Public Class MainApp
 
     End Sub
 
-    Dim proc As New Rapel
     Dim loan As New Payments
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles btnProc.Click

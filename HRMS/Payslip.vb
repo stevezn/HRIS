@@ -31,19 +31,17 @@ Public Class Payslip
         Next
     End Sub
 
-
-    Private Sub sp1()
+    Private Sub printslip()
         Dim objword As word.Application = Nothing
         Try
             objword = New word.Application
-            'Dim objdoc As word.Document            
-            objword.Documents.Open("E:\Word\sp1.docx")
+            objword.Documents.Open("E:\Backup\141113007Latihan4.pdf")
             Dim findobject As word.Find = objword.Selection.Find
             With findobject
                 .ClearFormatting()
                 .Text = "Name"
                 .Replacement.ClearFormatting()
-                .Replacement.Text = ""
+                .Replacement.Text = txtname.Text
                 .Execute(Replace:=word.WdReplace.wdReplaceAll)
             End With
             With findobject
@@ -55,32 +53,31 @@ Public Class Payslip
             End With
             With findobject
                 .ClearFormatting()
-                .Text = "Company Code"
+                .Text = "Period"
                 .Replacement.ClearFormatting()
-                .Replacement.Text = ""
+                .Replacement.Text = txtperiod.Text
                 .Execute(Replace:=word.WdReplace.wdReplaceAll)
             End With
-            With findobject
-                .ClearFormatting()
-                .Text = "Position"
-                .Replacement.ClearFormatting()
-                .Replacement.Text = ""
-                .Execute(Replace:=word.WdReplace.wdReplaceAll)
-            End With
-            'objword.Documents.Item(1).Save()
-            'objword.Documents.Close(word.WdSaveOptions.wdDoNotSaveChanges)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
         Finally
-            'If Not IsNothing(objword) Then
-            '    objword.Quit()
-            '    objword = Nothing
-            'End If
         End Try
     End Sub
 
-
     Private Sub Payslip_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loaddata()
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        If txtname.Text = "" OrElse txtempcode.Text = "" Then
+            MsgBox("Please insert the employee")
+        End If
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        If RadioButton1.Checked = True Then
+            txtname.Text = "<empty>"
+            txtname.Enabled = False
+        End If
     End Sub
 End Class

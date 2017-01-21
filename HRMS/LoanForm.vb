@@ -177,6 +177,47 @@
         End Try
     End Function
 
+    Public Function InsertAddPayroll() As Boolean
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "INSERT INTO db_payrolldata " +
+                            "(FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan, Description1, Additional1, Description2, Additional2, Description3, Additional3, Description4, Additional4, Description5, Additional5, Description6, Additional6, Description7, Additional7, Description8, Additional8, DescriptionDeduction1, Deduction1, DescriptionDeduction2, Deduction2, DescriptionDeduction3, Deduction3, DescriptionDeduction4, Deduction4, DescriptionDeduction5, Deduction5, DescriptionDeduction6, Deduction6, DescriptionDeduction7, Deduction7, DescriptionDeduction8, Deduction8) " +
+                            "values (@FullName, @EmployeeCode, @StatusWajibPajak, @MemilikiNpwp, @BasicRate, @Allowance, @Incentives, @MealRate, @Transport, @JaminanKesehatan, @Bpjs, @JaminanKecelakaanKerja, @JaminanKematian, @JaminanHariTua, @IuranPensiun, @BiayaJabatan, @Rapel, @Loan, @Description1, @Additional1, @Description2, @Additional2, @Description3, @Additional3, @Description4, @Additional4, @Description5, @Additional5, @Description6, @Additional6, @Description7, @Additional7, @Description8, @Addtional8, @DescriptionDeduction1, @Deduction1, @DescriptionDeduction2, @Deduction2, @DescriptionDeduction3, @Deduction3, @DescriptionDeduction4, @Deduction4, @DescriptionDeduction5, @Deduction5, @DescriptionDeduction6, @Deduction6, @DescriptionDeduction7, @Deduction7, @DescriptionDeduction8, @Deduction8 )"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@FullName", txtname1.Text)
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode1.Text)
+            sqlcommand.Parameters.AddWithValue("@StatusWajibPajak", txtwajibpajak.Text)
+            sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", txtnpwp.Text)
+            sqlcommand.Parameters.AddWithValue("@BasicRate", txtbasicrate.Text)
+            sqlcommand.Parameters.AddWithValue("@Allowance", txtallowance.Text)
+            sqlcommand.Parameters.AddWithValue("@Incentives", txtincentives.Text)
+            sqlcommand.Parameters.AddWithValue("@MealRate", txtmealrate.Text)
+            sqlcommand.Parameters.AddWithValue("@Transport", txttransport.Text)
+            sqlcommand.Parameters.AddWithValue("@JaminanKesehatan", cjk.Checked)
+            sqlcommand.Parameters.AddWithValue("@Bpjs", cbpjs.Checked)
+            sqlcommand.Parameters.AddWithValue("@JaminanKecelakaanKerja", cjkk.Checked)
+            sqlcommand.Parameters.AddWithValue("@JaminanKematian", cjamkem.Checked)
+            sqlcommand.Parameters.AddWithValue("@JaminanHariTua", cjht.Checked)
+            sqlcommand.Parameters.AddWithValue("@IuranPensiun", ciupe.Checked)
+            sqlcommand.Parameters.AddWithValue("@BiayaJabatan", cbj.Checked)
+            sqlcommand.Parameters.AddWithValue("@Rapel", crapel.Checked)
+            sqlcommand.Parameters.AddWithValue("@Loan", cloan.Checked)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            MessageBox.Show("Data Succesfully Added!")
+            Return True
+        Catch ex As Exception
+            SQLConnection.Close()
+            Return False
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
     Public Function InsertPayroll() As Boolean
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
@@ -473,7 +514,7 @@
         proc.Show()
     End Sub
 
-    Private Sub GridControl6_Click(sender As Object, e As EventArgs) Handles GridControl6.Click
+    Private Sub GridControl6_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -498,7 +539,7 @@
                 ciupe1.Checked = CBool(tbl_par2.Rows(index).Item(14).ToString)
                 cbj1.Checked = CBool(tbl_par2.Rows(index).Item(15).ToString)
                 crapel1.Checked = CBool(tbl_par2.Rows(index).Item(16).ToString)
-                cloan1.Checked = CBool(tbl_par2.Rows(index).Item(17).ToString)
+                cloan1.Checked = CBool(tbl_par2.Rows(index).Item(17).ToString) '                
             End If
         Next
     End Sub
@@ -507,20 +548,28 @@
 
     End Sub
 
+    Dim additional As New Additional
+
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         If txtname2.Text = "" OrElse txtempcode2.Text = "" Then
             MsgBox("Please Input Employee Name Or Employee Code!")
         Else
-            'updatechange()
-            Dim mess As String
-            mess = CType(MsgBox("Is there any additional or deductions left?", MsgBoxStyle.YesNo, "Warning"), String)
-            If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
-                XtraTabPage1.Show()
-            Else
+            Dim mess2 As String
+            mess2 = CType(MsgBox("Are you sure to change this employee data?", MsgBoxStyle.YesNo, "Warning"), String)
+            If CType(mess2, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
                 updatechange()
-                End If
             End If
-            loadpayroll1()
+            Dim mess As String
+            mess = CType(MsgBox("Is there any additionals or deductions left?", MsgBoxStyle.YesNo, "Warning"), String)
+            If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
+                If additional Is Nothing OrElse additional.IsDisposed Then
+                    additional = New Additional
+                End If
+                additional.Show()
+            Else
+            End If
+        End If
+        loadpayroll1()
         loadpayroll()
     End Sub
 
@@ -548,8 +597,14 @@
         months()
     End Sub
 
+    Dim closer As New ClosePayroll
+
     Private Sub BarButtonItem6_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem6.ItemClick
-        XtraTabPage8.Show()
+        If closer Is Nothing OrElse closer.IsDisposed Then
+            closer = New ClosePayroll
+        End If
+        closer.Show()
+        'XtraTabPage8.Show()
     End Sub
 
     Dim proses As New PayrollSet
@@ -672,15 +727,69 @@
         End If
     End Sub
 
-    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs)
 
     End Sub
+
     Dim pay As New Payslip
+
     Private Sub BarButtonItem8_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem8.ItemClick
         If pay Is Nothing OrElse pay.IsDisposed Then
             pay = New Payslip
         End If
         pay.Show()
+    End Sub
+
+    Private Sub TextEdit27_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TextEdit26_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TextEdit20_EditValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtbasicrate_EditValueChanged(sender As Object, e As EventArgs) Handles txtbasicrate.EditValueChanged
+
+    End Sub
+
+    Private Sub txtbasicrate_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbasicrate.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtallowance_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtallowance.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub txtincentives_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtincentives.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtmealrate_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtmealrate.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txttransport_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txttransport.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
     End Sub
 
     Private Sub txteffective_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txteffective.SelectedIndexChanged
