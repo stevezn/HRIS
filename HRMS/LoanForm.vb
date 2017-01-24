@@ -569,6 +569,7 @@
             Else
             End If
         End If
+        GridControl4.RefreshDataSource()
         loadpayroll1()
         loadpayroll()
     End Sub

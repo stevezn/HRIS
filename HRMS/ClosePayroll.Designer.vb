@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ClosePayroll
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,11 @@ Partial Class ClosePayroll
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClosePayroll))
         Me.LayoutControl8 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtempcode = New DevExpress.XtraEditors.TextEdit()
         Me.radioloadall = New System.Windows.Forms.RadioButton()
         Me.radiochoose = New System.Windows.Forms.RadioButton()
         Me.txtname = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -45,9 +46,12 @@ Partial Class ClosePayroll
         Me.lcempname = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.btnProcess = New DevExpress.XtraEditors.SimpleButton()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.LayoutControl8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl8.SuspendLayout()
+        CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bonuscheck.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.thrcheck.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,10 +70,13 @@ Partial Class ClosePayroll
         CType(Me.lcempname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl8
         '
+        Me.LayoutControl8.Controls.Add(Me.txtempcode)
         Me.LayoutControl8.Controls.Add(Me.radioloadall)
         Me.LayoutControl8.Controls.Add(Me.radiochoose)
         Me.LayoutControl8.Controls.Add(Me.txtname)
@@ -83,13 +90,21 @@ Partial Class ClosePayroll
         Me.LayoutControl8.Location = New System.Drawing.Point(3, 1)
         Me.LayoutControl8.Name = "LayoutControl8"
         Me.LayoutControl8.Root = Me.LayoutControlGroup8
-        Me.LayoutControl8.Size = New System.Drawing.Size(267, 259)
+        Me.LayoutControl8.Size = New System.Drawing.Size(267, 288)
         Me.LayoutControl8.TabIndex = 2
         Me.LayoutControl8.Text = "LayoutControl8"
         '
+        'txtempcode
+        '
+        Me.txtempcode.Location = New System.Drawing.Point(91, 65)
+        Me.txtempcode.Name = "txtempcode"
+        Me.txtempcode.Size = New System.Drawing.Size(164, 20)
+        Me.txtempcode.StyleController = Me.LayoutControl8
+        Me.txtempcode.TabIndex = 17
+        '
         'radioloadall
         '
-        Me.radioloadall.Location = New System.Drawing.Point(12, 65)
+        Me.radioloadall.Location = New System.Drawing.Point(12, 89)
         Me.radioloadall.Name = "radioloadall"
         Me.radioloadall.Size = New System.Drawing.Size(243, 25)
         Me.radioloadall.TabIndex = 16
@@ -119,7 +134,7 @@ Partial Class ClosePayroll
         '
         'bonuscheck
         '
-        Me.bonuscheck.Location = New System.Drawing.Point(12, 158)
+        Me.bonuscheck.Location = New System.Drawing.Point(12, 182)
         Me.bonuscheck.Name = "bonuscheck"
         Me.bonuscheck.Properties.Caption = "Process Bonus"
         Me.bonuscheck.Size = New System.Drawing.Size(243, 19)
@@ -128,7 +143,7 @@ Partial Class ClosePayroll
         '
         'thrcheck
         '
-        Me.thrcheck.Location = New System.Drawing.Point(12, 135)
+        Me.thrcheck.Location = New System.Drawing.Point(12, 159)
         Me.thrcheck.Name = "thrcheck"
         Me.thrcheck.Properties.Caption = "Process THR"
         Me.thrcheck.Size = New System.Drawing.Size(243, 19)
@@ -137,7 +152,7 @@ Partial Class ClosePayroll
         '
         'payrollcheck
         '
-        Me.payrollcheck.Location = New System.Drawing.Point(12, 112)
+        Me.payrollcheck.Location = New System.Drawing.Point(12, 136)
         Me.payrollcheck.Name = "payrollcheck"
         Me.payrollcheck.Properties.Caption = "Process Payroll"
         Me.payrollcheck.Size = New System.Drawing.Size(243, 19)
@@ -146,7 +161,7 @@ Partial Class ClosePayroll
         '
         'ComboBoxEdit7
         '
-        Me.ComboBoxEdit7.Location = New System.Drawing.Point(91, 225)
+        Me.ComboBoxEdit7.Location = New System.Drawing.Point(91, 249)
         Me.ComboBoxEdit7.Name = "ComboBoxEdit7"
         Me.ComboBoxEdit7.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ComboBoxEdit7.Properties.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
@@ -157,7 +172,7 @@ Partial Class ClosePayroll
         'DateEdit1
         '
         Me.DateEdit1.EditValue = Nothing
-        Me.DateEdit1.Location = New System.Drawing.Point(91, 201)
+        Me.DateEdit1.Location = New System.Drawing.Point(91, 225)
         Me.DateEdit1.Name = "DateEdit1"
         Me.DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -170,7 +185,7 @@ Partial Class ClosePayroll
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(12, 181)
+        Me.LabelControl3.Location = New System.Drawing.Point(12, 205)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(41, 16)
         Me.LabelControl3.StyleController = Me.LayoutControl8
@@ -180,7 +195,7 @@ Partial Class ClosePayroll
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 94)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 118)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(40, 14)
         Me.LabelControl2.StyleController = Me.LayoutControl8
@@ -192,10 +207,10 @@ Partial Class ClosePayroll
         Me.LayoutControlGroup8.CustomizationFormText = "LayoutControlGroup8"
         Me.LayoutControlGroup8.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup8.GroupBordersVisible = False
-        Me.LayoutControlGroup8.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem18, Me.LayoutControlItem20, Me.lcpaydate, Me.LayoutControlItem56, Me.LayoutControlItem1, Me.LayoutControlItem10, Me.LayoutControlItem16, Me.lcempname, Me.LayoutControlItem2, Me.LayoutControlItem3})
+        Me.LayoutControlGroup8.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem18, Me.LayoutControlItem20, Me.lcpaydate, Me.LayoutControlItem56, Me.LayoutControlItem1, Me.LayoutControlItem10, Me.LayoutControlItem16, Me.lcempname, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4})
         Me.LayoutControlGroup8.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
-        Me.LayoutControlGroup8.Size = New System.Drawing.Size(267, 259)
+        Me.LayoutControlGroup8.Size = New System.Drawing.Size(267, 288)
         Me.LayoutControlGroup8.Text = "LayoutControlGroup8"
         Me.LayoutControlGroup8.TextVisible = False
         '
@@ -203,7 +218,7 @@ Partial Class ClosePayroll
         '
         Me.LayoutControlItem18.Control = Me.LabelControl2
         Me.LayoutControlItem18.CustomizationFormText = "LayoutControlItem18"
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(0, 82)
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(0, 106)
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
         Me.LayoutControlItem18.Size = New System.Drawing.Size(247, 18)
         Me.LayoutControlItem18.Text = "LayoutControlItem18"
@@ -215,7 +230,7 @@ Partial Class ClosePayroll
         '
         Me.LayoutControlItem20.Control = Me.LabelControl3
         Me.LayoutControlItem20.CustomizationFormText = "LayoutControlItem20"
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 169)
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 193)
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
         Me.LayoutControlItem20.Size = New System.Drawing.Size(247, 20)
         Me.LayoutControlItem20.Text = "LayoutControlItem20"
@@ -227,7 +242,7 @@ Partial Class ClosePayroll
         '
         Me.lcpaydate.Control = Me.DateEdit1
         Me.lcpaydate.CustomizationFormText = "Payment Date :"
-        Me.lcpaydate.Location = New System.Drawing.Point(0, 189)
+        Me.lcpaydate.Location = New System.Drawing.Point(0, 213)
         Me.lcpaydate.Name = "lcpaydate"
         Me.lcpaydate.Size = New System.Drawing.Size(247, 24)
         Me.lcpaydate.Text = "Payment Date :"
@@ -237,9 +252,9 @@ Partial Class ClosePayroll
         '
         Me.LayoutControlItem56.Control = Me.ComboBoxEdit7
         Me.LayoutControlItem56.CustomizationFormText = "Salary Period :"
-        Me.LayoutControlItem56.Location = New System.Drawing.Point(0, 213)
+        Me.LayoutControlItem56.Location = New System.Drawing.Point(0, 237)
         Me.LayoutControlItem56.Name = "LayoutControlItem56"
-        Me.LayoutControlItem56.Size = New System.Drawing.Size(247, 26)
+        Me.LayoutControlItem56.Size = New System.Drawing.Size(247, 31)
         Me.LayoutControlItem56.Text = "Salary Period :"
         Me.LayoutControlItem56.TextSize = New System.Drawing.Size(76, 13)
         '
@@ -247,7 +262,7 @@ Partial Class ClosePayroll
         '
         Me.LayoutControlItem1.Control = Me.payrollcheck
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 100)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 124)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
         Me.LayoutControlItem1.Size = New System.Drawing.Size(247, 23)
         Me.LayoutControlItem1.Text = "LayoutControlItem1"
@@ -259,7 +274,7 @@ Partial Class ClosePayroll
         '
         Me.LayoutControlItem10.Control = Me.thrcheck
         Me.LayoutControlItem10.CustomizationFormText = "LayoutControlItem10"
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 123)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 147)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.Size = New System.Drawing.Size(247, 23)
         Me.LayoutControlItem10.Text = "LayoutControlItem10"
@@ -271,7 +286,7 @@ Partial Class ClosePayroll
         '
         Me.LayoutControlItem16.Control = Me.bonuscheck
         Me.LayoutControlItem16.CustomizationFormText = "LayoutControlItem16"
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(0, 146)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(0, 170)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
         Me.LayoutControlItem16.Size = New System.Drawing.Size(247, 23)
         Me.LayoutControlItem16.Text = "LayoutControlItem16"
@@ -305,7 +320,7 @@ Partial Class ClosePayroll
         '
         Me.LayoutControlItem3.Control = Me.radioloadall
         Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 53)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 77)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Size = New System.Drawing.Size(247, 29)
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
@@ -313,20 +328,39 @@ Partial Class ClosePayroll
         Me.LayoutControlItem3.TextToControlDistance = 0
         Me.LayoutControlItem3.TextVisible = False
         '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.txtempcode
+        Me.LayoutControlItem4.CustomizationFormText = "Employee Code"
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 53)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(247, 24)
+        Me.LayoutControlItem4.Text = "Employee Code"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(76, 13)
+        '
         'btnProcess
         '
         Me.btnProcess.Image = CType(resources.GetObject("btnProcess.Image"), System.Drawing.Image)
-        Me.btnProcess.Location = New System.Drawing.Point(122, 252)
+        Me.btnProcess.Location = New System.Drawing.Point(122, 286)
         Me.btnProcess.Name = "btnProcess"
         Me.btnProcess.Size = New System.Drawing.Size(137, 33)
         Me.btnProcess.TabIndex = 3
         Me.btnProcess.Text = "Proccess Now"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(264, 12)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(375, 307)
+        Me.DataGridView1.TabIndex = 4
+        '
         'ClosePayroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(271, 285)
+        Me.ClientSize = New System.Drawing.Size(641, 321)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnProcess)
         Me.Controls.Add(Me.LayoutControl8)
         Me.Name = "ClosePayroll"
@@ -334,6 +368,7 @@ Partial Class ClosePayroll
         Me.Text = "ClosePayroll"
         CType(Me.LayoutControl8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl8.ResumeLayout(False)
+        CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bonuscheck.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.thrcheck.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -352,6 +387,8 @@ Partial Class ClosePayroll
         CType(Me.lcempname, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -379,4 +416,7 @@ Partial Class ClosePayroll
     Friend WithEvents radiochoose As RadioButton
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtempcode As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

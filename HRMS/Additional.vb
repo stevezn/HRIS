@@ -22,17 +22,28 @@ Public Class Additional
         SQLConnection.Close()
     End Sub
 
-
     Public Sub updatechange()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
+        Dim dtb, dtr As DateTime
+
+        txtdate1.Format = DateTimePickerFormat.Custom
+        txtdate1.CustomFormat = "yyyy-MM-dd"
+        dtb = txtdate1.Value
+
+        txtdate2.Format = DateTimePickerFormat.Custom
+        txtdate2.CustomFormat = "yyyy-MM-dd"
+        dtr = txtdate2.Value
+
+
+        txtdate2.CustomFormat = "yyyy-MM-dd"
         Dim sqlcommand As New MySqlCommand
         Try
             sqlcommand.CommandText = "UPDATE db_payrolldata SET" +
                     " EmployeeCode = @EmployeeCode" +
                     ", SalaryPeriod = @SalaryPeriod" +
-                    ", Until = @Until" +
+                    ", Sampai = @Sampai" +
                     ", Amount1 = @Amount1" +
                     ", Amount2 = @Amount2" +
                     ", As1 = @As1" +
@@ -40,8 +51,8 @@ Public Class Additional
                     " WHERE EmployeeCode = @EmployeeCode"
             sqlcommand.Connection = SQLConnection
             sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode.Text)
-            sqlcommand.Parameters.AddWithValue("@SalaryPeriod", txtdate1.Text)
-            sqlcommand.Parameters.AddWithValue("@Until", txtdate2.Text)
+            sqlcommand.Parameters.AddWithValue("@SalaryPeriod", dtb.ToString("yyyy-MM-dd"))
+            sqlcommand.Parameters.AddWithValue("@Sampai", dtr.ToString("yyyy-MM-dd"))
             sqlcommand.Parameters.AddWithValue("@Amount1", txtamount1.Text)
             sqlcommand.Parameters.AddWithValue("@Amount2", txtamount2.Text)
             sqlcommand.Parameters.AddWithValue("@As1", txtas1.Text)
@@ -72,5 +83,13 @@ Public Class Additional
             If txtempcode.SelectedItem Is tbl_par.Rows(index).Item(0).ToString Then
             End If
         Next
+    End Sub
+
+    Private Sub txtdate1_EditValueChanged(sender As Object, e As EventArgs)
+        'txtdate1.Text = Format("yyyy-dd-MM").ToString
+    End Sub
+
+    Private Sub txtdate2_EditValueChanged(sender As Object, e As EventArgs)
+        'txtdate1.Text = Format("yyyy-dd-MM").ToString
     End Sub
 End Class

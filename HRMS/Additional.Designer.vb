@@ -24,52 +24,50 @@ Partial Class Additional
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Additional))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.txtdate2 = New DevExpress.XtraScheduler.UI.MonthEdit()
-        Me.txtdate1 = New DevExpress.XtraScheduler.UI.MonthEdit()
+        Me.txtempcode = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtas2 = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtamount2 = New DevExpress.XtraEditors.TextEdit()
         Me.txtas1 = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtamount1 = New DevExpress.XtraEditors.TextEdit()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.btnapprove = New DevExpress.XtraEditors.SimpleButton()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtamount2 = New DevExpress.XtraEditors.TextEdit()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtas2 = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtempcode = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtdate1 = New System.Windows.Forms.DateTimePicker()
+        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtdate2 = New System.Windows.Forms.DateTimePicker()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.txtdate2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtdate1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtas2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtamount2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtas1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtamount1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtamount2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtas2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.txtdate2)
+        Me.LayoutControl1.Controls.Add(Me.txtdate1)
         Me.LayoutControl1.Controls.Add(Me.txtempcode)
         Me.LayoutControl1.Controls.Add(Me.txtas2)
         Me.LayoutControl1.Controls.Add(Me.txtamount2)
-        Me.LayoutControl1.Controls.Add(Me.txtdate2)
-        Me.LayoutControl1.Controls.Add(Me.txtdate1)
         Me.LayoutControl1.Controls.Add(Me.txtas1)
         Me.LayoutControl1.Controls.Add(Me.txtamount1)
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 31)
@@ -79,23 +77,32 @@ Partial Class Additional
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'txtdate2
+        'txtempcode
         '
-        Me.txtdate2.Location = New System.Drawing.Point(89, 60)
-        Me.txtdate2.Name = "txtdate2"
-        Me.txtdate2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtdate2.Size = New System.Drawing.Size(205, 20)
-        Me.txtdate2.StyleController = Me.LayoutControl1
-        Me.txtdate2.TabIndex = 12
+        Me.txtempcode.Location = New System.Drawing.Point(89, 12)
+        Me.txtempcode.Name = "txtempcode"
+        Me.txtempcode.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtempcode.Size = New System.Drawing.Size(205, 20)
+        Me.txtempcode.StyleController = Me.LayoutControl1
+        Me.txtempcode.TabIndex = 13
         '
-        'txtdate1
+        'txtas2
         '
-        Me.txtdate1.Location = New System.Drawing.Point(89, 36)
-        Me.txtdate1.Name = "txtdate1"
-        Me.txtdate1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtdate1.Size = New System.Drawing.Size(205, 20)
-        Me.txtdate1.StyleController = Me.LayoutControl1
-        Me.txtdate1.TabIndex = 11
+        Me.txtas2.Location = New System.Drawing.Point(89, 156)
+        Me.txtas2.Name = "txtas2"
+        Me.txtas2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtas2.Properties.Items.AddRange(New Object() {"Deductions", "Income"})
+        Me.txtas2.Size = New System.Drawing.Size(205, 20)
+        Me.txtas2.StyleController = Me.LayoutControl1
+        Me.txtas2.TabIndex = 11
+        '
+        'txtamount2
+        '
+        Me.txtamount2.Location = New System.Drawing.Point(89, 132)
+        Me.txtamount2.Name = "txtamount2"
+        Me.txtamount2.Size = New System.Drawing.Size(205, 20)
+        Me.txtamount2.StyleController = Me.LayoutControl1
+        Me.txtamount2.TabIndex = 10
         '
         'txtas1
         '
@@ -120,7 +127,7 @@ Partial Class Additional
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem8, Me.LayoutControlItem1})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(306, 192)
@@ -147,25 +154,35 @@ Partial Class Additional
         Me.LayoutControlItem7.Text = "As :"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(74, 13)
         '
-        'LayoutControlItem1
+        'LayoutControlItem3
         '
-        Me.LayoutControlItem1.Control = Me.txtdate1
-        Me.LayoutControlItem1.CustomizationFormText = "Salary Period"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(286, 24)
-        Me.LayoutControlItem1.Text = "Salary Period"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(74, 13)
+        Me.LayoutControlItem3.Control = Me.txtamount2
+        Me.LayoutControlItem3.CustomizationFormText = "Amount"
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 120)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(286, 24)
+        Me.LayoutControlItem3.Text = "Amount"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(74, 13)
         '
-        'LayoutControlItem2
+        'LayoutControlItem4
         '
-        Me.LayoutControlItem2.Control = Me.txtdate2
-        Me.LayoutControlItem2.CustomizationFormText = "Until"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 48)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(286, 24)
-        Me.LayoutControlItem2.Text = "Until"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(74, 13)
+        Me.LayoutControlItem4.Control = Me.txtas2
+        Me.LayoutControlItem4.CustomizationFormText = "As"
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 144)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(286, 28)
+        Me.LayoutControlItem4.Text = "As"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(74, 13)
+        '
+        'LayoutControlItem5
+        '
+        Me.LayoutControlItem5.Control = Me.txtempcode
+        Me.LayoutControlItem5.CustomizationFormText = "Employee Code"
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem5.Name = "LayoutControlItem5"
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(286, 24)
+        Me.LayoutControlItem5.Text = "Employee Code"
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(74, 13)
         '
         'btnapprove
         '
@@ -196,62 +213,39 @@ Partial Class Additional
         Me.LabelControl1.TabIndex = 3
         Me.LabelControl1.Text = "Date"
         '
-        'txtamount2
+        'txtdate1
         '
-        Me.txtamount2.Location = New System.Drawing.Point(89, 132)
-        Me.txtamount2.Name = "txtamount2"
-        Me.txtamount2.Size = New System.Drawing.Size(205, 20)
-        Me.txtamount2.StyleController = Me.LayoutControl1
-        Me.txtamount2.TabIndex = 10
+        Me.txtdate1.Location = New System.Drawing.Point(89, 36)
+        Me.txtdate1.Name = "txtdate1"
+        Me.txtdate1.Size = New System.Drawing.Size(205, 20)
+        Me.txtdate1.TabIndex = 16
         '
-        'LayoutControlItem3
+        'LayoutControlItem8
         '
-        Me.LayoutControlItem3.Control = Me.txtamount2
-        Me.LayoutControlItem3.CustomizationFormText = "Amount"
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 120)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(286, 24)
-        Me.LayoutControlItem3.Text = "Amount"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(74, 13)
+        Me.LayoutControlItem8.Control = Me.txtdate1
+        Me.LayoutControlItem8.CustomizationFormText = "Salary Period"
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem8.Name = "LayoutControlItem8"
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(286, 24)
+        Me.LayoutControlItem8.Text = "Salary Period"
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(74, 13)
         '
-        'txtas2
+        'txtdate2
         '
-        Me.txtas2.Location = New System.Drawing.Point(89, 156)
-        Me.txtas2.Name = "txtas2"
-        Me.txtas2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtas2.Properties.Items.AddRange(New Object() {"Deductions", "Income"})
-        Me.txtas2.Size = New System.Drawing.Size(205, 20)
-        Me.txtas2.StyleController = Me.LayoutControl1
-        Me.txtas2.TabIndex = 11
+        Me.txtdate2.Location = New System.Drawing.Point(89, 60)
+        Me.txtdate2.Name = "txtdate2"
+        Me.txtdate2.Size = New System.Drawing.Size(205, 20)
+        Me.txtdate2.TabIndex = 17
         '
-        'LayoutControlItem4
+        'LayoutControlItem1
         '
-        Me.LayoutControlItem4.Control = Me.txtas2
-        Me.LayoutControlItem4.CustomizationFormText = "As"
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 144)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(286, 28)
-        Me.LayoutControlItem4.Text = "As"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(74, 13)
-        '
-        'txtempcode
-        '
-        Me.txtempcode.Location = New System.Drawing.Point(89, 12)
-        Me.txtempcode.Name = "txtempcode"
-        Me.txtempcode.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtempcode.Size = New System.Drawing.Size(205, 20)
-        Me.txtempcode.StyleController = Me.LayoutControl1
-        Me.txtempcode.TabIndex = 13
-        '
-        'LayoutControlItem5
-        '
-        Me.LayoutControlItem5.Control = Me.txtempcode
-        Me.LayoutControlItem5.CustomizationFormText = "Employee Code"
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(286, 24)
-        Me.LayoutControlItem5.Text = "Employee Code"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(74, 13)
+        Me.LayoutControlItem1.Control = Me.txtdate2
+        Me.LayoutControlItem1.CustomizationFormText = "Until"
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(286, 24)
+        Me.LayoutControlItem1.Text = "Until"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(74, 13)
         '
         'Additional
         '
@@ -267,23 +261,21 @@ Partial Class Additional
         Me.Text = "Other Income / Deductions"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.txtdate2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtdate1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtas2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtamount2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtas1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtamount1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtamount2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtas2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -296,10 +288,6 @@ Partial Class Additional
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents btnapprove As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents txtdate1 As DevExpress.XtraScheduler.UI.MonthEdit
-    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents txtdate2 As DevExpress.XtraScheduler.UI.MonthEdit
-    Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtas2 As DevExpress.XtraEditors.ComboBoxEdit
@@ -308,4 +296,8 @@ Partial Class Additional
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtempcode As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtdate2 As DateTimePicker
+    Friend WithEvents txtdate1 As DateTimePicker
+    Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
 End Class
