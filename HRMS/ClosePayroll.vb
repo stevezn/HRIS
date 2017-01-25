@@ -22,13 +22,13 @@ Public Class ClosePayroll
         SQLConnection.Close()
     End Sub
 
-    Sub loadbpjs()
+    Sub loadcounts()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         sqlcommand.CommandType = CommandType.StoredProcedure
-        sqlcommand.CommandText = "bpjs"
+        sqlcommand.CommandText = "test"
         Dim p1 As New MySqlParameter
         p1.ParameterName = "@empcode"
         p1.Value = txtempcode.Text
@@ -36,27 +36,11 @@ Public Class ClosePayroll
         sqlcommand.Connection = SQLConnection
         Dim dt As New DataTable
         dt.Load(sqlcommand.ExecuteReader())
+        list.GridControl1.DataSource = dt
         SQLConnection.Close()
-        DataGridView1.DataSource = dt
     End Sub
 
-    Sub loadgross()
-        SQLConnection = New MySqlConnection
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Dim sqlcommand As New MySqlCommand
-        sqlcommand.CommandType = CommandType.StoredProcedure
-        sqlcommand.CommandText = "gross"
-        Dim p1 As New MySqlParameter
-        p1.ParameterName = "@empcode"
-        p1.Value = txtempcode.Text
-        sqlcommand.Parameters.Add(p1)
-        sqlcommand.Connection = SQLConnection
-        Dim dt As New DataTable
-        dt.Load(sqlcommand.ExecuteReader())
-        SQLConnection.Close()
-        DataGridView1.DataSource = dt
-    End Sub
+    Dim list As New Lists
 
     Private Sub ClosePayroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loaddata()
@@ -109,34 +93,21 @@ Public Class ClosePayroll
 
 
     Private Sub btnProcess_Click(sender As Object, e As EventArgs) Handles btnProcess.Click
-        loadbpjs()
-        loadgross()
-        'Dim connectionstring As String
-        'Dim connection As New MySqlConnection
-        'Dim adapter As MySqlDataAdapter
-        'Dim command As New MySqlCommand
-        'Dim ds As New DataSet
-        'Dim i As Integer
-        'connectionstring = "Server=localhost; User Id=root; Password=; Database=db_hris"
-        'connection = New MySqlConnection(connectionstring)
-        'connection.Open()
-        'command.Connection = connection
-        'command.CommandType = CommandType.StoredProcedure
-        'command.CommandText = "bpjs where empcode = " + txtempcode.Text
-        'adapter = New MySqlDataAdapter(command)
-        'adapter.Fill(ds)
-        'For i = 0 To ds.Tables(0).Rows.Count - 1
-        '    MsgBox(ds.Tables(0).Rows(i).Item(0))
-        'Next
-        'connection.Close()
-        'If radiochoose.Checked = True Then
-        '    loademployee()
-        'ElseIf radioloadall.Checked = True Then
-        '    loadall()
-        'End If
+        If list Is Nothing OrElse list.IsDisposed Then
+            list = New Lists
+        End If
+        loadcounts()
+        list.Show()
     End Sub
 
     Private Sub txtempcode_EditValueChanged(sender As Object, e As EventArgs) Handles txtempcode.EditValueChanged
 
+    End Sub
+
+    Private Sub radioloadall_CheckedChanged(sender As Object, e As EventArgs) Handles radioloadall.CheckedChanged
+        If radioloadall.Checked = True Then
+            txtname.Text = ""
+            txtempcode.Text = ""
+        End If
     End Sub
 End Class

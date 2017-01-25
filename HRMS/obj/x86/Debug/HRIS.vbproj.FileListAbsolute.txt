@@ -529,3 +529,4 @@ E:\New folder\New folder\HRMS\bin\Debug\DevExpress.XtraPdfViewer.v13.1.dll
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.ClosePayroll.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Holiday.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.pdfviewer.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Lists.resources

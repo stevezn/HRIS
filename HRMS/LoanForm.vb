@@ -16,7 +16,6 @@
         adapter.Fill(tbl_par)
         For index As Integer = 0 To tbl_par.Rows.Count - 1
             txtname1.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
-            txtname.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
         Next
         SQLConnection.Close()
     End Sub
@@ -46,7 +45,7 @@
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
-        sqlcommand.CommandText = "SELECT FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan From db_payrolldata"
+        sqlcommand.CommandText = "SELECT FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan, SalaryType From db_payrolldata"
         sqlcommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
@@ -54,6 +53,7 @@
         For index As Integer = 0 To tbl_par2.Rows.Count - 1
             txtname2.Properties.Items.Add(tbl_par2.Rows(index).Item(0).ToString())
             txtname3.Properties.Items.Add(tbl_par2.Rows(index).Item(0).ToString())
+            txtname.Properties.Items.Add(tbl_par2.Rows(index).Item(0).ToString())
         Next
         SQLConnection.Close()
     End Sub
@@ -83,6 +83,7 @@
                     ", BiayaJabatan = @BiayaJabatan" +
                     ", Rapel = @Rapel" +
                     ", Loan = @Loan" +
+                    ", SalaryType = @SalaryType" +
                     " WHERE EmployeeCode = @EmployeeCode"
             sqlcommand.Connection = SQLConnection
             sqlcommand.Parameters.AddWithValue("@FullName", txtname2.Text)
@@ -103,6 +104,7 @@
             sqlcommand.Parameters.AddWithValue("@BiayaJabatan", cbj1.Checked)
             sqlcommand.Parameters.AddWithValue("@Rapel", crapel1.Checked)
             sqlcommand.Parameters.AddWithValue("@Loan", cloan1.Checked)
+            sqlcommand.Parameters.AddWithValue("@SalaryType", txtsaltype.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             MessageBox.Show("Data Successfully Changed!")
@@ -148,6 +150,45 @@
             MsgBox(ex.Message)
         End Try
     End Function
+
+    Public Sub UpdateLoan()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "UPDATE db_payrolldata SET" +
+                                    " Loan = @Loan"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("@Loan", "1")
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub UpdateRapel()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "Update db_payrolldata SET" +
+                                    " Rapel = @Rapel"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("@Rapel", "1")
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 
     Public Function insertrapel2() As Boolean
         SQLConnection = New MySqlConnection
@@ -226,8 +267,8 @@
         Dim str_carSql As String
         Try
             str_carSql = "INSERT INTO db_payrolldata " +
-                            "(FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan) " +
-                            "values (@FullName, @EmployeeCode, @StatusWajibPajak, @MemilikiNpwp, @BasicRate, @Allowance, @Incentives, @MealRate, @Transport, @JaminanKesehatan, @Bpjs, @JaminanKecelakaanKerja, @JaminanKematian, @JaminanHariTua, @IuranPensiun, @BiayaJabatan, @Rapel, @Loan)"
+                            "(FullName, EmployeeCode, StatusWajibPajak, MemilikiNpwp, BasicRate, Allowance, Incentives, MealRate, Transport, JaminanKesehatan, Bpjs, JaminanKecelakaanKerja, JaminanKematian, JaminanHariTua, IuranPensiun, BiayaJabatan, Rapel, Loan, SalaryType) " +
+                            "values (@FullName, @EmployeeCode, @StatusWajibPajak, @MemilikiNpwp, @BasicRate, @Allowance, @Incentives, @MealRate, @Transport, @JaminanKesehatan, @Bpjs, @JaminanKecelakaanKerja, @JaminanKematian, @JaminanHariTua, @IuranPensiun, @BiayaJabatan, @Rapel, @Loan, @SalaryType)"
             sqlCommand.Connection = SQLConnection
             sqlCommand.CommandText = str_carSql
             sqlCommand.Parameters.AddWithValue("@FullName", txtname1.Text)
@@ -248,6 +289,7 @@
             sqlCommand.Parameters.AddWithValue("@BiayaJabatan", cbj.Checked)
             sqlCommand.Parameters.AddWithValue("@Rapel", crapel.Checked)
             sqlCommand.Parameters.AddWithValue("@Loan", cloan.Checked)
+            sqlCommand.Parameters.AddWithValue("@SalaryType", txttype.Text)
             sqlCommand.Connection = SQLConnection
             sqlCommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
@@ -407,9 +449,9 @@
     End Sub
 
     Private Sub txtname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname.SelectedIndexChanged
-        For index As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtname.SelectedItem Is tbl_par.Rows(index).Item(1).ToString Then
-                txtempcode.Text = tbl_par.Rows(index).Item(0).ToString
+        For index As Integer = 0 To tbl_par2.Rows.Count - 1
+            If txtname.SelectedItem Is tbl_par2.Rows(index).Item(0).ToString Then
+                txtempcode.Text = tbl_par2.Rows(index).Item(1).ToString
             End If
         Next
     End Sub
@@ -483,8 +525,8 @@
 
     Private Sub txtname1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname1.SelectedIndexChanged
         For index As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtname1.SelectedItem Is tbl_par.Rows(index).Item(1).ToString Then
-                txtempcode1.Text = tbl_par.Rows(index).Item(0).ToString
+            If txtname1.SelectedItem Is tbl_par.Rows(index).Item(0).ToString Then
+                txtempcode1.Text = tbl_par.Rows(index).Item(1).ToString
             End If
         Next
     End Sub
@@ -539,7 +581,8 @@
                 ciupe1.Checked = CBool(tbl_par2.Rows(index).Item(14).ToString)
                 cbj1.Checked = CBool(tbl_par2.Rows(index).Item(15).ToString)
                 crapel1.Checked = CBool(tbl_par2.Rows(index).Item(16).ToString)
-                cloan1.Checked = CBool(tbl_par2.Rows(index).Item(17).ToString) '                
+                cloan1.Checked = CBool(tbl_par2.Rows(index).Item(17).ToString)
+                txtsaltype.Text = tbl_par2.Rows(index).Item(18).ToString()
             End If
         Next
     End Sub
@@ -589,6 +632,7 @@
             MsgBox("Please Insert Employee Name Or Employee Code!")
         Else
             InsertLoan()
+            UpdateLoan()
         End If
         loadloan()
     End Sub
@@ -642,6 +686,7 @@
             MsgBox("Please Insert Employee Code Or Employee Name")
         Else
             insertrapel2()
+            UpdateRapel()
             reset()
         End If
         loadrapel()

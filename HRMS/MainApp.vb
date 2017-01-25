@@ -312,99 +312,14 @@ Public Class MainApp
         GridView1.Focus()
         GridView1.MoveLast()
     End Sub
+    Dim pay As New Payments
 
     Private Sub BarButtonItem3_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem3.ItemClick
-        clearForm()
-        resetclear()
-        reset()
-        lcproc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcbtnnew.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcchange.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        barJudul.Caption = "Module Payroll"
-        'GridControl1.DataSource = DBNull.Value
-        GridControl1.RefreshDataSource()
-        GridView1.Columns.Clear()
-        btnLihat.Enabled = False
-        btnImport.Enabled = False
-        'lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcpayment.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lciuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtiuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcpphtahun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcpphutang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcrc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcrapel.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcfm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lctm.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lchasilrapel.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        ''lccode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        ''lccode.Text = "Employee Code"        
-        loadDataKaryawan()
-        'lcKaryawan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc2.Text = "Employee Code"
-        'lcoad.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcded.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcotc.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcoda.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lctotalovertime.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcGaji.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        ''lcTipePenggajian.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcStatWp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcTunjangan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcBiayaJab.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcIuranPen.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcgross.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcbpjs.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcdeductions.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcnetincome.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcpkp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        ''lcpajak.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcjkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'countButton.Enabled = True
-        ''lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'overtimehours.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'overtimetype.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'bpjspercentage.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lctaxes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lcloan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lclates.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'jkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'pjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'jht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'npwp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'Transport.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadddesc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadddesc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadddesc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadddesc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadddesc5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadd1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadd2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadd3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadd4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtadd5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtdeddesc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtdeddesc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtdeddesc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtdeddesc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtdeddesc5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtded1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtded2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtded3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtded4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'txtded5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        btnLihat.Enabled = False
-        btnImport.Enabled = False
-        loadDataReq()
+        If pay Is Nothing OrElse pay.IsDisposed Then
+            pay = New Payments
+        End If
+        pay.Show()
+        pay.XtraTabPage5.Show()
     End Sub
 
     Private Sub BarButtonItem4_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick

@@ -48,7 +48,6 @@ Partial Class ClosePayroll
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.btnProcess = New DevExpress.XtraEditors.SimpleButton()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.LayoutControl8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl8.SuspendLayout()
         CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,7 +70,6 @@ Partial Class ClosePayroll
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl8
@@ -87,10 +85,10 @@ Partial Class ClosePayroll
         Me.LayoutControl8.Controls.Add(Me.DateEdit1)
         Me.LayoutControl8.Controls.Add(Me.LabelControl3)
         Me.LayoutControl8.Controls.Add(Me.LabelControl2)
-        Me.LayoutControl8.Location = New System.Drawing.Point(3, 1)
+        Me.LayoutControl8.Location = New System.Drawing.Point(2, -6)
         Me.LayoutControl8.Name = "LayoutControl8"
         Me.LayoutControl8.Root = Me.LayoutControlGroup8
-        Me.LayoutControl8.Size = New System.Drawing.Size(267, 288)
+        Me.LayoutControl8.Size = New System.Drawing.Size(267, 286)
         Me.LayoutControl8.TabIndex = 2
         Me.LayoutControl8.Text = "LayoutControl8"
         '
@@ -210,7 +208,7 @@ Partial Class ClosePayroll
         Me.LayoutControlGroup8.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem18, Me.LayoutControlItem20, Me.lcpaydate, Me.LayoutControlItem56, Me.LayoutControlItem1, Me.LayoutControlItem10, Me.LayoutControlItem16, Me.lcempname, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4})
         Me.LayoutControlGroup8.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
-        Me.LayoutControlGroup8.Size = New System.Drawing.Size(267, 288)
+        Me.LayoutControlGroup8.Size = New System.Drawing.Size(267, 286)
         Me.LayoutControlGroup8.Text = "LayoutControlGroup8"
         Me.LayoutControlGroup8.TextVisible = False
         '
@@ -254,7 +252,7 @@ Partial Class ClosePayroll
         Me.LayoutControlItem56.CustomizationFormText = "Salary Period :"
         Me.LayoutControlItem56.Location = New System.Drawing.Point(0, 237)
         Me.LayoutControlItem56.Name = "LayoutControlItem56"
-        Me.LayoutControlItem56.Size = New System.Drawing.Size(247, 31)
+        Me.LayoutControlItem56.Size = New System.Drawing.Size(247, 29)
         Me.LayoutControlItem56.Text = "Salary Period :"
         Me.LayoutControlItem56.TextSize = New System.Drawing.Size(76, 13)
         '
@@ -341,26 +339,17 @@ Partial Class ClosePayroll
         'btnProcess
         '
         Me.btnProcess.Image = CType(resources.GetObject("btnProcess.Image"), System.Drawing.Image)
-        Me.btnProcess.Location = New System.Drawing.Point(122, 286)
+        Me.btnProcess.Location = New System.Drawing.Point(120, 269)
         Me.btnProcess.Name = "btnProcess"
         Me.btnProcess.Size = New System.Drawing.Size(137, 33)
         Me.btnProcess.TabIndex = 3
         Me.btnProcess.Text = "Proccess Now"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(264, 12)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(375, 307)
-        Me.DataGridView1.TabIndex = 4
-        '
         'ClosePayroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(641, 321)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(261, 304)
         Me.Controls.Add(Me.btnProcess)
         Me.Controls.Add(Me.LayoutControl8)
         Me.Name = "ClosePayroll"
@@ -388,7 +377,6 @@ Partial Class ClosePayroll
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -418,5 +406,4 @@ Partial Class ClosePayroll
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtempcode As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents DataGridView1 As DataGridView
 End Class
