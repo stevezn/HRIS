@@ -27,16 +27,12 @@ Public Class Additional
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim dtb, dtr As DateTime
-
         txtdate1.Format = DateTimePickerFormat.Custom
         txtdate1.CustomFormat = "yyyy-MM-dd"
         dtb = txtdate1.Value
-
         txtdate2.Format = DateTimePickerFormat.Custom
         txtdate2.CustomFormat = "yyyy-MM-dd"
         dtr = txtdate2.Value
-
-
         txtdate2.CustomFormat = "yyyy-MM-dd"
         Dim sqlcommand As New MySqlCommand
         Try

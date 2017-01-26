@@ -24,6 +24,8 @@ Partial Class Additional
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Additional))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtdate2 = New System.Windows.Forms.DateTimePicker()
+        Me.txtdate1 = New System.Windows.Forms.DateTimePicker()
         Me.txtempcode = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtas2 = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtamount2 = New DevExpress.XtraEditors.TextEdit()
@@ -35,13 +37,11 @@ Partial Class Additional
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.btnapprove = New DevExpress.XtraEditors.SimpleButton()
+        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtdate1 = New System.Windows.Forms.DateTimePicker()
-        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtdate2 = New System.Windows.Forms.DateTimePicker()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.btnapprove = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,10 +55,10 @@ Partial Class Additional
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -76,6 +76,20 @@ Partial Class Additional
         Me.LayoutControl1.Size = New System.Drawing.Size(306, 192)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtdate2
+        '
+        Me.txtdate2.Location = New System.Drawing.Point(89, 60)
+        Me.txtdate2.Name = "txtdate2"
+        Me.txtdate2.Size = New System.Drawing.Size(205, 20)
+        Me.txtdate2.TabIndex = 17
+        '
+        'txtdate1
+        '
+        Me.txtdate1.Location = New System.Drawing.Point(89, 36)
+        Me.txtdate1.Name = "txtdate1"
+        Me.txtdate1.Size = New System.Drawing.Size(205, 20)
+        Me.txtdate1.TabIndex = 16
         '
         'txtempcode
         '
@@ -184,14 +198,25 @@ Partial Class Additional
         Me.LayoutControlItem5.Text = "Employee Code"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(74, 13)
         '
-        'btnapprove
+        'LayoutControlItem8
         '
-        Me.btnapprove.Image = CType(resources.GetObject("btnapprove.Image"), System.Drawing.Image)
-        Me.btnapprove.Location = New System.Drawing.Point(179, 213)
-        Me.btnapprove.Name = "btnapprove"
-        Me.btnapprove.Size = New System.Drawing.Size(115, 39)
-        Me.btnapprove.TabIndex = 1
-        Me.btnapprove.Text = "Approve"
+        Me.LayoutControlItem8.Control = Me.txtdate1
+        Me.LayoutControlItem8.CustomizationFormText = "Salary Period"
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem8.Name = "LayoutControlItem8"
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(286, 24)
+        Me.LayoutControlItem8.Text = "Salary Period"
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(74, 13)
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.txtdate2
+        Me.LayoutControlItem1.CustomizationFormText = "Until"
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(286, 24)
+        Me.LayoutControlItem1.Text = "Until"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(74, 13)
         '
         'DateEdit1
         '
@@ -213,39 +238,14 @@ Partial Class Additional
         Me.LabelControl1.TabIndex = 3
         Me.LabelControl1.Text = "Date"
         '
-        'txtdate1
+        'btnapprove
         '
-        Me.txtdate1.Location = New System.Drawing.Point(89, 36)
-        Me.txtdate1.Name = "txtdate1"
-        Me.txtdate1.Size = New System.Drawing.Size(205, 20)
-        Me.txtdate1.TabIndex = 16
-        '
-        'LayoutControlItem8
-        '
-        Me.LayoutControlItem8.Control = Me.txtdate1
-        Me.LayoutControlItem8.CustomizationFormText = "Salary Period"
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(286, 24)
-        Me.LayoutControlItem8.Text = "Salary Period"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(74, 13)
-        '
-        'txtdate2
-        '
-        Me.txtdate2.Location = New System.Drawing.Point(89, 60)
-        Me.txtdate2.Name = "txtdate2"
-        Me.txtdate2.Size = New System.Drawing.Size(205, 20)
-        Me.txtdate2.TabIndex = 17
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.txtdate2
-        Me.LayoutControlItem1.CustomizationFormText = "Until"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 48)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(286, 24)
-        Me.LayoutControlItem1.Text = "Until"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(74, 13)
+        Me.btnapprove.Image = CType(resources.GetObject("btnapprove.Image"), System.Drawing.Image)
+        Me.btnapprove.Location = New System.Drawing.Point(179, 213)
+        Me.btnapprove.Name = "btnapprove"
+        Me.btnapprove.Size = New System.Drawing.Size(115, 39)
+        Me.btnapprove.TabIndex = 1
+        Me.btnapprove.Text = "Approve"
         '
         'Additional
         '
@@ -256,6 +256,7 @@ Partial Class Additional
         Me.Controls.Add(Me.DateEdit1)
         Me.Controls.Add(Me.btnapprove)
         Me.Controls.Add(Me.LayoutControl1)
+        Me.MaximizeBox = False
         Me.Name = "Additional"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Other Income / Deductions"
@@ -272,10 +273,10 @@ Partial Class Additional
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

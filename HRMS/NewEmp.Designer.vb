@@ -33,6 +33,11 @@ Partial Class NewEmp
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtemail = New DevExpress.XtraEditors.TextEdit()
+        Me.txtposition = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtrains = New DevExpress.XtraEditors.DateEdit()
+        Me.txtoffloc = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtcompcode = New DevExpress.XtraEditors.TextEdit()
         Me.txtfullname = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtworkdate = New DevExpress.XtraEditors.DateEdit()
         Me.btnPhoto = New DevExpress.XtraEditors.SimpleButton()
@@ -64,22 +69,23 @@ Partial Class NewEmp
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lworkdate = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcfullname = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.pictureEdit = New System.Windows.Forms.PictureBox()
-        Me.txtcompcode = New DevExpress.XtraEditors.TextEdit()
         Me.lccompcode = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtoffloc = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.lcoffice = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtrains = New DevExpress.XtraEditors.DateEdit()
         Me.lctrains = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtposition = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.lcposition = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.txtemail = New DevExpress.XtraEditors.TextEdit()
         Me.lcemail = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.pictureEdit = New System.Windows.Forms.PictureBox()
         CType(Me.lcaddress, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtaddress.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtrains.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtrains.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtoffloc.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtfullname.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtworkdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtworkdate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,18 +116,12 @@ Partial Class NewEmp
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lworkdate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcfullname, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtoffloc.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcoffice, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtrains.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtrains.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lctrains, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcposition, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcemail, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lcaddress
@@ -225,6 +225,63 @@ Partial Class NewEmp
         Me.LayoutControl1.Size = New System.Drawing.Size(292, 531)
         Me.LayoutControl1.TabIndex = 29
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtemail
+        '
+        Me.txtemail.Location = New System.Drawing.Point(102, 302)
+        Me.txtemail.MenuManager = Me.RibbonControl1
+        Me.txtemail.Name = "txtemail"
+        Me.txtemail.Size = New System.Drawing.Size(178, 20)
+        Me.txtemail.StyleController = Me.LayoutControl1
+        Me.txtemail.TabIndex = 38
+        '
+        'txtposition
+        '
+        Me.txtposition.Location = New System.Drawing.Point(102, 108)
+        Me.txtposition.MenuManager = Me.RibbonControl1
+        Me.txtposition.Name = "txtposition"
+        Me.txtposition.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtposition.Properties.Items.AddRange(New Object() {"Marketing", "Staff", "Secuity", "Manager", "HRD", "Supervisor"})
+        Me.txtposition.Size = New System.Drawing.Size(178, 20)
+        Me.txtposition.StyleController = Me.LayoutControl1
+        Me.txtposition.TabIndex = 37
+        '
+        'txtrains
+        '
+        Me.txtrains.EditValue = Nothing
+        Me.txtrains.Location = New System.Drawing.Point(102, 422)
+        Me.txtrains.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtrains.MenuManager = Me.RibbonControl1
+        Me.txtrains.Name = "txtrains"
+        Me.txtrains.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtrains.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtrains.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
+        Me.txtrains.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
+        Me.txtrains.Properties.Mask.EditMask = ""
+        Me.txtrains.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
+        Me.txtrains.Size = New System.Drawing.Size(178, 20)
+        Me.txtrains.StyleController = Me.LayoutControl1
+        Me.txtrains.TabIndex = 32
+        '
+        'txtoffloc
+        '
+        Me.txtoffloc.Location = New System.Drawing.Point(102, 132)
+        Me.txtoffloc.MenuManager = Me.RibbonControl1
+        Me.txtoffloc.Name = "txtoffloc"
+        Me.txtoffloc.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtoffloc.Properties.Items.AddRange(New Object() {"Head Office", "Factory"})
+        Me.txtoffloc.Size = New System.Drawing.Size(178, 20)
+        Me.txtoffloc.StyleController = Me.LayoutControl1
+        Me.txtoffloc.TabIndex = 36
+        '
+        'txtcompcode
+        '
+        Me.txtcompcode.Location = New System.Drawing.Point(102, 84)
+        Me.txtcompcode.MenuManager = Me.RibbonControl1
+        Me.txtcompcode.Name = "txtcompcode"
+        Me.txtcompcode.Size = New System.Drawing.Size(178, 20)
+        Me.txtcompcode.StyleController = Me.LayoutControl1
+        Me.txtcompcode.TabIndex = 35
         '
         'txtfullname
         '
@@ -560,25 +617,6 @@ Partial Class NewEmp
         Me.lcfullname.Text = "Full Name"
         Me.lcfullname.TextSize = New System.Drawing.Size(87, 13)
         '
-        'pictureEdit
-        '
-        Me.pictureEdit.Image = Global.HRMS.My.Resources.Resources.user_icon_6
-        Me.pictureEdit.Location = New System.Drawing.Point(310, 163)
-        Me.pictureEdit.Name = "pictureEdit"
-        Me.pictureEdit.Size = New System.Drawing.Size(148, 150)
-        Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pictureEdit.TabIndex = 30
-        Me.pictureEdit.TabStop = False
-        '
-        'txtcompcode
-        '
-        Me.txtcompcode.Location = New System.Drawing.Point(102, 84)
-        Me.txtcompcode.MenuManager = Me.RibbonControl1
-        Me.txtcompcode.Name = "txtcompcode"
-        Me.txtcompcode.Size = New System.Drawing.Size(178, 20)
-        Me.txtcompcode.StyleController = Me.LayoutControl1
-        Me.txtcompcode.TabIndex = 35
-        '
         'lccompcode
         '
         Me.lccompcode.Control = Me.txtcompcode
@@ -588,17 +626,6 @@ Partial Class NewEmp
         Me.lccompcode.Size = New System.Drawing.Size(272, 24)
         Me.lccompcode.Text = "Company Code"
         Me.lccompcode.TextSize = New System.Drawing.Size(87, 13)
-        '
-        'txtoffloc
-        '
-        Me.txtoffloc.Location = New System.Drawing.Point(102, 132)
-        Me.txtoffloc.MenuManager = Me.RibbonControl1
-        Me.txtoffloc.Name = "txtoffloc"
-        Me.txtoffloc.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtoffloc.Properties.Items.AddRange(New Object() {"Head Office", "Factory"})
-        Me.txtoffloc.Size = New System.Drawing.Size(178, 20)
-        Me.txtoffloc.StyleController = Me.LayoutControl1
-        Me.txtoffloc.TabIndex = 36
         '
         'lcoffice
         '
@@ -610,23 +637,6 @@ Partial Class NewEmp
         Me.lcoffice.Text = "Office Location"
         Me.lcoffice.TextSize = New System.Drawing.Size(87, 13)
         '
-        'txtrains
-        '
-        Me.txtrains.EditValue = Nothing
-        Me.txtrains.Location = New System.Drawing.Point(102, 422)
-        Me.txtrains.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtrains.MenuManager = Me.RibbonControl1
-        Me.txtrains.Name = "txtrains"
-        Me.txtrains.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtrains.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtrains.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
-        Me.txtrains.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
-        Me.txtrains.Properties.Mask.EditMask = ""
-        Me.txtrains.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
-        Me.txtrains.Size = New System.Drawing.Size(178, 20)
-        Me.txtrains.StyleController = Me.LayoutControl1
-        Me.txtrains.TabIndex = 32
-        '
         'lctrains
         '
         Me.lctrains.Control = Me.txtrains
@@ -636,17 +646,6 @@ Partial Class NewEmp
         Me.lctrains.Size = New System.Drawing.Size(272, 24)
         Me.lctrains.Text = "Last Training Date"
         Me.lctrains.TextSize = New System.Drawing.Size(87, 13)
-        '
-        'txtposition
-        '
-        Me.txtposition.Location = New System.Drawing.Point(102, 108)
-        Me.txtposition.MenuManager = Me.RibbonControl1
-        Me.txtposition.Name = "txtposition"
-        Me.txtposition.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtposition.Properties.Items.AddRange(New Object() {"Marketing", "Staff", "Secuity", "Manager", "HRD", "Supervisor"})
-        Me.txtposition.Size = New System.Drawing.Size(178, 20)
-        Me.txtposition.StyleController = Me.LayoutControl1
-        Me.txtposition.TabIndex = 37
         '
         'lcposition
         '
@@ -658,15 +657,6 @@ Partial Class NewEmp
         Me.lcposition.Text = "Position"
         Me.lcposition.TextSize = New System.Drawing.Size(87, 13)
         '
-        'txtemail
-        '
-        Me.txtemail.Location = New System.Drawing.Point(102, 302)
-        Me.txtemail.MenuManager = Me.RibbonControl1
-        Me.txtemail.Name = "txtemail"
-        Me.txtemail.Size = New System.Drawing.Size(178, 20)
-        Me.txtemail.StyleController = Me.LayoutControl1
-        Me.txtemail.TabIndex = 38
-        '
         'lcemail
         '
         Me.lcemail.Control = Me.txtemail
@@ -677,6 +667,16 @@ Partial Class NewEmp
         Me.lcemail.Text = "Email"
         Me.lcemail.TextSize = New System.Drawing.Size(87, 13)
         '
+        'pictureEdit
+        '
+        Me.pictureEdit.Image = Global.HRMS.My.Resources.Resources.user_icon_6
+        Me.pictureEdit.Location = New System.Drawing.Point(310, 163)
+        Me.pictureEdit.Name = "pictureEdit"
+        Me.pictureEdit.Size = New System.Drawing.Size(148, 150)
+        Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pictureEdit.TabIndex = 30
+        Me.pictureEdit.TabStop = False
+        '
         'NewEmp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -685,6 +685,7 @@ Partial Class NewEmp
         Me.Controls.Add(Me.pictureEdit)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.MaximizeBox = False
         Me.Name = "NewEmp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NewEmp"
@@ -693,6 +694,12 @@ Partial Class NewEmp
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtrains.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtrains.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtoffloc.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtfullname.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtworkdate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtworkdate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -723,18 +730,12 @@ Partial Class NewEmp
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lworkdate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcfullname, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtcompcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lccompcode, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtoffloc.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcoffice, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtrains.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtrains.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lctrains, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtposition.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcposition, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtemail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcemail, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

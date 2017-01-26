@@ -40,6 +40,24 @@ Public Class ClosePayroll
         SQLConnection.Close()
     End Sub
 
+    Sub compute()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        sqlcommand.CommandType = CommandType.StoredProcedure
+        sqlcommand.CommandText = "bpjs"
+        Dim p1 As New MySqlParameter
+        p1.ParameterName = "@empcode"
+        p1.Value = txtempcode.Text
+        sqlcommand.Parameters.Add(p1)
+        sqlcommand.Connection = SQLConnection
+        Dim dt As New DataTable
+        dt.Load(sqlcommand.ExecuteReader)
+        list.GridControl1.DataSource = dt
+        SQLConnection.Close()
+    End Sub
+
     Dim list As New Lists
 
     Private Sub ClosePayroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -90,7 +108,6 @@ Public Class ClosePayroll
     Private Sub payrollcheck_CheckedChanged(sender As Object, e As EventArgs) Handles payrollcheck.CheckedChanged
 
     End Sub
-
 
     Private Sub btnProcess_Click(sender As Object, e As EventArgs) Handles btnProcess.Click
         If list Is Nothing OrElse list.IsDisposed Then

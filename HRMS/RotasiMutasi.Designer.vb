@@ -38,7 +38,6 @@ Partial Class RotasiMutasi
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.txtnamakaryawan = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtEmpCode = New DevExpress.XtraEditors.TextEdit()
         Me.txtCompcode = New DevExpress.XtraEditors.TextEdit()
@@ -109,7 +108,7 @@ Partial Class RotasiMutasi
         'SimpleButton1
         '
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(231, 133)
+        Me.SimpleButton1.Location = New System.Drawing.Point(231, 156)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(216, 38)
         Me.SimpleButton1.StyleController = Me.LayoutControl1
@@ -119,7 +118,7 @@ Partial Class RotasiMutasi
         'txtDate
         '
         Me.txtDate.EditValue = Nothing
-        Me.txtDate.Location = New System.Drawing.Point(92, 109)
+        Me.txtDate.Location = New System.Drawing.Point(92, 132)
         Me.txtDate.MenuManager = Me.RibbonControl1
         Me.txtDate.Name = "txtDate"
         Me.txtDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -190,7 +189,7 @@ Partial Class RotasiMutasi
         '
         'BarButtonItem6
         '
-        Me.BarButtonItem6.Caption = "DemosiHistory"
+        Me.BarButtonItem6.Caption = "Demosi History"
         Me.BarButtonItem6.Glyph = CType(resources.GetObject("BarButtonItem6.Glyph"), System.Drawing.Image)
         Me.BarButtonItem6.Id = 12
         Me.BarButtonItem6.Name = "BarButtonItem6"
@@ -198,7 +197,7 @@ Partial Class RotasiMutasi
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "Rotasi and Demosi"
         '
@@ -208,22 +207,18 @@ Partial Class RotasiMutasi
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem1)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.BarButtonItem4)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "                                                                   "
         '
         'RibbonPageGroup2
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem2)
         Me.RibbonPageGroup2.ItemLinks.Add(Me.BarButtonItem6)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        '
-        'RibbonPageGroup3
-        '
-        Me.RibbonPageGroup3.Glyph = CType(resources.GetObject("RibbonPageGroup3.Glyph"), System.Drawing.Image)
-        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Visible = False
+        Me.RibbonPageGroup2.Text = "                                                                   "
         '
         'txtnamakaryawan
         '
-        Me.txtnamakaryawan.Location = New System.Drawing.Point(92, -11)
+        Me.txtnamakaryawan.Location = New System.Drawing.Point(92, 12)
         Me.txtnamakaryawan.MenuManager = Me.RibbonControl1
         Me.txtnamakaryawan.Name = "txtnamakaryawan"
         Me.txtnamakaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -234,7 +229,7 @@ Partial Class RotasiMutasi
         'txtEmpCode
         '
         Me.txtEmpCode.Enabled = False
-        Me.txtEmpCode.Location = New System.Drawing.Point(92, 13)
+        Me.txtEmpCode.Location = New System.Drawing.Point(92, 36)
         Me.txtEmpCode.MenuManager = Me.RibbonControl1
         Me.txtEmpCode.Name = "txtEmpCode"
         Me.txtEmpCode.Size = New System.Drawing.Size(355, 20)
@@ -244,7 +239,7 @@ Partial Class RotasiMutasi
         'txtCompcode
         '
         Me.txtCompcode.Enabled = False
-        Me.txtCompcode.Location = New System.Drawing.Point(92, 37)
+        Me.txtCompcode.Location = New System.Drawing.Point(92, 60)
         Me.txtCompcode.MenuManager = Me.RibbonControl1
         Me.txtCompcode.Name = "txtCompcode"
         Me.txtCompcode.Size = New System.Drawing.Size(355, 20)
@@ -254,7 +249,7 @@ Partial Class RotasiMutasi
         'btnChange
         '
         Me.btnChange.Image = CType(resources.GetObject("btnChange.Image"), System.Drawing.Image)
-        Me.btnChange.Location = New System.Drawing.Point(12, 133)
+        Me.btnChange.Location = New System.Drawing.Point(12, 156)
         Me.btnChange.Name = "btnChange"
         Me.btnChange.Size = New System.Drawing.Size(215, 38)
         Me.btnChange.StyleController = Me.LayoutControl1
@@ -263,7 +258,7 @@ Partial Class RotasiMutasi
         '
         'txtChange
         '
-        Me.txtChange.Location = New System.Drawing.Point(92, 85)
+        Me.txtChange.Location = New System.Drawing.Point(92, 108)
         Me.txtChange.MenuManager = Me.RibbonControl1
         Me.txtChange.Name = "txtChange"
         Me.txtChange.Size = New System.Drawing.Size(355, 20)
@@ -272,7 +267,7 @@ Partial Class RotasiMutasi
         '
         'txtPosition
         '
-        Me.txtPosition.Location = New System.Drawing.Point(92, 61)
+        Me.txtPosition.Location = New System.Drawing.Point(92, 84)
         Me.txtPosition.MenuManager = Me.RibbonControl1
         Me.txtPosition.Name = "txtPosition"
         Me.txtPosition.Size = New System.Drawing.Size(355, 20)
@@ -285,7 +280,7 @@ Partial Class RotasiMutasi
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lccurpos, Me.lcRotasi, Me.lcbutton, Me.lcompcode, Me.lcempcode, Me.lcfullnames, Me.lctime, Me.LayoutControlItem1})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, -23)
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(459, 206)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
@@ -461,6 +456,5 @@ Partial Class RotasiMutasi
     Friend WithEvents RibbonPage1 As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
 End Class

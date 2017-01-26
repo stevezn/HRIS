@@ -352,6 +352,7 @@ Partial Class ClosePayroll
         Me.ClientSize = New System.Drawing.Size(261, 304)
         Me.Controls.Add(Me.btnProcess)
         Me.Controls.Add(Me.LayoutControl8)
+        Me.MaximizeBox = False
         Me.Name = "ClosePayroll"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ClosePayroll"

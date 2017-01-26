@@ -38,8 +38,9 @@ Partial Class pdfviewer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(588, 656)
+        Me.ClientSize = New System.Drawing.Size(571, 640)
         Me.Controls.Add(Me.PdfViewer1)
+        Me.MaximizeBox = False
         Me.Name = "pdfviewer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "pdfviewer"

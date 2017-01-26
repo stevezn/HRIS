@@ -68,9 +68,16 @@ Public Class Payslip
         loaddata()
     End Sub
 
+    Dim pdf As New pdfviewer
+
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         If txtname.Text = "" OrElse txtempcode.Text = "" Then
             MsgBox("Please insert the employee")
+        Else
+            If pdf Is Nothing OrElse pdf.IsDisposed Then
+                pdf = New pdfviewer
+            End If
+            pdf.Show()
         End If
     End Sub
 

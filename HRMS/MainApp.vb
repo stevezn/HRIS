@@ -332,7 +332,6 @@ Public Class MainApp
         lcBtnHapus.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcBtnReset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         barJudul.Caption = "Module Attendance"
-        'GridControl1.DataSource = DBNull.Value
         GridControl1.RefreshDataSource()
         GridView1.Columns.Clear()
         btnLihat.Enabled = False
@@ -349,8 +348,6 @@ Public Class MainApp
         lcstart.Text = "Sign In Time"
         lcfinish.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcfinish.Text = "Sign Out Time"
-        'lc8.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        'lc8.Text = "Overtime Hours"
         btnLihat.Enabled = False
         btnImport.Enabled = False
         loadDataReq()
@@ -365,18 +362,11 @@ Public Class MainApp
             rotasi.Close()
             employeenotes.Close()
             loan.Close()
+            pay.Close()
         End If
-        'Dim pesan As String
-        'pesan = CType(MsgBox("Log Off Application?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Warning"), String)
-        'If CType(pesan, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
-        '    Close()
-        '    'spform.Close()
-        'End If
     End Sub
 
     Private Sub btnCari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'load data ke grid
-        'GridControl1.DataSource = DBNull.Value
         GridControl1.RefreshDataSource()
         Dim table As New DataTable
 
@@ -609,7 +599,7 @@ Public Class MainApp
             MessageBox.Show("Import Data Succesfully! Please Click Refresh To Load")
         Catch ex As Exception
             SQLConnection.Close()
-            MsgBox("There's Already an Exist Employee With The Same ID Number, Please Check Again.", MsgBoxStyle.Information)
+            MsgBox(ex.Message, MsgBoxStyle.Information)
         End Try
     End Sub
 
@@ -1160,11 +1150,6 @@ Public Class MainApp
             sqlcommand.Parameters.AddWithValue("@ResJaminanHariTua", cmboxjht.Text)
             sqlcommand.Parameters.AddWithValue("@ResBiayajabatan", cmboxbj.Text)
             sqlcommand.Parameters.AddWithValue("@ResIuranPensiun", cmboxiuranpensiun.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenKk", txtpkk.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenJk", txtpjk.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenJht", txtpjht.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenBj", txtpbj.Text)
-            'sqlcommand.Parameters.AddWithValue("@PersenIp", txtpip.Text)
             sqlcommand.Parameters.AddWithValue("@MemilikiNpwp", cmboxnpwp.Text)
             sqlcommand.Parameters.AddWithValue("@Gross", txtgross.Text)
             sqlcommand.Parameters.AddWithValue("@Bpjs", txtbpjs.Text)
@@ -2797,5 +2782,17 @@ Public Class MainApp
             item.BeginGroup = True
             e.Menu.Items.Add(item)
         End If
+    End Sub
+    Dim repot As New Report
+
+    Private Sub BarButtonItem12_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem12.ItemClick
+        'If report Is Nothing OrElse report.IsDisposed Then
+        '    report = New Reports
+        'End If
+        'report.Show()
+        If repot Is Nothing OrElse repot.IsDisposed Then
+            repot = New Report
+        End If
+        repot.Show()
     End Sub
 End Class

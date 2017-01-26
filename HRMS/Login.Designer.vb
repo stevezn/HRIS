@@ -24,8 +24,8 @@ Partial Class Login
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.teUsername = New DevExpress.XtraEditors.TextEdit()
         Me.tePassword = New DevExpress.XtraEditors.TextEdit()
-        Me.countButton = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.countButton = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.teUsername.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tePassword.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,14 +65,6 @@ Partial Class Login
         Me.tePassword.Size = New System.Drawing.Size(187, 20)
         Me.tePassword.TabIndex = 2
         '
-        'countButton
-        '
-        Me.countButton.Image = CType(resources.GetObject("countButton.Image"), System.Drawing.Image)
-        Me.countButton.Location = New System.Drawing.Point(237, 2)
-        Me.countButton.Name = "countButton"
-        Me.countButton.Size = New System.Drawing.Size(25, 18)
-        Me.countButton.TabIndex = 69
-        '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -82,11 +74,19 @@ Partial Class Login
         Me.LabelControl4.TabIndex = 70
         Me.LabelControl4.Text = "Sign In To Enter HRIS"
         '
+        'countButton
+        '
+        Me.countButton.Image = CType(resources.GetObject("countButton.Image"), System.Drawing.Image)
+        Me.countButton.Location = New System.Drawing.Point(237, 2)
+        Me.countButton.Name = "countButton"
+        Me.countButton.Size = New System.Drawing.Size(25, 18)
+        Me.countButton.TabIndex = 69
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(266, 84)
+        Me.ClientSize = New System.Drawing.Size(263, 84)
         Me.ControlBox = False
         Me.Controls.Add(Me.LabelControl4)
         Me.Controls.Add(Me.countButton)

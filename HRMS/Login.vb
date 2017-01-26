@@ -5,14 +5,6 @@
 
     Dim main As New MainApp
 
-
-    Private Sub teUsername_EditValueChanged(sender As Object, e As EventArgs) Handles teUsername.EditValueChanged
-
-    End Sub
-
-    Private Sub tePassword_Enter(sender As Object, e As EventArgs) Handles tePassword.Enter
-    End Sub
-
     Private Sub tePassword_TextChanged(sender As Object, e As EventArgs) Handles tePassword.TextChanged
         Try
             SQLConnection = New MySqlConnection()
@@ -40,5 +32,6 @@
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

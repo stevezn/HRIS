@@ -9,13 +9,13 @@
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
-        sqlcommand.CommandText = "SELECT EmployeeCode, FullName From db_pegawai"
+        sqlcommand.CommandText = "SELECT * From db_pegawai"
         sqlcommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
         adapter.Fill(tbl_par)
         For index As Integer = 0 To tbl_par.Rows.Count - 1
-            txtname1.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
+            txtname1.Properties.Items.Add(tbl_par.Rows(index).Item(2).ToString())
         Next
         SQLConnection.Close()
     End Sub
@@ -525,8 +525,8 @@
 
     Private Sub txtname1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname1.SelectedIndexChanged
         For index As Integer = 0 To tbl_par.Rows.Count - 1
-            If txtname1.SelectedItem Is tbl_par.Rows(index).Item(0).ToString Then
-                txtempcode1.Text = tbl_par.Rows(index).Item(1).ToString
+            If txtname1.SelectedItem Is tbl_par.Rows(index).Item(2).ToString Then
+                txtempcode1.Text = tbl_par.Rows(index).Item(0).ToString
             End If
         Next
     End Sub
@@ -538,11 +538,56 @@
 
     End Sub
 
+    Sub cleartxt()
+        txtname1.Text = ""
+        txtempcode1.Text = ""
+        txttype.Text = ""
+        txtwajibpajak.Text = ""
+        txtnpwp.Text = ""
+        txtbasicrate.Text = ""
+        txtallowance.Text = ""
+        txtincentives.Text = ""
+        txtmealrate.Text = ""
+        txttransport.Text = ""
+        cjk.Checked = False
+        cbpjs.Checked = False
+        cjkk.Checked = False
+        cjamkem.Checked = False
+        cjht.Checked = False
+        ciupe.Checked = False
+        cbj.Checked = False
+        crapel.Checked = False
+        cloan.Checked = False
+    End Sub
+
+    Sub cleartxt2()
+        txtname2.Text = ""
+        txtempcode2.Text = ""
+        txtsaltype.Text = ""
+        txtwp1.Text = ""
+        txtnpwp1.Text = ""
+        txtbasicrate1.Text = ""
+        txtallowance1.Text = ""
+        txtincentives1.Text = ""
+        txtmealrate1.Text = ""
+        txttransport1.Text = ""
+        cjk1.Checked = False
+        cbpjs1.Checked = False
+        cjkk1.Checked = False
+        cjamkem1.Checked = False
+        cjht1.Checked = False
+        ciupe1.Checked = False
+        cbj1.Checked = False
+        crapel1.Checked = False
+        cloan1.Checked = False
+    End Sub
+
     Private Sub btnapp1_Click(sender As Object, e As EventArgs) Handles btnapp1.Click
         If txtname1.Text = "" OrElse txtempcode1.Text = "" Then
             MsgBox("Please Insert Employee Name Or Employee Code")
         Else
             InsertPayroll()
+            cleartxt()
         End If
         loadpayroll()
         loadpayroll1()
@@ -600,6 +645,7 @@
             Dim mess2 As String
             mess2 = CType(MsgBox("Are you sure to change this employee data?", MsgBoxStyle.YesNo, "Warning"), String)
             If CType(mess2, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
+                cleartxt2()
                 updatechange()
             End If
             Dim mess As String
