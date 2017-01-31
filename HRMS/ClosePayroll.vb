@@ -22,6 +22,24 @@ Public Class ClosePayroll
         SQLConnection.Close()
     End Sub
 
+    Sub loadbpjs()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        sqlcommand.CommandType = CommandType.StoredProcedure
+        sqlcommand.CommandText = "bpjs"
+        Dim p1 As New MySqlParameter
+        p1.ParameterName = "@empcode"
+        p1.Value = txtempcode.Text
+        sqlcommand.Parameters.Add(p1)
+        sqlcommand.Connection = SQLConnection
+        Dim dt As New DataTable
+        dt.Load(sqlcommand.ExecuteReader)
+        list.GridControl1.DataSource = dt
+        SQLConnection.Close()
+    End Sub
+
     Sub loadcounts()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
@@ -40,13 +58,13 @@ Public Class ClosePayroll
         SQLConnection.Close()
     End Sub
 
-    Sub compute()
+    Sub computesalary()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         sqlcommand.CommandType = CommandType.StoredProcedure
-        sqlcommand.CommandText = "bpjs"
+        sqlcommand.CommandText = "test"
         Dim p1 As New MySqlParameter
         p1.ParameterName = "@empcode"
         p1.Value = txtempcode.Text

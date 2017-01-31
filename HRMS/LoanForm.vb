@@ -335,6 +335,28 @@
         End Try
     End Sub
 
+    Private Sub loadpaid()
+        GridControl2.RefreshDataSource()
+        Dim table As New DataTable
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "select * from reports"
+            sqlcommand.Connection = SQLConnection
+            Dim tbl_par As New DataTable
+            Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(table)
+            GridControl2.DataSource = table
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub loadrapel()
         GridControl5.RefreshDataSource()
         Dim table As New DataTable
@@ -387,7 +409,7 @@
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
         Try
-            sqlcommand.CommandText = "select FullName, EmployeeCode, AmountOfLoan, Month, Realisasi from db_loan where FullName Like '%" + txtloanname.Text + "%'"
+            sqlcommand.CommandText = "SELECT FullName, EmployeeCode, AmountOfLoan, Month, Realisasi from db_loan where FullName Like '%" + txtloanname.Text + "%'"
             sqlcommand.Connection = SQLConnection
             Dim tbl_par As New DataTable
             Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
@@ -593,12 +615,14 @@
         loadpayroll1()
     End Sub
 
+    Dim calculation As New Calculate
+
     Private Sub BarButtonItem4_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem4.ItemClick
         barJudul.Caption = "Calculate Salary"
-        If proc Is Nothing OrElse proc.IsDisposed Then
-            proc = New NewSalary
+        If calculation Is Nothing OrElse calculation.IsDisposed Then
+            calculation = New Calculate
         End If
-        proc.Show()
+        calculation.Show()
     End Sub
 
     Private Sub GridControl6_Click(sender As Object, e As EventArgs)
@@ -793,26 +817,26 @@
         Dim sqlCommand As New MySqlCommand
         datatabl.Clear()
         Dim param As String = ""
-            Try
+        Try
             param = "And EmployeeCode='" + GridView1.GetFocusedRowCellValue("EmployeeCode").ToString() + "'"
         Catch ex As Exception
-            End Try
-            If param > "" Then
-                act = "edit"
-            Else
-                act = "input"
-            End If
-            Try
+        End Try
+        If param > "" Then
+            act = "edit"
+        Else
+            act = "input"
+        End If
+        Try
             sqlCommand.CommandText = "SELECT FullName, EmployeeCode FROM db_loan WHERE 1 = 1 " + param.ToString()
             sqlCommand.Connection = SQLConnection
             Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
-                Dim cb As New MySqlCommandBuilder(adapter)
-                adapter.Fill(datatabl)
-                SQLConnection.Close()
-            Catch ex As Exception
-                SQLConnection.Close()
-                MsgBox(ex.Message, MsgBoxStyle.Critical)
-            End Try
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(datatabl)
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
         If datatabl.Rows.Count > 0 Then
             txtloanname.Text = datatabl.Rows(0).Item(0).ToString()
             txtempcode.Text = datatabl.Rows(0).Item(1).ToString()

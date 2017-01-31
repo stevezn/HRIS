@@ -649,3 +649,4 @@ E:\New folder\New folder\HRMS\bin\Debug\es\DevExpress.Snap.v13.1.Extensions.reso
 E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Snap.v13.1.Extensions.resources.dll
 E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Snap.v13.1.Extensions.resources.dll
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.ReportsForm.resources
+E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Calculate.resources

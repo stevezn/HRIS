@@ -29,6 +29,12 @@ Partial Class Report
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarSubItem1 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarSubItem3 = New DevExpress.XtraBars.BarSubItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -56,12 +62,6 @@ Partial Class Report
         Me.txtfrom = New DevExpress.XtraEditors.DateEdit()
         Me.txtdate = New DevExpress.XtraEditors.CheckEdit()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
-        Me.BarSubItem1 = New DevExpress.XtraBars.BarSubItem()
-        Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem()
-        Me.BarSubItem3 = New DevExpress.XtraBars.BarSubItem()
-        Me.BarButtonItem6 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem8 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage1.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,7 +90,7 @@ Partial Class Report
         Me.RibbonControl1.MaxItemId = 20
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(519, 144)
+        Me.RibbonControl1.Size = New System.Drawing.Size(517, 144)
         '
         'BarButtonItem1
         '
@@ -135,6 +135,46 @@ Partial Class Report
         Me.BarButtonItem5.Name = "BarButtonItem5"
         Me.BarButtonItem5.RibbonStyle = CType(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large Or DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) _
             Or DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText), DevExpress.XtraBars.Ribbon.RibbonItemStyles)
+        '
+        'BarSubItem1
+        '
+        Me.BarSubItem1.Caption = "Payroll"
+        Me.BarSubItem1.Glyph = Global.HRMS.My.Resources.Resources.dollar_sign_icon_cartoon_illustration_hand_drawn_animation_transparent_e1bittjj__S0004
+        Me.BarSubItem1.Id = 14
+        Me.BarSubItem1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Caption, Me.BarButtonItem6, "Premi Reports", True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.BarButtonItem7, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.BarButtonItem8, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.BarSubItem1.Name = "BarSubItem1"
+        Me.BarSubItem1.RibbonStyle = CType(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large Or DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) _
+            Or DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText), DevExpress.XtraBars.Ribbon.RibbonItemStyles)
+        '
+        'BarButtonItem6
+        '
+        Me.BarButtonItem6.Caption = "Premi Reports"
+        Me.BarButtonItem6.Id = 17
+        Me.BarButtonItem6.Name = "BarButtonItem6"
+        '
+        'BarButtonItem7
+        '
+        Me.BarButtonItem7.Caption = "Loan Reports"
+        Me.BarButtonItem7.Id = 18
+        Me.BarButtonItem7.Name = "BarButtonItem7"
+        '
+        'BarButtonItem8
+        '
+        Me.BarButtonItem8.Caption = "Rapel Reports"
+        Me.BarButtonItem8.Id = 19
+        Me.BarButtonItem8.Name = "BarButtonItem8"
+        '
+        'BarSubItem2
+        '
+        Me.BarSubItem2.Caption = "Rapel Reports"
+        Me.BarSubItem2.Id = 15
+        Me.BarSubItem2.Name = "BarSubItem2"
+        '
+        'BarSubItem3
+        '
+        Me.BarSubItem3.Caption = "BarSubItem3"
+        Me.BarSubItem3.Id = 16
+        Me.BarSubItem3.Name = "BarSubItem3"
         '
         'RibbonPage1
         '
@@ -385,51 +425,11 @@ Partial Class Report
         Me.XtraTabControl1.TabIndex = 1
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1})
         '
-        'BarSubItem1
-        '
-        Me.BarSubItem1.Caption = "Payroll"
-        Me.BarSubItem1.Glyph = Global.HRMS.My.Resources.Resources.dollar_sign_icon_cartoon_illustration_hand_drawn_animation_transparent_e1bittjj__S0004
-        Me.BarSubItem1.Id = 14
-        Me.BarSubItem1.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Caption, Me.BarButtonItem6, "Premi Reports", True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.BarButtonItem7, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.BarButtonItem8, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
-        Me.BarSubItem1.Name = "BarSubItem1"
-        Me.BarSubItem1.RibbonStyle = CType(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large Or DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) _
-            Or DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText), DevExpress.XtraBars.Ribbon.RibbonItemStyles)
-        '
-        'BarSubItem2
-        '
-        Me.BarSubItem2.Caption = "Rapel Reports"
-        Me.BarSubItem2.Id = 15
-        Me.BarSubItem2.Name = "BarSubItem2"
-        '
-        'BarSubItem3
-        '
-        Me.BarSubItem3.Caption = "BarSubItem3"
-        Me.BarSubItem3.Id = 16
-        Me.BarSubItem3.Name = "BarSubItem3"
-        '
-        'BarButtonItem6
-        '
-        Me.BarButtonItem6.Caption = "Premi Reports"
-        Me.BarButtonItem6.Id = 17
-        Me.BarButtonItem6.Name = "BarButtonItem6"
-        '
-        'BarButtonItem7
-        '
-        Me.BarButtonItem7.Caption = "Loan Reports"
-        Me.BarButtonItem7.Id = 18
-        Me.BarButtonItem7.Name = "BarButtonItem7"
-        '
-        'BarButtonItem8
-        '
-        Me.BarButtonItem8.Caption = "Rapel Reports"
-        Me.BarButtonItem8.Id = 19
-        Me.BarButtonItem8.Name = "BarButtonItem8"
-        '
         'Report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(519, 403)
+        Me.ClientSize = New System.Drawing.Size(517, 403)
         Me.Controls.Add(Me.XtraTabControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.MaximizeBox = False

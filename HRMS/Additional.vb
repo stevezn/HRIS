@@ -18,6 +18,7 @@ Public Class Additional
         adapter.Fill(tbl_par)
         For index As Integer = 0 To tbl_par.Rows.Count - 1
             txtempcode.Properties.Items.Add(tbl_par.Rows(index).Item(0).ToString())
+            txtname.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
         Next
         SQLConnection.Close()
     End Sub
@@ -77,15 +78,16 @@ Public Class Additional
     Private Sub txtempcode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtempcode.SelectedIndexChanged
         For index As Integer = 0 To tbl_par.Rows.Count - 1
             If txtempcode.SelectedItem Is tbl_par.Rows(index).Item(0).ToString Then
+                txtname.Text = tbl_par.Rows(index).Item(1).ToString
             End If
         Next
     End Sub
 
-    Private Sub txtdate1_EditValueChanged(sender As Object, e As EventArgs)
-        'txtdate1.Text = Format("yyyy-dd-MM").ToString
-    End Sub
-
-    Private Sub txtdate2_EditValueChanged(sender As Object, e As EventArgs)
-        'txtdate1.Text = Format("yyyy-dd-MM").ToString
+    Private Sub txtname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname.SelectedIndexChanged
+        For index As Integer = 0 To tbl_par.Rows.Count - 1
+            If txtname.SelectedItem Is tbl_par.Rows(index).Item(1).ToString Then
+                txtempcode.Text = tbl_par.Rows(index).Item(0).ToString
+            End If
+        Next
     End Sub
 End Class

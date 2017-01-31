@@ -193,6 +193,12 @@
     <Compile Include="Additional.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Calculate.Designer.vb">
+      <DependentUpon>Calculate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Calculate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ClosePayroll.Designer.vb">
       <DependentUpon>ClosePayroll.vb</DependentUpon>
     </Compile>
@@ -336,6 +342,9 @@
     </Compile>
     <EmbeddedResource Include="Additional.resx">
       <DependentUpon>Additional.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculate.resx">
+      <DependentUpon>Calculate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosePayroll.resx">
       <DependentUpon>ClosePayroll.vb</DependentUpon>
