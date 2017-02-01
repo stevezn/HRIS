@@ -248,6 +248,7 @@
     <Compile Include="MainApp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModCamera.vb" />
     <Compile Include="NewEmp.Designer.vb">
       <DependentUpon>NewEmp.vb</DependentUpon>
     </Compile>

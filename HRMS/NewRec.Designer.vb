@@ -76,6 +76,7 @@ Partial Class NewRec
         Me.lcreason = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.pictureEdit = New System.Windows.Forms.PictureBox()
+        Me.btnCapture = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -673,11 +674,20 @@ Partial Class NewRec
         Me.pictureEdit.TabIndex = 27
         Me.pictureEdit.TabStop = False
         '
+        'btnCapture
+        '
+        Me.btnCapture.Location = New System.Drawing.Point(319, 329)
+        Me.btnCapture.Name = "btnCapture"
+        Me.btnCapture.Size = New System.Drawing.Size(75, 23)
+        Me.btnCapture.TabIndex = 29
+        Me.btnCapture.Text = "Camera"
+        '
         'NewRec
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(439, 637)
+        Me.Controls.Add(Me.btnCapture)
         Me.Controls.Add(Me.pictureEdit)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
@@ -787,4 +797,5 @@ Partial Class NewRec
     Friend WithEvents txtno As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnCapture As DevExpress.XtraEditors.SimpleButton
 End Class

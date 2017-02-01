@@ -1318,7 +1318,6 @@ Public Class MainApp
 
     Private movelast As Boolean = True
 
-
     Public Function DeleteReq() As Boolean
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
@@ -1373,7 +1372,6 @@ Public Class MainApp
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlcommand As New MySqlCommand
-
         Dim messages As String
         messages = CType(MsgBox("Sure To Delete ?", MsgBoxStyle.YesNo, "Warning"), String)
         If CType(messages, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
@@ -1405,7 +1403,7 @@ Public Class MainApp
             MsgBox("Data Successfully Removed!", MsgBoxStyle.Information, "Success")
             GridControl1.RefreshDataSource()
             loadDataReq()
-            SQLConnection.CloseAsync()
+            SQLConnection.Close()
         End If
         Return Nothing
     End Function

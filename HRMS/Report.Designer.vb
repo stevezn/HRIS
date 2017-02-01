@@ -47,37 +47,40 @@ Partial Class Report
         Me.FieldListDockPanel1_Container = New DevExpress.XtraBars.Docking.ControlContainer()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
-        Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
-        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtto = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtfrom = New DevExpress.XtraEditors.DateEdit()
         Me.txtdate = New DevExpress.XtraEditors.CheckEdit()
+        Me.txtfrom = New DevExpress.XtraEditors.DateEdit()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtto = New DevExpress.XtraEditors.DateEdit()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
+        Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
+        Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
+        Me.XtraTabPage3 = New DevExpress.XtraTab.XtraTabPage()
+        Me.XtraTabPage4 = New DevExpress.XtraTab.XtraTabPage()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage1.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LayoutControl1.SuspendLayout()
-        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtto.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtdate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtfrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtfrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtdate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtto.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.LayoutControl1.SuspendLayout()
+        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
         Me.SuspendLayout()
@@ -90,7 +93,7 @@ Partial Class Report
         Me.RibbonControl1.MaxItemId = 20
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(517, 144)
+        Me.RibbonControl1.Size = New System.Drawing.Size(513, 144)
         '
         'BarButtonItem1
         '
@@ -271,127 +274,14 @@ Partial Class Report
         Me.GroupControl1.Text = "HRM Reports Criteria ------------------------------------------------------------" &
     "-----------------------------------"
         '
-        'SimpleButton3
+        'txtdate
         '
-        Me.SimpleButton3.Location = New System.Drawing.Point(411, 197)
-        Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(75, 23)
-        Me.SimpleButton3.TabIndex = 8
-        Me.SimpleButton3.Text = "Cancel"
-        '
-        'SimpleButton2
-        '
-        Me.SimpleButton2.Location = New System.Drawing.Point(318, 197)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(75, 23)
-        Me.SimpleButton2.TabIndex = 7
-        Me.SimpleButton2.Text = "Ok"
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Location = New System.Drawing.Point(25, 165)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(116, 23)
-        Me.SimpleButton1.TabIndex = 6
-        Me.SimpleButton1.Text = "Load Criteria . . ."
-        '
-        'LayoutControl1
-        '
-        Me.LayoutControl1.Controls.Add(Me.CheckEdit2)
-        Me.LayoutControl1.Controls.Add(Me.CheckEdit1)
-        Me.LayoutControl1.Location = New System.Drawing.Point(15, 89)
-        Me.LayoutControl1.Name = "LayoutControl1"
-        Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(471, 70)
-        Me.LayoutControl1.TabIndex = 2
-        Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'CheckEdit2
-        '
-        Me.CheckEdit2.Location = New System.Drawing.Point(12, 12)
-        Me.CheckEdit2.MenuManager = Me.RibbonControl1
-        Me.CheckEdit2.Name = "CheckEdit2"
-        Me.CheckEdit2.Properties.Caption = "Department"
-        Me.CheckEdit2.Size = New System.Drawing.Size(447, 19)
-        Me.CheckEdit2.StyleController = Me.LayoutControl1
-        Me.CheckEdit2.TabIndex = 6
-        '
-        'CheckEdit1
-        '
-        Me.CheckEdit1.Location = New System.Drawing.Point(12, 35)
-        Me.CheckEdit1.MenuManager = Me.RibbonControl1
-        Me.CheckEdit1.Name = "CheckEdit1"
-        Me.CheckEdit1.Properties.Caption = "Office Location"
-        Me.CheckEdit1.Size = New System.Drawing.Size(447, 19)
-        Me.CheckEdit1.StyleController = Me.LayoutControl1
-        Me.CheckEdit1.TabIndex = 6
-        '
-        'LayoutControlGroup1
-        '
-        Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem1})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(471, 70)
-        Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.TextVisible = False
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.CheckEdit2
-        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(451, 23)
-        Me.LayoutControlItem2.Text = "LayoutControlItem2"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem2.TextToControlDistance = 0
-        Me.LayoutControlItem2.TextVisible = False
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.CheckEdit1
-        Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 23)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(451, 27)
-        Me.LayoutControlItem1.Text = "LayoutControlItem1"
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextToControlDistance = 0
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Location = New System.Drawing.Point(11, 76)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(475, 13)
-        Me.LabelControl2.TabIndex = 5
-        Me.LabelControl2.Text = "Employee Criteria ---------------------------------------------------------------" &
-    "----------------------------------"
-        '
-        'txtto
-        '
-        Me.txtto.EditValue = Nothing
-        Me.txtto.Enabled = False
-        Me.txtto.Location = New System.Drawing.Point(302, 31)
-        Me.txtto.MenuManager = Me.RibbonControl1
-        Me.txtto.Name = "txtto"
-        Me.txtto.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtto.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtto.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
-        Me.txtto.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
-        Me.txtto.Size = New System.Drawing.Size(152, 20)
-        Me.txtto.TabIndex = 4
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Location = New System.Drawing.Point(251, 35)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(21, 13)
-        Me.LabelControl1.TabIndex = 3
-        Me.LabelControl1.Text = "Until"
+        Me.txtdate.Location = New System.Drawing.Point(25, 32)
+        Me.txtdate.MenuManager = Me.RibbonControl1
+        Me.txtdate.Name = "txtdate"
+        Me.txtdate.Properties.Caption = "Date :"
+        Me.txtdate.Size = New System.Drawing.Size(75, 19)
+        Me.txtdate.TabIndex = 1
         '
         'txtfrom
         '
@@ -407,14 +297,127 @@ Partial Class Report
         Me.txtfrom.Size = New System.Drawing.Size(139, 20)
         Me.txtfrom.TabIndex = 2
         '
-        'txtdate
+        'LabelControl1
         '
-        Me.txtdate.Location = New System.Drawing.Point(25, 32)
-        Me.txtdate.MenuManager = Me.RibbonControl1
-        Me.txtdate.Name = "txtdate"
-        Me.txtdate.Properties.Caption = "Date :"
-        Me.txtdate.Size = New System.Drawing.Size(75, 19)
-        Me.txtdate.TabIndex = 1
+        Me.LabelControl1.Location = New System.Drawing.Point(251, 35)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(21, 13)
+        Me.LabelControl1.TabIndex = 3
+        Me.LabelControl1.Text = "Until"
+        '
+        'txtto
+        '
+        Me.txtto.EditValue = Nothing
+        Me.txtto.Enabled = False
+        Me.txtto.Location = New System.Drawing.Point(302, 31)
+        Me.txtto.MenuManager = Me.RibbonControl1
+        Me.txtto.Name = "txtto"
+        Me.txtto.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtto.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtto.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
+        Me.txtto.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
+        Me.txtto.Size = New System.Drawing.Size(152, 20)
+        Me.txtto.TabIndex = 4
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Location = New System.Drawing.Point(11, 76)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(475, 13)
+        Me.LabelControl2.TabIndex = 5
+        Me.LabelControl2.Text = "Employee Criteria ---------------------------------------------------------------" &
+    "----------------------------------"
+        '
+        'LayoutControl1
+        '
+        Me.LayoutControl1.Controls.Add(Me.CheckEdit2)
+        Me.LayoutControl1.Controls.Add(Me.CheckEdit1)
+        Me.LayoutControl1.Location = New System.Drawing.Point(15, 89)
+        Me.LayoutControl1.Name = "LayoutControl1"
+        Me.LayoutControl1.Root = Me.LayoutControlGroup1
+        Me.LayoutControl1.Size = New System.Drawing.Size(471, 70)
+        Me.LayoutControl1.TabIndex = 2
+        Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'CheckEdit1
+        '
+        Me.CheckEdit1.Location = New System.Drawing.Point(12, 35)
+        Me.CheckEdit1.MenuManager = Me.RibbonControl1
+        Me.CheckEdit1.Name = "CheckEdit1"
+        Me.CheckEdit1.Properties.Caption = "Office Location"
+        Me.CheckEdit1.Size = New System.Drawing.Size(447, 19)
+        Me.CheckEdit1.StyleController = Me.LayoutControl1
+        Me.CheckEdit1.TabIndex = 6
+        '
+        'CheckEdit2
+        '
+        Me.CheckEdit2.Location = New System.Drawing.Point(12, 12)
+        Me.CheckEdit2.MenuManager = Me.RibbonControl1
+        Me.CheckEdit2.Name = "CheckEdit2"
+        Me.CheckEdit2.Properties.Caption = "Department"
+        Me.CheckEdit2.Size = New System.Drawing.Size(447, 19)
+        Me.CheckEdit2.StyleController = Me.LayoutControl1
+        Me.CheckEdit2.TabIndex = 6
+        '
+        'LayoutControlGroup1
+        '
+        Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.LayoutControlGroup1.GroupBordersVisible = False
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem1})
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(471, 70)
+        Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.TextVisible = False
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.CheckEdit1
+        Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 23)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(451, 27)
+        Me.LayoutControlItem1.Text = "LayoutControlItem1"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextToControlDistance = 0
+        Me.LayoutControlItem1.TextVisible = False
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.CheckEdit2
+        Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(451, 23)
+        Me.LayoutControlItem2.Text = "LayoutControlItem2"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem2.TextToControlDistance = 0
+        Me.LayoutControlItem2.TextVisible = False
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(25, 165)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(116, 23)
+        Me.SimpleButton1.TabIndex = 6
+        Me.SimpleButton1.Text = "Load Criteria . . ."
+        '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Location = New System.Drawing.Point(318, 197)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(75, 23)
+        Me.SimpleButton2.TabIndex = 7
+        Me.SimpleButton2.Text = "Ok"
+        '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Location = New System.Drawing.Point(411, 197)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(75, 23)
+        Me.SimpleButton3.TabIndex = 8
+        Me.SimpleButton3.Text = "Cancel"
         '
         'XtraTabControl1
         '
@@ -423,13 +426,31 @@ Partial Class Report
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
         Me.XtraTabControl1.Size = New System.Drawing.Size(517, 266)
         Me.XtraTabControl1.TabIndex = 1
-        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1})
+        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2, Me.XtraTabPage3, Me.XtraTabPage4})
+        '
+        'XtraTabPage2
+        '
+        Me.XtraTabPage2.Name = "XtraTabPage2"
+        Me.XtraTabPage2.Size = New System.Drawing.Size(511, 238)
+        Me.XtraTabPage2.Text = "XtraTabPage2"
+        '
+        'XtraTabPage3
+        '
+        Me.XtraTabPage3.Name = "XtraTabPage3"
+        Me.XtraTabPage3.Size = New System.Drawing.Size(511, 238)
+        Me.XtraTabPage3.Text = "XtraTabPage3"
+        '
+        'XtraTabPage4
+        '
+        Me.XtraTabPage4.Name = "XtraTabPage4"
+        Me.XtraTabPage4.Size = New System.Drawing.Size(511, 238)
+        Me.XtraTabPage4.Text = "XtraTabPage4"
         '
         'Report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(517, 403)
+        Me.ClientSize = New System.Drawing.Size(513, 403)
         Me.Controls.Add(Me.XtraTabControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.MaximizeBox = False
@@ -442,18 +463,18 @@ Partial Class Report
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtto.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtdate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtfrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtfrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtdate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtto.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -475,6 +496,12 @@ Partial Class Report
     Friend WithEvents ReportExplorerDockPanel1_Container As DevExpress.XtraBars.Docking.ControlContainer
     Friend WithEvents FieldListDockPanel1 As DevExpress.Snap.Extensions.UI.FieldListDockPanel
     Friend WithEvents FieldListDockPanel1_Container As DevExpress.XtraBars.Docking.ControlContainer
+    Friend WithEvents BarSubItem1 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarSubItem2 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarSubItem3 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
@@ -492,10 +519,7 @@ Partial Class Report
     Friend WithEvents txtfrom As DevExpress.XtraEditors.DateEdit
     Friend WithEvents txtdate As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
-    Friend WithEvents BarSubItem1 As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents BarSubItem2 As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents BarButtonItem6 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarSubItem3 As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XtraTabPage3 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XtraTabPage4 As DevExpress.XtraTab.XtraTabPage
 End Class

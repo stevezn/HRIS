@@ -34,6 +34,7 @@
         adapter.Fill(tbl_par3)
         For index As Integer = 0 To tbl_par3.Rows.Count - 1
             txtloanname.Properties.Items.Add(tbl_par3.Rows(index).Item(0).ToString())
+            txtnameloan.Properties.Items.Add(tbl_par3.Rows(index).Item(1).ToString())
         Next
         SQLConnection.Close()
     End Sub
@@ -139,7 +140,7 @@
             sqlcommand.Parameters.AddWithValue("@FromMonths", txtmonth.Text)
             sqlcommand.Parameters.AddWithValue("@Year", txtyears.Text)
             sqlcommand.Parameters.AddWithValue("@PaymentPerMonth", lcpayment.Text)
-            sqlcommand.Parameters.AddWithValue("@CompletedOn", txtcompletedon.Text)
+            sqlcommand.Parameters.AddWithValue("@CompletedOn", txtcompletedon1.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
@@ -158,8 +159,10 @@
         Dim sqlcommand As New MySqlCommand
         Try
             sqlcommand.CommandText = "UPDATE db_payrolldata SET" +
-                                    " Loan = @Loan"
+                                    " Loan = @Loan" +
+                                    " Where EmployeeCode = @EmployeeCode"
             sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("EmployeeCode", txtempcode.Text)
             sqlcommand.Parameters.AddWithValue("@Loan", "1")
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
@@ -177,8 +180,10 @@
         Dim sqlcommand As New MySqlCommand
         Try
             sqlcommand.CommandText = "Update db_payrolldata SET" +
-                                    " Rapel = @Rapel"
+                                    " Rapel = @Rapel" +
+                                    " Where EmployeeCode = @EmployeeCode"
             sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("EmployeeCode", txtempcode.Text)
             sqlcommand.Parameters.AddWithValue("@Rapel", "1")
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
@@ -188,7 +193,6 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-
 
     Public Function insertrapel2() As Boolean
         SQLConnection = New MySqlConnection
@@ -335,28 +339,6 @@
         End Try
     End Sub
 
-    Private Sub loadpaid()
-        GridControl2.RefreshDataSource()
-        Dim table As New DataTable
-        SQLConnection = New MySqlConnection
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Dim sqlcommand As New MySqlCommand
-        Try
-            sqlcommand.CommandText = "select * from reports"
-            sqlcommand.Connection = SQLConnection
-            Dim tbl_par As New DataTable
-            Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-            Dim cb As New MySqlCommandBuilder(adapter)
-            adapter.Fill(table)
-            GridControl2.DataSource = table
-            SQLConnection.Close()
-        Catch ex As Exception
-            SQLConnection.Close()
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
     Private Sub loadrapel()
         GridControl5.RefreshDataSource()
         Dim table As New DataTable
@@ -456,10 +438,6 @@
         XtraTabPage4.Show()
     End Sub
 
-    Private Sub VScrollBar1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub LoanForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loaddata()
         loaddata1()
@@ -517,15 +495,39 @@
             Dim a, res As Integer
             a = Convert.ToInt32(txtrangemon.Text)
             res = value + a
-            txtcompletedon.Text = res.ToString
+            txtcompletedon1.Text = res.ToString
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Private Sub txtmon_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Sub hasil()
         months()
-        txtyears.Text = Year(Now).ToString
+        If txtcompletedon1.Text = "1" Then
+            txtcompletedon1.Text = "January"
+        ElseIf txtcompletedon1.Text = "2" Then
+            txtcompletedon1.Text = "February"
+        ElseIf txtcompletedon1.Text = "3" Then
+            txtcompletedon1.Text = "March"
+        ElseIf txtcompletedon1.Text = "4" Then
+            txtcompletedon1.Text = "April"
+        ElseIf txtcompletedon1.Text = "5" Then
+            txtcompletedon1.Text = "May"
+        ElseIf txtcompletedon1.Text = "6" Then
+            txtcompletedon1.Text = "June"
+        ElseIf txtcompletedon1.Text = "7" Then
+            txtcompletedon1.Text = "July"
+        ElseIf txtcompletedon1.Text = "8" Then
+            txtcompletedon1.Text = "August"
+        ElseIf txtcompletedon1.Text = "9" Then
+            txtcompletedon1.Text = "September"
+        ElseIf txtcompletedon1.Text = "10" Then
+            txtcompletedon1.Text = "October"
+        ElseIf txtcompletedon1.Text = "11" Then
+            txtcompletedon1.Text = "November"
+        ElseIf txtcompletedon1.Text = "12" Then
+            txtcompletedon1.Text = "December"
+        End If
     End Sub
 
     Private Sub txtamount_KeyPress(sender As Object, e As KeyPressEventArgs)
@@ -540,24 +542,12 @@
         XtraTabPage5.Show()
     End Sub
 
-    Private Sub ComboBoxEdit5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtmonth.SelectedIndexChanged
-        months()
-        txtyears.Text = Year(Now).ToString
-    End Sub
-
     Private Sub txtname1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname1.SelectedIndexChanged
         For index As Integer = 0 To tbl_par.Rows.Count - 1
             If txtname1.SelectedItem Is tbl_par.Rows(index).Item(2).ToString Then
                 txtempcode1.Text = tbl_par.Rows(index).Item(0).ToString
             End If
         Next
-    End Sub
-
-    Private Sub txtmonths_SelectedIndexChanged(sender As Object, e As EventArgs)
-    End Sub
-
-    Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
-
     End Sub
 
     Sub cleartxt()
@@ -625,10 +615,6 @@
         calculation.Show()
     End Sub
 
-    Private Sub GridControl6_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Dim proc As New NewSalary
 
     Private Sub ComboBoxEdit6_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname2.SelectedIndexChanged
@@ -654,10 +640,6 @@
                 txtsaltype.Text = tbl_par2.Rows(index).Item(18).ToString()
             End If
         Next
-    End Sub
-
-    Private Sub cjk_CheckedChanged(sender As Object, e As EventArgs) Handles cjk.CheckedChanged
-
     End Sub
 
     Dim additional As New Additional
@@ -709,7 +691,6 @@
 
     Private Sub txtrangemon_EditValueChanged(sender As Object, e As EventArgs) Handles txtrangemon.EditValueChanged
         loanpay()
-        months()
     End Sub
 
     Dim closer As New ClosePayroll
@@ -719,7 +700,6 @@
             closer = New ClosePayroll
         End If
         closer.Show()
-        'XtraTabPage8.Show()
     End Sub
 
     Dim proses As New PayrollSet
@@ -747,8 +727,8 @@
         txtname3.Text = ""
         txtempcode3.Text = ""
         txtrapel.Text = ""
-        txteffective.Text = ""
         txtuntil.Text = ""
+        txteffective.Text = ""
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
@@ -764,28 +744,28 @@
 
     Dim value1, value2 As Integer
 
-    Private Sub txtuntil_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtuntil.SelectedIndexChanged
-        If txtuntil.Text = "January" Then
+    Private Sub txtuntil_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txteffective.SelectedIndexChanged
+        If txteffective.Text = "January" Then
             value2 = 1
-        ElseIf txtuntil.Text = "February" Then
+        ElseIf txteffective.Text = "February" Then
             value2 = 2
-        ElseIf txtuntil.Text = "March" Then
+        ElseIf txteffective.Text = "March" Then
             value2 = 3
-        ElseIf txtuntil.Text = "April" Then
+        ElseIf txteffective.Text = "April" Then
             value2 = 4
-        ElseIf txtuntil.Text = "May" Then
+        ElseIf txteffective.Text = "May" Then
             value2 = 5
-        ElseIf txtuntil.Text = "June" Then
+        ElseIf txteffective.Text = "June" Then
             value2 = 6
-        ElseIf txtuntil.Text = "July" Then
+        ElseIf txteffective.Text = "July" Then
             value2 = 7
-        ElseIf txtuntil.Text = "August" Then
+        ElseIf txteffective.Text = "August" Then
             value2 = 8
-        ElseIf txtuntil.Text = "September" Then
+        ElseIf txteffective.Text = "September" Then
             value2 = 9
-        ElseIf txtuntil.Text = "October" Then
+        ElseIf txteffective.Text = "October" Then
             value2 = 10
-        ElseIf txtuntil.Text = "November" Then
+        ElseIf txteffective.Text = "November" Then
             value2 = 11
         Else
             value2 = 12
@@ -793,6 +773,7 @@
     End Sub
 
     Private Sub txtloanname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtloanname.SelectedIndexChanged
+        loadloan()
         For index As Integer = 0 To tbl_par3.Rows.Count - 1
             If txtloanname.SelectedItem Is tbl_par3.Rows(index).Item(0).ToString Then
             End If
@@ -800,52 +781,15 @@
     End Sub
 
     Private Sub btnLookup_Click(sender As Object, e As EventArgs) Handles btnLookup.Click
-        loadloanname()
+        loadloan()
+        If txtloanname.Text = "" Then
+            MsgBox("Please Insert the employee name")
+        Else
+            loadloanname()
+        End If
     End Sub
 
     Dim act As String = ""
-
-    Private Sub GridView7_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView7.FocusedRowChanged
-
-    End Sub
-
-    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
-        SQLConnection = New MySqlConnection()
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Dim datatabl As New DataTable
-        Dim sqlCommand As New MySqlCommand
-        datatabl.Clear()
-        Dim param As String = ""
-        Try
-            param = "And EmployeeCode='" + GridView1.GetFocusedRowCellValue("EmployeeCode").ToString() + "'"
-        Catch ex As Exception
-        End Try
-        If param > "" Then
-            act = "edit"
-        Else
-            act = "input"
-        End If
-        Try
-            sqlCommand.CommandText = "SELECT FullName, EmployeeCode FROM db_loan WHERE 1 = 1 " + param.ToString()
-            sqlCommand.Connection = SQLConnection
-            Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
-            Dim cb As New MySqlCommandBuilder(adapter)
-            adapter.Fill(datatabl)
-            SQLConnection.Close()
-        Catch ex As Exception
-            SQLConnection.Close()
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
-        End Try
-        If datatabl.Rows.Count > 0 Then
-            txtloanname.Text = datatabl.Rows(0).Item(0).ToString()
-            txtempcode.Text = datatabl.Rows(0).Item(1).ToString()
-        End If
-    End Sub
-
-    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Dim pay As New Payslip
 
@@ -854,22 +798,6 @@
             pay = New Payslip
         End If
         pay.Show()
-    End Sub
-
-    Private Sub TextEdit27_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TextEdit26_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TextEdit20_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtbasicrate_EditValueChanged(sender As Object, e As EventArgs) Handles txtbasicrate.EditValueChanged
-
     End Sub
 
     Private Sub txtbasicrate_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbasicrate.KeyPress
@@ -908,7 +836,92 @@
         End If
     End Sub
 
-    Private Sub txteffective_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txteffective.SelectedIndexChanged
+    Private Sub txtmonth_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles txtmonth.SelectedIndexChanged
+        'months()
+        hasil()
+        txtyears.Text = Year(Now).ToString
+    End Sub
+
+    Sub completedloan()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "UPDATE db_payrolldata SET" +
+                                    " Loan = @Loan" +
+                                    "WHERE EmployeeCode = @EmployeeCode "
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode.Text)
+            sqlcommand.Parameters.AddWithValue("@Loan", "1")
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Sub settling()
+        Dim conn As New MySqlConnection(connectionString)
+        Dim cmd As MySqlCommand = conn.CreateCommand
+        conn.Open()
+        Dim mess As String
+        mess = CType(MsgBox("Sure to clear this employee ?", MsgBoxStyle.YesNo, "Warning"), String)
+        If CType(mess, Global.Microsoft.VisualBasic.MsgBoxResult) = vbYes Then
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New MySqlParameter("@empcode", txtnameloan.Text))
+            cmd.CommandText = "deleteloan"
+            cmd.ExecuteNonQuery()
+            MsgBox("Data Successfully Removed!", MsgBoxStyle.Information, "Success")
+            conn.Close()
+        End If
+    End Sub
+
+    Sub complete()
+        Try
+            Dim conn As New MySqlConnection(connectionString)
+            Dim cmd As MySqlCommand = conn.CreateCommand
+            conn.Open()
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New MySqlParameter("@empcode", txtnameloan.Text))
+            cmd.CommandText = "completedloan"
+            cmd.ExecuteNonQuery()
+            MsgBox("Data successfully procedeed", MsgBoxStyle.Information, "Success")
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub txtnameloan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnameloan.SelectedIndexChanged
+        For index As Integer = 0 To tbl_par3.Rows.Count - 1
+            If txtnameloan.SelectedItem Is tbl_par3.Rows(index).Item(1).ToString Then
+            End If
+        Next
+    End Sub
+
+    Private Sub SimpleButton3_Click_1(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+        If txtnameloan.Text = "" Then
+            MsgBox("Please Input The EmployeeCode To The Field!")
+        Else
+            Call settling()
+            loadloan()
+            txtnameloan.Text = ""
+        End If
+    End Sub
+
+    Private Sub btnClear_Click_1(sender As Object, e As EventArgs) Handles btnClear.Click
+        Call complete()
+    End Sub
+
+    Private Sub txteffective_SelectedIndexChanged(sender As Object, e As EventArgs)
         If txteffective.Text = "January" Then
             value = 0
         ElseIf txteffective.Text = "February" Then

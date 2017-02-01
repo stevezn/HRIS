@@ -5,7 +5,6 @@ Public Class NewRec
     Dim SQLConnection As MySqlConnection = New MySqlConnection
     Dim oDt_sched As New DataTable()
 
-
     Sub reset()
         lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcfullname.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -370,4 +369,48 @@ Public Class NewRec
 
     End Sub
 
+    Private Sub OpenPreviewWindows()
+        Dim iHeight As Integer = pictureEdit.Height
+        Dim iWidth As Integer = pictureEdit.Width
+        hHwnd = capCreateCaptureWindowA(iDevice, WS_VISIBLE Or WS_CHILD, 0, 0, 640, 480, pictureEdit.Handle.ToInt32, 0)
+        If SendMessage(hHwnd, WM_Cap_Paki_CONNECT, iDevice, 0) Then
+            SendMessage(hHwnd, WM_Cap_SET_SCALE, True, 0)
+            SendMessage(hHwnd, WM_Cap_SET_PREVIEWRATE, 66, 0)
+            SendMessage(hHwnd, WM_Cap_SET_PREVIEW, True, 0)
+            SetWindowPos(hHwnd, HWND_BOTTOM, 0, 0, pictureEdit.Width, pictureEdit.Height, SWP_NOMOVE Or SWP_NOZORDER)
+        Else
+            DestroyWindow(hHwnd)
+        End If
+    End Sub
+
+    Private Sub ClosePreviewWindow()
+        SendMessage(hHwnd, WM_Cap_Paki_DISCONNECT, iDevice, 0)
+        DestroyWindow(hHwnd)
+    End Sub
+
+    Private Sub btnCapture_Click(sender As Object, e As EventArgs) Handles btnCapture.Click
+
+    End Sub
+
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles btnCapture.Click
+        If btnCapture.Text = "Camera" Then
+            Call OpenPreviewWindows()
+            btnCapture.Text = "Capture"
+            btnReset.Enabled = False
+
+        ElseIf btnCapture.Text = "Capture" Then
+            Dim data As IDataObject
+            Dim Bmap As Drawing.Image
+            SendMessage(hHwnd, WM_Cap_EDIT_COPY, 0, 0)
+            data = Clipboard.GetDataObject()
+            If data.GetDataPresent(GetType(System.Drawing.Bitmap)) Then
+                Bmap = CType(data.GetData(GetType(System.Drawing.Bitmap)), Drawing.Image)
+                pictureEdit.Image = Bmap
+                ClosePreviewWindow()
+            End If
+            btnCapture.Text = "Camera"
+            btnReset.Enabled = True
+            Call ClosePreviewWindow()
+        End If
+    End Sub
 End Class
