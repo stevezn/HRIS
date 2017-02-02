@@ -33,6 +33,7 @@ Public Class MainApp
 #End Region
 
     Private Sub MainApp_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Timer1.Enabled = True
         koneksi()
         act = "input"
         If barJudul.Caption = "Module Employee" Then
@@ -2568,7 +2569,6 @@ Public Class MainApp
         GridControl1.RefreshDataSource()
         GridView1.Columns.Clear()
         loadDataReq()
-        'spform.Show()
     End Sub
 
     Dim employeenotes As New Notes
@@ -2576,8 +2576,7 @@ Public Class MainApp
         If employeenotes Is Nothing OrElse employeenotes.IsDisposed Then
             employeenotes = New Notes
         End If
-        employeenotes.Show()
-        'employeenotes.Activate()
+        employeenotes.Show()      
     End Sub
 
     Dim spforms As New SPForms
@@ -2736,23 +2735,11 @@ Public Class MainApp
         End If
     End Sub
 
-    Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs)
-
-    End Sub
-
     Private Sub btnProg_Click(sender As Object, e As EventArgs) Handles btnProg.Click
         If proses Is Nothing OrElse proses.IsDisposed Then
             proses = New RecProcess
         End If
         proses.Show()
-    End Sub
-
-    Private Sub txtTrainingSampai_EditValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtStatEmp_SelectedIndexChanged(sender As Object, e As EventArgs)
-
     End Sub
 
     Dim loan As New Payments
@@ -2775,7 +2762,7 @@ Public Class MainApp
             e.Menu.Items.Clear()
             ' Add a submenu with a single menu item.
             ' e.Menu.Items.Add(CreateRowSubMenu(view, rowHandle))
-            ' Add a check menu item.           
+            ' Add a check menu item.       
             Dim item As DXMenuItem = CreateMergingEnabledMenuItem(view, rowHandle)
             item.BeginGroup = True
             e.Menu.Items.Add(item)
@@ -2784,13 +2771,13 @@ Public Class MainApp
     Dim repot As New Report
 
     Private Sub BarButtonItem12_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem12.ItemClick
-        'If report Is Nothing OrElse report.IsDisposed Then
-        '    report = New Reports
-        'End If
-        'report.Show()
         If repot Is Nothing OrElse repot.IsDisposed Then
             repot = New Report
         End If
         repot.Show()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        TextEdit1.Text = Format(Now, "dd, MMMM, yyyy hhhh:mm:ss")
     End Sub
 End Class

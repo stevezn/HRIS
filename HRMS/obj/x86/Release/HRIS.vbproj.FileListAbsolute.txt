@@ -1,0 +1,5 @@
+E:\New folder\New folder\HRMS\bin\Release\HRMS.exe.config
+E:\New folder\New folder\HRMS\obj\x86\Release\Interop.Microsoft.Office.Core.dll
+E:\New folder\New folder\HRMS\obj\x86\Release\Interop.Microsoft.Office.Interop.Word.dll
+E:\New folder\New folder\HRMS\obj\x86\Release\Interop.VBIDE.dll
+E:\New folder\New folder\HRMS\obj\x86\Release\HRIS.vbproj.ResolveComReference.cache

@@ -151,7 +151,7 @@ Partial Class NewEmp
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.Employee})
-        Me.RibbonControl1.Size = New System.Drawing.Size(486, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(441, 142)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above
         '
@@ -218,11 +218,11 @@ Partial Class NewEmp
         Me.LayoutControl1.Controls.Add(Me.txtidcard)
         Me.LayoutControl1.Controls.Add(Me.txtempcode)
         Me.LayoutControl1.Controls.Add(Me.txtnames)
-        Me.LayoutControl1.Location = New System.Drawing.Point(12, 148)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 148)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(409, 411, 250, 350)
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(292, 531)
+        Me.LayoutControl1.Size = New System.Drawing.Size(292, 497)
         Me.LayoutControl1.TabIndex = 29
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -457,7 +457,7 @@ Partial Class NewEmp
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcName, Me.lcempcode, Me.lcpob, Me.lcidcard, Me.lcaddress, Me.lcbtnsave, Me.lcbtnreset, Me.lcphone, Me.lcdob, Me.lcbrowse, Me.lcgender, Me.lcreligion, Me.lcstats, Me.LayoutControlItem1, Me.lworkdate, Me.lcfullname, Me.lccompcode, Me.lcoffice, Me.lctrains, Me.lcposition, Me.lcemail})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(292, 531)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(292, 497)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -507,7 +507,7 @@ Partial Class NewEmp
         Me.lcbtnsave.CustomizationFormText = "LayoutControlItem8"
         Me.lcbtnsave.Location = New System.Drawing.Point(0, 434)
         Me.lcbtnsave.Name = "lcbtnsave"
-        Me.lcbtnsave.Size = New System.Drawing.Size(137, 77)
+        Me.lcbtnsave.Size = New System.Drawing.Size(137, 43)
         Me.lcbtnsave.Text = "lcbtnsave"
         Me.lcbtnsave.TextSize = New System.Drawing.Size(0, 0)
         Me.lcbtnsave.TextToControlDistance = 0
@@ -519,7 +519,7 @@ Partial Class NewEmp
         Me.lcbtnreset.CustomizationFormText = "LayoutControlItem9"
         Me.lcbtnreset.Location = New System.Drawing.Point(137, 434)
         Me.lcbtnreset.Name = "lcbtnreset"
-        Me.lcbtnreset.Size = New System.Drawing.Size(135, 77)
+        Me.lcbtnreset.Size = New System.Drawing.Size(135, 43)
         Me.lcbtnreset.Text = "lcbtnreset"
         Me.lcbtnreset.TextSize = New System.Drawing.Size(0, 0)
         Me.lcbtnreset.TextToControlDistance = 0
@@ -670,7 +670,7 @@ Partial Class NewEmp
         'pictureEdit
         '
         Me.pictureEdit.Image = Global.HRMS.My.Resources.Resources.user_icon_6
-        Me.pictureEdit.Location = New System.Drawing.Point(310, 163)
+        Me.pictureEdit.Location = New System.Drawing.Point(286, 163)
         Me.pictureEdit.Name = "pictureEdit"
         Me.pictureEdit.Size = New System.Drawing.Size(148, 150)
         Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -681,7 +681,7 @@ Partial Class NewEmp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(486, 625)
+        Me.ClientSize = New System.Drawing.Size(441, 637)
         Me.Controls.Add(Me.pictureEdit)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)

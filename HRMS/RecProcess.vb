@@ -91,13 +91,6 @@ Public Class RecProcess
         Next
         SQLConnection.Close()
     End Sub
-    Private Sub pictureEdit_Click(sender As Object, e As EventArgs) Handles pictureEdit.Click
-
-    End Sub
-
-    Private Sub GroupControl1_Paint(sender As Object, e As PaintEventArgs) Handles GroupControl1.Paint
-
-    End Sub
 
     Private Sub txtfullname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtfullname.SelectedIndexChanged
         For indexing As Integer = 0 To tbl_par.Rows.Count - 1
@@ -176,10 +169,8 @@ Public Class RecProcess
 
     Private Sub GridView1_PopupMenuShowing(sender As Object, e As Views.Grid.PopupMenuShowingEventArgs) Handles GridView1.PopupMenuShowing
         Dim view As GridView = CType(sender, GridView)
-        ' Check whether a row is right-clicked.
         If e.MenuType = DevExpress.XtraGrid.Views.Grid.GridMenuType.Row Then
             Dim rowHandle As Integer = e.HitInfo.RowHandle
-            ' Delete existing menu items, if any.
             e.Menu.Items.Clear()
             Dim item As DXMenuItem = CreateMergingEnabledMenuItem(view, rowHandle)
             item.BeginGroup = True
@@ -194,5 +185,12 @@ Public Class RecProcess
             view = New pdfviewer
         End If
         view.Show()
+    End Sub
+
+    Private Sub txtidcard_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtidcard.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) = True Then
+            e.Handled = True
+        End If
     End Sub
 End Class

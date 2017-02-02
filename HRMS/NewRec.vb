@@ -6,7 +6,6 @@ Public Class NewRec
     Dim oDt_sched As New DataTable()
 
     Sub reset()
-        lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcfullname.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcName.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcid.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -224,39 +223,6 @@ Public Class NewRec
         'Location = New Point(500, 200)
     End Sub
 
-
-    Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
-
-    End Sub
-
-    Private Sub LayoutControl1_Click(sender As Object, e As EventArgs) Handles LayoutControl1.Click
-
-    End Sub
-
-    Private Sub txtstatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtstatus.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub txtreligion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtreligion.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub txtgender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtgender.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub txtdob_EditValueChanged(sender As Object, e As EventArgs) Handles txtdob.EditValueChanged
-
-    End Sub
-
-    Private Sub txtbrowse_EditValueChanged(sender As Object, e As EventArgs) Handles txtbrowse.EditValueChanged
-
-    End Sub
-
-    Private Sub txtphone_EditValueChanged(sender As Object, e As EventArgs) Handles txtphone.EditValueChanged
-
-    End Sub
-
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         cleartxt()
     End Sub
@@ -273,36 +239,12 @@ Public Class NewRec
         End If
     End Sub
 
-    Private Sub txtaddress_EditValueChanged(sender As Object, e As EventArgs) Handles txtaddress.EditValueChanged
-
-    End Sub
-
-    Private Sub txtpob_EditValueChanged(sender As Object, e As EventArgs) Handles txtpob.EditValueChanged
-
-    End Sub
-
-    Private Sub txtidcard_EditValueChanged(sender As Object, e As EventArgs) Handles txtidcard.EditValueChanged
-
-    End Sub
-
-    Private Sub txtid_EditValueChanged(sender As Object, e As EventArgs) Handles txtid.EditValueChanged
-
-    End Sub
-
-    Private Sub txtnames_EditValueChanged(sender As Object, e As EventArgs) Handles txtnames.EditValueChanged
-
-    End Sub
-
     Private Sub btnPhoto_Click(sender As Object, e As EventArgs) Handles btnPhoto.Click
         Using dialog As New OpenFileDialog
             If dialog.ShowDialog() <> DialogResult.OK Then Return
             txtbrowse.Image = Image.FromFile(dialog.FileName)
             pictureEdit.Image = Image.FromFile(dialog.FileName)
         End Using
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub BarButtonItem2_ItemClick_1(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
@@ -323,7 +265,6 @@ Public Class NewRec
         lcbtnsave.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         btnSave.Text = "Change"
         lcbtnreset.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
-        lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         RibbonPageGroup1.Visible = False
     End Sub
 
@@ -365,22 +306,22 @@ Public Class NewRec
         txtcv.Text = openfd.FileName
     End Sub
 
-    Private Sub RichTextBoxEx1_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub OpenPreviewWindows()
-        Dim iHeight As Integer = pictureEdit.Height
-        Dim iWidth As Integer = pictureEdit.Width
-        hHwnd = capCreateCaptureWindowA(iDevice, WS_VISIBLE Or WS_CHILD, 0, 0, 640, 480, pictureEdit.Handle.ToInt32, 0)
-        If SendMessage(hHwnd, WM_Cap_Paki_CONNECT, iDevice, 0) Then
-            SendMessage(hHwnd, WM_Cap_SET_SCALE, True, 0)
-            SendMessage(hHwnd, WM_Cap_SET_PREVIEWRATE, 66, 0)
-            SendMessage(hHwnd, WM_Cap_SET_PREVIEW, True, 0)
-            SetWindowPos(hHwnd, HWND_BOTTOM, 0, 0, pictureEdit.Width, pictureEdit.Height, SWP_NOMOVE Or SWP_NOZORDER)
-        Else
-            DestroyWindow(hHwnd)
-        End If
+        Try
+            Dim iHeight As Integer = pictureEdit.Height
+            Dim iWidth As Integer = pictureEdit.Width
+            hHwnd = capCreateCaptureWindowA(iDevice, WS_VISIBLE Or WS_CHILD, 0, 0, 640, 480, pictureEdit.Handle.ToInt32, 0)
+            If SendMessage(hHwnd, WM_Cap_Paki_CONNECT, iDevice, 0) Then
+                SendMessage(hHwnd, WM_Cap_SET_SCALE, True, 0)
+                SendMessage(hHwnd, WM_Cap_SET_PREVIEWRATE, 66, 0)
+                SendMessage(hHwnd, WM_Cap_SET_PREVIEW, True, 0)
+                SetWindowPos(hHwnd, HWND_BOTTOM, 0, 0, pictureEdit.Width, pictureEdit.Height, SWP_NOMOVE Or SWP_NOZORDER)
+            Else
+                DestroyWindow(hHwnd)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub ClosePreviewWindow()
@@ -389,14 +330,9 @@ Public Class NewRec
     End Sub
 
     Private Sub btnCapture_Click(sender As Object, e As EventArgs) Handles btnCapture.Click
-
-    End Sub
-
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles btnCapture.Click
         If btnCapture.Text = "Camera" Then
             Call OpenPreviewWindows()
             btnCapture.Text = "Capture"
-            btnReset.Enabled = False
 
         ElseIf btnCapture.Text = "Capture" Then
             Dim data As IDataObject
@@ -409,7 +345,8 @@ Public Class NewRec
                 ClosePreviewWindow()
             End If
             btnCapture.Text = "Camera"
-            btnReset.Enabled = True
+            pictureEdit.Enabled = True
+            pictureEdit.Enabled = True
             Call ClosePreviewWindow()
         End If
     End Sub

@@ -217,8 +217,6 @@ Partial Class Payments
         Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage6 = New DevExpress.XtraTab.XtraTabPage()
-        Me.LayoutControl8 = New DevExpress.XtraLayout.LayoutControl()
-        Me.LayoutControlGroup8 = New DevExpress.XtraLayout.LayoutControlGroup()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -401,9 +399,6 @@ Partial Class Payments
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.XtraTabPage6.SuspendLayout()
-        CType(Me.LayoutControl8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -728,7 +723,7 @@ Partial Class Payments
         Me.XtraTabPage11.Controls.Add(Me.txtnameloan)
         Me.XtraTabPage11.Controls.Add(Me.GridControl7)
         Me.XtraTabPage11.Name = "XtraTabPage11"
-        Me.XtraTabPage11.Size = New System.Drawing.Size(441, 305)
+        Me.XtraTabPage11.Size = New System.Drawing.Size(441, 309)
         Me.XtraTabPage11.Text = "List of employee"
         '
         'LabelControl2
@@ -1593,7 +1588,7 @@ Partial Class Payments
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(853, 307)
         Me.GroupControl2.TabIndex = 19
-        Me.GroupControl2.Text = "Change Salary"
+        Me.GroupControl2.Text = "Adjust Salary"
         '
         'GridControl4
         '
@@ -2340,30 +2335,9 @@ Partial Class Payments
         '
         'XtraTabPage6
         '
-        Me.XtraTabPage6.Controls.Add(Me.LayoutControl8)
         Me.XtraTabPage6.Name = "XtraTabPage6"
         Me.XtraTabPage6.Size = New System.Drawing.Size(865, 337)
         Me.XtraTabPage6.Text = "Holiday"
-        '
-        'LayoutControl8
-        '
-        Me.LayoutControl8.Location = New System.Drawing.Point(3, 3)
-        Me.LayoutControl8.Name = "LayoutControl8"
-        Me.LayoutControl8.Root = Me.LayoutControlGroup8
-        Me.LayoutControl8.Size = New System.Drawing.Size(245, 314)
-        Me.LayoutControl8.TabIndex = 0
-        Me.LayoutControl8.Text = "LayoutControl8"
-        '
-        'LayoutControlGroup8
-        '
-        Me.LayoutControlGroup8.CustomizationFormText = "LayoutControlGroup8"
-        Me.LayoutControlGroup8.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.LayoutControlGroup8.GroupBordersVisible = False
-        Me.LayoutControlGroup8.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
-        Me.LayoutControlGroup8.Size = New System.Drawing.Size(245, 314)
-        Me.LayoutControlGroup8.Text = "LayoutControlGroup8"
-        Me.LayoutControlGroup8.TextVisible = False
         '
         'Payments
         '
@@ -2560,9 +2534,6 @@ Partial Class Payments
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.XtraTabPage6.ResumeLayout(False)
-        CType(Me.LayoutControl8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2746,8 +2717,6 @@ Partial Class Payments
     Friend WithEvents GridView7 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents BarButtonItem8 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup8 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents LayoutControl8 As DevExpress.XtraLayout.LayoutControl
-    Friend WithEvents LayoutControlGroup8 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents txttype As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtsaltype As DevExpress.XtraEditors.ComboBoxEdit

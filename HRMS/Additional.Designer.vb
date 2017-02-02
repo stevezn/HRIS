@@ -24,6 +24,7 @@ Partial Class Additional
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Additional))
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
+        Me.txtname = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtdate2 = New System.Windows.Forms.DateTimePicker()
         Me.txtdate1 = New System.Windows.Forms.DateTimePicker()
         Me.txtempcode = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -39,13 +40,13 @@ Partial Class Additional
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.btnapprove = New DevExpress.XtraEditors.SimpleButton()
-        Me.txtname = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
+        CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtas2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtamount2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,10 +60,9 @@ Partial Class Additional
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -81,6 +81,15 @@ Partial Class Additional
         Me.LayoutControl1.Size = New System.Drawing.Size(306, 222)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
+        '
+        'txtname
+        '
+        Me.txtname.Location = New System.Drawing.Point(91, 12)
+        Me.txtname.Name = "txtname"
+        Me.txtname.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.txtname.Size = New System.Drawing.Size(203, 20)
+        Me.txtname.StyleController = Me.LayoutControl1
+        Me.txtname.TabIndex = 18
         '
         'txtdate2
         '
@@ -223,6 +232,16 @@ Partial Class Additional
         Me.LayoutControlItem1.Text = "Until"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(76, 13)
         '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.txtname
+        Me.LayoutControlItem2.CustomizationFormText = "Employee Name"
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(286, 24)
+        Me.LayoutControlItem2.Text = "Employee Name"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(76, 13)
+        '
         'DateEdit1
         '
         Me.DateEdit1.EditValue = Nothing
@@ -253,25 +272,6 @@ Partial Class Additional
         Me.btnapprove.TabIndex = 1
         Me.btnapprove.Text = "Approve"
         '
-        'txtname
-        '
-        Me.txtname.Location = New System.Drawing.Point(91, 12)
-        Me.txtname.Name = "txtname"
-        Me.txtname.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtname.Size = New System.Drawing.Size(203, 20)
-        Me.txtname.StyleController = Me.LayoutControl1
-        Me.txtname.TabIndex = 18
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.txtname
-        Me.LayoutControlItem2.CustomizationFormText = "Employee Name"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(286, 24)
-        Me.LayoutControlItem2.Text = "Employee Name"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(76, 13)
-        '
         'Additional
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -287,6 +287,7 @@ Partial Class Additional
         Me.Text = "Other Income / Deductions"
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
+        CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtempcode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtas2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtamount2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -300,10 +301,9 @@ Partial Class Additional
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

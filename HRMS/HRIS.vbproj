@@ -43,6 +43,25 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -110,11 +129,38 @@
     <Reference Include="DevExpress.XtraTreeList.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraWizard.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2010">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.DebuggerVisualizers.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2012">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.DebuggerVisualizers.VS2012.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2013">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.DebuggerVisualizers.VS2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2015">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.DebuggerVisualizers.VS2015.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2017">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.DebuggerVisualizers.VS2017.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI.GL">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.UI.GL.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Emgu.CV.World.dll</HintPath>
+    </Reference>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Example.CameraCapture">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\Example.CameraCapture.exe</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Designer.Interfaces, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>

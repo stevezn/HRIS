@@ -33,7 +33,6 @@ Partial Class NewRec
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.txtno = New DevExpress.XtraEditors.TextEdit()
-        Me.txtreason = New DevExpress.Tutorials.Controls.RichTextBoxEx()
         Me.txtcv = New DevExpress.XtraEditors.TextEdit()
         Me.btnCV = New DevExpress.XtraEditors.SimpleButton()
         Me.txtfullname = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -73,10 +72,11 @@ Partial Class NewRec
         Me.lcfullname = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcbtncv = New DevExpress.XtraLayout.LayoutControlItem()
         Me.lcCv = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.lcreason = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtreason = New DevExpress.Tutorials.Controls.RichTextBoxEx()
         Me.pictureEdit = New System.Windows.Forms.PictureBox()
         Me.btnCapture = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -118,7 +118,6 @@ Partial Class NewRec
         CType(Me.lcfullname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcbtncv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lcCv, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lcreason, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -165,7 +164,7 @@ Partial Class NewRec
         Me.RibbonControl1.MaxItemId = 6
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.Employee})
-        Me.RibbonControl1.Size = New System.Drawing.Size(439, 144)
+        Me.RibbonControl1.Size = New System.Drawing.Size(443, 144)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above
         '
@@ -184,7 +183,6 @@ Partial Class NewRec
         'LayoutControl1
         '
         Me.LayoutControl1.Controls.Add(Me.txtno)
-        Me.LayoutControl1.Controls.Add(Me.txtreason)
         Me.LayoutControl1.Controls.Add(Me.txtcv)
         Me.LayoutControl1.Controls.Add(Me.btnCV)
         Me.LayoutControl1.Controls.Add(Me.txtfullname)
@@ -208,7 +206,7 @@ Partial Class NewRec
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(409, 411, 250, 350)
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(292, 489)
+        Me.LayoutControl1.Size = New System.Drawing.Size(292, 453)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -221,14 +219,6 @@ Partial Class NewRec
         Me.txtno.StyleController = Me.LayoutControl1
         Me.txtno.TabIndex = 29
         Me.txtno.Visible = False
-        '
-        'txtreason
-        '
-        Me.txtreason.Location = New System.Drawing.Point(111, 400)
-        Me.txtreason.Name = "txtreason"
-        Me.txtreason.Size = New System.Drawing.Size(169, 35)
-        Me.txtreason.TabIndex = 34
-        Me.txtreason.Text = ""
         '
         'txtcv
         '
@@ -370,7 +360,7 @@ Partial Class NewRec
         'btnReset
         '
         Me.btnReset.Image = CType(resources.GetObject("btnReset.Image"), System.Drawing.Image)
-        Me.btnReset.Location = New System.Drawing.Point(149, 439)
+        Me.btnReset.Location = New System.Drawing.Point(149, 400)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(131, 38)
         Me.btnReset.StyleController = Me.LayoutControl1
@@ -380,7 +370,7 @@ Partial Class NewRec
         'btnSave
         '
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(12, 439)
+        Me.btnSave.Location = New System.Drawing.Point(12, 400)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(133, 38)
         Me.btnSave.StyleController = Me.LayoutControl1
@@ -438,10 +428,10 @@ Partial Class NewRec
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcName, Me.lcid, Me.lcpob, Me.lcidcard, Me.lcaddress, Me.lcbtnsave, Me.lcbtnreset, Me.lcphone, Me.lcdob, Me.lcbrowse, Me.lcgender, Me.lcreligion, Me.lcstats, Me.lcinterview, Me.LayoutControlItem1, Me.lcinterviewdate, Me.lcfullname, Me.lcbtncv, Me.lcCv, Me.lcreason, Me.LayoutControlItem2})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcName, Me.lcid, Me.lcpob, Me.lcidcard, Me.lcaddress, Me.lcbtnsave, Me.lcbtnreset, Me.lcphone, Me.lcdob, Me.lcbrowse, Me.lcgender, Me.lcreligion, Me.lcstats, Me.lcinterview, Me.LayoutControlItem1, Me.lcinterviewdate, Me.lcfullname, Me.lcbtncv, Me.lcCv, Me.LayoutControlItem2})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(292, 489)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(292, 453)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -499,9 +489,9 @@ Partial Class NewRec
         '
         Me.lcbtnsave.Control = Me.btnSave
         Me.lcbtnsave.CustomizationFormText = "LayoutControlItem8"
-        Me.lcbtnsave.Location = New System.Drawing.Point(0, 427)
+        Me.lcbtnsave.Location = New System.Drawing.Point(0, 388)
         Me.lcbtnsave.Name = "lcbtnsave"
-        Me.lcbtnsave.Size = New System.Drawing.Size(137, 42)
+        Me.lcbtnsave.Size = New System.Drawing.Size(137, 45)
         Me.lcbtnsave.Text = "lcbtnsave"
         Me.lcbtnsave.TextSize = New System.Drawing.Size(0, 0)
         Me.lcbtnsave.TextToControlDistance = 0
@@ -511,9 +501,9 @@ Partial Class NewRec
         '
         Me.lcbtnreset.Control = Me.btnReset
         Me.lcbtnreset.CustomizationFormText = "LayoutControlItem9"
-        Me.lcbtnreset.Location = New System.Drawing.Point(137, 427)
+        Me.lcbtnreset.Location = New System.Drawing.Point(137, 388)
         Me.lcbtnreset.Name = "lcbtnreset"
-        Me.lcbtnreset.Size = New System.Drawing.Size(135, 42)
+        Me.lcbtnreset.Size = New System.Drawing.Size(135, 45)
         Me.lcbtnreset.Text = "lcbtnreset"
         Me.lcbtnreset.TextSize = New System.Drawing.Size(0, 0)
         Me.lcbtnreset.TextToControlDistance = 0
@@ -643,16 +633,6 @@ Partial Class NewRec
         Me.lcCv.Text = "Upload CV"
         Me.lcCv.TextSize = New System.Drawing.Size(96, 13)
         '
-        'lcreason
-        '
-        Me.lcreason.Control = Me.txtreason
-        Me.lcreason.CustomizationFormText = "Reason"
-        Me.lcreason.Location = New System.Drawing.Point(0, 388)
-        Me.lcreason.Name = "lcreason"
-        Me.lcreason.Size = New System.Drawing.Size(272, 39)
-        Me.lcreason.Text = "Reason"
-        Me.lcreason.TextSize = New System.Drawing.Size(96, 13)
-        '
         'LayoutControlItem2
         '
         Me.LayoutControlItem2.Control = Me.txtno
@@ -664,32 +644,51 @@ Partial Class NewRec
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(96, 13)
         Me.LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         '
+        'txtreason
+        '
+        Me.txtreason.Location = New System.Drawing.Point(298, 457)
+        Me.txtreason.Name = "txtreason"
+        Me.txtreason.Size = New System.Drawing.Size(133, 89)
+        Me.txtreason.TabIndex = 34
+        Me.txtreason.Text = ""
+        '
         'pictureEdit
         '
         Me.pictureEdit.Image = Global.HRMS.My.Resources.Resources.user_icon_6
         Me.pictureEdit.Location = New System.Drawing.Point(286, 165)
         Me.pictureEdit.Name = "pictureEdit"
-        Me.pictureEdit.Size = New System.Drawing.Size(148, 150)
+        Me.pictureEdit.Size = New System.Drawing.Size(148, 129)
         Me.pictureEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictureEdit.TabIndex = 27
         Me.pictureEdit.TabStop = False
         '
         'btnCapture
         '
-        Me.btnCapture.Location = New System.Drawing.Point(319, 329)
+        Me.btnCapture.Image = CType(resources.GetObject("btnCapture.Image"), System.Drawing.Image)
+        Me.btnCapture.Location = New System.Drawing.Point(312, 300)
         Me.btnCapture.Name = "btnCapture"
-        Me.btnCapture.Size = New System.Drawing.Size(75, 23)
+        Me.btnCapture.Size = New System.Drawing.Size(119, 36)
         Me.btnCapture.TabIndex = 29
         Me.btnCapture.Text = "Camera"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Location = New System.Drawing.Point(286, 438)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(36, 13)
+        Me.LabelControl1.TabIndex = 35
+        Me.LabelControl1.Text = "Reason"
         '
         'NewRec
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(439, 637)
+        Me.ClientSize = New System.Drawing.Size(443, 589)
+        Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.btnCapture)
         Me.Controls.Add(Me.pictureEdit)
         Me.Controls.Add(Me.LayoutControl1)
+        Me.Controls.Add(Me.txtreason)
         Me.Controls.Add(Me.RibbonControl1)
         Me.MaximizeBox = False
         Me.Name = "NewRec"
@@ -737,10 +736,10 @@ Partial Class NewRec
         CType(Me.lcfullname, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcbtncv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lcCv, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lcreason, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureEdit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -793,9 +792,9 @@ Partial Class NewRec
     Friend WithEvents txtcv As DevExpress.XtraEditors.TextEdit
     Friend WithEvents lcCv As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtreason As DevExpress.Tutorials.Controls.RichTextBoxEx
-    Friend WithEvents lcreason As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents txtno As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents BarButtonItem3 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnCapture As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
 End Class

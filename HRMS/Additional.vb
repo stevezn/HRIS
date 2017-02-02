@@ -90,4 +90,8 @@ Public Class Additional
             End If
         Next
     End Sub
+
+    Private Sub txtdate1_ValueChanged(sender As Object, e As EventArgs) Handles txtdate1.ValueChanged
+
+    End Sub
 End Class

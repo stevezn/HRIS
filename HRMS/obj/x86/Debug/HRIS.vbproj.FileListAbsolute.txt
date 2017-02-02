@@ -650,3 +650,16 @@ E:\New folder\New folder\HRMS\bin\Debug\ja\DevExpress.Snap.v13.1.Extensions.reso
 E:\New folder\New folder\HRMS\bin\Debug\ru\DevExpress.Snap.v13.1.Extensions.resources.dll
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.ReportsForm.resources
 E:\New folder\New folder\HRMS\obj\x86\Debug\HRMS.Calculate.resources
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2010.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2012.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2013.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2015.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.DebuggerVisualizers.VS2017.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.UI.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.UI.GL.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.World.dll
+E:\New folder\New folder\HRMS\bin\Debug\Example.CameraCapture.exe
+E:\New folder\New folder\HRMS\bin\Debug\ZedGraph.dll
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.UI.xml
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.UI.GL.xml
+E:\New folder\New folder\HRMS\bin\Debug\Emgu.CV.World.xml

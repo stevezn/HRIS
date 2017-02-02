@@ -718,9 +718,14 @@
             End If
         Next
     End Sub
+    Dim holiday As New Holiday
 
     Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
-        XtraTabPage6.Show()
+        If holiday Is Nothing OrElse holiday.IsDisposed Then
+            holiday = New Holiday
+        End If
+        holiday.Show()
+        'XtraTabPage6.Show()
     End Sub
 
     Sub reset()
@@ -773,7 +778,7 @@
     End Sub
 
     Private Sub txtloanname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtloanname.SelectedIndexChanged
-        loadloan()
+        loanlists()
         For index As Integer = 0 To tbl_par3.Rows.Count - 1
             If txtloanname.SelectedItem Is tbl_par3.Rows(index).Item(0).ToString Then
             End If
@@ -901,6 +906,7 @@
     End Sub
 
     Private Sub txtnameloan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnameloan.SelectedIndexChanged
+        loanlists()
         For index As Integer = 0 To tbl_par3.Rows.Count - 1
             If txtnameloan.SelectedItem Is tbl_par3.Rows(index).Item(1).ToString Then
             End If
