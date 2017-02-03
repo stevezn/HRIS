@@ -305,6 +305,40 @@
         End Try
     End Function
 
+    Public Function Process() As Boolean
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim dtb, dtr As DateTime
+        date1.Format = DateTimePickerFormat.Custom
+        date1.CustomFormat = "yyyy-MM-dd"
+        dtb = date1.Value
+        date2.Format = DateTimePickerFormat.Custom
+        date2.CustomFormat = "yyyy-MM-dd"
+        dtr = date2.Value
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "INSERT INTO db_holiday " +
+                            "(StartDate, EndDate, Reason, TotalDays) " +
+                            " Values (@StartDate, @EndDate, @Reason, @TotalDays)"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@StartDate", dtb.ToString("yyyy-MM-dd"))
+            sqlcommand.Parameters.AddWithValue("@EndDate", dtr.ToString("yyyy-MM-dd"))
+            sqlcommand.Parameters.AddWithValue("@Reason", textreason.Text)
+            sqlcommand.Parameters.AddWithValue("@TotalDays", txtdays.Text)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            MessageBox.Show("Data Succesfully Added!")
+            Return True
+        Catch ex As Exception
+            SQLConnection.Close()
+            Return False
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
     Private Sub loanpay()
         Try
             Dim a, b, res As Double
@@ -438,7 +472,30 @@
         XtraTabPage4.Show()
     End Sub
 
+    Private Sub holidays()
+        GridControl6.RefreshDataSource()
+        Dim table As New DataTable
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Try
+            sqlcommand.CommandText = "Select StartDate, EndDate, Reason, TotalDays from db_holiday"
+            sqlcommand.Connection = SQLConnection
+            Dim tbl_par As New DataTable
+            Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(table)
+            GridControl6.DataSource = table
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub LoanForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        holidays()
         loaddata()
         loaddata1()
         loadpayroll()
@@ -718,14 +775,13 @@
             End If
         Next
     End Sub
-    Dim holiday As New Holiday
 
     Private Sub BarButtonItem5_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem5.ItemClick
-        If holiday Is Nothing OrElse holiday.IsDisposed Then
-            holiday = New Holiday
-        End If
-        holiday.Show()
-        'XtraTabPage6.Show()
+        'If holiday Is Nothing OrElse holiday.IsDisposed Then
+        '    holiday = New Holiday
+        'End If
+        'holiday.Show()
+        XtraTabPage6.Show()
     End Sub
 
     Sub reset()
@@ -842,7 +898,6 @@
     End Sub
 
     Private Sub txtmonth_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles txtmonth.SelectedIndexChanged
-        'months()
         hasil()
         txtyears.Text = Year(Now).ToString
     End Sub
@@ -901,10 +956,6 @@
         End Try
     End Sub
 
-    Private Sub btnClear_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub txtnameloan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtnameloan.SelectedIndexChanged
         loanlists()
         For index As Integer = 0 To tbl_par3.Rows.Count - 1
@@ -925,6 +976,58 @@
 
     Private Sub btnClear_Click_1(sender As Object, e As EventArgs) Handles btnClear.Click
         Call complete()
+    End Sub
+
+    Private Sub btnProcess_Click(sender As Object, e As EventArgs) Handles btnProcess.Click
+        days()
+        If date1.Text = "" Then
+            MsgBox("Please Input The Start Date")
+        ElseIf date1.Value > date2.Value Then
+            MsgBox("Invalid Input")
+        Else
+            Process()
+            holidays()
+        End If
+    End Sub
+
+    Private Sub GridView6_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView6.FocusedRowChanged
+        SQLConnection = New MySqlConnection()
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim datatabl As New DataTable
+        Dim sqlCommand As New MySqlCommand
+        datatabl.Clear()
+        Dim param As String = ""
+        Try
+            param = "and no='" + GridView1.GetFocusedRowCellValue("no").ToString() + "'"
+        Catch ex As Exception
+        End Try
+        If param > "" Then
+            act = "edit"
+        Else
+            act = "input"
+        End If
+        Try
+            sqlCommand.CommandText = "SELECT StartDate, EndDate, Reason FROM db_holiday WHERE 1 = 1 " + param.ToString()
+            sqlCommand.Connection = SQLConnection
+            Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
+            Dim cb As New MySqlCommandBuilder(adapter)
+            adapter.Fill(datatabl)
+            SQLConnection.Close()
+        Catch ex As Exception
+            SQLConnection.Close()
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+        If datatabl.Rows.Count > 0 Then
+            date1.Value = CDate(datatabl.Rows(0).Item(0).ToString())
+            date2.Value = CDate(datatabl.Rows(0).Item(1).ToString())
+            textreason.Text = datatabl.Rows(0).Item(2).ToString()
+        End If
+    End Sub
+
+    Sub days()
+        Dim t As TimeSpan = date2.Value - date1.Value
+        txtdays.Text = t.Days.ToString
     End Sub
 
     Private Sub txteffective_SelectedIndexChanged(sender As Object, e As EventArgs)

@@ -333,7 +333,6 @@ Public Class NewRec
         If btnCapture.Text = "Camera" Then
             Call OpenPreviewWindows()
             btnCapture.Text = "Capture"
-
         ElseIf btnCapture.Text = "Capture" Then
             Dim data As IDataObject
             Dim Bmap As Drawing.Image

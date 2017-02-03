@@ -22,7 +22,6 @@ Public Class MainApp
             koneksi = New MySqlConnection(str)
             If koneksi.State = ConnectionState.Closed Then
                 koneksi.Open()
-                'MsgBox("Settings Connection Succesfully!")
                 BarButtonItem1.PerformClick()
             Else
             End If
@@ -112,7 +111,6 @@ Public Class MainApp
         txtTanggal.Text = ""
         txtStatEmp.Text = ""
         txtTglInterview.Text = ""
-        'txtTrainingSampai.Text = ""
         pictureEdit.Refresh()
         txtGaji.Text = ""
         txtAllowance.Text = ""
@@ -122,11 +120,6 @@ Public Class MainApp
         txtpphterutang.Text = ""
         cmboxbj.Text = ""
         cmboxiuranpensiun.Text = ""
-        'txtpkk.Text = ""
-        'txtpjk.Text = ""
-        'txtpjht.Text = ""
-        'txtpbj.Text = ""
-        'txtpip.Text = ""
         txtpajakpph.Text = ""
         txtrapel.Text = ""
         frommonth.Text = ""
@@ -135,7 +128,6 @@ Public Class MainApp
         tomonth.Text = ""
         txtworkdate.Text = ""
         txtJnsShift.Text = ""
-        'pictureEdit.Controls.Remove()
     End Sub
 
     Sub reset()
@@ -182,15 +174,10 @@ Public Class MainApp
         lcaddress.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcemail.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcpphutang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'lcpersenkk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'lcpersenjk.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'lcpersenjht.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        ' lcbiayajabatan1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lciuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         txtbiayajabatan.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         txtiuranpensiun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'lciuranpensiun1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         netosetaun.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcphone.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lclocation.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -206,11 +193,9 @@ Public Class MainApp
         lcdeductions.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcnetincome.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcpkp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'lcpajak.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lc1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lc2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         compcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'lccode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lc3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lc4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -1523,25 +1508,6 @@ Public Class MainApp
             If datatabl.Rows.Count > 0 Then
                 txtBar1.Text = datatabl.Rows(0).Item(0).ToString()
                 txtBar2.Text = datatabl.Rows(0).Item(1).ToString()
-                'txtBar3.Text = datatabl.Rows(0).Item(2).ToString()
-                'txtBar4.Text = datatabl.Rows(0).Item(3).ToString()
-                'txtTanggal.Text = datatabl.Rows(0).Item(4).ToString()
-                'txtaddress.Text = datatabl.Rows(0).Item(5).ToString()
-                'txtbar6.Text = datatabl.Rows(0).Item(6).ToString()
-                'txtbar7.Text = datatabl.Rows(0).Item(7).ToString()
-                'txtphone.Text = datatabl.Rows(0).Item(8).ToString()
-                'txtBar8.Text = datatabl.Rows(0).Item(9).ToString()
-                'Dim filefoto As Byte() = CType(datatabl.Rows(0).Item(10), Byte())
-                'If filefoto.Length > 0 
-                '    pictureEdit.Refresh()Then
-                '    pictureEdit.Image = ByteToImage(filefoto)
-                'Else
-                '    pictureEdit.Image = Nothing
-                'End If
-                ''tampilkan foto nya belum
-                ''
-                'txtText.Text = datatabl.Rows(0).Item(11).ToString()
-                'txtTglInterview.Text = datatabl(0).Item(12).ToString()
             End If
         ElseIf barJudul.Caption = "Module Employee" Then
             Dim param2 As String = ""
@@ -1653,11 +1619,6 @@ Public Class MainApp
                 cmboxjht.Text = datatabl.Rows(0).Item(36).ToString()
                 cmboxbj.Text = datatabl.Rows(0).Item(37).ToString()
                 cmboxiuranpensiun.Text = datatabl.Rows(0).Item(38).ToString()
-                'txtpkk.Text = datatabl.Rows(0).Item(39).ToString()
-                'txtpjk.Text = datatabl.Rows(0).Item(40).ToString()
-                'txtpjht.Text = datatabl.Rows(0).Item(41).ToString()
-                'txtpbj.Text = datatabl.Rows(0).Item(42).ToString()
-                'txtpip.Text = datatabl.Rows(0).Item(43).ToString()
                 cmboxnpwp.Text = datatabl.Rows(0).Item(44).ToString()
                 txtgross.Text = datatabl.Rows(0).Item(45).ToString()
                 txtbpjs.Text = datatabl.Rows(0).Item(46).ToString()

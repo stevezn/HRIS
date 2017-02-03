@@ -258,12 +258,6 @@
     <Compile Include="DemosiHistory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Holiday.Designer.vb">
-      <DependentUpon>Holiday.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Holiday.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="infoReq.Designer.vb">
       <DependentUpon>infoReq.vb</DependentUpon>
     </Compile>
@@ -398,9 +392,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DemosiHistory.resx">
       <DependentUpon>DemosiHistory.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Holiday.resx">
-      <DependentUpon>Holiday.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="infoReq.resx">
       <DependentUpon>infoReq.vb</DependentUpon>

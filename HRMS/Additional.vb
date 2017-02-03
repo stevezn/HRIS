@@ -23,6 +23,22 @@ Public Class Additional
         SQLConnection.Close()
     End Sub
 
+    Sub loaded()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        sqlcommand.CommandText = "select EmployeeCode, FullName from db_payrolldata"
+        sqlcommand.Connection = SQLConnection
+        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
+        Dim cb As New MySqlCommandBuilder(adapter)
+        adapter.Fill(tbl_par)
+        For index As Integer = 0 To tbl_par.Rows.Count - 1
+            txtempcode.Properties.Items.Add(tbl_par.Rows(index).Item(0).ToString())
+            txtname.Properties.Items.Add(tbl_par.Rows(index).Item(1).ToString())
+        Next
+    End Sub
+
     Public Sub updatechange()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
@@ -89,9 +105,5 @@ Public Class Additional
                 txtempcode.Text = tbl_par.Rows(index).Item(0).ToString
             End If
         Next
-    End Sub
-
-    Private Sub txtdate1_ValueChanged(sender As Object, e As EventArgs) Handles txtdate1.ValueChanged
-
     End Sub
 End Class

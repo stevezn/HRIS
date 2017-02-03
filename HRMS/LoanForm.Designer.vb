@@ -23,7 +23,7 @@ Partial Class Payments
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payments))
-        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
@@ -217,6 +217,20 @@ Partial Class Payments
         Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage6 = New DevExpress.XtraTab.XtraTabPage()
+        Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
+        Me.txtdays = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnProcess = New DevExpress.XtraEditors.SimpleButton()
+        Me.textreason = New System.Windows.Forms.RichTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.date2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.date1 = New System.Windows.Forms.DateTimePicker()
+        Me.GridControl6 = New DevExpress.XtraGrid.GridControl()
+        Me.GridView6 = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -399,6 +413,11 @@ Partial Class Payments
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage6.SuspendLayout()
+        CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl5.SuspendLayout()
+        CType(Me.GridControl6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl1
@@ -544,7 +563,7 @@ Partial Class Payments
         Me.LayoutControl1.Location = New System.Drawing.Point(5, 18)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(244, 102)
+        Me.LayoutControl1.Size = New System.Drawing.Size(244, 93)
         Me.LayoutControl1.TabIndex = 1
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -585,7 +604,7 @@ Partial Class Payments
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcempcode, Me.lcapproved, Me.lcname})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(244, 102)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(244, 93)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -605,7 +624,7 @@ Partial Class Payments
         Me.lcapproved.CustomizationFormText = "Approved by :"
         Me.lcapproved.Location = New System.Drawing.Point(0, 48)
         Me.lcapproved.Name = "lcapproved"
-        Me.lcapproved.Size = New System.Drawing.Size(224, 34)
+        Me.lcapproved.Size = New System.Drawing.Size(224, 25)
         Me.lcapproved.Text = "Approved by :"
         Me.lcapproved.TextSize = New System.Drawing.Size(83, 13)
         '
@@ -621,10 +640,10 @@ Partial Class Payments
         '
         'XtraTabControl1
         '
-        Me.XtraTabControl1.Location = New System.Drawing.Point(413, 0)
+        Me.XtraTabControl1.Location = New System.Drawing.Point(414, 0)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage2
-        Me.XtraTabControl1.Size = New System.Drawing.Size(447, 337)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(446, 337)
         Me.XtraTabControl1.TabIndex = 12
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage2, Me.XtraTabPage11})
         '
@@ -635,7 +654,7 @@ Partial Class Payments
         Me.XtraTabPage2.Controls.Add(Me.LayoutControl14)
         Me.XtraTabPage2.Controls.Add(Me.GridControl1)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(441, 309)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(440, 309)
         Me.XtraTabPage2.Text = "Payment History"
         '
         'btnClear
@@ -643,9 +662,9 @@ Partial Class Payments
         Me.btnClear.Image = CType(resources.GetObject("btnClear.Image"), System.Drawing.Image)
         Me.btnClear.Location = New System.Drawing.Point(0, 274)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(85, 38)
+        Me.btnClear.Size = New System.Drawing.Size(91, 35)
         Me.btnClear.TabIndex = 19
-        Me.btnClear.Text = "Check"
+        Me.btnClear.Text = "Check >>"
         '
         'btnLookup
         '
@@ -700,8 +719,8 @@ Partial Class Payments
         '
         'GridControl1
         '
-        GridLevelNode1.RelationName = "Level1"
-        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        GridLevelNode2.RelationName = "Level1"
+        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
         Me.GridControl1.Location = New System.Drawing.Point(0, 51)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
@@ -723,7 +742,7 @@ Partial Class Payments
         Me.XtraTabPage11.Controls.Add(Me.txtnameloan)
         Me.XtraTabPage11.Controls.Add(Me.GridControl7)
         Me.XtraTabPage11.Name = "XtraTabPage11"
-        Me.XtraTabPage11.Size = New System.Drawing.Size(441, 309)
+        Me.XtraTabPage11.Size = New System.Drawing.Size(440, 309)
         Me.XtraTabPage11.Text = "List of employee"
         '
         'LabelControl2
@@ -772,7 +791,7 @@ Partial Class Payments
         '
         Me.txtreason.Location = New System.Drawing.Point(253, 26)
         Me.txtreason.Name = "txtreason"
-        Me.txtreason.Size = New System.Drawing.Size(146, 91)
+        Me.txtreason.Size = New System.Drawing.Size(146, 79)
         Me.txtreason.TabIndex = 0
         Me.txtreason.Text = "Reason / Purpose"
         '
@@ -823,10 +842,10 @@ Partial Class Payments
         Me.LayoutControl7.Controls.Add(Me.lcpayment)
         Me.LayoutControl7.Controls.Add(Me.txtdates)
         Me.LayoutControl7.Controls.Add(Me.txtloan)
-        Me.LayoutControl7.Location = New System.Drawing.Point(5, 111)
+        Me.LayoutControl7.Location = New System.Drawing.Point(5, 102)
         Me.LayoutControl7.Name = "LayoutControl7"
         Me.LayoutControl7.Root = Me.LayoutControlGroup7
-        Me.LayoutControl7.Size = New System.Drawing.Size(403, 187)
+        Me.LayoutControl7.Size = New System.Drawing.Size(403, 196)
         Me.LayoutControl7.TabIndex = 14
         Me.LayoutControl7.Text = "LayoutControl7"
         '
@@ -921,7 +940,7 @@ Partial Class Payments
         Me.LayoutControlGroup7.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem22, Me.lcpaymonth, Me.LayoutControlItem24, Me.lcyears, Me.lcomplete, Me.lcmon, Me.LayoutControlItem26, Me.LayoutControlItem10})
         Me.LayoutControlGroup7.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup7.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup7.Size = New System.Drawing.Size(403, 187)
+        Me.LayoutControlGroup7.Size = New System.Drawing.Size(403, 196)
         Me.LayoutControlGroup7.Text = "LayoutControlGroup2"
         Me.LayoutControlGroup7.TextVisible = False
         '
@@ -971,7 +990,7 @@ Partial Class Payments
         Me.lcomplete.CustomizationFormText = "New Value :"
         Me.lcomplete.Location = New System.Drawing.Point(0, 143)
         Me.lcomplete.Name = "lcomplete"
-        Me.lcomplete.Size = New System.Drawing.Size(383, 24)
+        Me.lcomplete.Size = New System.Drawing.Size(383, 33)
         Me.lcomplete.Text = "Completed on :"
         Me.lcomplete.TextSize = New System.Drawing.Size(89, 13)
         '
@@ -2335,9 +2354,134 @@ Partial Class Payments
         '
         'XtraTabPage6
         '
+        Me.XtraTabPage6.Controls.Add(Me.GroupControl5)
+        Me.XtraTabPage6.Controls.Add(Me.GridControl6)
         Me.XtraTabPage6.Name = "XtraTabPage6"
         Me.XtraTabPage6.Size = New System.Drawing.Size(865, 337)
         Me.XtraTabPage6.Text = "Holiday"
+        '
+        'GroupControl5
+        '
+        Me.GroupControl5.Controls.Add(Me.txtdays)
+        Me.GroupControl5.Controls.Add(Me.Label4)
+        Me.GroupControl5.Controls.Add(Me.DateTimePicker1)
+        Me.GroupControl5.Controls.Add(Me.LabelControl3)
+        Me.GroupControl5.Controls.Add(Me.btnProcess)
+        Me.GroupControl5.Controls.Add(Me.textreason)
+        Me.GroupControl5.Controls.Add(Me.Label1)
+        Me.GroupControl5.Controls.Add(Me.date2)
+        Me.GroupControl5.Controls.Add(Me.Label2)
+        Me.GroupControl5.Controls.Add(Me.Label3)
+        Me.GroupControl5.Controls.Add(Me.date1)
+        Me.GroupControl5.Location = New System.Drawing.Point(-1, 0)
+        Me.GroupControl5.Name = "GroupControl5"
+        Me.GroupControl5.Size = New System.Drawing.Size(386, 337)
+        Me.GroupControl5.TabIndex = 16
+        '
+        'txtdays
+        '
+        Me.txtdays.Location = New System.Drawing.Point(242, 125)
+        Me.txtdays.Name = "txtdays"
+        Me.txtdays.Size = New System.Drawing.Size(50, 21)
+        Me.txtdays.TabIndex = 16
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(298, 128)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(31, 13)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "Days"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Enabled = False
+        Me.DateTimePicker1.Location = New System.Drawing.Point(179, 24)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
+        Me.DateTimePicker1.TabIndex = 12
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Location = New System.Drawing.Point(15, 44)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(61, 13)
+        Me.LabelControl3.TabIndex = 13
+        Me.LabelControl3.Text = "Holiday Date"
+        '
+        'btnProcess
+        '
+        Me.btnProcess.Image = CType(resources.GetObject("btnProcess.Image"), System.Drawing.Image)
+        Me.btnProcess.Location = New System.Drawing.Point(236, 263)
+        Me.btnProcess.Name = "btnProcess"
+        Me.btnProcess.Size = New System.Drawing.Size(93, 39)
+        Me.btnProcess.TabIndex = 20
+        Me.btnProcess.Text = "Process"
+        '
+        'textreason
+        '
+        Me.textreason.Location = New System.Drawing.Point(129, 175)
+        Me.textreason.Name = "textreason"
+        Me.textreason.Size = New System.Drawing.Size(200, 82)
+        Me.textreason.TabIndex = 21
+        Me.textreason.Text = ""
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(45, 159)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 13)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Holiday's Reason"
+        '
+        'date2
+        '
+        Me.date2.Location = New System.Drawing.Point(91, 99)
+        Me.date2.Name = "date2"
+        Me.date2.Size = New System.Drawing.Size(200, 21)
+        Me.date2.TabIndex = 18
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(45, 70)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(31, 13)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "Start"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(45, 101)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(25, 13)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "End"
+        '
+        'date1
+        '
+        Me.date1.Location = New System.Drawing.Point(91, 66)
+        Me.date1.Name = "date1"
+        Me.date1.Size = New System.Drawing.Size(200, 21)
+        Me.date1.TabIndex = 14
+        '
+        'GridControl6
+        '
+        Me.GridControl6.Location = New System.Drawing.Point(385, 0)
+        Me.GridControl6.MainView = Me.GridView6
+        Me.GridControl6.Name = "GridControl6"
+        Me.GridControl6.Size = New System.Drawing.Size(477, 334)
+        Me.GridControl6.TabIndex = 19
+        Me.GridControl6.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView6})
+        '
+        'GridView6
+        '
+        Me.GridView6.GridControl = Me.GridControl6
+        Me.GridView6.Name = "GridView6"
+        Me.GridView6.OptionsFind.AlwaysVisible = True
         '
         'Payments
         '
@@ -2534,6 +2678,12 @@ Partial Class Payments
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage6.ResumeLayout(False)
+        CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl5.ResumeLayout(False)
+        Me.GroupControl5.PerformLayout()
+        CType(Me.GridControl6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2731,4 +2881,18 @@ Partial Class Payments
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents txtnameloan As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents GroupControl5 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnProcess As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents textreason As RichTextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents date2 As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents date1 As DateTimePicker
+    Friend WithEvents GridControl6 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView6 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents txtdays As TextBox
+    Friend WithEvents Label4 As Label
 End Class
