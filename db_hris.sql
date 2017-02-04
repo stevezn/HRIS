@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2017 at 10:43 AM
+-- Generation Time: Feb 04, 2017 at 09:41 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -144,6 +144,7 @@ CREATE TABLE `db_holiday` (
   `StartDate` date NOT NULL,
   `EndDate` date NOT NULL,
   `Reason` varchar(50) NOT NULL,
+  `TotalDays` varchar(20) NOT NULL,
   `no` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -151,8 +152,8 @@ CREATE TABLE `db_holiday` (
 -- Dumping data for table `db_holiday`
 --
 
-INSERT INTO `db_holiday` (`StartDate`, `EndDate`, `Reason`, `no`) VALUES
-('2017-02-02', '2017-02-03', 'cuti', 2);
+INSERT INTO `db_holiday` (`StartDate`, `EndDate`, `Reason`, `TotalDays`, `no`) VALUES
+('2017-03-01', '2017-03-03', '', '2', 27);
 
 -- --------------------------------------------------------
 
@@ -183,8 +184,7 @@ CREATE TABLE `db_loan` (
 
 INSERT INTO `db_loan` (`FullName`, `EmployeeCode`, `ApprovedBy`, `Reason`, `Dates`, `AmountOfLoan`, `Month`, `Months`, `SalaryInclude`, `FromMonths`, `Year`, `PaymentPerMonth`, `CompletedOn`, `Realisasi`) VALUES
 ('Alpha', '17-1-00001', 'unknown', 'Reason / Purpose', '2/4/2017', '6000000', '', '5', '1', 'April', '2017', '1200000', 'September', ''),
-('Beta', '17-1-00002', 'unknown', 'Reason / Purpose', '2/2/2017', '7000000', '', '10', '1', 'January', '2017', '700000', 'November', ''),
-('Charlie', '17-1-00003', 'unknown', 'Reason / Purpose', '2/3/2017', '10000000', '', '5', '1', 'February', '2017', '2000000', 'July', '');
+('Beta', '17-1-00002', 'unknown', 'Reason / Purpose', '2/2/2017', '7000000', '', '10', '1', 'January', '2017', '700000', 'November', '');
 
 -- --------------------------------------------------------
 
@@ -329,105 +329,6 @@ INSERT INTO `db_payrolldata` (`FullName`, `EmployeeCode`, `StatusWajibPajak`, `M
 ('Steve', '17-1-0008', 'Tidak Kawin, Tanggungan 1', 'Yes', '25000000', '0', '00', '0', '0', '1', '1', '1', '1', '1', '1', '1', '0', '0', '2016-10-01', '2016-12-31', '500000', 'Deductions', '500000', 'Income', 'Monthly'),
 ('Jonny', '17-1-0009', 'Tidak Kawin, Tanpa Tanggungan', 'No', '65000000', '200000', '100000', '500000', '1000000', '1', '1', '1', '1', '1', '0', '1', '0', '0', '2016-11-03', '2016-12-22', '500000', 'Deductions', '500000', 'Income', 'Daily'),
 ('Steven', '17-1-0010', 'Tidak Kawin, Tanggungan 1', 'Yes', '5000000', '200000', '20000', '0', '0', '1', '1', '0', '1', '0', '0', '1', '0', '0', '2017-09-01', '2017-12-21', '500000', 'Deductions', '500000', 'Income', 'Monthly');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `db_payrolldetails`
---
-
-CREATE TABLE `db_payrolldetails` (
-  `Number` int(11) NOT NULL,
-  `EmployeeCode` varchar(50) NOT NULL,
-  `PaymentDate` varchar(100) NOT NULL,
-  `FullName` varchar(100) NOT NULL,
-  `BasicRate` varchar(50) NOT NULL,
-  `Allowance` varchar(50) NOT NULL,
-  `Incentives` varchar(50) NOT NULL,
-  `TableMoney` varchar(50) NOT NULL,
-  `Transport` varchar(50) NOT NULL,
-  `OtherAdditionalAllowance1` varchar(50) NOT NULL,
-  `OtherAdditionalAllowance2` varchar(50) NOT NULL,
-  `OtherAdditionalAllowance3` varchar(50) NOT NULL,
-  `OtherAdditionalAllowance4` varchar(50) NOT NULL,
-  `OtherAdditionalAllowance5` varchar(50) NOT NULL,
-  `AdditionalAllowance1` varchar(50) NOT NULL,
-  `AdditionalAllowance2` varchar(50) NOT NULL,
-  `AdditionalAllowance3` varchar(50) NOT NULL,
-  `AdditionalAllowance4` varchar(50) NOT NULL,
-  `AdditionalAllowance5` varchar(50) NOT NULL,
-  `OvertimeHours` varchar(50) NOT NULL,
-  `OvertimeType` varchar(50) NOT NULL,
-  `BpjsPercentage` varchar(50) NOT NULL,
-  `Taxes` varchar(50) NOT NULL,
-  `Loan` varchar(50) NOT NULL,
-  `Lates` varchar(50) NOT NULL,
-  `OtherAdditionalDeduction1` varchar(50) NOT NULL,
-  `OtherAdditionalDeduction2` varchar(50) NOT NULL,
-  `OtherAdditionalDeduction3` varchar(50) NOT NULL,
-  `OtherAdditionalDeduction4` varchar(50) NOT NULL,
-  `OtherAdditionalDeduction5` varchar(50) NOT NULL,
-  `AdditionalDeduction1` varchar(50) NOT NULL,
-  `AdditionalDeduction2` varchar(50) NOT NULL,
-  `AdditionalDeduction3` varchar(50) NOT NULL,
-  `AdditionalDeduction4` varchar(50) NOT NULL,
-  `AdditionalDeduction5` varchar(50) NOT NULL,
-  `ResJaminanKecelakaanKerja` varchar(50) NOT NULL,
-  `ResPremiJaminanKematian` varchar(50) NOT NULL,
-  `ResJaminanHariTua` varchar(50) NOT NULL,
-  `ResBiayaJabatan` varchar(50) NOT NULL,
-  `ResIuranPensiun` varchar(50) NOT NULL,
-  `PersenKk` varchar(50) NOT NULL,
-  `PersenJk` varchar(50) NOT NULL,
-  `PersenJht` varchar(50) NOT NULL,
-  `PersenBj` varchar(50) NOT NULL,
-  `PersenIp` varchar(50) NOT NULL,
-  `MemilikiNpwp` varchar(20) NOT NULL,
-  `Gross` varchar(50) NOT NULL,
-  `Bpjs` varchar(50) NOT NULL,
-  `OvertimeSalary` varchar(50) NOT NULL,
-  `TotalDeductions` varchar(50) NOT NULL,
-  `NetIncome` varchar(50) NOT NULL,
-  `PenghasilanKenaPajak` varchar(50) NOT NULL,
-  `JaminanKecelakaanKerja` varchar(50) NOT NULL,
-  `PremiJaminanKematian` varchar(50) NOT NULL,
-  `JaminanHariTua` varchar(50) NOT NULL,
-  `PphTerhutang` varchar(50) NOT NULL,
-  `BiayaJabatan` varchar(50) NOT NULL,
-  `IuranPensiun` varchar(50) NOT NULL,
-  `NettoSetahun` varchar(50) NOT NULL,
-  `StatusWajibPajak` varchar(100) NOT NULL,
-  `RapelFromMonth` varchar(50) NOT NULL,
-  `RapelToMonth` varchar(50) NOT NULL,
-  `RapelRate` varchar(50) NOT NULL,
-  `Rapel` varchar(50) NOT NULL,
-  `PajakPphPerTahun` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `db_payrolldetails`
---
-
-INSERT INTO `db_payrolldetails` (`Number`, `EmployeeCode`, `PaymentDate`, `FullName`, `BasicRate`, `Allowance`, `Incentives`, `TableMoney`, `Transport`, `OtherAdditionalAllowance1`, `OtherAdditionalAllowance2`, `OtherAdditionalAllowance3`, `OtherAdditionalAllowance4`, `OtherAdditionalAllowance5`, `AdditionalAllowance1`, `AdditionalAllowance2`, `AdditionalAllowance3`, `AdditionalAllowance4`, `AdditionalAllowance5`, `OvertimeHours`, `OvertimeType`, `BpjsPercentage`, `Taxes`, `Loan`, `Lates`, `OtherAdditionalDeduction1`, `OtherAdditionalDeduction2`, `OtherAdditionalDeduction3`, `OtherAdditionalDeduction4`, `OtherAdditionalDeduction5`, `AdditionalDeduction1`, `AdditionalDeduction2`, `AdditionalDeduction3`, `AdditionalDeduction4`, `AdditionalDeduction5`, `ResJaminanKecelakaanKerja`, `ResPremiJaminanKematian`, `ResJaminanHariTua`, `ResBiayaJabatan`, `ResIuranPensiun`, `PersenKk`, `PersenJk`, `PersenJht`, `PersenBj`, `PersenIp`, `MemilikiNpwp`, `Gross`, `Bpjs`, `OvertimeSalary`, `TotalDeductions`, `NetIncome`, `PenghasilanKenaPajak`, `JaminanKecelakaanKerja`, `PremiJaminanKematian`, `JaminanHariTua`, `PphTerhutang`, `BiayaJabatan`, `IuranPensiun`, `NettoSetahun`, `StatusWajibPajak`, `RapelFromMonth`, `RapelToMonth`, `RapelRate`, `Rapel`, `PajakPphPerTahun`) VALUES
-(1, '333', '1/1/2017', 'Stiv', '30000000', '1000000', '500000', '200000', '100000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '3', '0', '2', '50000', '50000', '50000', 'null', 'null', 'null', 'null', 'null', '1000', '2000', '3000', '4000', '5000', 'Yes', 'Yes', 'Yes', '0', '0', '1', '2', '3', '4', '5', 'Yes', '31800000', '600000', '953755', '165000', '31635000', '321120000', '300000', '600000', '900000', '48168000', '1200000', '1500000', '379620000', 'Tidak Kawin, Tanggungan 1', 'January', 'June', '1000000', '5000000', '32112000'),
-(2, '333', '2/3/2017', 'Stiv', '20000000', '1000000', '500000', '200000', '100000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '3', '0', '2', '50000', '50000', '50000', 'null', 'null', 'null', 'null', 'null', '1000', '2000', '3000', '4000', '5000', 'Yes', 'Yes', 'Yes', '0', '0', '1', '2', '3', '4', '5', 'Yes', '31800000', '600000', '953755', '165000', '31635000', '321120000', '300000', '600000', '900000', '48168000', '1200000', '1500000', '379620000', 'Tidak Kawin, Tanggungan 1', 'January', 'June', '1000000', '5000000', '32112000'),
-(3, '111', '2/15/2018', 'Steven', '10000000', '400000', '400000', '400000', '700000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '4', '0', '7', '40000', '40000', '40000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '1', '2', '3', '4', '5', 'Yes', '11900000', '700000', '433522', '120000', '11780000', '87360000', '100000', '200000', '300000', '13104000', '400000', '500000', '141360000', 'Tidak Kawin, Tanpa Tanggungan', 'January', 'December', '700000', '7700000', '0'),
-(4, '444', '6/4/2016', 'Dewi', '2000000', '100000', '400000', '700000', '800000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7', '0', '4', '1000', '10000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '2', '2', '2', '2', '2', 'Yes', '4000000', '80000', '156074', '21000', '3979000', '-10752000', '40000', '40000', '40000', '-3225600', '40000', '40000', '47748000', 'Tidak Kawin, Tanggungan 1', 'January', 'June', '700000', '3500000', '-537600'),
-(9, '222', '2/10/2017', 'Julie', '20000000', '10000', '10000', '50000', '50000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '3', '0', '2', '20000', '20000', '20000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '1', '1', '2', '3', '2', 'Yes', '20120000', '400000', '693642', '60000', '20060000', '173220000', '200000', '200000', '400000', '25983000', '600000', '400000', '240720000', 'Tidak Kawin, Tanggungan 3', 'January', 'May', '500000', '2000000', '0'),
-(10, '222', '2/10/2017', 'Julie', '20000000', '10000', '10000', '50000', '50000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '3', '0', '2', '20000', '20000', '20000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '1', '1', '2', '3', '0', 'Yes', '20120000', '400000', '693642', '60000', '20060000', '173220000', '200000', '200000', '400000', '25983000', '600000', '0', '240720000', 'Tidak Kawin, Tanggungan 3', 'January', 'May', '500000', '2000000', '0'),
-(11, '111', '1/19/2017', 'Steven', '500000', '222', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'No', 'No', 'No', '0', '0', '0', '0', '0', '0', '0', 'Yes', '500222', '15000', '11560', '0', '500222', '-56997336', '0', '0', '0', '-17099200.8', '0', '0', '6002664', 'Tidak Kawin, Tanggungan 2', 'December', 'January', '500000', '-5500000', '-2849866.8'),
-(12, '111', '1/19/2017', 'Steven', '500000', '20000', '0', '0', '0', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '2', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'No', 'No', 'No', '0', '0', '0', '0', '0', '0', '0', 'Yes', '520000', '15000', '11560', '0', '520000', '-56760000', '0', '0', '0', '-17028000', '0', '0', '6240000', 'Tidak Kawin, Tanggungan 2', 'December', 'January', '500000', '-5500000', '-2838000'),
-(13, '444', '6/4/2016', 'Dewi', '2000000', '100000', '400000', '700000', '800000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7', '0', '4', '1000', '10000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '2', '2', '2', '2', '2', 'Yes', '4000000', '80000', '156074', '21000', '3979000', '-10752000', '40000', '40000', '40000', '-3225600', '40000', '40000', '47748000', 'Tidak Kawin, Tanggungan 1', 'January', 'June', '700000', '3500000', '-537600'),
-(14, '222', '2/10/2017', 'Julie', '20000000', '10000', '10000', '50000', '50000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '3', '0', '2', '20000', '20000', '20000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '1', '1', '2', '3', '0', 'Yes', '20120000', '400000', '693642', '60000', '20060000', '173220000', '200000', '200000', '400000', '25983000', '600000', '0', '240720000', 'Tidak Kawin, Tanggungan 3', 'January', 'May', '500000', '2000000', '0'),
-(15, '111', '1/19/2017', 'Steven', '500000', '20000', '0', '0', '0', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '2', '0', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'No', 'No', 'No', '0', '0', '0', '0', '0', '0', '0', 'Yes', '520000', '15000', '10115', '0', '520000', '-56760000', '0', '0', '0', '-17028000', '0', '0', '6240000', 'Tidak Kawin, Tanggungan 2', 'December', 'January', '500000', '-5500000', '-2838000'),
-(16, '444', '6/4/2016', 'Dewi', '2000000', '100000', '400000', '700000', '800000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7', '0', '4', '1000', '10000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '2', '2', '2', '2', '2', 'Yes', '4', '80', '156', '21', '3', '-10', '40', '40', '40', '58', '40', '40', '47', 'Tidak Kawin, Tanggungan 1', 'January', 'June', '700000', '3', '-537'),
-(17, '444', '6/4/2016', 'Dewi', '2000000', '100000', '400000', '700000', '800000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7', '0', '4', '1000', '10000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '2', '2', '2', '2', '2', 'Yes', '4', '80', '156', '21', '3', '-10', '40', '40', '40', '58', '40', '40', '47', 'Tidak Kawin, Tanggungan 1', 'January', 'June', '700000', '3', '-537'),
-(18, '444', '6/4/2016', 'Dewi', '0', '100000', '400000', '700000', '800000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7', '0', '4', '1000', '10000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '2', '2', '2', '2', '2', 'Yes', '4', '80', '156', '21', '3', '-78', '40', '40', '40', '126', '40', '40', '47', 'Kawin, Penghasilan Digabung Tanggungan 3', 'January', 'June', '700000', '3', '-3'),
-(19, '444', '6/4/2016', 'Dewi', '0', '100000', '400000', '700000', '800000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7', '0', '4', '1000', '10000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', '0', '0', '2', '2', '2', '2', '2', 'Yes', '4', '80', '156', '21', '3', '-78', '40', '40', '40', '126', '40', '40', '47', 'Kawin, Penghasilan Digabung Tanggungan 3', 'January', 'June', '700000', '3', '-3'),
-(20, '444', '6/4/2016', 'Dewi', '2000000', '100000', '400000', '700000', '800000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '7', 'Regular Day', '4', '1000', '10000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', '2', '2', '2', '2', '2', 'Yes', '4,000,000', '80,000', '156,074', '21,000', '3,979,000', '-78,252,000', '40,000', '40,000', '40,000', '126,000,000', '40,000', '40,000', '47,748,000', 'Kawin, Penghasilan Digabung Tanggungan 3', 'January', 'June', '700000', '3,500,000', '-3'),
-(21, '111', '1/19/2017', 'Steven', '500000', '20000', '0', '0', '0', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '2', 'Regular Day', '20000', '2000', '2000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', '1', '2', '3', '4', '5', 'No', '520,000', '100,000,000', '10,115', '14,000', '506,000', '-56,928,000', '5,000', '10,000', '15,000', '-2,846,400', '20,000', '25,000', '6,072,000', 'Tidak Kawin, Tanggungan 2', 'December', 'January', '500000', '-5,500,000', '-2,846,400'),
-(22, '111', '1/19/2017', 'Steven', '500000', '20000', '0', '0', '0', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '2', 'Regular Day', '3', '2000', '2000', '10000', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', '1', '2', '3', '4', '5', 'No', '520,000', '15,000', '10,115', '14,000', '506,000', '-56,928,000', '5,000', '10,000', '15,000', '-2,846,400', '20,000', '25,000', '6,072,000', 'Tidak Kawin, Tanggungan 2', 'December', 'January', '500000', '-5,500,000', '-2,846,400'),
-(23, '222', '2/10/2017', 'Julie', '20000000', '10000', '10000', '50000', '50000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', '3', 'Holiday / Sunday', '2', '20000', '20000', '20000', 'null', 'null', 'null', 'null', 'null', '0', '0', '0', '0', '0', 'Yes', 'Yes', 'Yes', 'Yes', 'No', '1', '1', '2', '3', '0', 'Yes', '20,120,000', '400,000', '693,642', '60,000', '20,060,000', '173,220,000', '200,000', '200,000', '400,000', '67,500,000', '600,000', '200,000', '240,720,000', 'Tidak Kawin, Tanggungan 3', 'January', 'May', '500000', '2,000,000', '0');
 
 -- --------------------------------------------------------
 
@@ -638,7 +539,7 @@ CREATE TABLE `db_setpayroll` (
 --
 
 INSERT INTO `db_setpayroll` (`Bpjs`, `JamKecelakaanKerja`, `JaminanKesehatan`, `IuranPensiun`, `JaminanHariTua`, `BiayaJabatan`, `Lates`, `JaminanKematian`) VALUES
-('1', '2', '3', '4', '5', '6', '7', '8');
+('2', '2', '3', '4', '5', '6', '7', '8');
 
 -- --------------------------------------------------------
 
@@ -670,7 +571,9 @@ INSERT INTO `db_sp` (`Number`, `EmployeeCode`, `CompanyCode`, `FullName`, `Sp1`,
 (10, '17-1-0008', '003', 'Steve', '', '', '', '', 'Sp3', '20-01-2017'),
 (11, '17-1-00007', '007', 'Duri', 'Sp1', '20-01/2017', '', '', '', ''),
 (12, '17-1-0009', '004', 'Jonny', '', '', 'sp2', '20-01-2017', '', ''),
-(13, '17-1-0012', '002', 'Steve', '', '', '', '', 'Sp3', '20-01-2017');
+(13, '17-1-0012', '002', 'Steve', '', '', '', '', 'Sp3', '20-01-2017'),
+(14, '17-1-00002', '003', 'Beta', 'Sp1', '04-02/2017', '', '', '', ''),
+(15, '17-1-00002', '003', 'Beta', '', '', '', '', 'Sp3', '04-02-2017');
 
 -- --------------------------------------------------------
 
@@ -904,12 +807,6 @@ ALTER TABLE `db_payrolldata`
   ADD PRIMARY KEY (`EmployeeCode`);
 
 --
--- Indexes for table `db_payrolldetails`
---
-ALTER TABLE `db_payrolldetails`
-  ADD PRIMARY KEY (`Number`);
-
---
 -- Indexes for table `db_pegawai`
 --
 ALTER TABLE `db_pegawai`
@@ -985,12 +882,7 @@ ALTER TABLE `db_demotehistory`
 -- AUTO_INCREMENT for table `db_holiday`
 --
 ALTER TABLE `db_holiday`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `db_payrolldetails`
---
-ALTER TABLE `db_payrolldetails`
-  MODIFY `Number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `db_recruitment`
 --
@@ -1005,7 +897,7 @@ ALTER TABLE `db_rotasihistory`
 -- AUTO_INCREMENT for table `db_sp`
 --
 ALTER TABLE `db_sp`
-  MODIFY `Number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `db_user`
 --
