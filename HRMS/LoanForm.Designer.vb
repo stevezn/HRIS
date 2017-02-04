@@ -23,7 +23,7 @@ Partial Class Payments
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payments))
-        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
@@ -231,6 +231,7 @@ Partial Class Payments
         Me.date1 = New System.Windows.Forms.DateTimePicker()
         Me.GridControl6 = New DevExpress.XtraGrid.GridControl()
         Me.GridView6 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -669,7 +670,7 @@ Partial Class Payments
         'btnLookup
         '
         Me.btnLookup.Image = CType(resources.GetObject("btnLookup.Image"), System.Drawing.Image)
-        Me.btnLookup.Location = New System.Drawing.Point(182, 10)
+        Me.btnLookup.Location = New System.Drawing.Point(182, 6)
         Me.btnLookup.Name = "btnLookup"
         Me.btnLookup.Size = New System.Drawing.Size(96, 35)
         Me.btnLookup.TabIndex = 2
@@ -719,13 +720,13 @@ Partial Class Payments
         '
         'GridControl1
         '
-        GridLevelNode2.RelationName = "Level1"
-        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
-        Me.GridControl1.Location = New System.Drawing.Point(0, 51)
+        GridLevelNode1.RelationName = "Level1"
+        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        Me.GridControl1.Location = New System.Drawing.Point(0, 47)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.MenuManager = Me.RibbonControl1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(441, 217)
+        Me.GridControl1.Size = New System.Drawing.Size(441, 221)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -2362,6 +2363,7 @@ Partial Class Payments
         '
         'GroupControl5
         '
+        Me.GroupControl5.Controls.Add(Me.SimpleButton4)
         Me.GroupControl5.Controls.Add(Me.txtdays)
         Me.GroupControl5.Controls.Add(Me.Label4)
         Me.GroupControl5.Controls.Add(Me.DateTimePicker1)
@@ -2375,14 +2377,14 @@ Partial Class Payments
         Me.GroupControl5.Controls.Add(Me.date1)
         Me.GroupControl5.Location = New System.Drawing.Point(-1, 0)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(386, 337)
+        Me.GroupControl5.Size = New System.Drawing.Size(387, 337)
         Me.GroupControl5.TabIndex = 16
         '
         'txtdays
         '
-        Me.txtdays.Location = New System.Drawing.Point(242, 125)
+        Me.txtdays.Location = New System.Drawing.Point(252, 125)
         Me.txtdays.Name = "txtdays"
-        Me.txtdays.Size = New System.Drawing.Size(50, 21)
+        Me.txtdays.Size = New System.Drawing.Size(40, 21)
         Me.txtdays.TabIndex = 16
         '
         'Label4
@@ -2397,7 +2399,7 @@ Partial Class Payments
         'DateTimePicker1
         '
         Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker1.Location = New System.Drawing.Point(179, 24)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(180, 24)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 21)
         Me.DateTimePicker1.TabIndex = 12
@@ -2413,7 +2415,7 @@ Partial Class Payments
         'btnProcess
         '
         Me.btnProcess.Image = CType(resources.GetObject("btnProcess.Image"), System.Drawing.Image)
-        Me.btnProcess.Location = New System.Drawing.Point(236, 263)
+        Me.btnProcess.Location = New System.Drawing.Point(205, 262)
         Me.btnProcess.Name = "btnProcess"
         Me.btnProcess.Size = New System.Drawing.Size(93, 39)
         Me.btnProcess.TabIndex = 20
@@ -2421,16 +2423,16 @@ Partial Class Payments
         '
         'textreason
         '
-        Me.textreason.Location = New System.Drawing.Point(129, 175)
+        Me.textreason.Location = New System.Drawing.Point(92, 166)
         Me.textreason.Name = "textreason"
-        Me.textreason.Size = New System.Drawing.Size(200, 82)
+        Me.textreason.Size = New System.Drawing.Size(206, 90)
         Me.textreason.TabIndex = 21
         Me.textreason.Text = ""
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(45, 159)
+        Me.Label1.Location = New System.Drawing.Point(11, 150)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 13)
         Me.Label1.TabIndex = 15
@@ -2482,6 +2484,14 @@ Partial Class Payments
         Me.GridView6.GridControl = Me.GridControl6
         Me.GridView6.Name = "GridView6"
         Me.GridView6.OptionsFind.AlwaysVisible = True
+        '
+        'SimpleButton4
+        '
+        Me.SimpleButton4.Location = New System.Drawing.Point(302, 166)
+        Me.SimpleButton4.Name = "SimpleButton4"
+        Me.SimpleButton4.Size = New System.Drawing.Size(79, 34)
+        Me.SimpleButton4.TabIndex = 22
+        Me.SimpleButton4.Text = "Change Data"
         '
         'Payments
         '
@@ -2895,4 +2905,5 @@ Partial Class Payments
     Friend WithEvents GridView6 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents txtdays As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
 End Class

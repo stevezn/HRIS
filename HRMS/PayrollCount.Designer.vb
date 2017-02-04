@@ -401,6 +401,7 @@ Partial Class PayrollCount
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(328, 381)
         Me.Controls.Add(Me.LayoutControl1)
+        Me.MinimizeBox = False
         Me.Name = "PayrollCount"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PayrollCount"

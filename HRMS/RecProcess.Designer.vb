@@ -410,6 +410,7 @@ Partial Class RecProcess
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "RecProcess"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RecProcess"

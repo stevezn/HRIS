@@ -146,7 +146,6 @@ Public Class MainApp
         txtTanggal.Text = ""
         txtStatEmp.Text = ""
         txtTglInterview.Text = ""
-        ';txtTrainingSampai.Text = ""
         txtworkdate.Text = ""
         txtposition.Text = ""
         txtstart.Text = ""
@@ -213,7 +212,6 @@ Public Class MainApp
         lcStatEmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcStatReq.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcFoto.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        'lcTrainSmp.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcJnsShif.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcGaji.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         loadDataKaryawan()
@@ -278,7 +276,6 @@ Public Class MainApp
     Private Sub BarButtonItem2_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
         btnLihat.Enabled = False
         btnImport.Enabled = True
-        'clearForm()
         reset()
         resetclear()
         lcrotasi.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -352,88 +349,88 @@ Public Class MainApp
         End If
     End Sub
 
-    Private Sub btnCari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        GridControl1.RefreshDataSource()
-        Dim table As New DataTable
+    'Private Sub btnCari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    GridControl1.RefreshDataSource()
+    '    Dim table As New DataTable
 
-        SQLConnection = New MySqlConnection()
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Dim sqlCommand As New MySqlCommand
-        Try
-            If barJudul.Caption = "Module Recruitment" Then
-                sqlCommand.CommandText = "Select IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Status FROM db_recruitment" +
-                                         " WHERE InterviewTimes Like '%" + tePencarian.Text + "%' or " +
-                                         " FullName like'%" + tePencarian.Text + "%' or " +
-                                         " PlaceOfBirth like'%" + tePencarian.Text + "%' or " +
-                                         " DateOfBirth like'%" + tePencarian.Text + "%' or " +
-                                         " Gender like'%" + tePencarian.Text + "%' or " +
-                                         " Religion like'%" + tePencarian.Text + "%' or " +
-                                         " IdNumber like'%" + tePencarian.Text + "%' or " +
-                                         " Status like'%" + tePencarian.Text + "%'"
-            ElseIf barJudul.Caption = "Module Employee" Then
-                Dim param As Double
-                If tePencarian.Text = "" Then
-                    param = 0
-                End If
-                sqlCommand.CommandText = "SELECT EmployeeCode, CompanyCode, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Status, TrainingSampai, JenisPegawai, StatusWajibPajak from db_pegawai" +
-                                         " WHERE CompanyCode like '%" + tePencarian.Text + "%' or " +
-                                         " FullName like '%" + tePencarian.Text + "%' or " +
-                                         " PlaceOfBirth like '%" + tePencarian.Text + "%' or " +
-                                         " DateOfBirth like '%" + tePencarian.Text + "%' or " +
-                                         " Gender like '%" + tePencarian.Text + "%' or " +
-                                         " Religion like '%" + tePencarian.Text + "%' or " +
-                                         " IdNumber like '%" + tePencarian.Text + "%' or " +
-                                         " Status like '%" + tePencarian.Text + "%' or " +
-                                         " TrainingSampai like '%" + tePencarian.Text + "%' or " +
-                                         " JenisPegawai like '%" + tePencarian.Text + "%' or " +
-                                         " BasicRate =" + param.ToString() + " or " +
-                                         " Allowance =" + param.ToString() + " or " +
-                                         " BiayaJabatan = " + param.ToString() + " or " +
-                                         " iuran_pensiun = " + param.ToString() + " or " +
-                                         " StatusWajibPajak like '%" + tePencarian.Text + "%'  "
-            ElseIf barJudul.Caption = "Module Payroll" Then
-                sqlCommand.CommandText = "SELECT EmployeeCode, FullName, BasicRate, Allowance, Incentives, MealRate, BiayaJabatan, JaminanKematian from db_payroll" +
-                                            " WHERE EmployeeCode like '%" + tePencarian.Text + "%' or " +
-                                            " FullName like '%" + tePencarian.Text + "%' or " +
-                                            " BasicRate like '%" + tePencarian.Text + "%' or " +
-                                            " Allowance like '%" + tePencarian.Text + "%' or " +
-                                            " Incentives like '%" + tePencarian.Text + "%' or " +
-                                            " MealRate like '%" + tePencarian.Text + "%' or " +
-                                            " BiayaJabatan like '%" + tePencarian.Text + "%' or " +
-                                            " IuranPensiun like '%" + tePencarian.Text + "%'    "
-                Dim param As Double
-                If tePencarian.Text = "" Then
-                    param = 0
-                End If
-                sqlCommand.CommandText = "SELECT a.EmployeeCode, a.FullName , count(b.FullName) as jml_masuk, a.JenisPegawai, a.BasicRate, IF(a.JenisPegawai ='Full Time', a.BasicRate, (a.BasicRate * count(b.BasicRate))) as jml_gaji, b.tanggal, IF(sum(b.lama_lembur) > 0, ((1.5 *(1/173)) * a.BasicRate * sum(b.lama_lembur)), 0) as jml_lembur, a.Allowance, a.StatusWajibPajak, BiayaJabatan,Iuran_pensiun" +
-                                             " from" +
-                                             " db_pegawai a, db_absensi b" +
-                                             " WHERE a.EmployeeCode = b.EmployeeCode " +
-                                             " group by SUBSTRING(b.tanggal, 1,2), SUBSTRING(b.tanggal, 7,10)" +
-                                             " having " +
-                                             " a.EmployeeCode like'%" + tePencarian.Text + "%' or " +
-                                             " a.FullName like'%" + tePencarian.Text + "%' or " +
-                                             " count(b.EmployeeCode) =" + param.ToString() + " or " +
-                                             " a.JenisPegawai like'%" + tePencarian.Text + "%' or " +
-                                             " a.BasicRate like'%" + tePencarian.Text + "%' or " +
-                                             " IF(a.JenisPegawai like 'Full Time', a.BasicRate, (a.BasicRate * count(b.EmployeeCode))) =" + param.ToString() + " or " +
-                                             " IF(sum(b.lama_lembur) > 0, ((1.5 *(1/173)) * a.BasicRate * sum(b.lama_lembur)), 0) =" + param.ToString() + " or " +
-                                             " b.tanggal like'%" + tePencarian.Text + "%'"
-            ElseIf barJudul.Caption = "Module Attendance" Then
-                sqlCommand.CommandText = "SELECT a.id_absensi, a.EmployeeCode, b.FullName, a.tanggal, a.shift, a.jam_mulai, a.jam_selesai from db_absensi a, db_pegawai b WHERE a.EmployeeCode=b.EmployeeCode"
-            End If
-            sqlCommand.Connection = SQLConnection
-            Dim tbl_par As New DataTable
-            Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
-            Dim cb As New MySqlCommandBuilder(adapter)
-            adapter.Fill(table)
-            SQLConnection.Close()
-        Catch ex As Exception
-            SQLConnection.Close()
-            MsgBox(ex.Message)
-        End Try
-    End Sub
+    '    SQLConnection = New MySqlConnection()
+    '    SQLConnection.ConnectionString = connectionString
+    '    SQLConnection.Open()
+    '    Dim sqlCommand As New MySqlCommand
+    '    Try
+    '        If barJudul.Caption = "Module Recruitment" Then
+    '            sqlCommand.CommandText = "Select IdRec, InterviewTimes, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Status FROM db_recruitment" +
+    '                                     " WHERE InterviewTimes Like '%" + tePencarian.Text + "%' or " +
+    '                                     " FullName like'%" + tePencarian.Text + "%' or " +
+    '                                     " PlaceOfBirth like'%" + tePencarian.Text + "%' or " +
+    '                                     " DateOfBirth like'%" + tePencarian.Text + "%' or " +
+    '                                     " Gender like'%" + tePencarian.Text + "%' or " +
+    '                                     " Religion like'%" + tePencarian.Text + "%' or " +
+    '                                     " IdNumber like'%" + tePencarian.Text + "%' or " +
+    '                                     " Status like'%" + tePencarian.Text + "%'"
+    '        ElseIf barJudul.Caption = "Module Employee" Then
+    '            Dim param As Double
+    '            If tePencarian.Text = "" Then
+    '                param = 0
+    '            End If
+    '            sqlCommand.CommandText = "SELECT EmployeeCode, CompanyCode, FullName, PlaceOfBirth, DateOfBirth, Gender, Religion, IdNumber, Status, TrainingSampai, JenisPegawai, StatusWajibPajak from db_pegawai" +
+    '                                     " WHERE CompanyCode like '%" + tePencarian.Text + "%' or " +
+    '                                     " FullName like '%" + tePencarian.Text + "%' or " +
+    '                                     " PlaceOfBirth like '%" + tePencarian.Text + "%' or " +
+    '                                     " DateOfBirth like '%" + tePencarian.Text + "%' or " +
+    '                                     " Gender like '%" + tePencarian.Text + "%' or " +
+    '                                     " Religion like '%" + tePencarian.Text + "%' or " +
+    '                                     " IdNumber like '%" + tePencarian.Text + "%' or " +
+    '                                     " Status like '%" + tePencarian.Text + "%' or " +
+    '                                     " TrainingSampai like '%" + tePencarian.Text + "%' or " +
+    '                                     " JenisPegawai like '%" + tePencarian.Text + "%' or " +
+    '                                     " BasicRate =" + param.ToString() + " or " +
+    '                                     " Allowance =" + param.ToString() + " or " +
+    '                                     " BiayaJabatan = " + param.ToString() + " or " +
+    '                                     " iuran_pensiun = " + param.ToString() + " or " +
+    '                                     " StatusWajibPajak like '%" + tePencarian.Text + "%'  "
+    '        ElseIf barJudul.Caption = "Module Payroll" Then
+    '            sqlCommand.CommandText = "SELECT EmployeeCode, FullName, BasicRate, Allowance, Incentives, MealRate, BiayaJabatan, JaminanKematian from db_payroll" +
+    '                                        " WHERE EmployeeCode like '%" + tePencarian.Text + "%' or " +
+    '                                        " FullName like '%" + tePencarian.Text + "%' or " +
+    '                                        " BasicRate like '%" + tePencarian.Text + "%' or " +
+    '                                        " Allowance like '%" + tePencarian.Text + "%' or " +
+    '                                        " Incentives like '%" + tePencarian.Text + "%' or " +
+    '                                        " MealRate like '%" + tePencarian.Text + "%' or " +
+    '                                        " BiayaJabatan like '%" + tePencarian.Text + "%' or " +
+    '                                        " IuranPensiun like '%" + tePencarian.Text + "%'    "
+    '            Dim param As Double
+    '            If tePencarian.Text = "" Then
+    '                param = 0
+    '            End If
+    '            sqlCommand.CommandText = "SELECT a.EmployeeCode, a.FullName , count(b.FullName) as jml_masuk, a.JenisPegawai, a.BasicRate, IF(a.JenisPegawai ='Full Time', a.BasicRate, (a.BasicRate * count(b.BasicRate))) as jml_gaji, b.tanggal, IF(sum(b.lama_lembur) > 0, ((1.5 *(1/173)) * a.BasicRate * sum(b.lama_lembur)), 0) as jml_lembur, a.Allowance, a.StatusWajibPajak, BiayaJabatan,Iuran_pensiun" +
+    '                                         " from" +
+    '                                         " db_pegawai a, db_absensi b" +
+    '                                         " WHERE a.EmployeeCode = b.EmployeeCode " +
+    '                                         " group by SUBSTRING(b.tanggal, 1,2), SUBSTRING(b.tanggal, 7,10)" +
+    '                                         " having " +
+    '                                         " a.EmployeeCode like'%" + tePencarian.Text + "%' or " +
+    '                                         " a.FullName like'%" + tePencarian.Text + "%' or " +
+    '                                         " count(b.EmployeeCode) =" + param.ToString() + " or " +
+    '                                         " a.JenisPegawai like'%" + tePencarian.Text + "%' or " +
+    '                                         " a.BasicRate like'%" + tePencarian.Text + "%' or " +
+    '                                         " IF(a.JenisPegawai like 'Full Time', a.BasicRate, (a.BasicRate * count(b.EmployeeCode))) =" + param.ToString() + " or " +
+    '                                         " IF(sum(b.lama_lembur) > 0, ((1.5 *(1/173)) * a.BasicRate * sum(b.lama_lembur)), 0) =" + param.ToString() + " or " +
+    '                                         " b.tanggal like'%" + tePencarian.Text + "%'"
+    '        ElseIf barJudul.Caption = "Module Attendance" Then
+    '            sqlCommand.CommandText = "SELECT a.id_absensi, a.EmployeeCode, b.FullName, a.tanggal, a.shift, a.jam_mulai, a.jam_selesai from db_absensi a, db_pegawai b WHERE a.EmployeeCode=b.EmployeeCode"
+    '        End If
+    '        sqlCommand.Connection = SQLConnection
+    '        Dim tbl_par As New DataTable
+    '        Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
+    '        Dim cb As New MySqlCommandBuilder(adapter)
+    '        adapter.Fill(table)
+    '        SQLConnection.Close()
+    '    Catch ex As Exception
+    '        SQLConnection.Close()
+    '        MsgBox(ex.Message)
+    '    End Try
+    'End Sub
 
     Dim tbl_par As New DataTable
 

@@ -30,8 +30,8 @@ Partial Class Payslip
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.txtempcode = New DevExpress.XtraEditors.TextEdit()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         CType(Me.txtname.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtperiod.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtperiod.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +106,15 @@ Partial Class Payslip
         Me.GroupControl1.Size = New System.Drawing.Size(211, 165)
         Me.GroupControl1.TabIndex = 6
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
+        Me.SimpleButton1.Location = New System.Drawing.Point(102, 119)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(100, 38)
+        Me.SimpleButton1.TabIndex = 7
+        Me.SimpleButton1.Text = "Preview"
+        '
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
@@ -117,15 +126,6 @@ Partial Class Payslip
         Me.RadioButton1.Text = "Print All Employee Payslip"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(102, 119)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 38)
-        Me.SimpleButton1.TabIndex = 7
-        Me.SimpleButton1.Text = "Preview"
-        '
         'Payslip
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -133,6 +133,7 @@ Partial Class Payslip
         Me.ClientSize = New System.Drawing.Size(213, 164)
         Me.Controls.Add(Me.GroupControl1)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Payslip"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Payslip"

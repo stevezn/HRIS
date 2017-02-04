@@ -556,7 +556,7 @@ Partial Class Notes
         Me.PictureEdit1.MenuManager = Me.RibbonControl1
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch
-        Me.PictureEdit1.Size = New System.Drawing.Size(129, 120)
+        Me.PictureEdit1.Size = New System.Drawing.Size(129, 132)
         Me.PictureEdit1.TabIndex = 1
         '
         'LayoutControl2

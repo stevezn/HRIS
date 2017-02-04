@@ -5,10 +5,9 @@ Imports DevExpress.Utils.Menu
 
 Public Class RecProcess
 
-    Dim connectionString As String = "Server=localhost; User Id=root; Password=; Database=db_hris"
+    Dim connectionString As String = "Server=localhost; User Id=root; Password=; Database = db_hris"
     Dim SQLConnection As MySqlConnection = New MySqlConnection
     Dim oDt_sched As New DataTable()
-
 
     Sub reset()
         lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never

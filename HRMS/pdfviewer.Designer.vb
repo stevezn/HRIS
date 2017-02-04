@@ -41,6 +41,7 @@ Partial Class pdfviewer
         Me.ClientSize = New System.Drawing.Size(571, 640)
         Me.Controls.Add(Me.PdfViewer1)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "pdfviewer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "pdfviewer"

@@ -24,14 +24,14 @@
         End Try
     End Sub
 
-    Private Sub txtdate_CheckedChanged(sender As Object, e As EventArgs) Handles txtdate.CheckedChanged
-        If txtdate.Checked = True Then
-            txtfrom.Enabled = True
-            txtto.Enabled = True
-        ElseIf txtdate.Checked = False Then
-            txtfrom.Enabled = False
-            txtto.Enabled = False
-        End If
+    Private Sub txtdate_CheckedChanged(sender As Object, e As EventArgs)
+        'If txtdate.Checked = True Then
+        '    txtfrom.Enabled = True
+        '    txtto.Enabled = True
+        'ElseIf txtdate.Checked = False Then
+        '    txtfrom.Enabled = False
+        '    txtto.Enabled = False
+        'End If
     End Sub
 
     Dim form As New ReportsForm
@@ -43,4 +43,19 @@
         form.Show()
     End Sub
 
+    Dim reports As New ReportsForm
+
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        If reports Is Nothing OrElse reports.IsDisposed Then
+            reports = New ReportsForm
+        End If
+        reports.Show()
+    End Sub
+
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        If reports Is Nothing OrElse reports.IsDisposed Then
+            reports = New ReportsForm
+        End If
+        reports.Show()
+    End Sub
 End Class

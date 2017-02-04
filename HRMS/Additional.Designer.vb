@@ -282,6 +282,7 @@ Partial Class Additional
         Me.Controls.Add(Me.btnapprove)
         Me.Controls.Add(Me.LayoutControl1)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Additional"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Other Income / Deductions"

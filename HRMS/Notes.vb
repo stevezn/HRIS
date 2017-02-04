@@ -5,12 +5,13 @@
     Dim oDt_sched As New DataTable()
 
     Dim tbl_par As New DataTable
+
     Sub loadD()
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
         Dim sqlCommand As New MySqlCommand
-        sqlCommand.CommandText = "SELECT a.EmployeeCode, a.FullName, a.Position, a.CompanyCode, a.PlaceOfBirth, a.DateOfBirth, a.Gender, a.Religion, a.Address, a.Email, a.IdNumber, a.OfficeLocation, a.WorkDate, a.PhoneNumber, a.Photo, a.Status, a.TrainingSampai, b.Sp1, b.Sp1Date, b.Sp2, b.Sp2Date, b.Sp3, b.Sp3Date, c.Rotasi, c.RotasiDate, d.Demosi, d.DemosiDate FROM db_pegawai a, db_sp b, db_rotasi c, db_demosi d WHERE a.FullName = b.FullName = c.FullName = d.FullName"
+        sqlCommand.CommandText = "SELECT a.EmployeeCode, a.FullName, a.Position, a.CompanyCode, a.PlaceOfBirth, a.DateOfBirth, a.Gender, a.Religion, a.Address, a.Email, a.IdNumber, a.OfficeLocation, a.WorkDate, a.PhoneNumber, a.Photo, a.Status, a.TrainingSampai, b.Sp1, b.Sp1Date, b.Sp2, b.Sp2Date, b.Sp3, b.Sp3Date, c.Rotasi, c.RotasiDate, d.Demosi, d.DemosiDate FROM db_pegawai a, db_sp b, db_rotasi c, db_demosi d"
         sqlCommand.Connection = SQLConnection
         Dim adapter As New MySqlDataAdapter(sqlCommand.CommandText, SQLConnection)
         Dim cb As New MySqlCommandBuilder(adapter)
@@ -22,39 +23,6 @@
     End Sub
 
     Dim tbl_par4 As New DataTable
-
-    Sub loadsp()
-        SQLConnection = New MySqlConnection
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Dim sqlcommand As New MySqlCommand
-        sqlcommand.CommandText = "SELECT EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp2, Sp2Date, Sp3, Sp3Date FROM db_sp"
-        sqlcommand.Connection = SQLConnection
-        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-        Dim cb As New MySqlCommandBuilder(adapter)
-        adapter.Fill(tbl_par4)
-        For index As Integer = 0 To tbl_par4.Rows.Count - 1
-            txtname.Properties.Items.Add(tbl_par4.Rows(index).Item(2).ToString)
-        Next
-    End Sub
-
-    Dim tbl_par2 As New DataTable
-
-    Sub loadrotasi()
-        SQLConnection = New MySqlConnection
-        SQLConnection.ConnectionString = connectionString
-        SQLConnection.Open()
-        Dim sqlcommand As New MySqlCommand
-        sqlcommand.CommandText = "SELECT FullName, Rotasi, RotasiDate, EmployeeCode FROM db_rotasi"
-        sqlcommand.Connection = SQLConnection
-        Dim adapter As New MySqlDataAdapter(sqlcommand.CommandText, SQLConnection)
-        Dim cb As New MySqlCommandBuilder(adapter)
-        adapter.Fill(tbl_par2)
-        For index As Integer = 0 To tbl_par2.Rows.Count - 1
-            txtname.Properties.Items.Add(tbl_par2.Rows(index).Item(0).ToString())
-        Next
-        SQLConnection.Close()
-    End Sub
 
     Dim tbl_par3 As New DataTable
 
@@ -90,9 +58,6 @@
 
     Private Sub Notes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadD()
-        loadrotasi()
-        loaddemosi()
-        loadsp()
     End Sub
 
     Private Sub txtname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtname.SelectedIndexChanged

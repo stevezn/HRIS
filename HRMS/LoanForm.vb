@@ -339,6 +339,42 @@
         End Try
     End Function
 
+    Public Function updateholiday() As Boolean
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim dtb, dtr As DateTime
+        date1.Format = DateTimePickerFormat.Custom
+        date1.CustomFormat = "yyyy-MM-dd"
+        dtb = date1.Value
+        date2.Format = DateTimePickerFormat.Custom
+        date2.CustomFormat = "yyyy-MM-dd"
+        dtr = date2.Value
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = "Update db_holiday SET" +
+                          "StartDate = @StartDate" +
+                          "EndDate = @EndDate" +
+                          "Reason = @Reason" +
+                          "TotalDays = @TotalDays"
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.CommandText = str_carsql
+            sqlcommand.Parameters.AddWithValue("@StartDate", dtb.ToString("yyyy-MM-dd"))
+            sqlcommand.Parameters.AddWithValue("@EndDate", dtr.ToString("yyyy-MM-dd"))
+            sqlcommand.Parameters.AddWithValue("@Reason", txtreason.Text)
+            sqlcommand.Parameters.AddWithValue("@TotalDays", txtdays.Text)
+            sqlcommand.Connection = SQLConnection
+            sqlcommand.ExecuteNonQuery()
+            MessageBox.Show("Data Successfully Added!")
+            Return True
+        Catch ex As Exception
+            SQLConnection.Close()
+            Return False
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
     Private Sub loanpay()
         Try
             Dim a, b, res As Double
@@ -984,6 +1020,8 @@
             MsgBox("Please Input The Start Date")
         ElseIf date1.Value > date2.Value Then
             MsgBox("Invalid Input")
+        ElseIf txtreason.Text = "" Then
+            MsgBox("Please insert the reason of the holiday")
         Else
             Process()
             holidays()
@@ -1028,6 +1066,14 @@
     Sub days()
         Dim t As TimeSpan = date2.Value - date1.Value
         txtdays.Text = t.Days.ToString
+    End Sub
+
+    Private Sub date2_ValueChanged(sender As Object, e As EventArgs) Handles date2.ValueChanged
+        days()
+    End Sub
+
+    Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
+
     End Sub
 
     Private Sub txteffective_SelectedIndexChanged(sender As Object, e As EventArgs)

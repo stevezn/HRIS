@@ -19,10 +19,15 @@
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If ListBoxControl1.Visible = True Then
-            ListBoxControl1.Visible = False
-        ElseIf ListBoxControl1.Visible = False Then
-            ListBoxControl1.Visible = True
+        'If ListBoxControl1.Visible = True Then
+        '    ListBoxControl1.Visible = False
+        'ElseIf ListBoxControl1.Visible = False Then
+        '    ListBoxControl1.Visible = True
+        'End If       
+        If date1.Text = "" Then
+            MsgBox("Please Input The Start Date")
+        ElseIf date1.Value > date2.Value Then
+            MsgBox("Invalid Input")
         End If
     End Sub
 End Class

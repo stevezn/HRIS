@@ -56,12 +56,8 @@ Partial Class Report
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtto = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtfrom = New DevExpress.XtraEditors.DateEdit()
-        Me.txtdate = New DevExpress.XtraEditors.CheckEdit()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage1.SuspendLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,11 +69,6 @@ Partial Class Report
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtto.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtfrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtfrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtdate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
         Me.SuspendLayout()
@@ -250,30 +241,26 @@ Partial Class Report
         '
         Me.XtraTabPage1.Controls.Add(Me.GroupControl1)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(511, 238)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(511, 198)
         Me.XtraTabPage1.Text = "Criteria"
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Controls.Add(Me.SimpleButton3)
         Me.GroupControl1.Controls.Add(Me.SimpleButton2)
         Me.GroupControl1.Controls.Add(Me.SimpleButton1)
         Me.GroupControl1.Controls.Add(Me.LayoutControl1)
-        Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Controls.Add(Me.txtto)
-        Me.GroupControl1.Controls.Add(Me.LabelControl1)
-        Me.GroupControl1.Controls.Add(Me.txtfrom)
-        Me.GroupControl1.Controls.Add(Me.txtdate)
         Me.GroupControl1.Location = New System.Drawing.Point(0, 3)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(516, 237)
+        Me.GroupControl1.Size = New System.Drawing.Size(516, 196)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "HRM Reports Criteria ------------------------------------------------------------" &
     "-----------------------------------"
         '
         'SimpleButton3
         '
-        Me.SimpleButton3.Location = New System.Drawing.Point(411, 197)
+        Me.SimpleButton3.Location = New System.Drawing.Point(399, 150)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(75, 23)
         Me.SimpleButton3.TabIndex = 8
@@ -281,7 +268,7 @@ Partial Class Report
         '
         'SimpleButton2
         '
-        Me.SimpleButton2.Location = New System.Drawing.Point(318, 197)
+        Me.SimpleButton2.Location = New System.Drawing.Point(321, 150)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(75, 23)
         Me.SimpleButton2.TabIndex = 7
@@ -289,7 +276,7 @@ Partial Class Report
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(25, 165)
+        Me.SimpleButton1.Location = New System.Drawing.Point(21, 126)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(116, 23)
         Me.SimpleButton1.TabIndex = 6
@@ -299,7 +286,7 @@ Partial Class Report
         '
         Me.LayoutControl1.Controls.Add(Me.CheckEdit2)
         Me.LayoutControl1.Controls.Add(Me.CheckEdit1)
-        Me.LayoutControl1.Location = New System.Drawing.Point(15, 89)
+        Me.LayoutControl1.Location = New System.Drawing.Point(15, 50)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
         Me.LayoutControl1.Size = New System.Drawing.Size(471, 70)
@@ -362,74 +349,29 @@ Partial Class Report
         Me.LayoutControlItem1.TextToControlDistance = 0
         Me.LayoutControlItem1.TextVisible = False
         '
-        'LabelControl2
-        '
-        Me.LabelControl2.Location = New System.Drawing.Point(11, 76)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(475, 13)
-        Me.LabelControl2.TabIndex = 5
-        Me.LabelControl2.Text = "Employee Criteria ---------------------------------------------------------------" &
-    "----------------------------------"
-        '
-        'txtto
-        '
-        Me.txtto.EditValue = Nothing
-        Me.txtto.Enabled = False
-        Me.txtto.Location = New System.Drawing.Point(302, 31)
-        Me.txtto.MenuManager = Me.RibbonControl1
-        Me.txtto.Name = "txtto"
-        Me.txtto.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtto.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtto.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
-        Me.txtto.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
-        Me.txtto.Size = New System.Drawing.Size(152, 20)
-        Me.txtto.TabIndex = 4
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Location = New System.Drawing.Point(251, 35)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(21, 13)
-        Me.LabelControl1.TabIndex = 3
-        Me.LabelControl1.Text = "Until"
-        '
-        'txtfrom
-        '
-        Me.txtfrom.EditValue = Nothing
-        Me.txtfrom.Enabled = False
-        Me.txtfrom.Location = New System.Drawing.Point(92, 32)
-        Me.txtfrom.MenuManager = Me.RibbonControl1
-        Me.txtfrom.Name = "txtfrom"
-        Me.txtfrom.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtfrom.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txtfrom.Properties.CalendarTimeProperties.CloseUpKey = New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4)
-        Me.txtfrom.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.[Default]
-        Me.txtfrom.Size = New System.Drawing.Size(139, 20)
-        Me.txtfrom.TabIndex = 2
-        '
-        'txtdate
-        '
-        Me.txtdate.Location = New System.Drawing.Point(25, 32)
-        Me.txtdate.MenuManager = Me.RibbonControl1
-        Me.txtdate.Name = "txtdate"
-        Me.txtdate.Properties.Caption = "Date :"
-        Me.txtdate.Size = New System.Drawing.Size(75, 19)
-        Me.txtdate.TabIndex = 1
-        '
         'XtraTabControl1
         '
         Me.XtraTabControl1.Location = New System.Drawing.Point(0, 141)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
-        Me.XtraTabControl1.Size = New System.Drawing.Size(517, 266)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(517, 226)
         Me.XtraTabControl1.TabIndex = 1
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1})
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Location = New System.Drawing.Point(21, 31)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(475, 13)
+        Me.LabelControl2.TabIndex = 9
+        Me.LabelControl2.Text = "Employee Criteria ---------------------------------------------------------------" &
+    "----------------------------------"
         '
         'Report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(514, 403)
+        Me.ClientSize = New System.Drawing.Size(514, 363)
         Me.Controls.Add(Me.XtraTabControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.MaximizeBox = False
@@ -449,11 +391,6 @@ Partial Class Report
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtto.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtfrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtfrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtdate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -492,10 +429,6 @@ Partial Class Report
     Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents txtto As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents txtfrom As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents txtdate As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
 End Class

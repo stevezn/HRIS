@@ -912,6 +912,7 @@ Partial Class Calculate
         Me.ClientSize = New System.Drawing.Size(587, 528)
         Me.Controls.Add(Me.XtraTabControl1)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.MinimizeBox = False
         Me.Name = "Calculate"
         Me.Ribbon = Me.RibbonControl1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
