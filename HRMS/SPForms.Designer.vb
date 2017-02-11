@@ -46,6 +46,8 @@ Partial Class SPForms
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.txtreason = New DevExpress.XtraEditors.TextEdit()
+        Me.lcreason = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -61,6 +63,8 @@ Partial Class SPForms
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtreason.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lcreason, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonPageGroup1
@@ -109,7 +113,7 @@ Partial Class SPForms
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl1.Size = New System.Drawing.Size(410, 147)
+        Me.RibbonControl1.Size = New System.Drawing.Size(366, 147)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Below
         '
@@ -121,6 +125,7 @@ Partial Class SPForms
         '
         'LayoutControl1
         '
+        Me.LayoutControl1.Controls.Add(Me.txtreason)
         Me.LayoutControl1.Controls.Add(Me.lcTitle)
         Me.LayoutControl1.Controls.Add(Me.btnReset)
         Me.LayoutControl1.Controls.Add(Me.btnSP)
@@ -128,20 +133,21 @@ Partial Class SPForms
         Me.LayoutControl1.Controls.Add(Me.txtPosition)
         Me.LayoutControl1.Controls.Add(Me.txtcompcode)
         Me.LayoutControl1.Controls.Add(Me.txtEmpCode)
-        Me.LayoutControl1.Location = New System.Drawing.Point(15, 148)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 142)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.LayoutControlGroup1
-        Me.LayoutControl1.Size = New System.Drawing.Size(374, 220)
+        Me.LayoutControl1.Size = New System.Drawing.Size(374, 211)
         Me.LayoutControl1.TabIndex = 13
         Me.LayoutControl1.Text = "LayoutControl1"
         '
         'lcTitle
         '
-        Me.lcTitle.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lcTitle.Appearance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lcTitle.Appearance.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.lcTitle.LineLocation = DevExpress.XtraEditors.LineLocation.Center
-        Me.lcTitle.Location = New System.Drawing.Point(177, 12)
+        Me.lcTitle.Location = New System.Drawing.Point(178, 12)
         Me.lcTitle.Name = "lcTitle"
-        Me.lcTitle.Size = New System.Drawing.Size(20, 18)
+        Me.lcTitle.Size = New System.Drawing.Size(18, 19)
         Me.lcTitle.StyleController = Me.LayoutControl1
         Me.lcTitle.TabIndex = 14
         Me.lcTitle.Text = "SP"
@@ -149,7 +155,7 @@ Partial Class SPForms
         'btnReset
         '
         Me.btnReset.Image = CType(resources.GetObject("btnReset.Image"), System.Drawing.Image)
-        Me.btnReset.Location = New System.Drawing.Point(189, 130)
+        Me.btnReset.Location = New System.Drawing.Point(189, 155)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(173, 38)
         Me.btnReset.StyleController = Me.LayoutControl1
@@ -159,7 +165,7 @@ Partial Class SPForms
         'btnSP
         '
         Me.btnSP.Image = CType(resources.GetObject("btnSP.Image"), System.Drawing.Image)
-        Me.btnSP.Location = New System.Drawing.Point(12, 130)
+        Me.btnSP.Location = New System.Drawing.Point(12, 155)
         Me.btnSP.Name = "btnSP"
         Me.btnSP.Size = New System.Drawing.Size(173, 38)
         Me.btnSP.StyleController = Me.LayoutControl1
@@ -168,7 +174,7 @@ Partial Class SPForms
         '
         'txtNamaKaryawan
         '
-        Me.txtNamaKaryawan.Location = New System.Drawing.Point(96, 34)
+        Me.txtNamaKaryawan.Location = New System.Drawing.Point(96, 35)
         Me.txtNamaKaryawan.MenuManager = Me.RibbonControl1
         Me.txtNamaKaryawan.Name = "txtNamaKaryawan"
         Me.txtNamaKaryawan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -178,7 +184,7 @@ Partial Class SPForms
         '
         'txtPosition
         '
-        Me.txtPosition.Location = New System.Drawing.Point(96, 106)
+        Me.txtPosition.Location = New System.Drawing.Point(96, 107)
         Me.txtPosition.MenuManager = Me.RibbonControl1
         Me.txtPosition.Name = "txtPosition"
         Me.txtPosition.Size = New System.Drawing.Size(266, 20)
@@ -187,7 +193,7 @@ Partial Class SPForms
         '
         'txtcompcode
         '
-        Me.txtcompcode.Location = New System.Drawing.Point(96, 82)
+        Me.txtcompcode.Location = New System.Drawing.Point(96, 83)
         Me.txtcompcode.MenuManager = Me.RibbonControl1
         Me.txtcompcode.Name = "txtcompcode"
         Me.txtcompcode.Size = New System.Drawing.Size(266, 20)
@@ -196,7 +202,7 @@ Partial Class SPForms
         '
         'txtEmpCode
         '
-        Me.txtEmpCode.Location = New System.Drawing.Point(96, 58)
+        Me.txtEmpCode.Location = New System.Drawing.Point(96, 59)
         Me.txtEmpCode.MenuManager = Me.RibbonControl1
         Me.txtEmpCode.Name = "txtEmpCode"
         Me.txtEmpCode.Size = New System.Drawing.Size(266, 20)
@@ -208,10 +214,10 @@ Partial Class SPForms
         Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
         Me.LayoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.LayoutControlGroup1.GroupBordersVisible = False
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcempcode, Me.lccompcode, Me.lcposition, Me.lcnames, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.lcempcode, Me.lccompcode, Me.lcposition, Me.lcnames, Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.lcreason})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(374, 220)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(374, 211)
         Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -219,7 +225,7 @@ Partial Class SPForms
         '
         Me.lcempcode.Control = Me.txtEmpCode
         Me.lcempcode.CustomizationFormText = "Employee Code"
-        Me.lcempcode.Location = New System.Drawing.Point(0, 46)
+        Me.lcempcode.Location = New System.Drawing.Point(0, 47)
         Me.lcempcode.Name = "lcempcode"
         Me.lcempcode.Size = New System.Drawing.Size(354, 24)
         Me.lcempcode.Text = "Employee Code"
@@ -229,7 +235,7 @@ Partial Class SPForms
         '
         Me.lccompcode.Control = Me.txtcompcode
         Me.lccompcode.CustomizationFormText = "LayoutControlItem3"
-        Me.lccompcode.Location = New System.Drawing.Point(0, 70)
+        Me.lccompcode.Location = New System.Drawing.Point(0, 71)
         Me.lccompcode.Name = "lccompcode"
         Me.lccompcode.Size = New System.Drawing.Size(354, 24)
         Me.lccompcode.Text = "Company Code"
@@ -239,7 +245,7 @@ Partial Class SPForms
         '
         Me.lcposition.Control = Me.txtPosition
         Me.lcposition.CustomizationFormText = "Position"
-        Me.lcposition.Location = New System.Drawing.Point(0, 94)
+        Me.lcposition.Location = New System.Drawing.Point(0, 95)
         Me.lcposition.Name = "lcposition"
         Me.lcposition.Size = New System.Drawing.Size(354, 24)
         Me.lcposition.Text = "Position"
@@ -249,7 +255,7 @@ Partial Class SPForms
         '
         Me.lcnames.Control = Me.txtNamaKaryawan
         Me.lcnames.CustomizationFormText = "Employee Names"
-        Me.lcnames.Location = New System.Drawing.Point(0, 22)
+        Me.lcnames.Location = New System.Drawing.Point(0, 23)
         Me.lcnames.Name = "lcnames"
         Me.lcnames.Size = New System.Drawing.Size(354, 24)
         Me.lcnames.Text = "Employee Names"
@@ -259,9 +265,9 @@ Partial Class SPForms
         '
         Me.LayoutControlItem1.Control = Me.btnSP
         Me.LayoutControlItem1.CustomizationFormText = "LayoutControlItem1"
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 118)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 143)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(177, 82)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(177, 48)
         Me.LayoutControlItem1.Text = "LayoutControlItem1"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextToControlDistance = 0
@@ -271,9 +277,9 @@ Partial Class SPForms
         '
         Me.LayoutControlItem2.Control = Me.btnReset
         Me.LayoutControlItem2.CustomizationFormText = "LayoutControlItem2"
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(177, 118)
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(177, 143)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(177, 82)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(177, 48)
         Me.LayoutControlItem2.Text = "LayoutControlItem2"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextToControlDistance = 0
@@ -286,17 +292,36 @@ Partial Class SPForms
         Me.LayoutControlItem3.CustomizationFormText = "LayoutControlItem3"
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(354, 22)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(354, 23)
         Me.LayoutControlItem3.Text = "LayoutControlItem3"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextToControlDistance = 0
         Me.LayoutControlItem3.TextVisible = False
         '
+        'txtreason
+        '
+        Me.txtreason.Location = New System.Drawing.Point(96, 131)
+        Me.txtreason.MenuManager = Me.RibbonControl1
+        Me.txtreason.Name = "txtreason"
+        Me.txtreason.Size = New System.Drawing.Size(266, 20)
+        Me.txtreason.StyleController = Me.LayoutControl1
+        Me.txtreason.TabIndex = 18
+        '
+        'lcreason
+        '
+        Me.lcreason.Control = Me.txtreason
+        Me.lcreason.CustomizationFormText = "SP Reason"
+        Me.lcreason.Location = New System.Drawing.Point(0, 119)
+        Me.lcreason.Name = "lcreason"
+        Me.lcreason.Size = New System.Drawing.Size(354, 24)
+        Me.lcreason.Text = "SP Reason"
+        Me.lcreason.TextSize = New System.Drawing.Size(81, 13)
+        '
         'SPForms
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(410, 374)
+        Me.ClientSize = New System.Drawing.Size(366, 350)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.MaximizeBox = False
@@ -319,6 +344,8 @@ Partial Class SPForms
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtreason.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lcreason, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -345,4 +372,6 @@ Partial Class SPForms
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents lcTitle As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents txtreason As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents lcreason As DevExpress.XtraLayout.LayoutControlItem
 End Class

@@ -112,7 +112,7 @@ Partial Class RecProcess
         Me.RibbonControl1.MaxItemId = 5
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.Employee})
-        Me.RibbonControl1.Size = New System.Drawing.Size(813, 142)
+        Me.RibbonControl1.Size = New System.Drawing.Size(814, 142)
         Me.RibbonControl1.Toolbar.ItemLinks.Add(Me.barJudul)
         Me.RibbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above
         '
@@ -406,7 +406,7 @@ Partial Class RecProcess
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(813, 521)
+        Me.ClientSize = New System.Drawing.Size(814, 521)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.RibbonControl1)
         Me.MaximizeBox = False

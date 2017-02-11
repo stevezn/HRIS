@@ -707,7 +707,7 @@ Partial Class Notes
         Me.lcrotasi.Location = New System.Drawing.Point(0, 48)
         Me.lcrotasi.Name = "lcrotasi"
         Me.lcrotasi.Size = New System.Drawing.Size(197, 24)
-        Me.lcrotasi.Text = "Rotasi"
+        Me.lcrotasi.Text = "Last Rotasi"
         Me.lcrotasi.TextSize = New System.Drawing.Size(60, 13)
         '
         'lcrotasidate

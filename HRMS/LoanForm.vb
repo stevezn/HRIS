@@ -116,16 +116,24 @@
         End Try
     End Sub
 
-    Public Function InsertLoan() As Boolean
+    Public Sub InsertLoan()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
-        Dim sqlcommand As New MySqlCommand
-        Dim str_carsql As String
+        Dim quer As Integer
         Try
+            Dim cmd = SQLConnection.CreateCommand
+            cmd.CommandText = "select count(*) as numRows from db_loan where EmployeeCode = '" & txtempcode.Text & "'"
+            quer = CInt(cmd.ExecuteScalar)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        If quer = 0 Then
+            Dim sqlcommand As New MySqlCommand
+            Dim str_carsql As String
             str_carsql = "INSERT INTO db_loan " +
-                            "(FullName, EmployeeCode, ApprovedBy, Reason, Dates, AmountOfLoan, Month, Months, SalaryInclude, FromMonths, Year, PaymentPerMonth, CompletedOn ) " +
-                            " Values (@FullName, @EmployeeCode, @ApprovedBy, @Reason, @Dates, @AmountOfLoan, @Month, @Months, @SalaryInclude, @FromMonths, @Year, @PaymentPerMonth, @CompletedOn)"
+                                "(FullName, EmployeeCode, ApprovedBy, Reason, Dates, AmountOfLoan, Month, Months, SalaryInclude, FromMonths, Year, PaymentPerMonth, CompletedOn ) " +
+                                " Values (@FullName, @EmployeeCode, @ApprovedBy, @Reason, @Dates, @AmountOfLoan, @Month, @Months, @SalaryInclude, @FromMonths, @Year, @PaymentPerMonth, @CompletedOn)"
             sqlcommand.Connection = SQLConnection
             sqlcommand.CommandText = str_carsql
             sqlcommand.Parameters.AddWithValue("@FullName", txtname.Text)
@@ -144,13 +152,11 @@
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             MessageBox.Show("Data Succesfully Added!")
-            Return True
-        Catch ex As Exception
             SQLConnection.Close()
-            Return False
-            MsgBox(ex.Message)
-        End Try
-    End Function
+        Else
+            MsgBox("This Employee still have a loan in the lists!")
+        End If
+    End Sub
 
     Public Sub UpdateLoan()
         SQLConnection = New MySqlConnection
@@ -198,28 +204,39 @@
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
         SQLConnection.Open()
-        Dim sqlcommand As New MySqlCommand
-        Dim str_carsql As String
+        Dim quer As Integer
         Try
-            str_carsql = "Insert into db_rapel " +
-                        "(FullName, EmployeeCode, RapelRate, EffSince, Until)" +
-                        "Values (@FullName, @EmployeeCode, @RapelRate, @EffSince, @Until)"
-            sqlcommand.Connection = SQLConnection
-            sqlcommand.CommandText = str_carsql
-            sqlcommand.Parameters.AddWithValue("@FullName", txtname3.Text)
-            sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode3.Text)
-            sqlcommand.Parameters.AddWithValue("@RapelRate", txtrapel.Text)
-            sqlcommand.Parameters.AddWithValue("@EffSince", txteffective.Text)
-            sqlcommand.Parameters.AddWithValue("@Until", txtuntil.Text)
-            sqlcommand.Connection = SQLConnection
-            sqlcommand.ExecuteNonQuery()
-            MessageBox.Show("Data Successfully Added!")
-            Return True
+            Dim cmd = SQLConnection.CreateCommand
+            cmd.CommandText = "select count(*) as numRows from db_loan where EmployeeCode = '" & txtempcode.Text & "'"
+            quer = CInt(cmd.ExecuteScalar)
         Catch ex As Exception
-            SQLConnection.Close()
-            Return False
             MsgBox(ex.Message)
         End Try
+        If quer = 0 Then
+            Dim sqlcommand As New MySqlCommand
+            Dim str_carsql As String
+            Try
+                str_carsql = "Insert into db_rapel " +
+                            "(FullName, EmployeeCode, RapelRate, EffSince, Until)" +
+                            "Values (@FullName, @EmployeeCode, @RapelRate, @EffSince, @Until)"
+                sqlcommand.Connection = SQLConnection
+                sqlcommand.CommandText = str_carsql
+                sqlcommand.Parameters.AddWithValue("@FullName", txtname3.Text)
+                sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtempcode3.Text)
+                sqlcommand.Parameters.AddWithValue("@RapelRate", txtrapel.Text)
+                sqlcommand.Parameters.AddWithValue("@EffSince", txteffective.Text)
+                sqlcommand.Parameters.AddWithValue("@Until", txtuntil.Text)
+                sqlcommand.Connection = SQLConnection
+                sqlcommand.ExecuteNonQuery()
+                MessageBox.Show("Data Successfully Added!")
+                Return True
+            Catch ex As Exception
+                SQLConnection.Close()
+                MsgBox("This employee still has rapel progress on the go")
+                Return False
+            End Try
+        End If
+        Return False
     End Function
 
     Public Function InsertAddPayroll() As Boolean
@@ -777,6 +794,7 @@
             MsgBox("Please Insert Employee Name Or Employee Code!")
         Else
             InsertLoan()
+            'test()
             UpdateLoan()
         End If
         loadloan()
@@ -1072,7 +1090,63 @@
         days()
     End Sub
 
-    Private Sub SimpleButton4_Click(sender As Object, e As EventArgs) Handles SimpleButton4.Click
+    Private Sub txtloan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtloan.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtrapel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtrapel.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtdays_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtdays.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtbasicrate1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbasicrate1.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtallowance1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtallowance1.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtincentives1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtincentives1.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtmealrate1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtmealrate1.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txttransport1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txttransport1.KeyPress
+        Dim ch As Char = e.KeyChar
+        If Char.IsLetter(ch) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtcompletedon1_EditValueChanged(sender As Object, e As EventArgs) Handles txtcompletedon1.EditValueChanged
 
     End Sub
 

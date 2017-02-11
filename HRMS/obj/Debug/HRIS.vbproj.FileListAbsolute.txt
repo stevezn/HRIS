@@ -726,3 +726,7 @@ E:\Now Project\New folder\HRMS\obj\Debug\HRMS.setting.resources
 E:\Now Project\New folder\HRMS\obj\Debug\HRMS.SPForms.resources
 E:\Now Project\New folder\HRMS\obj\Debug\HRIS.vbproj.GenerateResource.Cache
 E:\Now Project\New folder\HRMS\obj\Debug\HRMS.exe.licenses
+E:\Now Project\New folder\HRMS\bin\Debug\HRMS.exe.manifest
+E:\Now Project\New folder\HRMS\bin\Debug\HRMS.application
+E:\Now Project\New folder\HRMS\obj\Debug\HRMS.exe.manifest
+E:\Now Project\New folder\HRMS\obj\Debug\HRMS.application

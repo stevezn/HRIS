@@ -541,7 +541,6 @@ Public Class MainApp
         infoForm.Show()
     End Sub
 
-
 #End Region
 
 #Region "CRUD database"
@@ -2737,5 +2736,9 @@ Public Class MainApp
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         TextEdit1.Text = Format(Now, "dd, MMMM, yyyy hhhh:mm:ss")
+    End Sub
+
+    Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit1.EditValueChanged
+
     End Sub
 End Class

@@ -11,6 +11,7 @@ Public Class SPForms
         txtEmpCode.Text = ""
         txtcompcode.Text = ""
         txtPosition.Text = ""
+        txtreason.Text = ""
     End Sub
 
     Dim tbl_par As New DataTable
@@ -36,6 +37,7 @@ Public Class SPForms
         lcempcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lccompcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         lcposition.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
+        lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         LayoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
         LayoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
@@ -52,6 +54,7 @@ Public Class SPForms
         lcempcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lccompcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcposition.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -66,6 +69,7 @@ Public Class SPForms
         lcempcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lccompcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcposition.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -80,6 +84,7 @@ Public Class SPForms
         lcempcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lccompcode.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         lcposition.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
+        lcreason.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem2.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
         LayoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always
@@ -217,6 +222,20 @@ Public Class SPForms
         End Try
     End Sub
 
+    Private Sub duplicate()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+        Dim sqlcommand As New MySqlCommand
+        Dim str_carsql As String
+        Try
+            str_carsql = ""
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
     Private Sub insertSP1()
         SQLConnection = New MySqlConnection
         SQLConnection.ConnectionString = connectionString
@@ -225,24 +244,29 @@ Public Class SPForms
         Dim str_carsql As String
         Try
             str_carsql = "INSERT INTO db_sp " +
-                        "(EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp2, Sp2Date, Sp3, Sp3Date) " +
-                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp1, @Sp1Date, @Sp2, @Sp2Date, @Sp3, @Sp3Date)"
+                        "(EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp1Reason ) " +
+                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp1, @Sp1Date, @Sp1Reason)" +
+                        "where "
             sqlcommand.Connection = SQLConnection
             sqlcommand.CommandText = str_carsql
             sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtEmpCode.Text)
             sqlcommand.Parameters.AddWithValue("@CompanyCode", txtcompcode.Text)
             sqlcommand.Parameters.AddWithValue("@FullName", txtNamaKaryawan.Text)
             sqlcommand.Parameters.AddWithValue("@Sp1", "Sp1")
-            sqlcommand.Parameters.AddWithValue("@Sp1Date", Format(Now, "dd-MM/yyyy"))
-            sqlcommand.Parameters.AddWithValue("@Sp2", "")
-            sqlcommand.Parameters.AddWithValue("@Sp2Date", "")
-            sqlcommand.Parameters.AddWithValue("@Sp3", "")
-            sqlcommand.Parameters.AddWithValue("@Sp3Date", "")
+            sqlcommand.Parameters.AddWithValue("@Sp1Date", Format(Now, "dd-MM-yyyy"))
+            sqlcommand.Parameters.AddWithValue("@Sp1Reason", txtreason.Text)
+            'sqlcommand.Parameters.AddWithValue("@Sp2", "")
+            'sqlcommand.Parameters.AddWithValue("@Sp2Date", "")
+            'sqlcommand.Parameters.AddWithValue("@Sp2Reason", txtreason.Text)
+            'sqlcommand.Parameters.AddWithValue("@Sp3", "")
+            'sqlcommand.Parameters.AddWithValue("@Sp3Date", "")
+            'sqlcommand.Parameters.AddWithValue("@Sp3Reason", txtreason.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             SQLConnection.Close()
         Catch ex As Exception
             SQLConnection.Close()
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -254,19 +278,16 @@ Public Class SPForms
         Dim str_carsql As String
         Try
             str_carsql = "INSERT INTO db_sp " +
-                        "(EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp2, Sp2Date, Sp3, Sp3Date) " +
-                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp1, @Sp1Date, @Sp2, @Sp2Date, @Sp3, @Sp3Date)"
+                        "(EmployeeCode, CompanyCode, FullName, Sp2, Sp2Date, Sp2Reason) " +
+                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp2, @Sp2Date, @Sp2Reason)"
             sqlcommand.Connection = SQLConnection
             sqlcommand.CommandText = str_carsql
             sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtEmpCode.Text)
             sqlcommand.Parameters.AddWithValue("@CompanyCode", txtcompcode.Text)
             sqlcommand.Parameters.AddWithValue("@FullName", txtNamaKaryawan.Text)
-            sqlcommand.Parameters.AddWithValue("@Sp1", "")
-            sqlcommand.Parameters.AddWithValue("@Sp1Date", "")
             sqlcommand.Parameters.AddWithValue("@Sp2", "sp2")
             sqlcommand.Parameters.AddWithValue("@Sp2Date", Format(Now, "dd-MM-yyyy"))
-            sqlcommand.Parameters.AddWithValue("@Sp3", "")
-            sqlcommand.Parameters.AddWithValue("@Sp3Date", "")
+            sqlcommand.Parameters.AddWithValue("@Sp2", txtreason.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             SQLConnection.Close()
@@ -283,19 +304,16 @@ Public Class SPForms
         Dim str_carsql As String
         Try
             str_carsql = "INSERT INTO db_sp " +
-                        "(EmployeeCode, CompanyCode, FullName, Sp1, Sp1Date, Sp2, Sp2Date, Sp3, Sp3Date) " +
-                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp1, @Sp1Date, @Sp2, @Sp2Date, @Sp3, @Sp3Date)"
+                        "(EmployeeCode, CompanyCode, FullName, Sp3, Sp3Date, Sp3Reason) " +
+                        "values (@EmployeeCode, @CompanyCode, @FullName, @Sp3, @Sp3Date, @Sp3Reason)"
             sqlcommand.Connection = SQLConnection
             sqlcommand.CommandText = str_carsql
             sqlcommand.Parameters.AddWithValue("@EmployeeCode", txtEmpCode.Text)
             sqlcommand.Parameters.AddWithValue("@CompanyCode", txtcompcode.Text)
             sqlcommand.Parameters.AddWithValue("@FullName", txtNamaKaryawan.Text)
-            sqlcommand.Parameters.AddWithValue("@Sp1", "")
-            sqlcommand.Parameters.AddWithValue("@Sp1Date", "")
-            sqlcommand.Parameters.AddWithValue("@Sp2", "")
-            sqlcommand.Parameters.AddWithValue("@Sp2Date", "")
             sqlcommand.Parameters.AddWithValue("@Sp3", "Sp3")
             sqlcommand.Parameters.AddWithValue("@Sp3Date", Format(Now, "dd-MM-yyyy"))
+            sqlcommand.Parameters.AddWithValue("@Sp3Reason", txtreason.Text)
             sqlcommand.Connection = SQLConnection
             sqlcommand.ExecuteNonQuery()
             SQLConnection.Close()
@@ -341,9 +359,5 @@ Public Class SPForms
                 txtcompcode.Text = tbl_par.Rows(indexing).Item(3).ToString()
             End If
         Next
-    End Sub
-
-    Private Sub RibbonControl1_Click(sender As Object, e As EventArgs) Handles RibbonControl1.Click
-
     End Sub
 End Class

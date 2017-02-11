@@ -112,6 +112,15 @@ Public Class NewRec
 
     Dim main As MainApp
 
+    Private Sub interviewtimes()
+        SQLConnection = New MySqlConnection
+        SQLConnection.ConnectionString = connectionString
+        SQLConnection.Open()
+
+
+
+    End Sub
+
     Public Function InsertReq() As Boolean
         SQLConnection = New MySqlConnection()
         SQLConnection.ConnectionString = connectionString
@@ -131,6 +140,17 @@ Public Class NewRec
         'If n > 1 Then
         '    interview = +1
         'End If
+        Dim quer As Integer
+        Try
+            Dim cmd = SQLConnection.CreateCommand
+            cmd.CommandText = "select count(*) as numRows from db_recruitment where IdNumber = '" & txtid.Text & "'"
+            quer = CInt(cmd.ExecuteScalar) + 1
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        If quer > 1 Then
+
+        End If
         Try
             Dim cmd = SQLConnection.CreateCommand()
             cmd.CommandText = "SELECT IdRec FROM id_last_num"

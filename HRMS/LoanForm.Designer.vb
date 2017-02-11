@@ -218,6 +218,7 @@ Partial Class Payments
         Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabPage6 = New DevExpress.XtraTab.XtraTabPage()
         Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.txtdays = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -231,7 +232,6 @@ Partial Class Payments
         Me.date1 = New System.Windows.Forms.DateTimePicker()
         Me.GridControl6 = New DevExpress.XtraGrid.GridControl()
         Me.GridView6 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
@@ -2380,8 +2380,17 @@ Partial Class Payments
         Me.GroupControl5.Size = New System.Drawing.Size(387, 337)
         Me.GroupControl5.TabIndex = 16
         '
+        'SimpleButton4
+        '
+        Me.SimpleButton4.Location = New System.Drawing.Point(302, 166)
+        Me.SimpleButton4.Name = "SimpleButton4"
+        Me.SimpleButton4.Size = New System.Drawing.Size(79, 34)
+        Me.SimpleButton4.TabIndex = 22
+        Me.SimpleButton4.Text = "Change Data"
+        '
         'txtdays
         '
+        Me.txtdays.Enabled = False
         Me.txtdays.Location = New System.Drawing.Point(252, 125)
         Me.txtdays.Name = "txtdays"
         Me.txtdays.Size = New System.Drawing.Size(40, 21)
@@ -2484,14 +2493,6 @@ Partial Class Payments
         Me.GridView6.GridControl = Me.GridControl6
         Me.GridView6.Name = "GridView6"
         Me.GridView6.OptionsFind.AlwaysVisible = True
-        '
-        'SimpleButton4
-        '
-        Me.SimpleButton4.Location = New System.Drawing.Point(302, 166)
-        Me.SimpleButton4.Name = "SimpleButton4"
-        Me.SimpleButton4.Size = New System.Drawing.Size(79, 34)
-        Me.SimpleButton4.TabIndex = 22
-        Me.SimpleButton4.Text = "Change Data"
         '
         'Payments
         '
